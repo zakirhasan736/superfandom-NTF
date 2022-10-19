@@ -4,23 +4,13 @@ import { NextPage } from 'next';
 import { gsap } from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
+// gsap.registerPlugin(ScrollTrigger)
+
 const Explore: NextPage<any> = ({}) => {
-  // 
-  // var tl = gsap.timeline({repeat: 3, repeatDelay: 1});
 
   const sliderRef = useRef(null);
   const el = sliderRef.current;
-  // gsap.registerPlugin(ScrollTrigger);
-  gsap.to(el, {
-    x: 500,
-    duration: 2
-  });
-
-
-  // gsap.to(".slides-image-box", {
-  //   scrollTrigger: ".slides-image-box",
-  //   x: 500
-  // });
+  gsap.fromTo(el, { left: 0 }, { left: 100, duration: 3 })
 
   return (
     <>
