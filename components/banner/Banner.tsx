@@ -29,9 +29,15 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
       <div className="container lg:container md:container sm:container relative lg:px-9 md:px-7 sm:px-4">
         <div className="main-visual-wrapper flex items-center justify-between md:block">
           {/* ------------------- */}
+<<<<<<<<< Temporary merge branch 1
           <div className="banner-text-cont-left w-full relative z-50">
             <h2 id="b_title" className="banner_title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
               <span className="font-primary font-normal text-fig-5x text-left text-secondary uppercase">
+=========
+          <div className="banner-text-cont-left relative w-full z-50">
+            <h2 className="banner-title mb-[67px] absolute md:relative top-0 left-0 z-30">
+              <span className="font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-x:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
+>>>>>>>>> Temporary merge branch 2
                 Collect
               </span>{' '}
               <br />
@@ -84,6 +90,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               fandoms
             </p>
             <div className="banner-btn-box text-left flex mt-8">
+<<<<<<<<< Temporary merge branch 1
               <Link href="/">
                 <a
 
@@ -99,10 +106,25 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                   Explore Causes
                 </a>
               </Link>
+=========
+              <a
+                href="/"
+                className="p-5 md:py-4 uppercase sm:text-xs font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
+              >
+                Explore Causes
+              </a>
+              <a
+                href="/"
+                className="p-5 md:py-4 uppercase sm:text-xs font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out"
+              >
+                Explore Causes
+              </a>
+>>>>>>>>> Temporary merge branch 2
             </div>
           </div>
           {/* ------------ */}
         </div>
+<<<<<<<<< Temporary merge branch 1
         <div className="main-visual-modal-bg absolute bottom-[170px] left-0 w-full max-w-[1820px] right-0 ml-auto mr-auto">
           <Image
             src="/images/banner-bg.png"
@@ -112,6 +134,17 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             height="444px"
           />
         </div>
+=========
+        <div className="main-visual-modal-bg absolute bottom-[170px] left-0 w-full max-w-[1820px] right-0 ml-auto mr-auto desktop-m:bottom-[220px] md:bottom-[240px] sm:bottom-[425px]">
+            <Image
+              src="/images/banner-bg.png"
+              alt="superfandom banner-bg"
+              className="banner-bg "
+              width="1820px"
+              height="444px"
+            />
+          </div>
+>>>>>>>>> Temporary merge branch 2
       </div>
     </div>
   );
