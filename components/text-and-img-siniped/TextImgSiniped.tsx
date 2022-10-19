@@ -59,18 +59,17 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                     Donate to the causes you care about and collect nonfungible
                     or soulbound tokens to memorialize your support
                   </p>
-                 <Link href="/">
-                 <a
+                  <a
+                    href="/"
                     className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
                   >
                     Explore Causes
                   </a>
-                 </Link>
                 </div>
 
                 <div className="text-img-siniped-anim-scroll w-full flex gap-x-12  max-h-[1080px] h-full px-[50px] md:hidden laptop-m:max-h-[800px]">
 
-                <ul id="left-image" className="scroll-slides-card-left flex flex-col gap-y-12">
+                <ul className="scroll-slides-card-left flex flex-col gap-y-12">
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-15.png"
@@ -196,7 +195,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                     </li>
                   </ul>
                   
-                  <ul id="right-image-1" className="scroll-slides-card-right flex flex-col gap-y-12">
+                  <ul className="scroll-slides-card-right flex flex-col gap-y-12">
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-7.png"
@@ -242,11 +241,13 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                   </p>
                   <Link  href="/">
                   <a
+                    href="/"
                     className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out"
                   >
                     Explore fandoms
                   </a>
                   </Link>
+                </div>
                 </div>
               </li>
               {/* -------------------------- */}
