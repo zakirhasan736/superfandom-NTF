@@ -9,26 +9,28 @@ const TextImgSiniped: NextPage<any> = ({}) => {
           <div className="text-img-siniped-cont-wrapper">
             <ul className="text-img-siniped-info-items">
               {/* ------------------------ */}
-              <li className="text-img-siniped-info-list columns-2 gap-0 bg-primary">
-                <div className="text-cont-box w-full py-[307px] px-[190px] bg-primary">
-                  <h2 className="title  mb-6 font-primary font-normal text-fig-3x text-left text-secondary uppercase">
+              <li className="text-img-siniped-info-list columns-2 gap-0 bg-primary md:columns-1">
+                <div className="text-cont-box w-full py-[307px] px-[190px] bg-primary  max-h-[1080px] h-full laptop-x:px-[80px] laptop-m:max-h-[800px] laptop-m:py-[210px] lg:px-[60px] md:py-8 md:px-6 sm:px-4">
+                  <div className="siniped-text-box">
+                  <h2 className="title  mb-6 font-primary font-normal text-fig-3x text-left text-secondary uppercase desktop-l:text-7xl desktop-m:text-6xl md:text-fig-40">
                     Soulbound <br /> Tokens for <br /> Causes
                   </h2>
-                  <p className="desc font-primary font-normal text-fig-24 text-left text-secondary pb-6">
+                  <p className="desc font-primary font-normal text-fig-24 text-left text-secondary pb-6 desktop-m:text-xl md:text-fig-4">
                     Donate to the causes you care about and collect nonfungible
                     or soulbound tokens to memorialize your support
                   </p>
                   <a
                     href="/"
-                    className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
+                    className="max-w-[180px] sm:max-w-full w-full flex text-center justify-center p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
                   >
                     Explore Causes
                   </a>
+                  </div>
                 </div>
 
-                <div className="text-img-siniped-anim-scroll w-full flex gap-x-12 h-[1080px] px-[50px]">
+                <div className="text-img-siniped-anim-scroll w-full flex gap-x-12  max-h-[1080px] h-full px-[50px] md:hidden laptop-m:max-h-[800px]">
 
-                <ul className="scroll-slides-card-left flex flex-col gap-y-12">
+                <ul className="scroll-slides-card-left flex flex-col gap-y-12 lg:hidden">
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-15.png"
@@ -99,8 +101,8 @@ const TextImgSiniped: NextPage<any> = ({}) => {
               {/* ------------------------- */}
 
               {/* ----------------------- */}
-              <li className="text-img-siniped-info-list columns-2 gap-0 bg-secondary">
-                <div className="text-img-siniped-anim-scroll w-full flex gap-x-12 h-[1080px] px-[50px] bg-primary">
+              <li className="text-img-siniped-info-list columns-2 gap-0 bg-secondary md:columns-1">
+                <div className="text-img-siniped-anim-scroll w-full flex gap-x-12 max-h-[1080px] px-[50px] bg-primary h-full md:hidden laptop-m:max-h-[800px]">
 
                   <ul className="scroll-slides-card-left flex flex-col gap-y-12">
                     <li className="slides-card-items h-[520px] w-[382px]">
@@ -135,7 +137,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                     </li>
                   </ul>
                   
-                  <ul className="scroll-slides-card-right flex flex-col gap-y-12">
+                  <ul className="scroll-slides-card-right flex flex-col gap-y-12 lg:hidden">
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-7.png"
@@ -170,20 +172,22 @@ const TextImgSiniped: NextPage<any> = ({}) => {
 
                 </div>
 
-                <div className="text-cont-box w-full py-[307px] px-[190px] bg-secondary">
-                  <h2 className="title  mb-6 font-primary font-normal text-fig-3x text-left text-primary uppercase">
+                <div className="text-cont-box w-full py-[307px] px-[190px] bg-secondary max-h-[1080px] h-full laptop-x:px-[80px] laptop-m:max-h-[800px] laptop-m:py-[210px] lg:px-[60px] md:py-8 md:px-6 sm:px-4">
+                <div className="siniped-text-box">
+                  <h2 className="title  mb-6 font-primary font-normal text-fig-3x text-left text-primary uppercase desktop-l:text-7xl desktop-m:text-6xl md:text-fig-40">
                     Soulbound <br /> Tokens for <br /> Causes
                   </h2>
-                  <p className="desc font-primary font-normal text-fig-24 text-left text-primary pb-6">
+                  <p className="desc font-primary font-normal text-fig-24 text-left text-primary pb-6 desktop-m:text-xl md:text-fig-4">
                     Donate to the causes you care about and collect nonfungible
                     or soulbound tokens to memorialize your support
                   </p>
                   <a
                     href="/"
-                    className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out"
+                    className="max-w-[180px] sm:max-w-full w-full flex text-center justify-center p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out"
                   >
                     Explore fandoms
                   </a>
+                </div>
                 </div>
               </li>
               {/* -------------------------- */}

@@ -14,19 +14,19 @@ const HowItWork: NextPage<any> = ({}) => {
             height="1080px"
           />
         </div>
-        <div className="how-it-work-wrapper pt-[138px] pb-[234px] w-full z-10 relative">
-          <div className="section-titlebox mb-24">
-            <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-40">
+        <div className="how-it-work-wrapper pt-[138px] pb-[234px] w-full z-10 relative lg:pt-[80px] lg:pb-[80px] md:pt-8 md:pb-8">
+          <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
+            <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32">
               how it works • how it work
             </h2>
           </div>
           <div className="custom-container 2xl:px-0 xl:px-0 laptop-x:px-12 md:px-5 sm:px-4">
             <div className="how-it-work-cont-wrapper">
               <ul className="how-it-work-info-items">
-                <li className="how-it-work-info-list flex items-center flex-row gap-[190px]">
+                <li className="how-it-work-info-list flex items-center flex-row gap-[190px] lg:gap-[120px] md:gap-[60px] sm:flex-col-reverse sm:mb-8">
                   <div className="how-it-work-info-cont w-full flex justify-end">
                     <div className="text-cont-box w-full max-w-[462px] relative">
-                      <div className="info-num-icon absolute right-0 top-[-129px] ">
+                      <div className="info-num-icon absolute right-0 top-[-129px] md:w-[130px] sm:w-[60px] sm:top-0 md:top-[-70px] sm:left-0 sm:right-auto">
                         <Image
                           src="/images/Subtract-num-1.png"
                           alt="superfandom info-item-num-img"
@@ -35,16 +35,18 @@ const HowItWork: NextPage<any> = ({}) => {
                           height="198px"
                         />
                       </div>
-                      <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase">
+                      <div className="info-text-box sm:pl-20">
+                      <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase md:text-fig-32 md:mb-4">
                         Mint <br /> soulbound
                       </h2>
-                      <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0">
+                      <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0 md:text-fig-base">
                         Mint soulbound tokens of the causes you care about
                       </p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="how-it-work-anim-cont w-full relative">
+                  <div className="how-it-work-anim-cont w-full relative sm:mb-8">
                     <div className="how-it-work-anim-img">
                       <Image
                         src="/images/card-img-6.png"
@@ -73,10 +75,10 @@ const HowItWork: NextPage<any> = ({}) => {
                     </div>
                   </div>
                 </li>
-                <li className="how-it-work-info-list flex items-center flex-row gap-[190px]">
+                <li className="how-it-work-info-list flex items-center flex-row gap-[190px] lg:gap-[120px] md:gap-[60px] sm:flex-col-reverse sm:mb-8">
                   <div className="how-it-work-info-cont w-full flex justify-end">
                     <div className="text-cont-box w-full max-w-[462px] relative">
-                      <div className="info-num-icon absolute right-0 top-[-129px] ">
+                      <div className="info-num-icon absolute right-0 top-[-129px] md:w-[130px] sm:w-[60px] sm:top-0 md:top-[-70px] sm:left-0 sm:right-auto">
                         <Image
                           src="/images/Subtract-num-2.png"
                           alt="superfandom info-item-num-img"
@@ -85,16 +87,18 @@ const HowItWork: NextPage<any> = ({}) => {
                           height="198px"
                         />
                       </div>
-                      <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase">
+                      <div className="info-text-box sm:pl-20">
+                      <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase md:text-fig-32 md:mb-4">
                         Mint <br /> soulbound
                       </h2>
-                      <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0">
+                      <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0 md:text-fig-base">
                         Mint soulbound tokens of the causes you care about
                       </p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="how-it-work-anim-cont w-full relative flex justify-end">
+                  <div className="how-it-work-anim-cont w-full relative flex justify-end sm:mb-8">
                     <div className="how-it-work-anim-img relative">
                       <Image
                         src="/images/card-mobo.png"
@@ -152,10 +156,10 @@ const HowItWork: NextPage<any> = ({}) => {
                     </div>
                   </div>
                 </li>
-                <li className="how-it-work-info-list flex items-center flex-row gap-[190px]">
+                <li className="how-it-work-info-list flex items-center flex-row gap-[190px] lg:gap-[120px] md:gap-[60px] sm:flex-col-reverse sm:mb-8">
                   <div className="how-it-work-info-cont w-full flex justify-end">
                     <div className="text-cont-box w-full max-w-[462px] relative">
-                      <div className="info-num-icon absolute right-0 top-[-129px] ">
+                      <div className="info-num-icon absolute right-0 top-[-129px] md:w-[130px] sm:w-[60px] sm:top-0 md:top-[-70px] sm:left-0 sm:right-auto">
                         <Image
                           src="/images/Subtract-num-3.png"
                           alt="superfandom info-item-num-img"
@@ -164,16 +168,18 @@ const HowItWork: NextPage<any> = ({}) => {
                           height="198px"
                         />
                       </div>
-                      <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase">
+                      <div className="info-text-box sm:pl-20">
+                      <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase md:text-fig-32 md:mb-4">
                         Mint <br /> soulbound
                       </h2>
-                      <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0">
+                      <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0 md:text-fig-base">
                         Mint soulbound tokens of the causes you care about
                       </p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="how-it-work-anim-cont w-full relative">
+                  <div className="how-it-work-anim-cont w-full relative mb-8">
                     <div className="how-it-work-anim-img relative">
                       <Image
                         src="/images/card-img-1.png"
