@@ -1,12 +1,47 @@
 import { NextPage } from 'next';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import  Link from 'next/link';
-const { gsap } = require("gsap/dist/gsap");
-const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
+import  gsap  from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const TextImgSiniped: NextPage<any> = ({}) => {
-  gsap.registerPlugin(ScrollTrigger);
 
+  useEffect(() => {
+    gsap.to("#left-image", {
+      scrollTrigger: {
+        trigger: ".text-img-siniped-section",
+        toggleActions: 'restart none none none'
+      },
+      y: -170,
+      duration: 5
+    })
+    gsap.to("#right-image", {
+      scrollTrigger: {
+        trigger: ".text-img-siniped-section",
+        toggleActions: 'restart none none none'
+      },
+      y: 170,
+      duration: 5
+    })
+    gsap.to("#left-image-1", {
+      scrollTrigger: {
+        trigger: ".columns-2",
+        toggleActions: 'restart none none none'
+      },
+      y: -170,
+      duration: 5
+    })
+    gsap.to("#right-image-1", {
+      scrollTrigger: {
+        trigger: ".columns-2",
+        toggleActions: 'restart none none none'
+      },
+      y: 170,
+      duration: 5
+    })
+  }, [])
   return (
     <>
       <section className="text-img-siniped-section relative w-full px-0 bg-primary">
@@ -86,7 +121,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                       />
                     </li>
                   </ul>
-                  <ul className="scroll-slides-card-right flex flex-col gap-y-12">
+                  <ul id="right-image" className="scroll-slides-card-right flex flex-col gap-y-12">
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-12.png"
@@ -127,7 +162,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
               <li className="text-img-siniped-info-list columns-2 gap-0 bg-secondary">
                 <div className="text-img-siniped-anim-scroll w-full flex gap-x-12 h-[1080px] px-[50px] bg-primary">
 
-                  <ul className="scroll-slides-card-left flex flex-col gap-y-12">
+                  <ul id="left-image-1" className="scroll-slides-card-left flex flex-col gap-y-12">
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-4.png"
@@ -160,7 +195,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                     </li>
                   </ul>
                   
-                  <ul className="scroll-slides-card-right flex flex-col gap-y-12">
+                  <ul id="right-image-1" className="scroll-slides-card-right flex flex-col gap-y-12">
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-7.png"

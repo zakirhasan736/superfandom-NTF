@@ -1,21 +1,28 @@
 import { NextPage } from 'next';
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import  gsap  from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const ScrollAnimText: NextPage<any> = ({}) => {
-  // const titleRef = useRef(null);
-  // const el = titleRef.current;
+  
   useEffect(() => {
     gsap.to(".t1", {
       scrollTrigger: {
         trigger: ".how-it-work-section",
         start: 'top center+=100',
-        toggleActions: 'play none none reverse'
+        toggleActions: 'restart none none none'
       },
       y: 30,
+      duration: 5
+    })
+    gsap.to(".section-titlebox", {
+      scrollTrigger: {
+        trigger: ".how-it-work-section",
+        toggleActions: 'restart none none none'
+      },
+      x: 100,
       duration: 5
     })
   }, [])
@@ -31,7 +38,7 @@ const ScrollAnimText: NextPage<any> = ({}) => {
             height="1080px"
           />
         </div>
-        <div className="how-it-work-wrapper pt-[138px] pb-[234px] w-full z-10 relative">
+        <div className="how-it-work-wrapper pt-[138px] pb-[234px] w-full z-10 relative overflow-hidden">
           <div className="section-titlebox mb-24">
             <h2 className="section-title t1 scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-40 mb-[29px]">
             nft • fandoms • metavers • 

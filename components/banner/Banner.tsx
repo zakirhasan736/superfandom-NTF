@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import  gsap  from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -12,14 +12,12 @@ export interface IBanner {
 }
 
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
-  const titleRef = useRef(null);
-  const el = titleRef.current;
   useEffect(() => {
     gsap.to("#b_title", {
       scrollTrigger: {
-        trigger: el,
+        trigger: ".main-visual-section",
         start: 'top center+=100',
-        toggleActions: 'play none none reverse'
+        toggleActions: 'restart none none none'
       },
       y: 30,
       zIndex: -1,
@@ -32,7 +30,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         <div className="main-visual-wrapper flex items-center justify-between">
           {/* ------------------- */}
           <div className="banner-text-cont-left w-full relative z-50">
-            <h2 id="b_title" ref={titleRef} className="banner_title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
+            <h2 id="b_title" className="banner_title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
               <span className="font-primary font-normal text-fig-5x text-left text-secondary uppercase">
                 Collect
               </span>{' '}
