@@ -1,10 +1,14 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ImStarFull } from 'react-icons/im';
+import  gsap  from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const HowItWork: NextPage<any> = ({}) => {
   return (
     <>
-      <section className="how-it-work-section relative w-full px-0 bg-primary overflow-hidden">
+      <section className="how-it-work-section relative w-full px-0 bg-primary">
         <div className="scrolable-bg-shape absolute top-0 left-0 w-full w-[100%]">
           <Image
             src="/images/how-it-work-bg.png"
@@ -58,12 +62,13 @@ const HowItWork: NextPage<any> = ({}) => {
                       />
                     </div>
                     <div className="how-it-work-anim-btn-box absolute bottom-0 left-0">
-                      <a
-                        href="/"
-                        className="anim-item-btn font-primary relative bottom-[161px] font-normal text-fig-15 text-center text-primary border border-solid border-primary bg-neon hover:bg-secondary uppercase p-5 w-[245px] block rounded-[40px] sm:w-[160px]"
+                    <Link href="/">
+                    <a
+                        className="anim-item-btn font-primary relative bottom-[161px] font-normal text-fig-15 text-center text-primary border border-solid border-primary bg-neon hover:bg-secondary uppercase p-5 w-[245px] block rounded-[40px]"
                       >
                         mint now
                       </a>
+                    </Link>
                       <div className="anim-hand-icon relative bottom-[161px]">
                         <Image
                           src="/images/icon/cursor-hand-svgrepo-com 2.png"
@@ -143,12 +148,14 @@ const HowItWork: NextPage<any> = ({}) => {
                       </ul>
                     </div>
                     <div className="how-it-work-anim-btn-box absolute bottom-0 right-0">
+                      <Link href="/">
                       <a
-                        href="/"
-                        className="anim-item-btn font-primary relative bottom-[131px] font-normal text-fig-15 sm:text-fig-xs text-center text-primary border border-solid border-primary bg-secondary hover:bg-neon uppercase p-5 w-[245px] sm:w-[160px] block rounded-[40px] z-50"
+                        
+                        className="anim-item-btn font-primary relative bottom-[131px] font-normal text-fig-15 text-center text-primary border border-solid border-primary bg-secondary hover:bg-neon uppercase p-5 w-[245px] block rounded-[40px]"
                       >
                         your collection
                       </a>
+                      </Link>
                       <div className="anim-hand-icon relative bottom-[131px]">
                         <Image
                           src="/images/icon/cursor-hand-svgrepo-com 2.png"
@@ -220,9 +227,10 @@ const HowItWork: NextPage<any> = ({}) => {
                       </ul>
                     </div>
                     <div className="how-it-work-anim-btn-box absolute bottom-0 left-0">
-                      <a
-                        href="/"
-                        className="anim-item-btn font-primary relative bottom-[161px] font-normal flex items-center justify-between text-fig-24 md:text-lg text-center text-primary border border-solid border-primary bg-secondary uppercase py-5 px-[45px] w-[245px] md:w-[160px] md:px-[20px] rounded-[40px]"
+
+                     <Link href="/">
+                     <a
+                        className="anim-item-btn font-primary relative bottom-[161px] font-normal flex items-center justify-between text-fig-24 text-center text-primary border border-solid border-primary bg-secondary uppercase py-5 px-[45px] w-[245px]  rounded-[40px]"
                       >
                         <span className="stars">
                           <ImStarFull />
@@ -240,6 +248,7 @@ const HowItWork: NextPage<any> = ({}) => {
                           <ImStarFull />
                         </span>
                       </a>
+                     </Link>
                     </div>
                     </div>
                   </div>

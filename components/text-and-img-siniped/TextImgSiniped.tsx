@@ -1,7 +1,47 @@
 import { NextPage } from 'next';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
+import  Link from 'next/link';
+import  gsap  from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const TextImgSiniped: NextPage<any> = ({}) => {
+
+  useEffect(() => {
+    gsap.to("#left-image", {
+      scrollTrigger: {
+        trigger: ".text-img-siniped-section",
+        toggleActions: 'restart none none none'
+      },
+      y: -170,
+      duration: 5
+    })
+    gsap.to("#right-image", {
+      scrollTrigger: {
+        trigger: ".text-img-siniped-section",
+        toggleActions: 'restart none none none'
+      },
+      y: 170,
+      duration: 5
+    })
+    gsap.to("#left-image-1", {
+      scrollTrigger: {
+        trigger: ".columns-2",
+        toggleActions: 'restart none none none'
+      },
+      y: -170,
+      duration: 5
+    })
+    gsap.to("#right-image-1", {
+      scrollTrigger: {
+        trigger: ".columns-2",
+        toggleActions: 'restart none none none'
+      },
+      y: 170,
+      duration: 5
+    })
+  }, [])
   return (
     <>
       <section className="text-img-siniped-section relative w-full px-0 bg-primary">
@@ -19,18 +59,20 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                     Donate to the causes you care about and collect nonfungible
                     or soulbound tokens to memorialize your support
                   </p>
-                  <a
-                    href="/"
-                    className="max-w-[180px] sm:text-xs md:py-4 uppercase sm:max-w-full w-full flex text-center justify-center p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
+                 <Link href="/">
+                 <a
+                    className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
                   >
                     Explore Causes
                   </a>
-                  </div>
+                 </Link>
                 </div>
 
                 <div className="text-img-siniped-anim-scroll w-full flex gap-x-12  max-h-[1080px] h-full px-[50px] md:hidden laptop-m:max-h-[800px]">
 
-                <ul className="scroll-slides-card-left flex flex-col gap-y-12 lg:hidden">
+
+                <ul id="left-image" className="scroll-slides-card-left flex flex-col gap-y-12">
+
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-15.png"
@@ -61,9 +103,28 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                         
                       />
                     </li>
+                    <li className="slides-card-items h-[520px] w-[382px]">
+                      <Image
+                        src="/images/card-img-13.png"
+                        alt="superfandom slides-card-img"
+                        className="slides-card-img "
+                        width="382px"
+                        height="520px"
+                        
+                      />
+                    </li>
+                    <li className="slides-card-items h-[520px] w-[382px]">
+                      <Image
+                        src="/images/card-img-13.png"
+                        alt="superfandom slides-card-img"
+                        className="slides-card-img "
+                        width="382px"
+                        height="520px"
+                        
+                      />
+                    </li>
                   </ul>
-
-                  <ul className="scroll-slides-card-right flex flex-col gap-y-12">
+                  <ul id="right-image" className="scroll-slides-card-right flex flex-col gap-y-12">
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-12.png"
@@ -104,7 +165,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
               <li className="text-img-siniped-info-list columns-2 gap-0 bg-secondary md:columns-1">
                 <div className="text-img-siniped-anim-scroll w-full flex gap-x-12 max-h-[1080px] px-[50px] bg-primary h-full md:hidden laptop-m:max-h-[800px]">
 
-                  <ul className="scroll-slides-card-left flex flex-col gap-y-12">
+                  <ul id="left-image-1" className="scroll-slides-card-left flex flex-col gap-y-12">
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-4.png"
@@ -137,7 +198,9 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                     </li>
                   </ul>
                   
-                  <ul className="scroll-slides-card-right flex flex-col gap-y-12 lg:hidden">
+
+                  <ul id="right-image-1" className="scroll-slides-card-right flex flex-col gap-y-12">
+
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-7.png"
@@ -181,12 +244,15 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                     Donate to the causes you care about and collect nonfungible
                     or soulbound tokens to memorialize your support
                   </p>
+                  <Link  href="/">
                   <a
-                    href="/"
-                    className="max-w-[180px] uppercase md:py-4 sm:text-xs sm:max-w-full w-full flex text-center justify-center p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out"
+
+                    className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out"
+
                   >
                     Explore fandoms
                   </a>
+                  </Link>
                 </div>
                 </div>
               </li>

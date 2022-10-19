@@ -12,6 +12,7 @@ import ScrollAnimText from '../components/scroll-anim-text/ScrollAnimText';
 import Banner from '../components/banner/Banner';
 
 const Home: NextPageWithLayout = () => {
+
   return (
     <div className={styles.container}>
       <Head>

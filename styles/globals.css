@@ -585,6 +585,38 @@ stroke-width: 1px;
   padding-top: 16px;
 }
 }
+
+
+/* animation */
+.explore-slidebox {
+  position: relative;
+  height: 375px;
+  overflow: hidden;
+}
+
+.slides-image-box {
+  position: absolute;
+  animation: left_to_right 30s linear infinite;
+  z-index: 9;
+}
+.slide-image-items{
+  width: 280px;
+}
+@keyframes left_to_right {
+  0% {
+      left: -50%;
+  }
+  25% {
+      left: 0%;
+  }
+  75%{
+    left:-50%;
+  }
+  100%{
+    left:0%;
+  }
+}
+
 @media (max-width:991px) {
   .how-it-work-info-list:nth-child(3) .how-it-work-anim-cont .anim-item-btn{
     left: -7%;
@@ -614,3 +646,4 @@ stroke-width: 1px;
   
 }
 .banner-title > span{white-space: nowrap;}
+
