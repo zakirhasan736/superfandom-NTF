@@ -2,6 +2,9 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ImStarFull } from 'react-icons/im';
+import  gsap  from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const HowItWork: NextPage<any> = ({}) => {
   return (
     <>
