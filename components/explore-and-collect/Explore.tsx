@@ -1,17 +1,8 @@
 import Image from 'next/image';
-import React, { useRef, useEffect } from 'react';
 import { NextPage } from 'next';
-import { gsap } from "gsap";
-import ScrollTrigger from 'gsap/ScrollTrigger';
-
-// gsap.registerPlugin(ScrollTrigger)
+import  Link from 'next/link';
 
 const Explore: NextPage<any> = ({}) => {
-
-  const sliderRef = useRef(null);
-  const el = sliderRef.current;
-  gsap.fromTo(el, { left: 0 }, { left: 100, duration: 3 })
-
   return (
     <>
       <section className="explore-section w-full bg-secondary pt-[132px] pb-0 px-0 relative z-10">
@@ -23,12 +14,30 @@ const Explore: NextPage<any> = ({}) => {
           </div>
         </div>
         <div className="container 2xl:container xl:container lg:container md:container sm:container">
-          <div className="explore-content-wrapper pt-12 pb-[51px] px-0 bg-primary overflow-hidden">
+          <div className="explore-content-wrapper pt-12 pb-[51px] px-0 bg-primary">
             <div className="explore-slidebox mb-12">
-              <ul ref={sliderRef} className="slides-image-box grid grid-cols-5 gap-5">
+              <ul className="slides-image-box flex no-wrap gap-5">
                 <li className="slide-image-items">
                   <Image
                     src="/images/card-img-7.png"
+                    alt="superfandom slide-image"
+                    className="slide-image "
+                    width="382px"
+                    height="520px"
+                  />
+                </li>
+                <li className="slide-image-items">
+                  <Image
+                    src="/images/card-img-13.png"
+                    alt="superfandom slide-image"
+                    className="slide-image "
+                    width="382px"
+                    height="520px"
+                  />
+                </li>
+                <li className="slide-image-items">
+                  <Image
+                    src="/images/card-img-13.png"
                     alt="superfandom slide-image"
                     className="slide-image "
                     width="382px"
@@ -74,18 +83,19 @@ const Explore: NextPage<any> = ({}) => {
               </ul>
             </div>
             <div className="explore-btn-box text-center">
-              <a
-                href="/"
-                className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
-              >
-                Explore Causes
-              </a>
-              <a
-                href="/"
-                className="p-5 font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out"
-              >
-                Explore Causes
-              </a>
+              <Link href="/">
+                <a className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
+                >
+                  Explore Causes
+                </a>
+              </Link>
+              <Link href="/">
+                <a
+                  className="p-5 font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out"
+                >
+                  Explore Causes
+                </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -573,3 +573,33 @@ stroke-width: 1px;
   padding-top: 16px;
 }
 }
+
+/* animation */
+.explore-slidebox {
+  position: relative;
+  height: 375px;
+  overflow: hidden;
+}
+
+.slides-image-box {
+  position: absolute;
+  animation: left_to_right 30s linear infinite;
+  z-index: 9;
+}
+.slide-image-items{
+  width: 280px;
+}
+@keyframes left_to_right {
+  0% {
+      left: -50%;
+  }
+  25% {
+      left: 0%;
+  }
+  75%{
+    left:-50%;
+  }
+  100%{
+    left:0%;
+  }
+}

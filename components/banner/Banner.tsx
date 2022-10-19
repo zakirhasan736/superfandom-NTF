@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from 'react';
-
 import Image from 'next/image';
-import gsap from "gsap";
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import React, { useRef, useEffect } from 'react';
+import Link from 'next/link';
+import  gsap  from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export interface IBanner {
   title: string;
@@ -10,24 +11,28 @@ export interface IBanner {
   desc: string;
 }
 
-// gsap.to(".main-visual-section", {
-//   scrollTrigger: ".banner_title_animation",
-//   x: 500
-// });
-
-
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
-  // gsap.registerPlugin(ScrollTrigger)
   const titleRef = useRef(null);
-  //   const el = titleRef.current;
-  //   gsap.fromTo(el, { rotation: 0 }, { rotation: 100, duration: 3 })
+  const el = titleRef.current;
+  useEffect(() => {
+    gsap.to("#b_title", {
+      scrollTrigger: {
+        trigger: el,
+        start: 'top center+=100',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      zIndex: -1,
+      duration: 3
+    })
+  }, [])
   return (
     <div className="main-visual-section bg-primary pb-[51px] pt-[209px] relative">
       <div className="container lg:container md:container sm:container relative">
         <div className="main-visual-wrapper flex items-center justify-between">
           {/* ------------------- */}
           <div className="banner-text-cont-left w-full relative z-50">
-            <h2 ref={titleRef} className="banner_title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
+            <h2 id="b_title" ref={titleRef} className="banner_title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
               <span className="font-primary font-normal text-fig-5x text-left text-secondary uppercase">
                 Collect
               </span>{' '}
@@ -81,18 +86,21 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               fandoms
             </p>
             <div className="banner-btn-box text-left flex mt-8">
-              <a
-                href="/"
-                className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
-              >
-                Explore Causes
-              </a>
-              <a
-                href="/"
-                className="p-5 font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out"
-              >
-                Explore Causes
-              </a>
+              <Link href="/">
+                <a
+
+                  className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
+                >
+                  Explore Causes
+                </a>
+              </Link>
+              <Link href="/">
+                <a
+                  className="p-5 font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out"
+                >
+                  Explore Causes
+                </a>
+              </Link>
             </div>
           </div>
           {/* ------------ */}

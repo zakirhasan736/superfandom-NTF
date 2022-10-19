@@ -1,7 +1,12 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
+import  Link from 'next/link';
+const { gsap } = require("gsap/dist/gsap");
+const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
 
 const TextImgSiniped: NextPage<any> = ({}) => {
+  gsap.registerPlugin(ScrollTrigger);
+
   return (
     <>
       <section className="text-img-siniped-section relative w-full px-0 bg-primary">
@@ -18,17 +23,18 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                     Donate to the causes you care about and collect nonfungible
                     or soulbound tokens to memorialize your support
                   </p>
-                  <a
-                    href="/"
+                 <Link href="/">
+                 <a
                     className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
                   >
                     Explore Causes
                   </a>
+                 </Link>
                 </div>
 
                 <div className="text-img-siniped-anim-scroll w-full flex gap-x-12 h-[1080px] px-[50px]">
 
-                <ul className="scroll-slides-card-left flex flex-col gap-y-12">
+                <ul id="left-image" className="scroll-slides-card-left flex flex-col gap-y-12">
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-15.png"
@@ -59,8 +65,27 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                         
                       />
                     </li>
+                    <li className="slides-card-items h-[520px] w-[382px]">
+                      <Image
+                        src="/images/card-img-13.png"
+                        alt="superfandom slides-card-img"
+                        className="slides-card-img "
+                        width="382px"
+                        height="520px"
+                        
+                      />
+                    </li>
+                    <li className="slides-card-items h-[520px] w-[382px]">
+                      <Image
+                        src="/images/card-img-13.png"
+                        alt="superfandom slides-card-img"
+                        className="slides-card-img "
+                        width="382px"
+                        height="520px"
+                        
+                      />
+                    </li>
                   </ul>
-
                   <ul className="scroll-slides-card-right flex flex-col gap-y-12">
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
@@ -178,12 +203,13 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                     Donate to the causes you care about and collect nonfungible
                     or soulbound tokens to memorialize your support
                   </p>
+                  <Link  href="/">
                   <a
-                    href="/"
                     className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out"
                   >
                     Explore fandoms
                   </a>
+                  </Link>
                 </div>
               </li>
               {/* -------------------------- */}
