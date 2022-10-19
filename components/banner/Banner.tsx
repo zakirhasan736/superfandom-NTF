@@ -1,4 +1,8 @@
+import React, { useRef, useEffect } from 'react';
+
 import Image from 'next/image';
+import gsap from "gsap";
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 export interface IBanner {
   title: string;
@@ -6,14 +10,24 @@ export interface IBanner {
   desc: string;
 }
 
+// gsap.to(".main-visual-section", {
+//   scrollTrigger: ".banner_title_animation",
+//   x: 500
+// });
+
+
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
+  // gsap.registerPlugin(ScrollTrigger)
+  const titleRef = useRef(null);
+  //   const el = titleRef.current;
+  //   gsap.fromTo(el, { rotation: 0 }, { rotation: 100, duration: 3 })
   return (
     <div className="main-visual-section bg-primary pb-[51px] pt-[209px] relative">
       <div className="container lg:container md:container sm:container relative">
         <div className="main-visual-wrapper flex items-center justify-between">
           {/* ------------------- */}
-          <div className="banner-text-cont-left relative w-full relative z-50">
-            <h2 className="banner-title mb-[67px] absolute top-0 left-0 z-30">
+          <div className="banner-text-cont-left w-full relative z-50">
+            <h2 ref={titleRef} className="banner_title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
               <span className="font-primary font-normal text-fig-5x text-left text-secondary uppercase">
                 Collect
               </span>{' '}
@@ -82,19 +96,17 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             </div>
           </div>
           {/* ------------ */}
-
         </div>
         <div className="main-visual-modal-bg absolute bottom-[170px] left-0 w-full max-w-[1820px] right-0 ml-auto mr-auto">
-            <Image
-              src="/images/banner-bg.png"
-              alt="superfandom banner-bg"
-              className="banner-bg "
-              width="1820px"
-              height="444px"
-            />
-          </div>
+          <Image
+            src="/images/banner-bg.png"
+            alt="superfandom banner-bg"
+            className="banner-bg "
+            width="1820px"
+            height="444px"
+          />
+        </div>
       </div>
-     
     </div>
   );
 };

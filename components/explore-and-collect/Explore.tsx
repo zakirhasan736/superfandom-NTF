@@ -1,7 +1,27 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
+import React, { useRef, useEffect } from 'react';
+import { NextPage } from 'next';
+import { gsap } from "gsap";
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const Explore: NextPage<any> = ({}) => {
+  // 
+  // var tl = gsap.timeline({repeat: 3, repeatDelay: 1});
+
+  const sliderRef = useRef(null);
+  const el = sliderRef.current;
+  // gsap.registerPlugin(ScrollTrigger);
+  gsap.to(el, {
+    x: 500,
+    duration: 2
+  });
+
+
+  // gsap.to(".slides-image-box", {
+  //   scrollTrigger: ".slides-image-box",
+  //   x: 500
+  // });
+
   return (
     <>
       <section className="explore-section w-full bg-secondary pt-[132px] pb-0 px-0 relative z-10">
@@ -15,7 +35,7 @@ const Explore: NextPage<any> = ({}) => {
         <div className="container 2xl:container xl:container lg:container md:container sm:container">
           <div className="explore-content-wrapper pt-12 pb-[51px] px-0 bg-primary overflow-hidden">
             <div className="explore-slidebox mb-12">
-              <ul className="slides-image-box grid grid-cols-5 gap-5">
+              <ul ref={sliderRef} className="slides-image-box grid grid-cols-5 gap-5">
                 <li className="slide-image-items">
                   <Image
                     src="/images/card-img-7.png"
