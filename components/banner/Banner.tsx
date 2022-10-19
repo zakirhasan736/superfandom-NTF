@@ -25,9 +25,9 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     })
   }, [])
   return (
-    <div className="main-visual-section bg-primary pb-[51px] pt-[209px] relative">
-      <div className="container lg:container md:container sm:container relative">
-        <div className="main-visual-wrapper flex items-center justify-between">
+    <div className="main-visual-section bg-primary pb-[51px] pt-[209px] relative sm:pt-[150px]">
+      <div className="container lg:container md:container sm:container relative lg:px-9 md:px-7 sm:px-4">
+        <div className="main-visual-wrapper flex items-center justify-between md:block">
           {/* ------------------- */}
           <div className="banner-text-cont-left w-full relative z-50">
             <h2 id="b_title" className="banner_title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
@@ -35,17 +35,17 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                 Collect
               </span>{' '}
               <br />
-              <span className="font-primary font-normal text-fig-5x text-left text-secondary uppercase">
+              <span className="font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-x:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
                 life-changing
               </span>{' '}
               <br />
-              <span className="font-primary font-normal text-fig-5x text-left text-secondary uppercase">
+              <span className="font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-m:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
                 NFTs
               </span>
             </h2>
             <div className="banner-modal-imgbox w-full z-20 relative">
-              <ul className="modal-img-list flex gap-7 items-center justify-end mr-28">
-                <li className="modal-img-item mt-[320px]">
+              <ul className="modal-img-list flex gap-7 items-center justify-end mr-28 desktop-l:mr-16 lg:mr-12 md:flex-row-reverse md:absolute md:top-[-45px] md:mr-0">
+                <li className="modal-img-item mt-[320px] md:mt-0 md:w-[180px] sm:w-[146px] md:relative md:top-[-17px]">
                   <Image
                     src="/images/card-img-1.png"
                     alt="superfandom banner-modal-img"
@@ -54,7 +54,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                     height="520px"
                   />
                 </li>
-                <li className="modal-img-item mb-[30px]">
+                <li className="modal-img-item mb-[30px] md:w-[180px] sm:w-[146px] md:relative md:bottom-[-45px]">
                   <Image
                     src="/images/card-img-2.png"
                     alt="superfandom banner-modal-img"
@@ -65,21 +65,21 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                 </li>
               </ul>
             </div>
-            <span className="overly-text-bottom z-30 font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-[-90deg] absolute left-0 top-[520px]">
+            <span className="md:hidden overly-text-bottom z-30 font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-[-90deg] absolute left-0 top-[520px]">
               Nft
             </span>
           </div>
           {/* --------------- */}
 
           {/* ------------- */}
-          <div className="banner-text-cont-right w-[560px] relative z-50 mt-24 mr-10">
-            <span className="overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute right-0 bottom-[420px]">
+          <div className="banner-text-cont-right w-[560px] relative z-50 mt-24 mr-10 md:mt-32 md:pt-[206px] sm:pt-[166px] md:w-full">
+            <span className="md:hidden overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute right-0 bottom-[420px]">
               SBT
             </span>
-            <h3 className="subtitle font-primary font-normal text-fig-32 text-left text-secondary uppercase mb-3">
+            <h3 className="subtitle font-primary font-normal text-fig-32 text-left text-secondary uppercase mb-3 md:text-fig-24">
               Soulbound tokens and NFTs that make a difference
             </h3>
-            <p className="desc font-primary font-normal text-fig-base text-left text-secondary">
+            <p className="desc font-primary font-normal text-fig-base text-left text-secondary md:text-fig-base">
               Participate in your cherished causes, or experience your favorite
               fandoms
             </p>

@@ -8,6 +8,7 @@ module.exports = {
     // Ensure these match with .storybook/preview.js
     screens: {
       xl: { 'max': '1920px' },
+      'desktop-l': { 'max': '1880px' },
       'desktop-m': { 'max': '1680px' },
       'laptop-x': { 'max': '1440px' },
       'laptop-m': { 'max': '1280px' },
