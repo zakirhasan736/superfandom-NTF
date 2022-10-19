@@ -21,7 +21,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                   </p>
                   <a
                     href="/"
-                    className="max-w-[180px] sm:max-w-full w-full flex text-center justify-center p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
+                    className="max-w-[180px] sm:text-xs md:py-4 uppercase sm:max-w-full w-full flex text-center justify-center p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
                   >
                     Explore Causes
                   </a>
@@ -183,7 +183,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                   </p>
                   <a
                     href="/"
-                    className="max-w-[180px] sm:max-w-full w-full flex text-center justify-center p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out"
+                    className="max-w-[180px] uppercase md:py-4 sm:text-xs sm:max-w-full w-full flex text-center justify-center p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out"
                   >
                     Explore fandoms
                   </a>
