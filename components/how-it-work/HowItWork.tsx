@@ -18,19 +18,19 @@ const HowItWork: NextPage<any> = ({}) => {
             height="1080px"
           />
         </div>
-        <div className="how-it-work-wrapper pt-[138px] pb-[234px] w-full z-10 relative">
-          <div className="section-titlebox mb-24">
-            <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-40">
+        <div className="how-it-work-wrapper pt-[138px] pb-[234px] w-full z-10 relative lg:pt-[80px] lg:pb-[80px] md:pt-8 md:pb-8">
+          <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
+            <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32">
               how it works • how it work
             </h2>
           </div>
           <div className="custom-container 2xl:px-0 xl:px-0 laptop-x:px-12 md:px-5 sm:px-4">
             <div className="how-it-work-cont-wrapper">
               <ul className="how-it-work-info-items">
-                <li className="how-it-work-info-list flex items-center flex-row gap-[190px]">
-                  <div className="how-it-work-info-cont w-full flex justify-end">
+                <li className="how-it-work-info-list flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
+                  <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                     <div className="text-cont-box w-full max-w-[462px] relative">
-                      <div className="info-num-icon absolute right-0 top-[-129px] ">
+                        <div className="info-num-icon absolute right-0 top-[-129px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
                         <Image
                           src="/images/Subtract-num-1.png"
                           alt="superfandom info-item-num-img"
@@ -39,16 +39,19 @@ const HowItWork: NextPage<any> = ({}) => {
                           height="198px"
                         />
                       </div>
-                      <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase">
+                      <div className="info-text-box md:pl-36 sm:pl-20">
+                      <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase md:text-fig-40 sm:text-fig-32 md:mb-4">
                         Mint <br /> soulbound
                       </h2>
-                      <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0">
+                      <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0 md:text-fig-base">
                         Mint soulbound tokens of the causes you care about
                       </p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="how-it-work-anim-cont w-full relative">
+                  <div className="how-it-work-anim-cont w-full relative sm:mb-8 md:text-right md:flex md:justify-center">
+                  <div className="text-count-item-box w-full relative md:flex md:justify-end md:max-w-[270px] md:w-full">
                     <div className="how-it-work-anim-img">
                       <Image
                         src="/images/card-img-6.png"
@@ -76,12 +79,13 @@ const HowItWork: NextPage<any> = ({}) => {
                         />
                       </div>
                     </div>
+                    </div>
                   </div>
                 </li>
-                <li className="how-it-work-info-list flex items-center flex-row gap-[190px]">
-                  <div className="how-it-work-info-cont w-full flex justify-end">
+                <li className="how-it-work-info-list flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
+                  <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                     <div className="text-cont-box w-full max-w-[462px] relative">
-                      <div className="info-num-icon absolute right-0 top-[-129px] ">
+                      <div className="info-num-icon absolute right-0 top-[-129px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
                         <Image
                           src="/images/Subtract-num-2.png"
                           alt="superfandom info-item-num-img"
@@ -90,26 +94,31 @@ const HowItWork: NextPage<any> = ({}) => {
                           height="198px"
                         />
                       </div>
-                      <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase">
+                      <div className="info-text-box md:pl-36 sm:pl-20">
+                      <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase md:text-fig-40 sm:text-fig-32 md:mb-4">
                         Mint <br /> soulbound
                       </h2>
-                      <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0">
+                      <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0 md:text-fig-base">
                         Mint soulbound tokens of the causes you care about
                       </p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="how-it-work-anim-cont w-full relative flex justify-end">
-                    <div className="how-it-work-anim-img relative">
-                      <Image
+                  <div className="how-it-work-anim-cont w-full relative flex justify-end md:justify-center sm:mb-8">
+                       <div className="text-count-items-box md:max-w-[320px] md:w-full relative">
+                       <div className="how-it-work-anim-img relative md:max-w-[320px] md:w-full ">
+                     <div className="how-it-work-mobo md:max-w-[320px] md:w-full relative z-50">
+                     <Image
                         src="/images/card-mobo.png"
                         alt="superfandom anim-modal-img"
                         className="anim-modal-img"
                         width="389px"
                         height="601px"
                       />
+                     </div>
                        <ul className="shadow-image-box absolute left-[-60px] top-0 w-full h-full">
-                        <li className="shadow-image-item absolute left-[-105px] top-[-23px] w-full z-[-9]">
+                        <li className="shadow-image-item absolute left-[-105px] top-[-23px] w-full z-[-9 md:max-w-[270px] md:w-full">
                           <Image
                             src="/images/card-img-16.png"
                             alt="superfandom anim-modal-img"
@@ -118,7 +127,7 @@ const HowItWork: NextPage<any> = ({}) => {
                             height="502px"
                           />
                         </li>
-                        <li className="shadow-image-item absolute w-full z-[-12] left-[-164px] top-[-64px]">
+                        <li className="shadow-image-item absolute w-full z-[-12] left-[-164px] top-[-64px] md:max-w-[270px] md:w-full">
                           <Image
                             src="/images/card-img-17.png"
                             alt="superfandom anim-modal-img"
@@ -127,7 +136,7 @@ const HowItWork: NextPage<any> = ({}) => {
                             height="502px"
                           />
                         </li>
-                        <li className="shadow-image-item absolute w-full z-[-17] left-[-216px] top-[-107px]">
+                        <li className="shadow-image-item absolute w-full z-[-17] left-[-216px] top-[-107px] md:max-w-[270px] md:w-full">
                           <Image
                             src="/images/card-img-15.png"
                             alt="superfandom anim-modal-img"
@@ -157,12 +166,13 @@ const HowItWork: NextPage<any> = ({}) => {
                         />
                       </div>
                     </div>
+                       </div>
                   </div>
                 </li>
-                <li className="how-it-work-info-list flex items-center flex-row gap-[190px]">
-                  <div className="how-it-work-info-cont w-full flex justify-end">
+                <li className="how-it-work-info-list flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
+                  <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                     <div className="text-cont-box w-full max-w-[462px] relative">
-                      <div className="info-num-icon absolute right-0 top-[-129px] ">
+                      <div className="info-num-icon absolute right-0 top-[-129px] md:w-[130px] sm:w-[60px]  md:top-0 md:left-0 md:right-auto">
                         <Image
                           src="/images/Subtract-num-3.png"
                           alt="superfandom info-item-num-img"
@@ -171,17 +181,21 @@ const HowItWork: NextPage<any> = ({}) => {
                           height="198px"
                         />
                       </div>
-                      <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase">
+                      <div className="info-text-box md:pl-36 sm:pl-20">
+                      <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase md:text-fig-40 sm:text-fig-32 md:mb-4">
                         Mint <br /> soulbound
                       </h2>
-                      <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0">
+                      <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0 md:text-fig-base">
                         Mint soulbound tokens of the causes you care about
                       </p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="how-it-work-anim-cont w-full relative">
+                  <div className="how-it-work-anim-cont w-full relative flex justify-center mb-8">
+                    <div className="text-cont-item-box md:max-w-[270px] md:w-full relative">
                     <div className="how-it-work-anim-img relative">
+                      <div className="anim-items-img md:max-w-[270px] md:w-full">
                       <Image
                         src="/images/card-img-1.png"
                         alt="superfandom anim-modal-img"
@@ -189,8 +203,10 @@ const HowItWork: NextPage<any> = ({}) => {
                         width="382px"
                         height="502px"
                       />
+                      </div>
+              
                       <ul className="shadow-image-box absolute left-0 top-0 w-full h-full">
-                        <li className="shadow-image-item absolute left-[109px] top-[-37px] w-full z-[-9]">
+                        <li className="shadow-image-item absolute left-[109px] top-[-37px] w-full z-[-9] md:max-w-[270px] md:w-full">
                           <Image
                             src="/images/card-img-11.png"
                             alt="superfandom anim-modal-img"
@@ -199,7 +215,7 @@ const HowItWork: NextPage<any> = ({}) => {
                             height="502px"
                           />
                         </li>
-                        <li className="shadow-image-item absolute w-full z-[-12] left-[251px] top-[-76px]">
+                        <li className="shadow-image-item absolute w-full z-[-12] left-[251px] top-[-76px] md:max-w-[270px] md:w-full">
                           <Image
                             src="/images/card-img-18.png"
                             alt="superfandom anim-modal-img"
@@ -211,6 +227,7 @@ const HowItWork: NextPage<any> = ({}) => {
                       </ul>
                     </div>
                     <div className="how-it-work-anim-btn-box absolute bottom-0 left-0">
+
                      <Link href="/">
                      <a
                         className="anim-item-btn font-primary relative bottom-[161px] font-normal flex items-center justify-between text-fig-24 text-center text-primary border border-solid border-primary bg-secondary uppercase py-5 px-[45px] w-[245px]  rounded-[40px]"
@@ -232,6 +249,7 @@ const HowItWork: NextPage<any> = ({}) => {
                         </span>
                       </a>
                      </Link>
+                    </div>
                     </div>
                   </div>
                 </li>
