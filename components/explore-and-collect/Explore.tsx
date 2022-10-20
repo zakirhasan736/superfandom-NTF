@@ -10,8 +10,26 @@ gsap.registerPlugin(ScrollTrigger);
 const Explore: NextPage<any> = ({}) => {
 
   useEffect(() => {
-    
-  });
+    gsap.fromTo(".slides-image-box", 
+      {
+      duration: 4, 
+      x: 750, 
+      ease: "none", 
+    },{
+      duration: 4, 
+      x: -750, 
+      ease: "none", 
+    }
+  );
+// gsap.to(".slides-image-box",{
+//   keyframes:[
+//     {x:0},
+//     {x:0}
+//   ],
+//   repeat: -1,
+//   duration:10
+// })
+  },[]);
   return (
     <>
       <section className="explore-section w-full bg-secondary pt-[132px] laptop-m:pt-[65px]  md:pt-8 pb-0 px-0 relative z-10  overflow-hidden">
