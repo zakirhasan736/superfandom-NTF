@@ -30,6 +30,28 @@ const TextImgSiniped: NextPage<any> = ({}) => {
         }
       );
     });
+
+    gsap.to('.text-img-siniped-info-list', {
+      scrollTrigger: {
+        trigger: '.text-img-siniped-info-list',
+        scrub: true,
+        markers: true,
+        start: 'top -100px',
+        end: 'bottom bottom=+400px',
+        toggleClass: 'active',
+      },
+    });
+
+    gsap.to('.text-img-siniped-info-list.inf-list2', {
+      scrollTrigger: {
+        trigger: '.text-img-siniped-info-list.info-list2',
+        scrub: true,
+        markers: true,
+        start: 'top center',
+        end: 'bottom bottom',
+        toggleClass: 'active',
+      },
+    });
   });
 
   return (
@@ -51,7 +73,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                       support
                     </p>
                     <Link href="/">
-                      <a className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
+                      <a className="link-buttons p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
                         Explore Causes
                       </a>
                     </Link>
@@ -241,7 +263,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
               {/* ------------------------- */}
 
               {/* ----------------------- */}
-              <li className="text-img-siniped-info-list columns-2 gap-0 bg-secondary md:columns-1">
+              <li className="text-img-siniped-info-list info-list2 columns-2 gap-0 bg-secondary md:columns-1">
                 <div className="text-img-siniped-anim-scroll overflow-hidden w-full flex gap-x-12 max-h-[1080px] px-[50px] bg-primary h-full md:hidden laptop-m:max-h-[800px]">
                   <div className="scroll-image-box">
                     <ul
