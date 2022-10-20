@@ -13,24 +13,37 @@ export interface IBanner {
 
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   useEffect(() => {
-    gsap.to("#b_title", {
-      scrollTrigger: {
-        trigger: ".main-visual-section",
-        start: 'top center+=100',
-        toggleActions: 'restart none none none'
-      },
-      y: 30,
-      zIndex: -1,
-      duration: 3
-    })
+
+gsap.to(".text-animetion", {
+  scrollTrigger: {
+    trigger: ".title_animation",
+    start: "center center",
+    end: "bottom -100px",
+    toggleClass: "active",
+    ease: "power2"
+  }
+});
+
+gsap.to(".modal-img-item.two", {
+  scrollTrigger: {
+    trigger: ".banner-modal-img.two",
+    scrub: 0.5,
+    start: "top bottom",
+    end: "bottom -300%",
+    ease: "power2"
+  },
+  y: "-30%"
+});
+
   }, [])
   return (
+    <>
     <div className="main-visual-section bg-primary pb-[51px] pt-[209px] relative sm:pt-[150px]">
       <div className="container lg:container md:container sm:container relative lg:px-9 md:px-7 sm:px-4">
         <div className="main-visual-wrapper flex items-center justify-between md:block">
           {/* ------------------- */}
-          <div className="banner-text-cont-left w-full relative z-50">
-            <h2 id="b_title" className="banner_title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
+          <div className="banner-text-cont-left text-animation text-animetion w-full relative z-50">
+            <h2 className="banner_title_animation title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
               <span className="font-primary font-normal text-fig-5x text-left text-secondary uppercase">
                 Collect
               </span>{' '}
@@ -49,16 +62,16 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                   <Image
                     src="/images/card-img-1.png"
                     alt="superfandom banner-modal-img"
-                    className="banner-modal-img "
+                    className="banner-modal-img"
                     width="382px"
                     height="520px"
                   />
                 </li>
-                <li className="modal-img-item mb-[30px] md:w-[180px] sm:w-[146px] md:relative md:bottom-[-45px]">
+                <li className="modal-img-item two mb-[30px] md:w-[180px] sm:w-[146px] md:relative md:bottom-[-45px]">
                   <Image
                     src="/images/card-img-2.png"
                     alt="superfandom banner-modal-img"
-                    className="banner-modal-img "
+                    className="banner-modal-img  two"
                     width="382px"
                     height="520px"
                   />
@@ -116,6 +129,8 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         </div>
       </div>
     </div>
+
+</>
   );
 };
 

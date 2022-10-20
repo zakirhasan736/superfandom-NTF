@@ -6,26 +6,24 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const ScrollAnimText: NextPage<any> = ({}) => {
-  
+
   useEffect(() => {
-    gsap.to(".t1", {
-      scrollTrigger: {
-        trigger: ".how-it-work-section",
-        start: 'top center+=100',
-        toggleActions: 'restart none none none'
-      },
-      y: 30,
-      duration: 5
-    })
-    gsap.to(".section-titlebox", {
-      scrollTrigger: {
-        trigger: ".how-it-work-section",
-        toggleActions: 'restart none none none'
-      },
-      x: 100,
-      duration: 5
-    })
-  }, [])
+    document.body.style.overflow = 'auto';
+    document.scrollingElement.scrollTo(0, 0);
+    
+    gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
+      const w = section.querySelector('.scroll-text-item');
+      const [x, xEnd] = (index % 2) ? ['200%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
+      gsap.fromTo(w, {  x  }, {
+        x: xEnd,
+        scrollTrigger: { 
+          trigger: section, 
+          scrub: 0.5 
+        }
+      });
+    });
+  });
+
   return (
     <>
       <section className="how-it-work-section relative w-full h-[1080px] md:h-auto px-0 bg-primary overflow-hidden md:pt-8  sm:pt-6">
@@ -40,15 +38,42 @@ const ScrollAnimText: NextPage<any> = ({}) => {
         </div>
         <div className="how-it-work-wrapper pt-[138px] pb-[234px] w-full z-10 relative overflow-hidden">
           <div className="section-titlebox mb-24">
-            <h2 className="section-title t1 scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-40 mb-[29px]">
+            <div className="scrolable-text-box">
+            <div className="scroll-text-item">
+            <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-40 mb-[29px]">
+            nft • fandoms • metavers • 
+            nft • fandoms • metavers • 
+            nft • fandoms • metavers • 
+            nft • fandoms • metavers • 
             nft • fandoms • metavers • 
             </h2>
-            <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32 mb-[29px] md:mb-[14px]">
+            </div>
+            </div>
+
+            <div className="scrolable-text-box">
+            <div className="scroll-text-item">
+            <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32 mb-[29px] md:mb-[14px]">
+            soulbound • tokens • no • 
+            soulbound • tokens • no • 
+            soulbound • tokens • no • 
+            soulbound • tokens • no • 
             soulbound • tokens • no • 
             </h2>
-            <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32 mb-0">
+            </div>
+            </div>
+
+            <div className="scrolable-text-box">
+            <div className="scroll-text-item">
+            <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32 mb-0">
+            nft • fandoms • metaverse • 
+            nft • fandoms • metaverse • 
+            nft • fandoms • metaverse • 
+            nft • fandoms • metaverse • 
             nft • fandoms • metaverse • 
             </h2>
+            </div>
+            </div>
+
           </div>
         </div>
       </section>

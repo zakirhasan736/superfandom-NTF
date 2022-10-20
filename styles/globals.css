@@ -596,7 +596,7 @@ stroke-width: 1px;
 
 .slides-image-box {
   position: absolute;
-  animation: left_to_right 30s linear infinite;
+  animation: left_to_right 30s linear infinite forwards;
   z-index: 9;
 }
 .slide-image-items{
