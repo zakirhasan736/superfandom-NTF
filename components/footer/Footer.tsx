@@ -22,16 +22,16 @@ const Footer: React.FC<IFooter> = ({ className, ...footerProps }) => {
           <div className="footer-contant-box w-full">
             <ul className="footer-link-items flex items-center border-b border-solid border-secondary w-full py-[85px] px-[84px] laptop-x:py-12 laptop-x:px-14 lg:block lg:p-0 lg:text-center">
               <li className="font-primary text-fig-32 font-normal text-secondary laptop-x:text-2xl laptop-m:text-xl lg:text-lg md:text-fig-15 lg:py-4 lg:border-t lg:border-solid lg:border-secondary">
-                <Link href="/">CAUSES</Link>
+                <Link href="/"><a>CAUSES</a></Link>
               </li>
               <li className="font-primary text-fig-32 font-normal text-secondary laptop-x:text-2xl laptop-m:text-xl lg:text-lg md:text-fig-15 lg:py-4 lg:border-t lg:border-solid lg:border-secondary">
-                <Link href="/">FANDOMS</Link>
+                <Link href="/"><a>FANDOMS</a></Link>
               </li>
               <li className="font-primary text-fig-32 font-normal text-secondary laptop-x:text-2xl laptop-m:text-xl lg:text-lg md:text-fig-15 lg:py-4 lg:border-t lg:border-solid lg:border-secondary">
-                <Link href="/">CAMPAIGN</Link>
+                <Link href="/"><a>CAMPAIGN</a></Link>
               </li>
               <li className="font-primary text-fig-32 font-normal text-secondary laptop-x:text-2xl laptop-m:text-xl lg:text-lg md:text-fig-15 lg:py-4 lg:border-t lg:border-solid lg:border-secondary">
-                <Link href="/">SERVICES</Link>
+                <Link href="/"><a>SERVICES</a></Link>
               </li>
               
             </ul>
@@ -60,12 +60,14 @@ const Footer: React.FC<IFooter> = ({ className, ...footerProps }) => {
                 </li>
                 <li className='font-primary cursor-pointer text-secondary laptop-x:w-6'>
                   <Link href="/">
-                           <Image src="/images/icon/twitte-1.png"
+<a>
+<Image src="/images/icon/twitte-1.png"
                              alt="superfandom logo"
                              className="brand-image w-[24px]"
                              width="32px"
                              height="32px"
                               />
+</a>
                   </Link>
                 </li>
 
@@ -74,10 +76,10 @@ const Footer: React.FC<IFooter> = ({ className, ...footerProps }) => {
             
               <ul className="footer-info-links flex items-center lg:pb-2.5 lg:justify-center">
                 <li className='font-primary font-normal text-fig-base text-darkgray laptop-m:text-xs lg:text-fig-base sm:text-fig-xs'>
-                  <Link href="/">Terms of Service</Link>
+                  <Link href="/"><a>Terms of Service</a></Link>
                 </li>
                 <li className='font-primary font-normal text-fig-base text-darkgray laptop-m:text-xs lg:text-fig-base sm:text-fig-xs'>
-                  <Link href="/">Privacy Policy</Link>
+                  <Link href="/"><a>Privacy Policy</a></Link>
                 </li>
               </ul>
             </div>
