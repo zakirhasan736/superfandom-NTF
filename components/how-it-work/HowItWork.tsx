@@ -1,14 +1,34 @@
 import { NextPage } from 'next';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ImStarFull } from 'react-icons/im';
 import  gsap  from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+
 const HowItWork: NextPage<any> = ({}) => {
+
+  useEffect(() => {
+    document.body.style.overflow = 'auto';
+    document.scrollingElement.scrollTo(0, 0);
+    
+    gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
+      const w = section.querySelector('.scroll-text-item');
+      const [x, xEnd] = (index % 2) ? ['200%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
+      gsap.fromTo(w, {  x  }, {
+        x: xEnd,
+        scrollTrigger: { 
+          trigger: section, 
+          scrub: 0.5 
+        }
+      });
+    });
+  });
+
   return (
     <>
-      <section className="how-it-work-section relative w-full px-0 bg-primary">
+      <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
         <div className="scrolable-bg-shape absolute top-0 left-0 w-full w-[100%]">
           <Image
             src="/images/how-it-work-bg.png"
@@ -20,9 +40,17 @@ const HowItWork: NextPage<any> = ({}) => {
         </div>
         <div className="how-it-work-wrapper pt-[138px] pb-[234px] w-full z-10 relative lg:pt-[80px] lg:pb-[80px] md:pt-8 md:pb-8">
           <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
+            <div className="scrolable-text-box">
+            <div className="scroll-text-item">
             <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32">
-              how it works • how it work
+         • how it work • how it work
+         • how it work • how it work
+         • how it work • how it work
+         • how it work • how it work
+         • how it work • how it work
             </h2>
+            </div>
+            </div>
           </div>
           <div className="custom-container 2xl:px-0 xl:px-0 laptop-x:px-12 md:px-5 sm:px-4">
             <div className="how-it-work-cont-wrapper">
@@ -64,7 +92,7 @@ const HowItWork: NextPage<any> = ({}) => {
                     <div className="how-it-work-anim-btn-box absolute bottom-0 left-0">
                     <Link href="/">
                     <a
-                        className="anim-item-btn font-primary relative bottom-[161px] font-normal text-fig-15 text-center text-primary border border-solid border-primary bg-neon hover:bg-secondary uppercase p-5 w-[245px] block rounded-[40px]"
+                        className="anim-item-btn font-primary relative bottom-[161px] font-normal text-fig-15 text-center text-primary border border-solid border-primary bg-neon hover:bg-secondary uppercase p-5 w-[245px] block rounded-[40px] z-50"
                       >
                         mint now
                       </a>
@@ -151,7 +179,7 @@ const HowItWork: NextPage<any> = ({}) => {
                       <Link href="/">
                       <a
                         
-                        className="anim-item-btn font-primary relative bottom-[131px] font-normal text-fig-15 text-center text-primary border border-solid border-primary bg-secondary hover:bg-neon uppercase p-5 w-[245px] block rounded-[40px]"
+                        className="anim-item-btn font-primary relative bottom-[131px] font-normal text-fig-15 text-center text-primary border border-solid border-primary bg-secondary hover:bg-neon uppercase p-5 w-[245px] block z-50 rounded-[40px]"
                       >
                         your collection
                       </a>
