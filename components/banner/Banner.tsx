@@ -14,19 +14,22 @@ export interface IBanner {
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   useEffect(() => {
 
-gsap.to(".text-animetion", {
+gsap.to(".main-visual-section", {
   scrollTrigger: {
-    trigger: ".title_animation",
-    start: "center center",
-    end: "bottom -100%",
+    trigger: ".main-visual-section",
+    scrub: true,
+    markers: true,
+    start: "top center",
+    end: "bottom 250px",
+    toggleActions: 'restart pause reverse pause',
     toggleClass: "active",
-    ease: "power2"
+    ease: 'none',
   }
 });
 
-gsap.to(".modal-img-item.two", {
+gsap.to(".banner-modal-img.two", {
   scrollTrigger: {
-    trigger: ".banner-modal-img.two",
+    trigger: ".banner-text-cont-left",
     scrub: 0.5,
     start: "top center",
     end: "bottom center",
@@ -45,19 +48,28 @@ gsap.to(".modal-img-item.two", {
         <div className="main-visual-wrapper flex items-center justify-between md:block">
           {/* ------------------- */}
           <div className="banner-text-cont-left text_animation text-animetion w-full relative z-50">
-            <h2 className="banner_title_animation title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
+            <div className="heading-title-box h-full w-full block">
+            <h2 className="banner_title_animation active title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
+              <span className='overflow-hidden w-full h-full block leading-[132px] pb-2'>
               <span className="font-primary font-normal text-fig-5x text-left text-secondary uppercase">
-                Collect
+                Collect 
               </span>{' '}
+              </span>
               <br />
+               <span className='overflow-hidden w-full h-full block leading-[132px] pb-2'>
               <span className="font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-x:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
                 life-changing
               </span>{' '}
+              </span>
               <br />
+               <span className='overflow-hidden w-full h-full block leading-[132px] pb-2'>
               <span className="font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-m:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
                 NFTs
               </span>
+              </span>
             </h2>
+            </div>
+          
             <div className="banner-modal-imgbox w-full z-20 relative">
               <ul className="modal-img-list flex gap-7 items-center justify-end mr-28 desktop-l:mr-16 lg:mr-12 md:flex-row-reverse md:absolute md:top-[-45px] md:mr-0">
                 <li className="modal-img-item mt-[320px] md:mt-0 md:w-[180px] sm:w-[146px] md:relative md:top-[-17px]">
@@ -69,7 +81,7 @@ gsap.to(".modal-img-item.two", {
                     height="520px"
                   />
                 </li>
-                <li className="modal-img-item two mb-[30px] md:w-[180px] sm:w-[146px] md:relative md:bottom-[-45px]">
+                <li className="modal-img-item two md:w-[180px] sm:w-[146px] md:relative md:bottom-[-45px]">
                   <Image
                     src="/images/card-img-2.png"
                     alt="superfandom banner-modal-img"
