@@ -10,12 +10,9 @@ const TextImgSiniped: NextPage<any> = ({}) => {
   useEffect(() => {
     document.body.style.overflow = 'auto';
     document.scrollingElement.scrollTo(0, 0);
-    
-    let marqueeText = "";
 
     gsap.utils.toArray('.scroll-image-box').forEach((section, index) => {
       const w = section.querySelector('ul.anim-card-scroll');
-      w.innerText = `${marqueeText} 😎 `.repeat(20);
       const [y, yEnd] =
         index % 2
           ? ['100%', (w.scrollHeight - section.offsetHeight) * -1]
@@ -27,8 +24,6 @@ const TextImgSiniped: NextPage<any> = ({}) => {
           y: yEnd,
           scrollTrigger: {
             trigger: section,
-            start: 'center center',
-            end: 'bottom center',
             toggleActions: 'restart pause reverse pause',
             scrub: 0.5,
           },
@@ -39,7 +34,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
 
   return (
     <>
-      <section className="text-img-siniped-section relative w-full px-0 bg-primary">
+      <section className="text-img-siniped-section relative w-full px-0 bg-primary  overflow-hidden">
         <div className="text-img-siniped-wrapper w-full z-10">
           <div className="text-img-siniped-cont-wrapper">
             <ul className="text-img-siniped-info-items">

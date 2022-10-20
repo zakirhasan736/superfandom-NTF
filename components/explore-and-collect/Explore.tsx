@@ -14,7 +14,7 @@ const Explore: NextPage<any> = ({}) => {
   });
   return (
     <>
-      <section className="explore-section w-full bg-secondary pt-[132px] laptop-m:pt-[65px]  md:pt-8 pb-0 px-0 relative z-10">
+      <section className="explore-section w-full bg-secondary pt-[132px] laptop-m:pt-[65px]  md:pt-8 pb-0 px-0 relative z-10  overflow-hidden">
         <div className="custom-container 2xl:px-0 xl:px-0 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="section-titlebox text-animetion mb-16 md:mb-4">
             <h2 className="section-title title_animation font-primary font-normal text-fig-3x text-left text-primary laptop-x:text-6xl md:text-fig-40 uppercase">

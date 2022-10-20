@@ -7,7 +7,7 @@ const LoadingScreen: NextPage<any> = ({loaded}) => {
             <div className="flex items-center justify-center">
                 <div className="">
                     <Image
-                        src="/public/images/Union.png"
+                        src="/images/Union.png"
                         alt="preloader"
                         width="382px"
                         height="520px"

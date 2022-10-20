@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { ImStarFull } from 'react-icons/im';
 import  gsap  from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
 
 const HowItWork: NextPage<any> = ({}) => {
@@ -29,7 +28,7 @@ const HowItWork: NextPage<any> = ({}) => {
 
   return (
     <>
-      <section className="how-it-work-section relative w-full px-0 bg-primary">
+      <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
         <div className="scrolable-bg-shape absolute top-0 left-0 w-full w-[100%]">
           <Image
             src="/images/how-it-work-bg.png"
@@ -93,7 +92,7 @@ const HowItWork: NextPage<any> = ({}) => {
                     <div className="how-it-work-anim-btn-box absolute bottom-0 left-0">
                     <Link href="/">
                     <a
-                        className="anim-item-btn font-primary relative bottom-[161px] font-normal text-fig-15 text-center text-primary border border-solid border-primary bg-neon hover:bg-secondary uppercase p-5 w-[245px] block rounded-[40px]"
+                        className="anim-item-btn font-primary relative bottom-[161px] font-normal text-fig-15 text-center text-primary border border-solid border-primary bg-neon hover:bg-secondary uppercase p-5 w-[245px] block rounded-[40px] z-50"
                       >
                         mint now
                       </a>
@@ -180,7 +179,7 @@ const HowItWork: NextPage<any> = ({}) => {
                       <Link href="/">
                       <a
                         
-                        className="anim-item-btn font-primary relative bottom-[131px] font-normal text-fig-15 text-center text-primary border border-solid border-primary bg-secondary hover:bg-neon uppercase p-5 w-[245px] block rounded-[40px]"
+                        className="anim-item-btn font-primary relative bottom-[131px] font-normal text-fig-15 text-center text-primary border border-solid border-primary bg-secondary hover:bg-neon uppercase p-5 w-[245px] block z-50 rounded-[40px]"
                       >
                         your collection
                       </a>
@@ -195,6 +194,7 @@ const HowItWork: NextPage<any> = ({}) => {
                         />
                       </div>
                     </div>
+                       </div>
                   </div>
                 </li>
                 <li className="how-it-work-info-list flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
@@ -255,10 +255,7 @@ const HowItWork: NextPage<any> = ({}) => {
                       </ul>
                     </div>
                     <div className="how-it-work-anim-btn-box absolute bottom-0 left-0">
-<<<<<<< HEAD
-=======
 
->>>>>>> 03cef8e2515c7111ebc956eb1c1b460c0692c5b8
                      <Link href="/">
                      <a
                         className="anim-item-btn font-primary relative bottom-[161px] font-normal flex items-center justify-between text-fig-24 text-center text-primary border border-solid border-primary bg-secondary uppercase py-5 px-[45px] w-[245px]  rounded-[40px]"
@@ -280,6 +277,7 @@ const HowItWork: NextPage<any> = ({}) => {
                         </span>
                       </a>
                      </Link>
+                    </div>
                     </div>
                   </div>
                 </li>

@@ -28,17 +28,19 @@ gsap.to(".modal-img-item.two", {
   scrollTrigger: {
     trigger: ".banner-modal-img.two",
     scrub: 0.5,
-    start: "top bottom",
-    end: "bottom -300%",
-    ease: "power2"
+    start: "top center",
+    end: "bottom center",
+    ease: "power2",
   },
-  y: "-30%"
+  yPercent: -20,
 });
+
+
 
   }, [])
   return (
     <>
-    <div className="main-visual-section bg-primary pb-[51px] pt-[209px] relative sm:pt-[150px]">
+    <div className="main-visual-section bg-primary pb-[51px] pt-[209px] relative sm:pt-[150px] overflow-hidden">
       <div className="container lg:container md:container sm:container relative lg:px-9 md:px-7 sm:px-4">
         <div className="main-visual-wrapper flex items-center justify-between md:block">
           {/* ------------------- */}

@@ -26,7 +26,7 @@ const ScrollAnimText: NextPage<any> = ({}) => {
 
   return (
     <>
-      <section className="how-it-work-section relative w-full h-[1080px] md:h-auto px-0 bg-primary overflow-hidden md:pt-8  sm:pt-6">
+      <section className="how-it-work-section relative w-full h-[1080px] md:h-auto px-0 bg-primary overflow-hidden md:pt-8  sm:pt-6  overflow-hidden">
         <div className="scrolable-bg-shape absolute top-0 left-0 w-full sm:h-[1080px]">
           <Image
             src="/images/scroll-text-bg.png"
