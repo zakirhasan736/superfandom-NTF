@@ -166,7 +166,6 @@ const HowItWork: NextPage<any> = ({}) => {
                         />
                       </div>
                     </div>
-                       </div>
                   </div>
                 </li>
                 <li className="how-it-work-info-list flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
@@ -227,7 +226,10 @@ const HowItWork: NextPage<any> = ({}) => {
                       </ul>
                     </div>
                     <div className="how-it-work-anim-btn-box absolute bottom-0 left-0">
+<<<<<<< HEAD
+=======
 
+>>>>>>> 03cef8e2515c7111ebc956eb1c1b460c0692c5b8
                      <Link href="/">
                      <a
                         className="anim-item-btn font-primary relative bottom-[161px] font-normal flex items-center justify-between text-fig-24 text-center text-primary border border-solid border-primary bg-secondary uppercase py-5 px-[45px] w-[245px]  rounded-[40px]"
@@ -249,7 +251,6 @@ const HowItWork: NextPage<any> = ({}) => {
                         </span>
                       </a>
                      </Link>
-                    </div>
                     </div>
                   </div>
                 </li>

@@ -59,20 +59,32 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                     Donate to the causes you care about and collect nonfungible
                     or soulbound tokens to memorialize your support
                   </p>
+<<<<<<< HEAD
+                  <a
+                    href="/"
+=======
                  <Link href="/">
                  <a
+>>>>>>> 03cef8e2515c7111ebc956eb1c1b460c0692c5b8
                     className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out"
                   >
                     Explore Causes
                   </a>
+<<<<<<< HEAD
+=======
                  </Link>
+>>>>>>> 03cef8e2515c7111ebc956eb1c1b460c0692c5b8
                 </div>
 
                 <div className="text-img-siniped-anim-scroll w-full flex gap-x-12  max-h-[1080px] h-full px-[50px] md:hidden laptop-m:max-h-[800px]">
 
+<<<<<<< HEAD
+                <ul className="scroll-slides-card-left flex flex-col gap-y-12">
+=======
 
                 <ul id="left-image" className="scroll-slides-card-left flex flex-col gap-y-12">
 
+>>>>>>> 03cef8e2515c7111ebc956eb1c1b460c0692c5b8
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-15.png"
@@ -199,9 +211,13 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                     </li>
                   </ul>
                   
+<<<<<<< HEAD
+                  <ul className="scroll-slides-card-right flex flex-col gap-y-12">
+=======
 
                   <ul id="right-image-1" className="scroll-slides-card-right flex flex-col gap-y-12">
 
+>>>>>>> 03cef8e2515c7111ebc956eb1c1b460c0692c5b8
                     <li className="slides-card-items h-[520px] w-[382px]">
                       <Image
                         src="/images/card-img-7.png"
@@ -247,9 +263,14 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                   </p>
                   <Link  href="/">
                   <a
+<<<<<<< HEAD
+                    href="/"
+                    className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out"
+=======
 
                     className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out"
 
+>>>>>>> 03cef8e2515c7111ebc956eb1c1b460c0692c5b8
                   >
                     Explore fandoms
                   </a>
