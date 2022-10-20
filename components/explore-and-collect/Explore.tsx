@@ -13,11 +13,11 @@ const Explore: NextPage<any> = ({}) => {
     gsap.fromTo(".slides-image-box", 
       {
       duration: 4, 
-      x: 750, 
+      x: 50, 
       ease: "none", 
     },{
       duration: 4, 
-      x: -750, 
+      x: -50, 
       ease: "none", 
     }
   );
