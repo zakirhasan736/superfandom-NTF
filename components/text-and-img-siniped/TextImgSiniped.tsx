@@ -158,6 +158,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                   </ul>
 
                 </div>
+                </div>
               </li>
               {/* ------------------------- */}
 
