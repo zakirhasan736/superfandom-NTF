@@ -24,7 +24,26 @@ const HowItWork: NextPage<any> = ({}) => {
         }
       });
     });
+
+    gsap.utils.toArray('.how-it-work-info-items').forEach((section) => {
+      const infoLine = section.querySelector('.how-it-work-info-list');
+      gsap.to(infoLine, {
+        scrollTrigger: { 
+          trigger: section, 
+          scrub: true,
+          markers: true,
+          start: 'top center',
+          end: 'bottom bottom',
+          toggleActions: 'restart pause reverse pause',
+          toggleClass: 'active',
+          ease: 'power2',
+        },
+        opacity: 1,
+      });
   });
+
+
+});
 
   return (
     <>
@@ -55,7 +74,8 @@ const HowItWork: NextPage<any> = ({}) => {
           <div className="custom-container 2xl:px-0 xl:px-0 laptop-x:px-12 md:px-5 sm:px-4">
             <div className="how-it-work-cont-wrapper">
               <ul className="how-it-work-info-items">
-                <li className="how-it-work-info-list flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
+
+                <li className="how-it-work-info-list info-list1 flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
                   <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                     <div className="text-cont-box w-full max-w-[462px] relative">
                         <div className="info-num-icon absolute right-0 top-[-129px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
@@ -110,7 +130,8 @@ const HowItWork: NextPage<any> = ({}) => {
                     </div>
                   </div>
                 </li>
-                <li className="how-it-work-info-list flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
+
+                <li className="how-it-work-info-list info-list2 flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
                   <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                     <div className="text-cont-box w-full max-w-[462px] relative">
                       <div className="info-num-icon absolute right-0 top-[-129px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
@@ -197,7 +218,8 @@ const HowItWork: NextPage<any> = ({}) => {
                        </div>
                   </div>
                 </li>
-                <li className="how-it-work-info-list flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
+
+                <li className="how-it-work-info-list info-list3 flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
                   <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                     <div className="text-cont-box w-full max-w-[462px] relative">
                       <div className="info-num-icon absolute right-0 top-[-129px] md:w-[130px] sm:w-[60px]  md:top-0 md:left-0 md:right-auto">
@@ -281,6 +303,7 @@ const HowItWork: NextPage<any> = ({}) => {
                     </div>
                   </div>
                 </li>
+
               </ul>
             </div>
           </div>

@@ -18,16 +18,44 @@ const ScrollAnimText: NextPage<any> = ({}) => {
         x: xEnd,
         scrollTrigger: { 
           trigger: section, 
-          scrub: 0.5 
-        }
+          scrub: 0.5 ,
+        },
+        y: 70,
+        
       });
     });
   });
 
+useEffect(() => {
+  gsap.to(".bg-shape", {
+    scrollTrigger: {
+      trigger: ".scroll-anim-text",
+      scrub: 0.5,
+      start: "top bottom",
+      end: "bottom -300%",
+      ease: "power3"
+    },
+    y: "-70%"
+  });
+
+
+  gsap.to(".scroll-anim-text", {
+    scrollTrigger: {
+      trigger: ".scroll-anim-text",
+      scrub: true,
+      markers: true,
+      start: "top center",
+      end: "bottom center",
+      toggleClass: "active",
+      ease: 'none',
+    }
+  });
+})
+
   return (
     <>
-      <section className="how-it-work-section relative w-full h-[1080px] md:h-auto px-0 bg-primary overflow-hidden md:pt-8  sm:pt-6  overflow-hidden">
-        <div className="scrolable-bg-shape absolute top-0 left-0 w-full sm:h-[1080px]">
+      <section className="scroll-anim-text relative w-full h-[100vh] md:h-auto px-0 bg-primary overflow-hidden md:pt-8  sm:pt-6  overflow-hidden">
+        <div className="scrolable-bg-shape bg-shape absolute top-0 left-0 w-full sm:h-[100vh]">
           <Image
             src="/images/scroll-text-bg.png"
             alt="superfandom bg-shape"
@@ -36,7 +64,7 @@ const ScrollAnimText: NextPage<any> = ({}) => {
             height="1080px"
           />
         </div>
-        <div className="how-it-work-wrapper pt-[138px] pb-[234px] w-full z-10 relative overflow-hidden">
+        <div className="scroll-anim-text-wrapper pt-[138px] pb-[234px] w-full z-10 relative overflow-hidden">
           <div className="section-titlebox mb-24">
             <div className="scrolable-text-box">
             <div className="scroll-text-item">
@@ -70,6 +98,18 @@ const ScrollAnimText: NextPage<any> = ({}) => {
             nft • fandoms • metaverse • 
             nft • fandoms • metaverse • 
             nft • fandoms • metaverse • 
+            </h2>
+            </div>
+            </div>
+
+            <div className="scrolable-text-box">
+            <div className="scroll-text-item">
+            <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32 mb-[29px] md:mb-[14px]">
+            soulbound • tokens • no • 
+            soulbound • tokens • no • 
+            soulbound • tokens • no • 
+            soulbound • tokens • no • 
+            soulbound • tokens • no • 
             </h2>
             </div>
             </div>
