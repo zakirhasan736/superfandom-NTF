@@ -18,7 +18,7 @@ gsap.to(".text-animetion", {
   scrollTrigger: {
     trigger: ".title_animation",
     start: "center center",
-    end: "bottom -100px",
+    end: "bottom -100%",
     toggleClass: "active",
     ease: "power2"
   }
@@ -42,7 +42,7 @@ gsap.to(".modal-img-item.two", {
       <div className="container lg:container md:container sm:container relative lg:px-9 md:px-7 sm:px-4">
         <div className="main-visual-wrapper flex items-center justify-between md:block">
           {/* ------------------- */}
-          <div className="banner-text-cont-left text-animation text-animetion w-full relative z-50">
+          <div className="banner-text-cont-left text_animation text-animetion w-full relative z-50">
             <h2 className="banner_title_animation title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
               <span className="font-primary font-normal text-fig-5x text-left text-secondary uppercase">
                 Collect

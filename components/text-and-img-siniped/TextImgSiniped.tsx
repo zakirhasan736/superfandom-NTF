@@ -15,6 +15,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
 
     gsap.utils.toArray('.scroll-image-box').forEach((section, index) => {
       const w = section.querySelector('ul.anim-card-scroll');
+      w.innerText = `${marqueeText} 😎 `.repeat(20);
       const [y, yEnd] =
         index % 2
           ? ['100%', (w.scrollHeight - section.offsetHeight) * -1]
@@ -26,6 +27,9 @@ const TextImgSiniped: NextPage<any> = ({}) => {
           y: yEnd,
           scrollTrigger: {
             trigger: section,
+            start: 'center center',
+            end: 'bottom center',
+            toggleActions: 'restart pause reverse pause',
             scrub: 0.5,
           },
         }
@@ -61,7 +65,9 @@ const TextImgSiniped: NextPage<any> = ({}) => {
 
                 <div className="text-img-siniped-anim-scroll overflow-hidden  w-full flex gap-x-12  max-h-[1080px] h-full px-[50px] md:hidden laptop-m:max-h-[800px]">
                   <div className="scroll-image-box">
-                    <ul id="left-image" className="scroll-slides-card-left anim-card-scroll flex flex-col gap-y-12"
+                    <ul
+                      id="left-image"
+                      className="scroll-slides-card-left anim-card-scroll flex flex-col gap-y-12"
                     >
                       <li className="slides-card-items h-[520px] w-[382px]">
                         <Image
