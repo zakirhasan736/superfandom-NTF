@@ -94,8 +94,8 @@ useEffect(() => {
   return (
     <>
       <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
-        <div className="scrolable-bg-shape absolute top-0 left-0 w-full w-[100%] prallex2">
-          <Image
+        <div className="scrolable-bg-shape absolute top-0 left-0 w-full prallex2">
+          <img
             src="/images/how-it-work-bg.png"
             alt="superfandom bg-shape"
             className="bg-shape-image w-full h-full"

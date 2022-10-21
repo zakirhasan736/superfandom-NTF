@@ -68,7 +68,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
       images,
       { scale: 1 },
       {
-        scaleX: 1.2,
+        scaleX: 2.5,
         scaleY:3,
         ease: 'none',
         force3D: true,
@@ -108,9 +108,32 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
 
   }, []);
 
+useEffect(() => {
+    document.body.style.overflow = 'auto';
+    document.scrollingElement.scrollTo(0, 0);
+    
+    gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
+      const w = section.querySelector('.scroll-text-item');
+      const [x, xEnd] = (index % 2) ? ['200%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
+      gsap.fromTo(w, {  x  }, {
+        x: xEnd,
+        scrollTrigger: { 
+          trigger: section, 
+          scrub: 0.5 ,
+          markers: true,
+        },
+        y: 0,
+        direction:10,
+        
+      });
+    });
+
+  });
+
+
   return (
     <>
-      <div className="main-visual-section bg-primary pb-[51px] pt-[209px] relative sm:pt-[150px] overflow-hidden">
+      <section className="main-visual-section bg-primary pb-[51px] pt-[209px] relative sm:pt-[150px] overflow-hidden">
         <div className="container lg:container md:container sm:container relative lg:px-9 md:px-7 sm:px-4">
           <div className="main-visual-wrapper flex items-center justify-between md:block">
             {/* ------------------- */}
@@ -202,7 +225,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             />
           </div>
         </div>
-            </div>
+            </section>
 
     </>
   );

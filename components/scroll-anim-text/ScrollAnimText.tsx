@@ -33,7 +33,7 @@ const ScrollAnimText: NextPage<any> = ({}) => {
     <>
       <section className="scroll-anim-text  relative w-full h-full md:h-auto px-0 bg-primary overflow-hidden md:pt-8  sm:pt-6">
         <div className="scrolable-bg-shape prallex bg-shape absolute top-0 left-0 w-full sm:h-full">
-          <Image
+          <img
             src="/images/scroll-text-bg.png"
             alt="superfandom bg-shape"
             className="bg-shape-image w-full h-full"
@@ -90,7 +90,6 @@ const ScrollAnimText: NextPage<any> = ({}) => {
             </h2>
             </div>
             </div>
-
           </div>
         </div>
       </section>

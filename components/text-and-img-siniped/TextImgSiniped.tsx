@@ -50,7 +50,6 @@ const TextImgSiniped: NextPage<any> = ({}) => {
         trigger: section,
         start: 'top center',
         end: 'bottom center',
-        markers: true,
         onEnter: () => gsap.to(elems, {
           y: 0,
           opacity: 1,

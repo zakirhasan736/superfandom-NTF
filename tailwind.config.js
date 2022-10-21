@@ -19,6 +19,7 @@ module.exports = {
       '2xl': '1921px'
     },
     container: {
+      center: true,
       padding: {
         DEFAULT: '3rem',
         sm: '1rem',
