@@ -14,7 +14,6 @@ const Explore: NextPage<any> = ({}) => {
       scrollTrigger: {
         trigger: ".explore-section",
         scrub: true,
-        markers: true,
         start: "top 0px",
         end: "bottom -250px",
         toggleClass: "active",
@@ -32,8 +31,8 @@ const Explore: NextPage<any> = ({}) => {
             </h2>
           </div>
         </div>
-        <div className="container 2xl:container xl:container lg:container md:container sm:container">
-          <div className="explore-content-wrapper pt-12 pb-[51px] px-0 bg-primary">
+        <div className="container 2xl:container xl:container lg:container md:container sm:container 2xl:pl-12 2xl:pr-12 xl:pl-12 xl:pr-12 lg:pl-8 lg:pr-8 md:pl-5 md:pr-5 sm:pl-0 sm:pr-0">
+          <div className="explore-content-wrapper pt-12 pb-[51px] sm:pb-8 px-0 bg-primary sm:bg-secondary">
             <div className="explore-slidebox mb-12">
               <ul className="slides-image-box flex no-wrap gap-5">
                 <li className="slide-image-items">
@@ -101,14 +100,14 @@ const Explore: NextPage<any> = ({}) => {
                 </li>
               </ul>
             </div>
-            <div className="explore-btn-box text-center">
+            <div className="explore-btn-box text-center sm:flex sm:flex-col">
               <Link href="/">
-                <a className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
+                <a className="p-5 font-primary font-normal text-fig-15 text-primary sm:mb-5 sm:mr-0 rounded-[40px] bg-secondary border sm:hover:text-primary border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out sm:bg-primary sm:hover:text-secondary sm:hover:border-primary sm:text-secondary">
                   Explore Causes
                 </a>
               </Link>
               <Link href="/">
-                <a className="p-5 font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out">
+                <a className="p-5 font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out sm:border-primary sm:text-primary sm:hover:bg-primary sm:hover:text-secondary">
                   Explore Causes
                 </a>
               </Link>

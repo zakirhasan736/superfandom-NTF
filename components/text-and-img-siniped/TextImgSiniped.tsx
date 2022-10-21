@@ -31,27 +31,48 @@ const TextImgSiniped: NextPage<any> = ({}) => {
       );
     });
 
-    gsap.to('.text-img-siniped-info-list', {
-      scrollTrigger: {
-        trigger: '.text-img-siniped-info-list',
-        scrub: true,
-        markers: true,
-        start: 'top -100px',
-        end: 'bottom bottom=+400px',
-        toggleClass: 'active',
-      },
-    });
 
-    gsap.to('.text-img-siniped-info-list.inf-list2', {
-      scrollTrigger: {
-        trigger: '.text-img-siniped-info-list.info-list2',
-        scrub: true,
-        markers: true,
+  });
+
+  useEffect(() => {
+    gsap.utils.toArray('.text-img-siniped-info-list').forEach(section => {
+      const elems = section.querySelectorAll('.siniped-text-box');
+      // Set starting params for sections
+      gsap.set(elems, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        overwrite: 'auto',
+      });
+      
+      ScrollTrigger.create({
+        trigger: section,
         start: 'top center',
-        end: 'bottom bottom',
-        toggleClass: 'active',
-      },
-    });
+        end: 'bottom center',
+        markers: true,
+        onEnter: () => gsap.to(elems, {
+          y: 0,
+          opacity: 1,
+          stagger: 0.2,
+        }),
+        onLeave: () => gsap.to(elems, {
+          y: -50,
+          opacity: 0,
+          stagger: 0.2,
+        }),
+        onEnterBack: () => gsap.to(elems, {
+          y: 0,
+          opacity: 1,
+          stagger: -0.2,
+        }),
+        onLeaveBack: () => gsap.to(elems, {
+          y: 50,
+          opacity: 0,
+          stagger: -0.2,
+        }),
+      });
+    })
   });
 
   return (
@@ -82,10 +103,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
 
                 <div className="text-img-siniped-anim-scroll overflow-hidden  w-full flex gap-x-12  max-h-[1080px] h-full px-[50px] md:hidden laptop-m:max-h-[800px]">
                   <div className="scroll-image-box">
-                    <ul
-                      id="left-image"
-                      className="scroll-slides-card-left anim-card-scroll flex flex-col gap-y-12"
-                    >
+                    <ul  id="left-image" className="scroll-slides-card-left anim-card-scroll flex flex-col gap-y-12">
                       <li className="slides-card-items h-[520px] w-[382px]">
                         <Image
                           src="/images/card-img-15.png"

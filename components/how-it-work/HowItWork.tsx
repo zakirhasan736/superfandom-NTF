@@ -4,7 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ImStarFull } from 'react-icons/im';
 import  gsap  from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollTrigger} from "gsap/dist/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const HowItWork: NextPage<any> = ({}) => {
@@ -31,7 +32,6 @@ const HowItWork: NextPage<any> = ({}) => {
         scrollTrigger: { 
           trigger: section, 
           scrub: true,
-          markers: true,
           start: 'top center',
           end: 'bottom bottom',
           toggleActions: 'restart pause reverse pause',
@@ -42,13 +42,58 @@ const HowItWork: NextPage<any> = ({}) => {
       });
   });
 
+  ScrollTrigger.create({
+    trigger: ".prallex2",
+    pin: true,
+    scrub: true,
+    start: "center center",
+    end: "+=800"
+  });
 
 });
-
+useEffect(() => {
+  gsap.utils.toArray('.how-it-work-info-list').forEach(section => {
+    const elems = section.querySelectorAll('.text-cont-box');
+    // Set starting params for sections
+    gsap.set(elems, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+      overwrite: 'auto',
+    });
+    
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top 60%',
+      end: 'bottom 30%',
+      onEnter: () => gsap.to(elems, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+      }),
+      onLeave: () => gsap.to(elems, {
+        y: -50,
+        opacity: 0,
+        stagger: 0.2,
+      }),
+      onEnterBack: () => gsap.to(elems, {
+        y: 0,
+        opacity: 1,
+        stagger: -0.2,
+      }),
+      onLeaveBack: () => gsap.to(elems, {
+        y: 50,
+        opacity: 0,
+        stagger: -0.2,
+      }),
+    });
+  })
+});
   return (
     <>
       <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
-        <div className="scrolable-bg-shape absolute top-0 left-0 w-full w-[100%]">
+        <div className="scrolable-bg-shape absolute top-0 left-0 w-full w-[100%] prallex2">
           <Image
             src="/images/how-it-work-bg.png"
             alt="superfandom bg-shape"
@@ -57,7 +102,7 @@ const HowItWork: NextPage<any> = ({}) => {
             height="1080px"
           />
         </div>
-        <div className="how-it-work-wrapper pt-[138px] pb-[234px] w-full z-10 relative lg:pt-[80px] lg:pb-[80px] md:pt-8 md:pb-8">
+        <div className="how-it-work-wrapper pt-[60px] pb-[124px] w-full z-10 relative lg:pt-[80px] lg:pb-[80px] md:pt-8 md:pb-8">
           <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
             <div className="scrolable-text-box">
             <div className="scroll-text-item">

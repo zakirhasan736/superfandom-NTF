@@ -34,7 +34,7 @@ const FaqPage: NextPage<any> = ({}) => {
   ];
   return (
     <>
-    <section className="Faq-section w-full bg-secondary pt-[132px] pb-[132px] laptop-m:pt-[64px] laptop-m:pb-[60px]  md:pb-[40px] px-0  overflow-hidden">
+    <section className="Faq-section w-full bg-secondary pt-[132px] pb-[132px] laptop-m:pt-[64px] laptop-m:pb-[60px] sm:pt-8  md:pb-[40px] px-0  overflow-hidden">
           <div className="custom-container 2xl:px-0 xl:px-[50px] laptop-x:px-12 md:px-5 sm:px-4">
               <div className="section-titlebox mb-16 md:mb-4">
                 <h2 className="section-title font-primary font-normal text-fig-3x text-left text-primary laptop-x:text-6xl md:text-fig-40">FAQs</h2>

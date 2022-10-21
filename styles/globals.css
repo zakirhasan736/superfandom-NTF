@@ -586,7 +586,7 @@ a {
   background-position: center;
 }
 .slides-image-box {
-  animation: scroll-slide-item 7s linear infinite forwards;
+  animation: left_to_right 40s linear infinite forwards;
 }
 @keyframes scroll-slide-item {
   0% {
@@ -722,7 +722,7 @@ a {
 
 .main-visual-section.active .heading-title-box h2.banner_title_animation {
   --padding: 1.5vmin;
-  --duration: 650ms;
+  --duration: 850ms;
   --delay: calc(var(--duration) / 2);
   --ease: cubic-bezier(0.25, 1, 0.5, 1);
   display: inline-block;
@@ -755,7 +755,7 @@ a {
 }
 .main-visual-section.active
   .heading-title-box
-  h2.banner_title_animation > span
+  h2.banner_title_animation > span 
   > span:nth-child(1) {
   transition-delay: calc(var(--delay) + 190ms);
 }
@@ -797,4 +797,26 @@ li.text-img-siniped-info-list.active .siniped-text-box {
   color: #000000;
   transition: color 650ms ease 0s;
 
+}
+.box-container {
+  top: 50vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  overflow: visible;
+  height: 900px;
+}
+.box {
+  font-size: 28px;
+  font-weight: 700;
+  background-color: blue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 15%;
+  margin: 10px;
 }

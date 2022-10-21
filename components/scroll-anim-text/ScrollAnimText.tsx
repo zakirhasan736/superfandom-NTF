@@ -20,42 +20,16 @@ const ScrollAnimText: NextPage<any> = ({}) => {
           trigger: section, 
           scrub: 0.5 ,
         },
-        y: 70,
+        y: 200,
         
       });
     });
   });
 
-useEffect(() => {
-  gsap.to(".bg-shape", {
-    scrollTrigger: {
-      trigger: ".scroll-anim-text",
-      scrub: 0.5,
-      start: "top bottom",
-      end: "bottom -300%",
-      ease: "power3"
-    },
-    y: "-70%"
-  });
-
-
-  gsap.to(".scroll-anim-text", {
-    scrollTrigger: {
-      trigger: ".scroll-anim-text",
-      scrub: true,
-      markers: true,
-      start: "top center",
-      end: "bottom center",
-      toggleClass: "active",
-      ease: 'none',
-    }
-  });
-})
-
   return (
     <>
-      <section className="scroll-anim-text relative w-full h-[100vh] md:h-auto px-0 bg-primary overflow-hidden md:pt-8  sm:pt-6  overflow-hidden">
-        <div className="scrolable-bg-shape bg-shape absolute top-0 left-0 w-full sm:h-[100vh]">
+      <section className="scroll-anim-text  relative w-full h-full md:h-auto px-0 bg-primary overflow-hidden md:pt-8  sm:pt-6">
+        <div className="scrolable-bg-shape prallex bg-shape absolute top-0 left-0 w-full sm:h-full">
           <Image
             src="/images/scroll-text-bg.png"
             alt="superfandom bg-shape"
@@ -64,7 +38,7 @@ useEffect(() => {
             height="1080px"
           />
         </div>
-        <div className="scroll-anim-text-wrapper pt-[138px] pb-[234px] w-full z-10 relative overflow-hidden">
+        <div className="scroll-anim-text-wrapper pt-[60px] pb-[90px] w-full z-10 relative overflow-hidden">
           <div className="section-titlebox mb-24">
             <div className="scrolable-text-box">
             <div className="scroll-text-item">
