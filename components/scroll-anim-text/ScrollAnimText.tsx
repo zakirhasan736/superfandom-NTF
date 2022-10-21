@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import  gsap  from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { isAbsolute } from 'path';
 gsap.registerPlugin(ScrollTrigger);
 
 const ScrollAnimText: NextPage<any> = ({}) => {
@@ -20,10 +21,12 @@ const ScrollAnimText: NextPage<any> = ({}) => {
           trigger: section, 
           scrub: 0.5 ,
         },
-        y: 200,
+        y: 0,
+        direction:10,
         
       });
     });
+
   });
 
   return (

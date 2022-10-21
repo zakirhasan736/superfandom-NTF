@@ -14,7 +14,7 @@ const HowItWork: NextPage<any> = ({}) => {
     document.body.style.overflow = 'auto';
     document.scrollingElement.scrollTo(0, 0);
     
-    gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
+    gsap.utils.toArray('.scrolable-text-box.how-it-work-title').forEach((section, index) => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] = (index % 2) ? ['200%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
       gsap.fromTo(w, {  x  }, {
@@ -22,7 +22,8 @@ const HowItWork: NextPage<any> = ({}) => {
         scrollTrigger: { 
           trigger: section, 
           scrub: 0.5 
-        }
+        },
+        y: 0,
       });
     });
 
@@ -104,7 +105,7 @@ useEffect(() => {
         </div>
         <div className="how-it-work-wrapper pt-[60px] pb-[124px] w-full z-10 relative lg:pt-[80px] lg:pb-[80px] md:pt-8 md:pb-8">
           <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
-            <div className="scrolable-text-box">
+            <div className="scrolable-text-box how-it-work-title">
             <div className="scroll-text-item">
             <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32">
          • how it work • how it work

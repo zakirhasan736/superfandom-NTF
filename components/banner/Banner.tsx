@@ -14,21 +14,9 @@ export interface IBanner {
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   useEffect(() => {
 
-    gsap.to('.main-visual-section', {
+    gsap.to('.modal-img-item.two', {
       scrollTrigger: {
-        trigger: '.main-visual-section',
-        scrub: true,
-        start: 'top center',
-        end: 'bottom 10px',
-        toggleActions: 'restart pause reverse pause',
-        toggleClass: 'active',
-        ease: 'none',
-      },
-    });
-
-    gsap.to('.modal-img-item', {
-      scrollTrigger: {
-        trigger: '.banner-modal-img',
+        trigger: '.banner-modal-img.two',
         scrub: 0.5,
         start: 'top center',
         end: 'bottom +=200',
@@ -42,7 +30,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
       textPrl,
       { y: 0 },
       {
-        y: -400,
+        y: -100,
         ease: 'none',
         force3D: true,
         scrollTrigger: {
@@ -80,8 +68,8 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
       images,
       { scale: 1 },
       {
-        scale: 2,
-        scaleY:4,
+        scaleX: 1.2,
+        scaleY:3,
         ease: 'none',
         force3D: true,
         scrollTrigger: {
@@ -94,6 +82,30 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         },
       }
     );
+
+    const textAnim = gsap.utils.toArray('.banner_title_animation > span > span');
+    gsap.fromTo(
+      textAnim,
+      {
+        translateY: '0%',
+        opacity: 1,
+      },
+      {
+        translateY: '200%',
+        ease: 'power3',
+        force3D: true,
+        duration: 1,
+        scrollTrigger: {
+          pin: true,
+          trigger: '.main-visual-section',
+          start: 'top top',
+          end: 'bottom top',
+          //pinType: isTouch ? "fixed" : "transform",
+          scrub: 0.5,
+        },
+      }
+    );
+
   }, []);
 
   return (
