@@ -20,8 +20,9 @@ const ScrollAnimText: NextPage<any> = ({}) => {
         scrollTrigger: { 
           trigger: section, 
           scrub: 0.5 ,
+          markers: true,
         },
-        y: 0,
+        yPercent: 20,
         direction:10,
         
       });
@@ -31,8 +32,8 @@ const ScrollAnimText: NextPage<any> = ({}) => {
 
   return (
     <>
-      <section className="scroll-anim-text  relative w-full h-full md:h-auto px-0 bg-primary overflow-hidden md:pt-8  sm:pt-6">
-        <div className="scrolable-bg-shape prallex bg-shape absolute top-0 left-0 w-full sm:h-full">
+      <section className="scroll-anim-text  relative w-full  md:h-auto px-0 bg-primary md:pt-8  sm:pt-6">
+        {/* <div className="scrolable-bg-shape prallex bg-shape absolute top-0 left-0 w-full sm:h-full">
           <img
             src="/images/scroll-text-bg.png"
             alt="superfandom bg-shape"
@@ -40,15 +41,12 @@ const ScrollAnimText: NextPage<any> = ({}) => {
             width="1920px"
             height="1080px"
           />
-        </div>
-        <div className="scroll-anim-text-wrapper pt-[60px] pb-[90px] w-full z-10 relative overflow-hidden">
-          <div className="section-titlebox mb-24">
+        </div> */}
+        <div className="scroll-anim-text-wrapper w-full z-10 relative mt-[-140px] px-0">
+          <div className="section-titlebox">
             <div className="scrolable-text-box">
             <div className="scroll-text-item">
             <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-40 mb-[29px]">
-            nft • fandoms • metavers • 
-            nft • fandoms • metavers • 
-            nft • fandoms • metavers • 
             nft • fandoms • metavers • 
             nft • fandoms • metavers • 
             </h2>
@@ -58,9 +56,6 @@ const ScrollAnimText: NextPage<any> = ({}) => {
             <div className="scrolable-text-box">
             <div className="scroll-text-item">
             <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32 mb-[29px] md:mb-[14px]">
-            soulbound • tokens • no • 
-            soulbound • tokens • no • 
-            soulbound • tokens • no • 
             soulbound • tokens • no • 
             soulbound • tokens • no • 
             </h2>
@@ -72,24 +67,10 @@ const ScrollAnimText: NextPage<any> = ({}) => {
             <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32 mb-0">
             nft • fandoms • metaverse • 
             nft • fandoms • metaverse • 
-            nft • fandoms • metaverse • 
-            nft • fandoms • metaverse • 
-            nft • fandoms • metaverse • 
             </h2>
             </div>
             </div>
 
-            <div className="scrolable-text-box">
-            <div className="scroll-text-item">
-            <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32 mb-[29px] md:mb-[14px]">
-            soulbound • tokens • no • 
-            soulbound • tokens • no • 
-            soulbound • tokens • no • 
-            soulbound • tokens • no • 
-            soulbound • tokens • no • 
-            </h2>
-            </div>
-            </div>
           </div>
         </div>
       </section>

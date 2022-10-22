@@ -27,6 +27,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
             toggleActions: 'restart pause reverse pause',
             scrub: 0.5,
           },
+          duration: '10s',
         }
       );
     });
@@ -81,7 +82,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
           <div className="text-img-siniped-cont-wrapper">
             <ul className="text-img-siniped-info-items">
               {/* ------------------------ */}
-              <li className="text-img-siniped-info-list columns-2 gap-0 bg-primary md:columns-1">
+              <li className="text-img-siniped-info-list columns-2 gap-0 bg-primary md:columns-1 border-b border-t border-solid border-primary">
                 <div className="text-cont-box w-full py-[307px] px-[190px] bg-primary  max-h-[1080px] h-full laptop-x:px-[80px] laptop-m:max-h-[800px] laptop-m:py-[210px] lg:px-[60px] md:py-8 md:px-6 sm:px-4">
                   <div className="siniped-text-box">
                     <h2 className="title  mb-6 font-primary font-normal text-fig-3x text-left text-secondary uppercase desktop-l:text-7xl desktop-m:text-6xl md:text-fig-40">
@@ -93,7 +94,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                       support
                     </p>
                     <Link href="/">
-                      <a className="link-buttons p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
+                      <a className="link-buttons uppercase p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
                         Explore Causes
                       </a>
                     </Link>
@@ -280,7 +281,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
               {/* ------------------------- */}
 
               {/* ----------------------- */}
-              <li className="text-img-siniped-info-list info-list2 columns-2 gap-0 bg-secondary md:columns-1">
+              <li className="text-img-siniped-info-list info-list2 columns-2 gap-0 bg-secondary md:columns-1 border-b border-t border-solid border-primary">
                 <div className="text-img-siniped-anim-scroll overflow-hidden w-full flex gap-x-12 max-h-[1080px] px-[50px] bg-primary h-full md:hidden laptop-m:max-h-[800px]">
                   <div className="scroll-image-box">
                     <ul
@@ -418,7 +419,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
                       support
                     </p>
                     <Link href="/">
-                      <a className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out">
+                      <a className="p-5 font-primary uppercase font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out">
                         Explore fandoms
                       </a>
                     </Link>

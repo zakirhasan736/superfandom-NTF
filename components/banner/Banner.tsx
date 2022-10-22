@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import ScrollAnimText from '../scroll-anim-text/ScrollAnimText';
 gsap.registerPlugin(ScrollTrigger);
 
 export interface IBanner {
@@ -62,7 +63,6 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         },
       }
     );
-
     const images = gsap.utils.toArray('.main-visual-modal-bg');
     gsap.fromTo(
       images,
@@ -83,6 +83,26 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
       }
     );
 
+    const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
+    gsap.fromTo(
+      imgSclTest,
+      { scaleY: .4, scaleX: 1, y:320, },
+      {
+        scaleX: 2.5,
+        scaleY:2,
+        ease: 'none',
+        force3D: true,
+        scrollTrigger: {
+          pin: true,
+          trigger: '.main-visual-section',
+          start: 'top top',
+          end: 'bottom top',
+          //pinType: isTouch ? "fixed" : "transform",
+          scrub: 0.5,
+        },
+      }
+    );
+   
     const textAnim = gsap.utils.toArray('.banner_title_animation > span > span');
     gsap.fromTo(
       textAnim,
@@ -122,9 +142,7 @@ useEffect(() => {
           scrub: 0.5 ,
           markers: true,
         },
-        y: 0,
-        direction:10,
-        
+        yPercent: 20,
       });
     });
 
@@ -202,12 +220,12 @@ useEffect(() => {
               </p>
               <div className="banner-btn-box text-left flex mt-8">
                 <Link href="/">
-                  <a className="p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
+                  <a className="p-5 uppercase font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
                     Explore Causes
                   </a>
                 </Link>
                 <Link href="/">
-                  <a className="p-5 font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out">
+                  <a className="p-5 uppercase font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out">
                     Explore Causes
                   </a>
                 </Link>
@@ -215,7 +233,7 @@ useEffect(() => {
             </div>
             {/* ------------ */}
           </div>
-          <div className="main-visual-modal-bg absolute bottom-[170px] left-0 w-full max-w-[1820px] right-0 ml-auto prallex3 mr-auto">
+          {/* <div className="main-visual-modal-bg absolute bottom-[170px] left-0 w-full max-w-[1820px] right-0 ml-auto prallex3 mr-auto">
             <Image
               src="/images/banner-bg.png"
               alt="superfandom banner-bg"
@@ -223,8 +241,29 @@ useEffect(() => {
               width="1820px"
               height="444px"
             />
-          </div>
+          </div> */}
         </div>
+
+        <ScrollAnimText />
+
+        <div className="main-test-modal-bg absolute top-0 left-0 w-full max-w-[1820px] right-0 ml-auto mr-auto">
+            <Image
+              src="/images/banner-bg.png"
+              alt="superfandom banner-bg"
+              className="banner-bg "
+              width="1820px"
+              height="444px"
+            />
+            <div className="scrolable-bg-shape bg-shape absolute top-0 left-0 w-full sm:h-full">
+          <img
+            src="/images/how-it-work-bg.png"
+            alt="superfandom bg-shape"
+            className="bg-shape-image w-full h-full"
+            width="1920px"
+            height="556px"
+          />
+          </div>
+          </div>
             </section>
 
     </>

@@ -102,13 +102,13 @@ const Explore: NextPage<any> = ({}) => {
             </div>
             <div className="explore-btn-box text-center sm:flex sm:flex-col">
               <Link href="/">
-                <a className="p-5 font-primary font-normal text-fig-15 text-primary sm:mb-5 sm:mr-0 rounded-[40px] bg-secondary border sm:hover:text-primary border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out sm:bg-primary sm:hover:text-secondary sm:hover:border-primary sm:text-secondary">
+                <a className="p-5 uppercase font-primary font-normal text-fig-15 text-primary sm:mb-5 sm:mr-0 rounded-[40px] bg-secondary border sm:hover:text-primary border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out sm:bg-primary sm:hover:text-secondary sm:hover:border-primary sm:text-secondary">
                   Explore Causes
                 </a>
               </Link>
               <Link href="/">
-                <a className="p-5 font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out sm:border-primary sm:text-primary sm:hover:bg-primary sm:hover:text-secondary">
-                  Explore Causes
+                <a className="p-5 uppercase font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out sm:border-primary sm:text-primary sm:hover:bg-primary sm:hover:text-secondary">
+                Explore fandoms
                 </a>
               </Link>
             </div>
