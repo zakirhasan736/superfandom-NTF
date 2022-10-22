@@ -77,7 +77,7 @@ const HowItWork: NextPage<any> = ({}) => {
     // "(max-width:1680px)": function(){},
   })
 
-});
+}, []);
 useEffect(() => {
   gsap.utils.toArray('.how-it-work-info-list').forEach(section => {
     const elems = section.querySelectorAll('.text-cont-box');
@@ -116,7 +116,7 @@ useEffect(() => {
       }),
     });
   })
-});
+}, []);
   return (
     <>
       <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
