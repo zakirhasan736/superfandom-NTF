@@ -6,7 +6,7 @@ import FaqPage from '../components/FAQ/Faqt';
 import Explore from '../components/explore-and-collect/Explore';
 import HowItWork from '../components/how-it-work/HowItWork';
 import TextImgSiniped from '../components/text-and-img-siniped/TextImgSiniped';
-import ScrollAnimText from '../components/scroll-anim-text/ScrollAnimText';
+// import ScrollAnimText from '../components/scroll-anim-text/ScrollAnimText';
 import Banner from '../components/banner/Banner';
 
 const Home: NextPageWithLayout = () => {
@@ -19,7 +19,7 @@ const Home: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner />
-      <ScrollAnimText />
+      {/* <ScrollAnimText /> */}
       <TextImgSiniped />
       <HowItWork />
       <Explore />

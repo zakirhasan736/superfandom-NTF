@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import ScrollAnimText from '../scroll-anim-text/ScrollAnimText';
 gsap.registerPlugin(ScrollTrigger);
 
 export interface IBanner {
@@ -62,7 +63,25 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         },
       }
     );
-
+    const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
+    gsap.fromTo(
+      imgSclTest,
+      { scaleY: .4, scaleX: 1, y:320, },
+      {
+        scaleX: 2.5,
+        scaleY:2,
+        ease: 'none',
+        force3D: true,
+        scrollTrigger: {
+          pin: true,
+          trigger: '.main-visual-section',
+          start: 'top top',
+          end: 'bottom top',
+          //pinType: isTouch ? "fixed" : "transform",
+          scrub: 0.5,
+        },
+      }
+    );
     const images = gsap.utils.toArray('.main-visual-modal-bg');
     gsap.fromTo(
       images,
@@ -109,25 +128,25 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   }, []);
 
 useEffect(() => {
-    document.body.style.overflow = 'auto';
-    document.scrollingElement.scrollTo(0, 0);
-    
-    gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
-      const w = section.querySelector('.scroll-text-item');
-      const [x, xEnd] = (index % 2) ? ['200%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
-      gsap.fromTo(w, {  x  }, {
-        x: xEnd,
-        scrollTrigger: { 
-          trigger: section, 
-          scrub: 0.5 ,
-          markers: true,
-        },
-        y: 0,
-        direction:10,
-        
-      });
+  document.body.style.overflow = 'auto';
+  document.scrollingElement.scrollTo(0, 0);
+  
+  gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
+    const w = section.querySelector('.scroll-text-item');
+    const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
+    gsap.fromTo(w, {  x  }, {
+      x: xEnd,
+      scrollTrigger: { 
+        trigger: section, 
+        scrub: 0.5 ,
+        start: 'top 300px',
+        end: 'bottom top',
+      },
+      y: 0,
+      direction:10,
+      
     });
-
+  });
   });
 
 
@@ -215,7 +234,7 @@ useEffect(() => {
             </div>
             {/* ------------ */}
           </div>
-          <div className="main-visual-modal-bg absolute bottom-[170px] left-0 w-full max-w-[1820px] right-0 ml-auto prallex3 mr-auto">
+          {/* <div className="main-visual-modal-bg absolute bottom-[170px] left-0 w-full max-w-[1820px] right-0 ml-auto prallex3 mr-auto">
             <Image
               src="/images/banner-bg.png"
               alt="superfandom banner-bg"
@@ -223,8 +242,29 @@ useEffect(() => {
               width="1820px"
               height="444px"
             />
-          </div>
+          </div> */}
         </div>
+
+       <ScrollAnimText />
+
+        <div className="main-test-modal-bg absolute top-0 left-0 w-full max-w-[1820px] right-0 ml-auto mr-auto">
+            <Image
+              src="/images/banner-bg.png"
+              alt="superfandom banner-bg"
+              className="banner-bg "
+              width="1820px"
+              height="444px"
+            />
+            <div className="scrolable-bg-shape bg-shape absolute top-0 left-0 w-full sm:h-full">
+          <img
+            src="/images/how-it-work-bg.png"
+            alt="superfandom bg-shape"
+            className="bg-shape-image w-full h-full"
+            width="1920px"
+            height="556px"
+          />
+          </div>
+          </div>
             </section>
 
     </>
