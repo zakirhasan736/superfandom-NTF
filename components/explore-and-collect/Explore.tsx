@@ -21,7 +21,8 @@ const Explore: NextPage<any> = ({}) => {
         ease: 'power2.out',
       }
   });
-});
+
+}, []);
   return (
     <>
       <section className="explore-section w-full bg-primary pt-[132px] laptop-m:pt-[65px]  md:pt-8 pb-0 px-0 relative z-10  overflow-hidden">

@@ -32,7 +32,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
     });
 
 
-  });
+  }, []);
 
   useEffect(() => {
     gsap.utils.toArray('.text-img-siniped-info-list').forEach(section => {
@@ -85,7 +85,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
         }),
       });
     })
-  });
+  }, []);
 
   return (
     <>
