@@ -8,28 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ScrollAnimText: NextPage<any> = ({}) => {
 
-  useEffect(() => {
-    document.body.style.overflow = 'auto';
-    document.scrollingElement.scrollTo(0, 0);
-    
-    gsap.utils.toArray('.scroll-anim-text').forEach((section, index) => {
-      const w = section.querySelector('.scroll-text-item');
-      const [x, xEnd] = (index % 5) ? ['50%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
-      gsap.fromTo(w, {  x  }, {
-        x: xEnd,
-        scrollTrigger: { 
-          trigger: section, 
-          scrub: 0.5 ,
-          start: 'top 170px',
-          end: 'bottom top+=170px',
-        },
-        y: 0,
-        direction:10,
-        
-      });
-    });
-  });
-
   return (
     <>
       <section className="scroll-anim-text  relative w-full h-[456px] md:h-auto px-0 bg-primary  md:pt-8  sm:pt-6">
@@ -42,47 +20,7 @@ const ScrollAnimText: NextPage<any> = ({}) => {
             height="1080px"
           />
         </div> */}
-        <div className="scroll-anim-text-wrapper  w-full z-10 relative mt-[-150px]">
-          <div className="section-titlebox mb-24">
-            <div className="scrolable-text-box">
-            <div className="scroll-text-item">
-            <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-40 mb-[29px]">
-            nft • fandoms • metavers • 
-            nft • fandoms • metavers • 
-            nft • fandoms • metavers • 
-            nft • fandoms • metavers • 
-            nft • fandoms • metavers • 
-            </h2>
-            </div>
-            </div>
-
-            <div className="scrolable-text-box">
-            <div className="scroll-text-item">
-            <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32 mb-[29px] md:mb-[14px]">
-            soulbound • tokens • no • 
-            soulbound • tokens • no • 
-            soulbound • tokens • no • 
-            soulbound • tokens • no • 
-            soulbound • tokens • no • 
-            </h2>
-            </div>
-            </div>
-
-            <div className="scrolable-text-box">
-            <div className="scroll-text-item">
-            <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32 mb-0">
-            nft • fandoms • metaverse • 
-            nft • fandoms • metaverse • 
-            nft • fandoms • metaverse • 
-            nft • fandoms • metaverse • 
-            nft • fandoms • metaverse • 
-            </h2>
-            </div>
-            </div>
-
-            
-          </div>
-        </div>
+       
       </section>
     </>
   );
