@@ -5,15 +5,15 @@ export const Accordion = ({ id, question, answer }) => {
     const [isActive, setIsActive] = useState(false);
     return (
         <div
-            className="pb-[34px] accordion-items border-b border-solid border-primary md:pb-4 md:pt-4"
+            className="pb-[34px] accordion-items border-b border-solid border-primary md:pb-4 md:pt-4 "
             id={`faqs-accordion-${id}-wrapper`}
         >
             <div
-                className="flex justify-between items-center w-full"
+                className="flex justify-between accordion-title items-center w-full"
                 onClick={() => setIsActive(!isActive)}
                 id={`faqs-accordion-${id}`}
             >
-                <div className="font-primary font-normal text-fig-32 text-left text-primary uppercase cursor-pointer md:text-fig-15">{question}</div>
+                <div className="font-primary font-normal accordion-title-text text-fig-32 text-left text-primary uppercase cursor-pointer md:text-fig-15">{question}</div>
                 {isActive ? (
                     <Image src="/images/icon/close.png" alt={'close icon'} width='32px' height="32px" />
                 ) : (

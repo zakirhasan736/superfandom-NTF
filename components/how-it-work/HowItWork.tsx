@@ -16,9 +16,10 @@ const HowItWork: NextPage<any> = ({}) => {
     
     gsap.utils.toArray('.scrolable-text-box.how-it-work-title').forEach((section, index) => {
       const w = section.querySelector('.scroll-text-item');
-      const [x, xEnd] = (index % 2) ? ['200%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
-      gsap.fromTo(w, {  x  }, {
+      const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
+      gsap.fromTo(w, {  x, y: 0,  }, {
         x: xEnd,
+        duration: 10,
         scrollTrigger: { 
           trigger: section, 
           scrub: 0.5 
@@ -43,13 +44,38 @@ const HowItWork: NextPage<any> = ({}) => {
       });
   });
 
-  ScrollTrigger.create({
-    trigger: ".prallex2",
-    pin: true,
-    scrub: true,
-    start: "center center",
-    end: "+=800"
-  });
+
+
+  ScrollTrigger.matchMedia({
+    "(min-width:1681px)": function(){
+      ScrollTrigger.create({
+        trigger: ".prallex2",
+        pin: true,
+        scrub: true,
+        start: "center center",
+        end: "+=800"
+      });
+    },
+    "(max-width:1680px)": function(){
+      ScrollTrigger.create({
+        trigger: ".prallex2",
+        pin: true,
+        scrub: true,
+        start: "center center",
+        end: "+=600"
+      });
+    },
+    "(max-width:1280px)": function(){
+      ScrollTrigger.create({
+        trigger: ".prallex2",
+        pin: true,
+        scrub: true,
+        start: "top top",
+        end: "top"
+      });
+    },
+    // "(max-width:1680px)": function(){},
+  })
 
 });
 useEffect(() => {
@@ -191,10 +217,10 @@ useEffect(() => {
                       </div>
                       <div className="info-text-box md:pl-36 sm:pl-20">
                       <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase md:text-fig-40 sm:text-fig-32 md:mb-4">
-                        Mint <br /> soulbound
+                      forever <br /> bound
                       </h2>
                       <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0 md:text-fig-base">
-                        Mint soulbound tokens of the causes you care about
+                      Soulbound tokens are forever bound to your wallet
                       </p>
                       </div>
                     </div>
@@ -279,10 +305,10 @@ useEffect(() => {
                       </div>
                       <div className="info-text-box md:pl-36 sm:pl-20">
                       <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase md:text-fig-40 sm:text-fig-32 md:mb-4">
-                        Mint <br /> soulbound
+                      increase <br /> reputation
                       </h2>
                       <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0 md:text-fig-base">
-                        Mint soulbound tokens of the causes you care about
+                      Soulbound tokens you own increase your reputation
                       </p>
                       </div>
                     </div>
