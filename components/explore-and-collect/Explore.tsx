@@ -11,8 +11,6 @@ const Explore: NextPage<any> = ({}) => {
 
   useEffect(() => {
 
-ScrollTrigger.matchMedia({
-  "(min-width:1281px": function() {
     gsap.to('.explore-section', {
       scrollTrigger: {
         trigger: ".explore-section",
@@ -22,25 +20,8 @@ ScrollTrigger.matchMedia({
         toggleClass: "active",
         ease: 'power2.out',
       }
-    });
-  },
-  "(max-width:1280px": function() {
-    gsap.to('.explore-section', {
-      scrollTrigger: {
-        trigger: ".explore-section",
-        scrub: true,
-        start: "top 0px",
-        end: "bottom -450px",
-        toggleClass: "active",
-        ease: 'power2.out',
-      }
-    });
-  },
-})
-
-
-
   });
+});
   return (
     <>
       <section className="explore-section w-full bg-primary pt-[132px] laptop-m:pt-[65px]  md:pt-8 pb-0 px-0 relative z-10  overflow-hidden">
