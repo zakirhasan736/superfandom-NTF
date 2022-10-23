@@ -22,6 +22,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   window.addEventListener("scroll", scrollHandler);
 
   useEffect(() => {
+    
     gsap.to('.modal-img-item.two', {
       scrollTrigger: {
         trigger: '.banner-modal-img.two',
