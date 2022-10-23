@@ -6,13 +6,16 @@ import Link from 'next/link';
 import { ImStarFull } from 'react-icons/im';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Animation1 from '../../public/lottie_files/01.json'
+import Animation1 from '../../public/lottie_files/01.json';
+import Animation2 from '../../public/lottie_files/02.json';
+import Animation3 from '../../public/lottie_files/03.json';
+
 gsap.registerPlugin(ScrollTrigger);
 
-const HowItWork: NextPage<any> = ({}) => {
+const HowItWork: NextPage<any> = ({ }) => {
   const defaultOptions = {
     loop: true,
-    autoplay: true, 
+    autoplay: true,
     animationData: Animation1,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
@@ -175,12 +178,18 @@ const HowItWork: NextPage<any> = ({}) => {
                       </div>
                     </div>
                   </div>
-  
                   <div className="how-it-work-anim-cont w-full relative sm:mb-8 md:text-right md:flex md:justify-center">
-              <Lottie
-              options={defaultOptions} 
-              height={400}
-              width={400}/>
+                    <Lottie
+                      options={{
+                        loop: true,
+                        autoplay: true,
+                        animationData: Animation1,
+                        rendererSettings: {
+                          preserveAspectRatio: 'xMidYMid slice'
+                        }
+                      }}
+                      height={610}
+                      width={600} />
                   </div>
                 </li>
 
@@ -206,69 +215,18 @@ const HowItWork: NextPage<any> = ({}) => {
                       </div>
                     </div>
                   </div>
-
                   <div className="how-it-work-anim-cont w-full relative flex justify-end md:justify-center sm:mb-8">
-                    <div className="text-count-items-box md:max-w-[320px] md:w-full relative">
-                      <div className="how-it-work-anim-img relative md:max-w-[320px] md:w-full ">
-                        <div className="how-it-work-mobo md:max-w-[320px] md:w-full relative z-50">
-                          <Image
-                            src="/images/card-mobo.png"
-                            alt="superfandom anim-modal-img"
-                            className="anim-modal-img"
-                            width="389px"
-                            height="601px"
-                          />
-                        </div>
-                        <ul className="shadow-image-box absolute left-[-60px] top-0 w-full h-full">
-                          <li className="shadow-image-item absolute left-[-105px] top-[-23px] w-full z-[-9 md:max-w-[270px] md:w-full">
-                            <Image
-                              src="/images/card-img-16.png"
-                              alt="superfandom anim-modal-img"
-                              className="anim-modal-img"
-                              width="382px"
-                              height="502px"
-                            />
-                          </li>
-                          <li className="shadow-image-item absolute w-full z-[-12] left-[-164px] top-[-64px] md:max-w-[270px] md:w-full">
-                            <Image
-                              src="/images/card-img-17.png"
-                              alt="superfandom anim-modal-img"
-                              className="anim-modal-img"
-                              width="382px"
-                              height="502px"
-                            />
-                          </li>
-                          <li className="shadow-image-item absolute w-full z-[-17] left-[-216px] top-[-107px] md:max-w-[270px] md:w-full">
-                            <Image
-                              src="/images/card-img-15.png"
-                              alt="superfandom anim-modal-img"
-                              className="anim-modal-img"
-                              width="382px"
-                              height="502px"
-                            />
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="how-it-work-anim-btn-box absolute bottom-0 right-0">
-                        <Link href="/">
-                          <a
-
-                            className="anim-item-btn font-primary relative bottom-[131px] font-normal text-fig-15 text-center text-primary border border-solid border-primary bg-secondary hover:bg-neon uppercase p-5 w-[245px] block z-50 rounded-[40px]"
-                          >
-                            your collection
-                          </a>
-                        </Link>
-                        <div className="anim-hand-icon relative bottom-[131px]">
-                          <Image
-                            src="/images/icon/cursor-hand-svgrepo-com 2.png"
-                            alt="superfandom anim-hand-icon"
-                            className="anim-hand-icon"
-                            width="36px"
-                            height="36px"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                  <Lottie
+                      options={{
+                        loop: true,
+                        autoplay: true,
+                        animationData: Animation2,
+                        rendererSettings: {
+                          preserveAspectRatio: 'xMidYMid slice'
+                        }
+                      }}
+                      height={600}
+                      width={650} />
                   </div>
                 </li>
 
@@ -294,69 +252,20 @@ const HowItWork: NextPage<any> = ({}) => {
                       </div>
                     </div>
                   </div>
-
                   <div className="how-it-work-anim-cont w-full relative flex justify-center mb-8">
-                    <div className="text-cont-item-box md:max-w-[270px] md:w-full relative">
-                      <div className="how-it-work-anim-img relative">
-                        <div className="anim-items-img md:max-w-[270px] md:w-full">
-                          <Image
-                            src="/images/card-img-1.png"
-                            alt="superfandom anim-modal-img"
-                            className="anim-modal-img"
-                            width="382px"
-                            height="502px"
-                          />
-                        </div>
-
-                        <ul className="shadow-image-box absolute left-0 top-0 w-full h-full">
-                          <li className="shadow-image-item absolute left-[109px] top-[-37px] w-full z-[-9] md:max-w-[270px] md:w-full">
-                            <Image
-                              src="/images/card-img-11.png"
-                              alt="superfandom anim-modal-img"
-                              className="anim-modal-img"
-                              width="382px"
-                              height="502px"
-                            />
-                          </li>
-                          <li className="shadow-image-item absolute w-full z-[-12] left-[251px] top-[-76px] md:max-w-[270px] md:w-full">
-                            <Image
-                              src="/images/card-img-18.png"
-                              alt="superfandom anim-modal-img"
-                              className="anim-modal-img"
-                              width="382px"
-                              height="502px"
-                            />
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="how-it-work-anim-btn-box absolute bottom-0 left-0">
-
-                        <Link href="/">
-                          <a
-                            className="anim-item-btn font-primary relative bottom-[161px] font-normal flex items-center justify-between text-fig-24 text-center text-primary border border-solid border-primary bg-secondary uppercase py-5 px-[45px] w-[245px]  rounded-[40px]"
-                          >
-                            <span className="stars">
-                              <ImStarFull />
-                            </span>
-                            <span className="stars">
-                              <ImStarFull />
-                            </span>
-                            <span className="stars">
-                              <ImStarFull />
-                            </span>
-                            <span className="stars">
-                              <ImStarFull />
-                            </span>
-                            <span className="stars">
-                              <ImStarFull />
-                            </span>
-                          </a>
-                        </Link>
-                      </div>
-                    </div>
+                  <Lottie
+                      options={{
+                        loop: true,
+                        autoplay: true,
+                        animationData: Animation3,
+                        rendererSettings: {
+                          preserveAspectRatio: 'xMidYMid slice'
+                        }
+                      }}
+                      height={600}
+                      width={750} />
                   </div>
                 </li>
-
               </ul>
             </div>
           </div>
