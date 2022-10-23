@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useState,useEffect } from 'react';
 import Link from 'next/link';
-import gsap from 'gsap';
+import gsap, { Power3 } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 // import ScrollAnimText from '../scroll-anim-text/ScrollAnimText';
 gsap.registerPlugin(ScrollTrigger);
@@ -27,8 +27,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         trigger: '.banner-modal-img.two',
         scrub: 0.5,
         start: 'top center',
-        end: 'bottom +=200',
-        ease: 'power3.out',
+        end: 'bottom +=200'
       },
       yPercent: -20,
     });
@@ -55,8 +54,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
     const textAnim = gsap.utils.toArray('.banner_title_animation > span > span');
     document.body.style.overflow = 'auto';
-    document.scrollingElement.scrollTo(0, 0);
-
+    // document.scrollingElement.scrollTo(0, 0);
     ScrollTrigger.matchMedia({
       "(min-width:800px)": function(){
         gsap.fromTo(
@@ -115,8 +113,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           }
         );
 
-        
-        gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
+        gsap.utils.toArray('.scrolable-text-box').forEach((section:any, index) => {
           const w = section.querySelector('.scroll-text-item');
           const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
           gsap.fromTo(w, {  x  }, {
@@ -192,7 +189,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         }
       );
 
-      gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
+      gsap.utils.toArray('.scrolable-text-box').forEach((section:any, index) => {
         const w = section.querySelector('.scroll-text-item');
         const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
         gsap.fromTo(w, {  x  }, {
@@ -246,7 +243,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           }
         );
 
-        gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
+        gsap.utils.toArray('.scrolable-text-box').forEach((section:any, index) => {
           const w = section.querySelector('.scroll-text-item');
           const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
           gsap.fromTo(w, {  x , marginTop:30, }, {

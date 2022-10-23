@@ -2,8 +2,6 @@ import { NextPage } from 'next';
 import React, { useEffect } from 'react';
 import Lottie from 'react-lottie';
 import Image from 'next/image';
-import Link from 'next/link';
-import { ImStarFull } from 'react-icons/im';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Animation1 from '../../public/lottie_files/01.json';
@@ -12,20 +10,11 @@ import Animation3 from '../../public/lottie_files/03.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HowItWork: NextPage<any> = ({ }) => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: Animation1,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
+const HowItWork: NextPage<any> = () => {
   useEffect(() => {
     document.body.style.overflow = 'auto';
-    document.scrollingElement.scrollTo(0, 0);
-
-    gsap.utils.toArray('.scrolable-text-box.how-it-work-title').forEach((section, index) => {
+    // document.scrollingElement.scrollTo(0, 0);
+    gsap.utils.toArray('.scrolable-text-box.how-it-work-title').forEach((section:any, index) => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
       gsap.fromTo(w, { x, y: 0, }, {
@@ -40,7 +29,7 @@ const HowItWork: NextPage<any> = ({ }) => {
       });
     });
 
-    gsap.utils.toArray('.how-it-work-info-items').forEach((section) => {
+    gsap.utils.toArray('.how-it-work-info-items').forEach((section:any) => {
       const infoLine = section.querySelector('.how-it-work-info-list');
       gsap.to(infoLine, {
         scrollTrigger: {
@@ -50,7 +39,7 @@ const HowItWork: NextPage<any> = ({ }) => {
           end: 'bottom bottom',
           toggleActions: 'restart pause reverse pause',
           toggleClass: 'active',
-          ease: 'power2',
+          // ease: 'power2',
         },
         opacity: 1,
       });
@@ -88,7 +77,7 @@ const HowItWork: NextPage<any> = ({ }) => {
 
   }, []);
   useEffect(() => {
-    gsap.utils.toArray('.how-it-work-info-list').forEach(section => {
+    gsap.utils.toArray('.how-it-work-info-list').forEach((section:any) => {
       const elems = section.querySelectorAll('.text-cont-box');
       // Set starting params for sections
       gsap.set(elems, {

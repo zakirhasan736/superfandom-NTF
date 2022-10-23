@@ -6,12 +6,12 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-const TextImgSiniped: NextPage<any> = ({}) => {
+const TextImgSiniped: NextPage<any> = () => {
   useEffect(() => {
     document.body.style.overflow = 'auto';
-    document.scrollingElement.scrollTo(0, 0);
+    // document.scrollingElement.scrollTo(0, 0);
 
-    gsap.utils.toArray('.scroll-image-box').forEach((section, index) => {
+    gsap.utils.toArray('.scroll-image-box').forEach((section:any, index) => {
       const w = section.querySelector('ul.anim-card-scroll');
       const [y, yEnd] =
         index % 2
@@ -35,7 +35,7 @@ const TextImgSiniped: NextPage<any> = ({}) => {
   }, []);
 
   useEffect(() => {
-    gsap.utils.toArray('.text-img-siniped-info-list').forEach(section => {
+    gsap.utils.toArray('.text-img-siniped-info-list').forEach((section:any) => {
       const elems = section.querySelectorAll('.siniped-text-box');
       // Set starting params for sections
       ScrollTrigger.matchMedia({

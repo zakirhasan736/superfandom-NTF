@@ -3,7 +3,7 @@ import React from 'react';
 
 
 
-const ScrollAnimText: NextPage<any> = ({}) => {
+const ScrollAnimText: NextPage<any> = () => {
 
   return (
     <>

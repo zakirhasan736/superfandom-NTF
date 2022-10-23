@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { Accordion } from '../accordion/accordion';
 
-const FaqPage: NextPage<any> = ({}) => {
+const FaqPage: NextPage<any> = () => {
   const accordianData = [
     {
       id: 1,

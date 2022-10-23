@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { NextPage } from 'next';
-import gsap, { Power4 } from 'gsap';
+import gsap, { Power2 } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Explore: NextPage<any> = ({}) => {
+const Explore: NextPage<any> = () => {
 
   useEffect(() => {
 
@@ -17,8 +17,7 @@ const Explore: NextPage<any> = ({}) => {
         scrub: true,
         start: "top 0px",
         end: "bottom -250px",
-        toggleClass: "active",
-        ease: 'power2.out',
+        toggleClass: "active"
       }
   });
 

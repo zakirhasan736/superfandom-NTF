@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import Image from 'next/image';
-
-export const Accordion = ({ id, question, answer }) => {
+type accordion = {
+    id: number;
+    question: string;
+    answer: string; 
+  };
+  
+export const Accordion = ({ id, question, answer }:accordion) => {
     const [isActive, setIsActive] = useState(false);
     return (
         <div
