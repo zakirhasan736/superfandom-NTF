@@ -13,7 +13,16 @@ export interface IBanner {
 }
 
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
+
   useEffect(() => {
+
+    // ScrollTrigger.matchMedia({
+    //   "(min-width:1200px)": function(){
+
+    //   },
+    //   "(max-width:1199px)": function(){}
+    // })
+
     gsap.to('.modal-img-item.two', {
       scrollTrigger: {
         trigger: '.banner-modal-img.two',
@@ -54,6 +63,30 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     document.scrollingElement.scrollTo(0, 0);
 
     ScrollTrigger.matchMedia({
+      "(min-width:1200px)": function(){
+        gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
+          const w = section.querySelector('.scroll-text-item');
+          const [x, xEnd] =
+            index % 2
+              ? ['100%', (w.scrollWidth - section.offsetWidth) * -1]
+              : [w.scrollWidth * -1, 0];
+          gsap.fromTo(
+            w,
+            { x },
+            {
+              x: xEnd,
+              scrollTrigger: {
+                trigger: section,
+                scrub: 0.5,
+               toggleActions: 'play pause reverse restart',
+                start: 'top -=570',
+                   markers: true,
+                end: '+=2000',
+              },
+            }
+          );
+        });
+      },
       '(min-width:800px)': function () {
         gsap.fromTo(
           slidePrl,
@@ -132,7 +165,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                 trigger: section,
                 scrub: 0.5,
                toggleActions: 'play pause reverse restart',
-                start: 'top -=570',
+                start: 'top +=470',
                    markers: true,
                 end: '+=2000',
               },
