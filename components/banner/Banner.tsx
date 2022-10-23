@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import React, { useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import ScrollAnimText from '../scroll-anim-text/ScrollAnimText';
+// import ScrollAnimText from '../scroll-anim-text/ScrollAnimText';
 gsap.registerPlugin(ScrollTrigger);
 
 export interface IBanner {
@@ -13,8 +13,17 @@ export interface IBanner {
 }
 
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
-  useEffect(() => {
+  const [scroll, setscroll] = useState(false);
+  const scrollHandler = () => {
+      if (window.scrollY >= 10) {
+          setscroll(true);
+      } else {
+          setscroll(false);
+      }
+  }
+  window.addEventListener("scroll", scrollHandler);
 
+  useEffect(() => {
     gsap.to('.modal-img-item.two', {
       scrollTrigger: {
         trigger: '.banner-modal-img.two',
@@ -25,7 +34,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
       },
       yPercent: -20,
     });
-
+  
     const textPrl = gsap.utils.toArray('.banner_title_animation');
     gsap.fromTo(
       textPrl,
@@ -259,9 +268,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
       }
 
     })
-
-  }, []);
-
+  }, [scroll]);
 
   return (
     <>
