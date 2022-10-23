@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 export interface IFaq {
   id: 1,
-  question: string;
-  answer: string;
+  title: string;
+  desc: string;
 }
 
-const Faq: React.FC<IFaq> = ({id, question, answer }) => {
+const Faq: React.FC<IFaq> = ({id, title, desc }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -33,7 +33,7 @@ const Faq: React.FC<IFaq> = ({id, question, answer }) => {
                 onClick={() => setIsActive(!isActive)}
                 id={`faqs-accordion-${id}`}
             >
-                <div className="font-24 color-black">{question}</div>
+                <div className="font-24 color-black">{title}</div>
                 {isActive ? (
                     <img src="/assets/icon/arrow-up.svg" alt={'arrow-up'} />
                 ) : (
@@ -42,7 +42,7 @@ const Faq: React.FC<IFaq> = ({id, question, answer }) => {
             </div>
             {isActive && (
                 <div
-                    dangerouslySetInnerHTML={{ __html: answer }}
+                    dangerouslySetInnerHTML={{ __html: desc }}
                     className="text-left mt-3 font-20thin color-black"
                 ></div>
             )}

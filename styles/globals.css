@@ -665,7 +665,7 @@ a {
 /* animation */
 .explore-slidebox {
   position: relative;
-  height: 375px;
+  height: 520px;
   overflow: hidden;
 }
 
@@ -674,7 +674,7 @@ a {
   z-index: 9;
 }
 .slide-image-items {
-  width: 280px;
+  width: 382px;
 }
 @keyframes left_to_right {
   0% {

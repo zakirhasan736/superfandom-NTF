@@ -41,7 +41,7 @@ const Explore: NextPage<any> = ({}) => {
                   <Image
                     src="/images/card-img-7.png"
                     alt="superfandom slide-image"
-                    className="slide-image "
+                    className="slide-image h-full w-full"
                     width="382px"
                     height="520px"
                   />
@@ -50,7 +50,7 @@ const Explore: NextPage<any> = ({}) => {
                   <Image
                     src="/images/card-img-13.png"
                     alt="superfandom slide-image"
-                    className="slide-image "
+                    className="slide-image h-full w-full"
                     width="382px"
                     height="520px"
                   />
@@ -59,7 +59,7 @@ const Explore: NextPage<any> = ({}) => {
                   <Image
                     src="/images/card-img-13.png"
                     alt="superfandom slide-image"
-                    className="slide-image "
+                    className="slide-image h-full w-full"
                     width="382px"
                     height="520px"
                   />
@@ -68,7 +68,7 @@ const Explore: NextPage<any> = ({}) => {
                   <Image
                     src="/images/card-img-13.png"
                     alt="superfandom slide-image"
-                    className="slide-image "
+                    className="slide-image h-full w-full"
                     width="382px"
                     height="520px"
                   />
@@ -77,7 +77,7 @@ const Explore: NextPage<any> = ({}) => {
                   <Image
                     src="/images/card-img-18.png"
                     alt="superfandom slide-image"
-                    className="slide-image "
+                    className="slide-image h-full w-full"
                     width="382px"
                     height="520px"
                   />
@@ -86,7 +86,7 @@ const Explore: NextPage<any> = ({}) => {
                   <Image
                     src="/images/card-img-4.png"
                     alt="superfandom slide-image"
-                    className="slide-image "
+                    className="slide-image h-full w-full"
                     width="382px"
                     height="520px"
                   />
@@ -95,14 +95,14 @@ const Explore: NextPage<any> = ({}) => {
                   <Image
                     src="/images/card-img-5.png"
                     alt="superfandom slide-image"
-                    className="slide-image "
+                    className="slide-image h-full w-full"
                     width="382px"
                     height="520px"
                   />
                 </li>
               </ul>
             </div>
-            <div className="explore-btn-box text-center sm:flex sm:flex-col sm:px-4">
+            <div className="explore-btn-box text-center flex justify-center sm:flex sm:flex-col sm:px-4">
               <Link href="/">
                 <a className="p-5 font-primary uppercase font-normal text-fig-15 text-primary sm:mb-5 sm:mr-0 rounded-[40px] bg-secondary border md:hover:text-primary border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out md:bg-primary md:hover:text-primary md:hover:border-primary md:text-secondary">
                   Explore Causes

@@ -2,8 +2,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 export const Accordion = ({ id, question, answer }) => {
+
     const [isActive, setIsActive] = useState(false);
+    
     return (
+        <>
         <div
             className="pb-[34px] accordion-items border-b border-solid border-primary md:pb-4 md:pt-4 "
             id={`faqs-accordion-${id}-wrapper`}
@@ -27,5 +30,6 @@ export const Accordion = ({ id, question, answer }) => {
                 ></div>
             )}
         </div>
+        </>
     );
 };
