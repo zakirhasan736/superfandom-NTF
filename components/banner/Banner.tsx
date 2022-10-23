@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -13,6 +13,14 @@ export interface IBanner {
 }
 
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
+  const [scroll, setscroll] = useState(false);
+  const scrollHandler = () => {
+      if (!scroll) {
+          setscroll(true);
+      }
+  }
+  window.addEventListener("scroll", scrollHandler);
+
   useEffect(() => {
     gsap.to('.modal-img-item.two', {
       scrollTrigger: {
@@ -21,11 +29,10 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         start: 'top center',
         end: 'bottom +=200',
         ease: 'power3.out',
-        markers: false,
       },
       yPercent: -20,
     });
-
+  
     const textPrl = gsap.utils.toArray('.banner_title_animation');
     gsap.fromTo(
       textPrl,
@@ -36,25 +43,22 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         force3D: true,
         scrollTrigger: {
           pin: true,
-          trigger: '.main-visual-section',
+          trigger:  '.main-visual-section',
           start: 'top top',
           end: 'bottom top',
           scrub: true,
-        markers: false,
         },
       }
     );
 
     const slidePrl = gsap.utils.toArray('.modal-img-item');
     const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
-    const textAnim = gsap.utils.toArray(
-      '.banner_title_animation > span > span'
-    );
+    const textAnim = gsap.utils.toArray('.banner_title_animation > span > span');
     document.body.style.overflow = 'auto';
     document.scrollingElement.scrollTo(0, 0);
 
     ScrollTrigger.matchMedia({
-      '(min-width:800px)': function () {
+      "(min-width:800px)": function(){
         gsap.fromTo(
           slidePrl,
           { y: 0 },
@@ -64,22 +68,20 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             force3D: true,
             scrollTrigger: {
               pin: true,
-              trigger: '.main-visual-section',
+              trigger:  '.main-visual-section',
               start: 'top top',
               end: 'bottom top',
               scrub: true,
-        markers: false,
-
             },
           }
         );
 
         gsap.fromTo(
           imgSclTest,
-          { scaleY: 0.4, scaleX: 1, y: 320 },
+          { scaleY: .4, scaleX: 1, y:320, },
           {
             scaleX: 2.5,
-            scaleY: 2,
+            scaleY:2,
             ease: 'none',
             force3D: true,
             scrollTrigger: {
@@ -88,8 +90,6 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               start: 'top top',
               end: 'bottom top',
               scrub: 0.5,
-        markers: false,
-
             },
           }
         );
@@ -111,36 +111,29 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               start: 'top top',
               end: 'bottom top',
               scrub: 0.5,
-        markers: false,
-
             },
           }
         );
 
+        
         gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
           const w = section.querySelector('.scroll-text-item');
-          const [x, xEnd] =
-            index % 2
-              ? ['100%', (w.scrollWidth - section.offsetWidth) * -1]
-              : [w.scrollWidth * -1, 0];
-          gsap.fromTo(
-            w,
-            { x },
-            {
-              x: xEnd,
-              scrollTrigger: {
-                trigger: section,
-                scrub: 0.5,
-               toggleActions: 'play pause reverse restart',
-                start: 'top -=570',
-                   markers: true,
-                end: '+=2000',
-              },
-            }
-          );
+          const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
+          gsap.fromTo(w, {  x  }, {
+            x: xEnd,
+            scrollTrigger: { 
+              trigger: section, 
+              scrub: 0.5 ,
+              start: 'top 300px',
+              end: 'bottom top',
+            },
+            
+          });
         });
+
+
       },
-      '(max-width:799px)': function () {
+      "(max-width:799px)": function(){
         gsap.fromTo(
           slidePrl,
           { y: 200 },
@@ -150,22 +143,20 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             force3D: true,
             scrollTrigger: {
               pin: true,
-              trigger: '.main-visual-section',
+              trigger:  '.main-visual-section',
               start: 'top top',
               end: 'bottom top',
               scrub: true,
-        markers: false,
-
             },
           }
         );
 
         gsap.fromTo(
           imgSclTest,
-          { scaleY: 1, scaleX: 1, y: 430 },
+          { scaleY: 1, scaleX: 1, y:430, }, 
           {
             scaleX: 2.5,
-            scaleY: 3,
+            scaleY:3,
             ease: 'none',
             force3D: true,
             scrollTrigger: {
@@ -174,67 +165,58 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               start: 'top top',
               end: 'bottom top',
               scrub: 0.5,
-        markers: false,
-
             },
           }
         );
-
-        gsap.fromTo(
-          textAnim,
-          {
-            translateY: '-20%',
-            opacity: 1,
+        
+      gsap.fromTo(
+        textAnim,
+        {
+          translateY: '-20%',
+          opacity: 1,
+          
+        },
+        {
+          translateY: '200%',
+          y: 60,
+          ease: 'power3',
+          force3D: true,
+          duration: 1,
+          scrollTrigger: {
+            pin: true,
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
           },
-          {
-            translateY: '200%',
-            y: 60,
-            ease: 'power3',
-            force3D: true,
-            duration: 1,
-            scrollTrigger: {
-              pin: true,
-              trigger: '.main-visual-section',
-              start: 'top top',
-              end: 'bottom top',
-              scrub: 0.5,
-        markers: false,
+        }
+      );
 
-            },
-          }
-        );
-
-        gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
-          const w = section.querySelector('.scroll-text-item');
-          const [x, xEnd] =
-            index % 2
-              ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
-              : [w.scrollWidth * -1, 0];
-          gsap.fromTo(
-            w,
-            { x },
-            {
-              x: xEnd,
-              y: 100,
-              scrollTrigger: {
-                trigger: section,
-                scrub: 0.5,
-                start: 'top 300px',
-                end: 'bottom top',
-        markers: false,
-
-              },
-            }
-          );
+      gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
+        const w = section.querySelector('.scroll-text-item');
+        const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
+        gsap.fromTo(w, {  x  }, {
+          x: xEnd,
+          y: 100,
+          scrollTrigger: { 
+            trigger: section, 
+            scrub: 0.5 ,
+            start: 'top 300px',
+            end: 'bottom top',
+          },
+          
         });
+      });
+      
       },
-      '(max-width:460px)': function () {
+      "(max-width:460px)": function(){
+
         gsap.fromTo(
           imgSclTest,
-          { scaleY: 5, scaleX: 1, y: 530 },
+          { scaleY: 5, scaleX: 1, y:530, }, 
           {
             scaleX: 2.5,
-            scaleY: 25,
+            scaleY:25,
             ease: 'none',
             force3D: true,
             scrollTrigger: {
@@ -243,8 +225,6 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               start: 'top top',
               end: 'bottom top',
               scrub: 0.5,
-        markers: false,
-
             },
           }
         );
@@ -258,43 +238,35 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             force3D: true,
             scrollTrigger: {
               pin: true,
-              trigger: '.main-visual-section',
+              trigger:  '.main-visual-section',
               start: 'top top',
               end: 'bottom top',
               scrub: true,
-        markers: false,
-
             },
           }
         );
 
         gsap.utils.toArray('.scrolable-text-box').forEach((section, index) => {
           const w = section.querySelector('.scroll-text-item');
-          const [x, xEnd] =
-            index % 2
-              ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
-              : [w.scrollWidth * -1, 0];
-          gsap.fromTo(
-            w,
-            { x, marginTop: 30 },
-            {
-              x: xEnd,
-              marginTop: 30,
-              y: 0,
-              scrollTrigger: {
-                trigger: section,
-                scrub: 0.5,
-                start: 'top 900px',
-                end: 'bottom 900px',
-        markers: false,
-
-              },
-            }
-          );
+          const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
+          gsap.fromTo(w, {  x , marginTop:30, }, {
+            x: xEnd,
+            marginTop: 30,
+            y:  0,
+            scrollTrigger: { 
+              trigger: section, 
+              scrub: 0.5 ,
+              start: 'top 300px',
+              end: 'bottom top',
+            },
+            
+          });
         });
-      },
-    });
-  }, []);
+
+      }
+
+    })
+  }, [scroll]);
 
   return (
     <>
@@ -373,7 +345,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                 </Link>
                 <Link href="/">
                   <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out">
-                    explore fandoms
+                  explore fandoms
                   </a>
                 </Link>
               </div>
@@ -391,67 +363,68 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           </div> */}
         </div>
 
-        <div className="main-test-modal-bg absolute top-0 left-0 w-full max-w-[1820px] right-0 ml-auto mr-auto">
-          <Image
-            src="/images/banner-bg.png"
-            alt="superfandom banner-bg"
-            className="banner-bg "
-            width="1820px"
-            height="444px"
-          />
-          <div className="scrolable-bg-shape bg-shape absolute top-0 left-0 w-full sm:h-full">
-            <img
-              src="/images/how-it-work-bg.png"
-              alt="superfandom bg-shape"
-              className="bg-shape-image w-full h-full"
-              width="1920px"
-              height="556px"
-            />
-          </div>
-        </div>
-        <div className="scroll-anim-text-wrapper  w-full z-10 relative mt-[-150px] md:mt-0 sm:h-[210px] h-[456px]">
+        <div className="scroll-anim-text-wrapper  w-full z-10 relative mt-[-130px] md:mt-0 sm:h-[210px] h-[456px]">
           <div className="section-titlebox mb-24 md:mb-12">
             <div className="scrolable-text-box">
-              <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-40 mb-[29px]">
-                  nft • fandoms • metavers • nft • fandoms • metavers • nft •
-                  fandoms • metavers • nft • fandoms • metavers • nft • fandoms
-                  • metavers •
-                  nft • fandoms • metavers • nft • fandoms • metavers • nft •
-                  fandoms • metavers • nft • fandoms • metavers • nft • fandoms
-                  • metavers •
-                </h2>
-              </div>
+            <div className="scroll-text-item">
+            <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-40 mb-[29px]">
+            nft • fandoms • metavers • 
+            nft • fandoms • metavers • 
+            nft • fandoms • metavers • 
+            nft • fandoms • metavers • 
+            nft • fandoms • metavers • 
+            </h2>
+            </div>
             </div>
 
             <div className="scrolable-text-box">
-              <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-32 mb-[29px] md:mb-[14px]">
-                  soulbound • tokens • no • soulbound • tokens • no • soulbound
-                  • tokens • no • soulbound • tokens • no • soulbound • tokens •
-                  no •
-                  soulbound • tokens • no • soulbound • tokens • no • soulbound
-                  • tokens • no • soulbound • tokens • no • soulbound • tokens •
-                  no •
-                </h2>
-              </div>
+            <div className="scroll-text-item">
+            <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-32 mb-[29px] md:mb-[14px]">
+            soulbound • tokens • no • 
+            soulbound • tokens • no • 
+            soulbound • tokens • no • 
+            soulbound • tokens • no • 
+            soulbound • tokens • no • 
+            </h2>
+            </div>
             </div>
 
             <div className="scrolable-text-box">
-              <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-32 mb-0">
-                  nft • fandoms • metaverse • nft • fandoms • metaverse • nft •
-                  fandoms • metaverse • nft • fandoms • metaverse • nft •
-                  fandoms • metaverse •
-                  nft • fandoms • metaverse • nft • fandoms • metaverse • nft •
-                  fandoms • metaverse • nft • fandoms • metaverse • nft •
-                  fandoms • metaverse •
-                </h2>
-              </div>
+            <div className="scroll-text-item">
+            <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-32 mb-0">
+            nft • fandoms • metaverse • 
+            nft • fandoms • metaverse • 
+            nft • fandoms • metaverse • 
+            nft • fandoms • metaverse • 
+            nft • fandoms • metaverse • 
+            </h2>
             </div>
+            </div>
+
+            
           </div>
         </div>
-      </section>
+
+        <div className="main-test-modal-bg absolute top-0 left-0 w-full max-w-[1820px] right-0 ml-auto mr-auto">
+            <Image
+              src="/images/banner-bg.png"
+              alt="superfandom banner-bg"
+              className="banner-bg "
+              width="1820px"
+              height="444px"
+            />
+            <div className="scrolable-bg-shape bg-shape absolute top-0 left-0 w-full sm:h-full">
+          <img
+            src="/images/how-it-work-bg.png"
+            alt="superfandom bg-shape"
+            className="bg-shape-image w-full h-full"
+            width="1920px"
+            height="556px"
+          />
+          </div>
+          </div>
+            </section>
+
     </>
   );
 };
