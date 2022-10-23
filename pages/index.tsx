@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+// import styles from '../styles/Home.module.css';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
 import FaqPage from '../components/FAQ/Faqt';

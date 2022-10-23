@@ -15,10 +15,8 @@ export interface IBanner {
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   const [scroll, setscroll] = useState(false);
   const scrollHandler = () => {
-      if (window.scrollY >= 10) {
+      if (!scroll) {
           setscroll(true);
-      } else {
-          setscroll(false);
       }
   }
   window.addEventListener("scroll", scrollHandler);

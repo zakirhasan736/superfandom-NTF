@@ -37,7 +37,7 @@ const Explore: NextPage<any> = ({}) => {
           <div className="explore-content-wrapper pt-12 pb-[51px] sm:pb-8 px-0 bg-primary md:bg-secondary sm:rounded-0">
             <div className="explore-slidebox mb-12">
               <ul className="slides-image-box flex no-wrap gap-5">
-                <li className="slide-image-items">
+                <li className="slide-image-items w-[382px] h-[520px]">
                   <Image
                     src="/images/card-img-7.png"
                     alt="superfandom slide-image"
@@ -46,7 +46,7 @@ const Explore: NextPage<any> = ({}) => {
                     height="520px"
                   />
                 </li>
-                <li className="slide-image-items">
+                <li className="slide-image-items w-[382px] h-[520px]">
                   <Image
                     src="/images/card-img-13.png"
                     alt="superfandom slide-image"
@@ -55,7 +55,7 @@ const Explore: NextPage<any> = ({}) => {
                     height="520px"
                   />
                 </li>
-                <li className="slide-image-items">
+                <li className="slide-image-items w-[382px] h-[520px]">
                   <Image
                     src="/images/card-img-13.png"
                     alt="superfandom slide-image"
@@ -64,7 +64,7 @@ const Explore: NextPage<any> = ({}) => {
                     height="520px"
                   />
                 </li>
-                <li className="slide-image-items">
+                <li className="slide-image-items w-[382px] h-[520px]">
                   <Image
                     src="/images/card-img-13.png"
                     alt="superfandom slide-image"
@@ -73,7 +73,7 @@ const Explore: NextPage<any> = ({}) => {
                     height="520px"
                   />
                 </li>
-                <li className="slide-image-items">
+                <li className="slide-image-items w-[382px] h-[520px]">
                   <Image
                     src="/images/card-img-18.png"
                     alt="superfandom slide-image"
@@ -82,7 +82,7 @@ const Explore: NextPage<any> = ({}) => {
                     height="520px"
                   />
                 </li>
-                <li className="slide-image-items">
+                <li className="slide-image-items w-[382px] h-[520px]">
                   <Image
                     src="/images/card-img-4.png"
                     alt="superfandom slide-image"
@@ -91,7 +91,7 @@ const Explore: NextPage<any> = ({}) => {
                     height="520px"
                   />
                 </li>
-                <li className="slide-image-items">
+                <li className="slide-image-items w-[382px] h-[520px]">
                   <Image
                     src="/images/card-img-5.png"
                     alt="superfandom slide-image"

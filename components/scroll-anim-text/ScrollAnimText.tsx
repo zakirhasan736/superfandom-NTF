@@ -1,10 +1,7 @@
 import { NextPage } from 'next';
-import React, { useEffect } from 'react';
-import Image from 'next/image';
-import  gsap  from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { isAbsolute } from 'path';
-gsap.registerPlugin(ScrollTrigger);
+import React from 'react';
+
+
 
 const ScrollAnimText: NextPage<any> = ({}) => {
 
