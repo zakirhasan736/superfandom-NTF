@@ -49,9 +49,9 @@ const HowItWork: NextPage<any> = () => {
         ScrollTrigger.create({
           trigger: ".prallex2",
           pin: true,
-          scrub: true,
+          scrub: 1.5,
           start: "center center",
-          end: "+=800"
+          end: "+=400"
         });
       },
       "(max-width:1680px)": function () {
