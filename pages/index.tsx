@@ -6,9 +6,7 @@ import FaqPage from '../components/FAQ/Faqt';
 import Explore from '../components/explore-and-collect/Explore';
 import HowItWork from '../components/how-it-work/HowItWork';
 import TextImgSiniped from '../components/text-and-img-siniped/TextImgSiniped';
-// import ScrollAnimText from '../components/scroll-anim-text/ScrollAnimText';
 import Banner from '../components/banner/Banner';
-import CSToken from './../components/c-s-token/CSToken';
 
 const Home: NextPageWithLayout = () => {
 
@@ -20,12 +18,10 @@ const Home: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner title={''} subtitle={''} desc={''} />
-      {/* <ScrollAnimText /> */}
       <TextImgSiniped />
       <HowItWork />
       <Explore />
       <FaqPage />
-      <CSToken/>
     </div>
   );
 };
