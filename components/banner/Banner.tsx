@@ -124,8 +124,9 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             scrollTrigger: { 
               trigger: section, 
               scrub: 0.5 ,
-              start: 'top 300px',
-              end: 'bottom top',
+              start: 'top -=570',
+              markers: true,
+             end: '+=2000',
             },
             
           });
