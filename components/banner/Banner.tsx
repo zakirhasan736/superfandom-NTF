@@ -126,13 +126,11 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               trigger: section, 
               scrub: 0.5 ,
               start: 'top -=570',
-              markers: true,
              end: '+=2000',
             },
             
           });
         });
-
 
       },
       "(max-width:799px)": function(){
