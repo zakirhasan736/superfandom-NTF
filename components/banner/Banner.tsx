@@ -22,6 +22,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   window.addEventListener("scroll", scrollHandler);
 
   useEffect(() => {
+    
     gsap.to('.modal-img-item.two', {
       scrollTrigger: {
         trigger: '.banner-modal-img.two',
@@ -121,8 +122,9 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             scrollTrigger: { 
               trigger: section, 
               scrub: 0.5 ,
-              start: 'top 300px',
-              end: 'bottom top',
+              start: 'top -=570',
+              markers: true,
+             end: '+=2000',
             },
             
           });

@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout || ((page) => page);
 
   return (
-    <>
+    <> 
       {pageLoaded ?
         getLayout(<Component {...pageProps} />) :
         <LoadingScreen loaded={pageLoaded}/>}

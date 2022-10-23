@@ -8,7 +8,9 @@ type accordion = {
   
 export const Accordion = ({ id, question, answer }:accordion) => {
     const [isActive, setIsActive] = useState(false);
+    
     return (
+        <>
         <div
             className="pb-[34px] accordion-items border-b border-solid border-primary md:pb-4 md:pt-4 "
             id={`faqs-accordion-${id}-wrapper`}
@@ -32,5 +34,6 @@ export const Accordion = ({ id, question, answer }:accordion) => {
                 ></div>
             )}
         </div>
+        </>
     );
 };
