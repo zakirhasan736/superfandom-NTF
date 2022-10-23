@@ -22,6 +22,7 @@ const HowItWork: NextPage<any> = ({}) => {
         duration: 10,
         scrollTrigger: { 
           trigger: section, 
+          markers: true,
           scrub: 0.5 
         },
         y: 0,
