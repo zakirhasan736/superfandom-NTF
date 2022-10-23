@@ -812,7 +812,7 @@ li.text-img-siniped-info-list.active .siniped-text-box {
   transition: color 650ms ease 0s;
 
 }
-.box-container {
+/* .box-container {
   top: 50vh;
   position: relative;
   display: flex;
@@ -833,4 +833,4 @@ li.text-img-siniped-info-list.active .siniped-text-box {
   height: 100px;
   width: 15%;
   margin: 10px;
-}
+} */
