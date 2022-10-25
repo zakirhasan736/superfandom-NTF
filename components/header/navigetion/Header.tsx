@@ -2,14 +2,17 @@ import React, { useState } from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { HiMenu , HiX } from "react-icons/hi";
-export interface IHeader extends React.ComponentPropsWithoutRef<'header'> {}
+export interface IHeader extends React.ComponentPropsWithoutRef<'header'> {
+  headerNext:boolean;
+}
 
-const Header: React.FC<IHeader> = ({ className, ...headerProps }) => {
+const Header: React.FC<IHeader> = ({ className,headerNext, ...headerProps }) => {
   const [open, setOpen] = useState(false)
+  console.log(headerNext)
   return (
     <header
       {...headerProps}
-      className={`w-full flex flex-row justify-between bg-primary absolute top-0 left-0 z-[9999] pt-[50px] sm:pt-8 ${className}`}
+      className={`${headerNext ? "bg-white":"bg-primary"} w-full flex flex-row justify-between bg-primary absolute top-0 left-0 z-[9999] pt-[50px] sm:pt-8 ${className}`}
     >
       <div className="container lg:container md:container sm:container 2xl:px-12 xl:px-12 lg:px-8  sm:px-4 md:px-0">
       <nav className='navbar'>
@@ -17,14 +20,13 @@ const Header: React.FC<IHeader> = ({ className, ...headerProps }) => {
                     <div className="navbar-wrapper md:flex md:items-center md:justify-between relative md:px-8 sm:px-3 z-[99999] bg-primary">
                         <div className="nav-logo w-[222px] h-[66px] sm:w-[170px] sm:h-auto" >
                           <div className="brand-logo-box">
-                          <Image src="/images/brand-logo.png"
+                          <Image src={`${headerNext ? "/images/brand-logo.png":"/images/brand-logo.png"}`}
                              alt="superfandom logo"
                              className="brand-image"
                              width="222px"
                              height="66px"
                               />
                           </div>
-                            
                         </div>
                         <div className="hamgur-bar hidden md:block text-secondary text-[40px]" onClick={() => setOpen(!open)}>
                             <span>{open ? <HiX /> : <HiMenu />}</span> 
