@@ -1,7 +1,6 @@
 import React from "react"
 import type { AppProps } from 'next/app';
 import '../styles/globals.css';
-// import 'fonts/stylesheet.css'; 
 import { NextPageWithLayout } from './page';
 import LoadingScreen from './../components/pre-loader/LoadingScreen';
 

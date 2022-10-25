@@ -2,26 +2,13 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { NextPage } from 'next';
-import gsap, { Power2 } from 'gsap';
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ActiveDrop: NextPage<any> = () => {
 
-  useEffect(() => {
-
-  //   gsap.to('.explore-section', {
-  //     scrollTrigger: {
-  //       trigger: ".explore-section",
-  //       scrub: true,
-  //       start: "top 0px",
-  //       end: "bottom -250px",
-  //       toggleClass: "active"
-  //     }
-  // });
-
-}, []);
   return (
     <>
       <section className="active-drop-section w-full bg-primary pt-[142px] laptop-m:pt-[65px]  md:pt-8 pb-16 px-0 relative z-10  overflow-hidden">

@@ -1,27 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { NextPage } from 'next';
-import gsap, { Power2 } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Exclusive: NextPage<any> = () => {
 
-  useEffect(() => {
-
-  //   gsap.to('.explore-section', {
-  //     scrollTrigger: {
-  //       trigger: ".explore-section",
-  //       scrub: true,
-  //       start: "top 0px",
-  //       end: "bottom -250px",
-  //       toggleClass: "active"
-  //     }
-  // });
-
-}, []);
   return (
     <>
       <section className="exclusive-section w-full bg-secondary pt-[92px] laptop-m:pt-[65px]  md:pt-8 pb-0 px-0 relative z-10  overflow-hidden">

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Footer from '../../footer/Footer';
-import Header from '../../header/navigetion/Header';
+import Navigation from '../../header/navigation/Navigation';
 
 export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {
   justify?: 'items-center' | 'items-start';
@@ -21,7 +21,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div {...divProps} className={`w-full bg-primary`}>
-        <Header headerNext={headerNext}/>
+        <Navigation headerNext={headerNext}/>
         <main className="w-full main-wrapper--box">{children}</main>
         <div className="m-auto" />
         <Footer />
