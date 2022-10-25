@@ -1,8 +1,9 @@
 import { NextPage } from 'next';
-import React from 'react';
+import React,{useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 const ProductDetails2: NextPage<any> = () => {
+  const [count,setCount] = useState(1)
   return (
     <>
       <section className="product-details-section relative w-full px-0 bg-secondary pt-44 overflow-hidden">
@@ -72,9 +73,9 @@ const ProductDetails2: NextPage<any> = () => {
                         </h3>
                         <div className="product-price-btn-box text-center flex sm:flex sm:flex-col sm:px-4">
                               <div className="update-product flex items-center justify-between p-5 font-primary uppercase font-normal text-fig-15 text-primary  rounded-[40px] bg-transparent border border-solid border-primary transition duration-150 ease-out md:border-primary max-w-[180px] w-full md:text-primary mr-5">
-                                <div className="inc-box cursor-pointer"><img src="/images/minus.png" alt="icon" /></div>
-                                <div className="upd-numb font-primary font-normal text-fig-32 text-center text-primary">1</div>
-                                <div className="dec-box cursor-pointer"><img src="/images/plus.png" alt="icon" /></div>
+                                <div onClick={()=>count > 1 && setCount(prev=>prev-1)} className="inc-box cursor-pointer"><img src="/images/minus.png" alt="icon" /></div>
+                                <div className="upd-numb font-primary font-normal text-fig-32 text-center text-primary">{count}</div>
+                                <div onClick={()=>setCount(prev=>prev+1)} className="dec-box cursor-pointer"><img src="/images/plus.png" alt="icon" /></div>
                               </div>
                           <Link href="/">
                             <a className="p-5 font-primary uppercase font-normal text-fig-15 text-secondary sm:mb-5 sm:mr-0 rounded-[40px] bg-primary border md:hover:text-secondary border-solid border-primary mr-5 hover:bg-transparent hover:text-primary transition max-w-[180px] w-full duration-150 ease-out md:bg-secondary md:hover:text-secondary md:hover:border-primary">
