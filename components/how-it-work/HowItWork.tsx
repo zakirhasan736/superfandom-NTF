@@ -13,7 +13,6 @@ gsap.registerPlugin(ScrollTrigger);
 const HowItWork: NextPage<any> = () => {
   useEffect(() => {
     document.body.style.overflow = 'auto';
-    // document.scrollingElement.scrollTo(0, 0);
     gsap.utils.toArray('.scrolable-text-box.how-it-work-title').forEach((section:any, index) => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];

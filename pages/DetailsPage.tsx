@@ -23,5 +23,5 @@ const DetailsPage: NextPageWithLayout = () => {
 export default DetailsPage;
 
 DetailsPage.getLayout = (page) => {
-  return <PrimaryLayout>{page}</PrimaryLayout>;
+  return <PrimaryLayout headerNext={true}>{page}</PrimaryLayout>;
 };
