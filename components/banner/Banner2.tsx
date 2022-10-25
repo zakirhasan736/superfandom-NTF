@@ -4,6 +4,7 @@ import Link from 'next/link';
 import gsap, { Power3 } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 // import ScrollAnimText from '../scroll-anim-text/ScrollAnimText';
+import { IBanner } from './Banner4';
 gsap.registerPlugin(ScrollTrigger);
 
 const Banner2: React.FC<IBanner> = ({ title, subtitle, desc }) => {
@@ -68,7 +69,6 @@ const Banner2: React.FC<IBanner> = ({ title, subtitle, desc }) => {
 
     // scroll text
     document.body.style.overflow = 'auto';
-    document.scrollingElement.scrollTo(0, 0);
     gsap.utils.toArray('.scrolable-text-box').forEach((section: any, index) => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] =

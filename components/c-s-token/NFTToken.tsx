@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Token from '../collect-soulbound-tokens/Token';
+import { IToken } from './../collect-soulbound-tokens/Token';
 
 const NFTToken = () => {
   const [filterText, setFilter] = useState<string>('all');
@@ -129,7 +130,7 @@ const NFTToken = () => {
 
           <div className="collection-tokens-box">
             <div className="content_wrapper flex items-center flex-wrap gap-5 mb-16">
-              {tokenItem.map(({ id, photo_name, categories_name }) => (
+              {tokenItem.map(({ id, photo_name, categories_name }: IToken) => (
                 <Token
                   key={id}
                   id={id}
