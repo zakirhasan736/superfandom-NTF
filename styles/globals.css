@@ -836,3 +836,28 @@ li.text-img-siniped-info-list.active .siniped-text-box {
   background-size: cover;
   width: 100%;
 }
+
+@media screen and (max-width:991px) {
+    header.white-varient-navbar  .hamgur-bar{
+      color: #000000;
+    }
+    header.white-varient-navbar  .navbar-cont-box.navbar-box-active{
+      background-color: #ffffff !important;
+    }
+    header.white-varient-navbar .navbar-cont-box .nav-items  li{
+    border-top:1px solid #000000;
+    border-bottom:1px solid #000000;
+      }
+  header.white-varient-navbar  .navbar-btn-items li:first-child a{color: #fff;}
+
+}
+header.white-varient-navbar .navbar-cont-box .nav-items  li a{
+  color: #000000 !important;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 21.36px;
+  }
+  header.white-varient-navbar .navbar-btn-items li:not(:first-child){
+    border: 1px solid #000000;
+  }
+  header.white-varient-navbar  .navbar-btn-items li a{color: #000000;}

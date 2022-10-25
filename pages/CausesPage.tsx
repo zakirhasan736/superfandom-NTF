@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
-import FaqPage from '../components/FAQ/Faqt';
 import Banner2 from '../components/banner/Banner2';
+import FaqPage from '../components/FAQ/Faq';
 import ActiveDrop from '../components/ActiveDrop/ActiveDrop';
 import CSToken from '../components/c-s-token/CSToken';
 import HowItWork2 from '../components/how-it-work/HowItWork2';
+
 const CausesPage: NextPageWithLayout = () => {
 
   return (
@@ -28,5 +29,5 @@ const CausesPage: NextPageWithLayout = () => {
 export default CausesPage;
 
 CausesPage.getLayout = (page) => {
-  return <PrimaryLayout>{page}</PrimaryLayout>;
+  return <PrimaryLayout headerNext={false}>{page}</PrimaryLayout>;
 };

@@ -1,8 +1,11 @@
 import { NextPage } from 'next';
-import React from 'react';
+import React,{useState} from 'react';
+import { IoIosArrowDown } from 'react-icons/io';
+
 import Image from 'next/image';
 import Link from 'next/link';
 const ProductDetails: NextPage<any> = () => {
+  const [more,setMore] = useState(false)
   return (
     <>
       <section className="product-details-section relative w-full px-0 bg-secondary pt-44 overflow-hidden">
@@ -87,46 +90,77 @@ const ProductDetails: NextPage<any> = () => {
                   </div>
                 </div>
 
-                <div className="product-cont-box desc-box bg-lightgray px-10 py-10 mb-0 rounded-[20px] w-full">
-                  <h3 className="product-cont-title text-primary text-left text-fig-24 font-primary font-normal mb-0 pb-4 border-b border-secondary">
-                    Offers
-                  </h3>
+                <div className={`${more ? "h-100 transition-all duration-300 ease-in-out" :"h-20 transition-all duration-300 ease-in-out"} product-cont-box desc-box bg-lightgray px-10 py-10 mb-0 rounded-[20px] w-full overflow-hidden transition-all duration-300 ease-in-out`}>
+                  <div className="product-cont-title text-primary text-left text-fig-24 font-primary font-normal mb-0 pb-4 border-b border-secondary flex items-center justify-between">
+                    <h3>Offers</h3>
+                    <div onClick={()=>setMore(!more)} className={`${more ? "rotate-360":"rotate-90"} cursor-pointer`}>
+                    <IoIosArrowDown/>
+                  </div>
+                  </div>
                   <div className="offer-list-box">
                     <div className="offer-details mb-4">
-                       <table className="offer-table w-full">
+                      <table className="offer-table w-full">
                         <thead>
-                        <tr>
-                          <th className='border-b uppercase border-secondary font-primary font-normal text-darkgray text-fig-15 text-left py-2'>Value</th>
-                          <th className='border-b uppercase border-secondary font-primary font-normal text-darkgray text-fig-15 text-left py-2'>Expires in</th>
-                          <th className='border-b uppercase border-secondary font-primary font-normal text-darkgray text-fig-15 text-left py-2'>From</th>
-                        </tr>
+                          <tr>
+                            <th className="border-b uppercase border-secondary font-primary font-normal text-darkgray text-fig-15 text-left py-2">
+                              Value
+                            </th>
+                            <th className="border-b uppercase border-secondary font-primary font-normal text-darkgray text-fig-15 text-left py-2">
+                              Expires in
+                            </th>
+                            <th className="border-b uppercase border-secondary font-primary font-normal text-darkgray text-fig-15 text-left py-2">
+                              From
+                            </th>
+                          </tr>
                         </thead>
-                    <tbody>
-                       <tr>
-                          <td className='border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2'>82,377 STX</td>
-                          <td className='border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2'>2 hours</td>
-                          <td className='border-b border-secondary font-primary font-normal text-skyblue text-fig-15 text-left py-2'>boredorangutan</td>
-                        </tr>
-                        <tr>
-                          <td className='border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2'>54,918 STX</td>
-                          <td className='border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2'>3 days</td>
-                          <td className='border-b border-secondary font-primary font-normal text-skyblue text-fig-15 text-left py-2'>mhb11</td>
-                        </tr>
-                        <tr>
-                          <td className='border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2'>24,614 STX</td>
-                          <td className='border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2'>48 mins</td>
-                          <td className='border-b border-secondary font-primary font-normal text-skyblue text-fig-15 text-left py-2'>crypto_phunk</td>
-                        </tr>
-                        <tr>
-                          <td className='border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2'>2,746 STX</td>
-                          <td className='border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2'>3 weeks</td>
-                          <td className='font-primary font-normal text-skyblue text-fig-15 text-left py-2'>randomd00d</td>
-                        </tr>
-                    </tbody>
-                       
-                       </table>
+                        <tbody>
+                          <tr>
+                            <td className="border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2">
+                              82,377 STX
+                            </td>
+                            <td className="border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2">
+                              2 hours
+                            </td>
+                            <td className="border-b border-secondary font-primary font-normal text-skyblue text-fig-15 text-left py-2">
+                              boredorangutan
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2">
+                              54,918 STX
+                            </td>
+                            <td className="border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2">
+                              3 days
+                            </td>
+                            <td className="border-b border-secondary font-primary font-normal text-skyblue text-fig-15 text-left py-2">
+                              mhb11
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2">
+                              24,614 STX
+                            </td>
+                            <td className="border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2">
+                              48 mins
+                            </td>
+                            <td className="border-b border-secondary font-primary font-normal text-skyblue text-fig-15 text-left py-2">
+                              crypto_phunk
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2">
+                              2,746 STX
+                            </td>
+                            <td className="border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2">
+                              3 weeks
+                            </td>
+                            <td className="font-primary font-normal text-skyblue text-fig-15 text-left py-2">
+                              randomd00d
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
-                  
                   </div>
                 </div>
               </div>

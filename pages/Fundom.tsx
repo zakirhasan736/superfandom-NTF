@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
-import FaqPage from '../components/FAQ/Faqt';
+import FaqPage from '../components/FAQ/Faq';
 import ActiveDrop from '../components/ActiveDrop/ActiveDrop';
 import NFTToken from '../components/c-s-token/NFTToken';
 import HowItWork3 from '../components/how-it-work/HowItWork3';
@@ -29,5 +29,5 @@ const Fundom: NextPageWithLayout = () => {
 export default Fundom;
 
 Fundom.getLayout = (page) => {
-  return <PrimaryLayout>{page}</PrimaryLayout>;
+  return <PrimaryLayout headerNext={false}>{page}</PrimaryLayout>;
 };

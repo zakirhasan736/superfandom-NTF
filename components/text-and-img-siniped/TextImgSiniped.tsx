@@ -9,8 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 const TextImgSiniped: NextPage<any> = () => {
   useEffect(() => {
     document.body.style.overflow = 'auto';
-    // document.scrollingElement.scrollTo(0, 0);
-
     gsap.utils.toArray('.scroll-image-box').forEach((section:any, index) => {
       const w = section.querySelector('ul.anim-card-scroll');
       const [y, yEnd] =
