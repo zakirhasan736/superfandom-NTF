@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Token from '../collect-soulbound-tokens/Token';
 
-const CSToken = () => {
+const NFTToken = () => {
   const [filterText, setFilter] = useState<string>('all');
   const [tokenItem, setTokenItem] = useState<any>([]);
   let data = [
@@ -82,20 +82,20 @@ const CSToken = () => {
         <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="section-titlebox text-animetion mb-8 md:mb-4">
             <h2 className="section-title title_animation max-w-[970px] font-primary font-normal text-fig-3x text-left text-primary laptop-x:text-6xl md:text-fig-40 uppercase">
-            collect soulbound tokens
+            collections
             </h2>
           </div>
 
           <div className="collection-wrapper-box">
             <div className="collection-tabs-items mb-8">
-
+              
               <button
                 onClick={() => setFilter('all')}
                 className={`border-primary ${
                   filterText === 'all' && 'bg-primary text-secondary'
                 } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
-                all nft tokens
+                all soulbound tokens
               </button>
 
               <button
@@ -113,7 +113,7 @@ const CSToken = () => {
                   filterText === 'd_wot_b' && 'bg-primary text-secondary'
                 } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
-                doctors without borders
+               doctors without borders
               </button>
 
               <button
@@ -154,4 +154,4 @@ const CSToken = () => {
   );
 };
 
-export default CSToken;
+export default NFTToken;

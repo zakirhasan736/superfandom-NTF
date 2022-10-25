@@ -48,7 +48,7 @@ const HowItWork: NextPage<any> = () => {
       "(min-width:1681px)": function () {
         ScrollTrigger.create({
           trigger: ".prallex2",
-          pin: true,
+          // pin: true,
           scrub: 1.5,
           start: "center center",
           end: "+=400"
@@ -57,16 +57,16 @@ const HowItWork: NextPage<any> = () => {
       "(max-width:1680px)": function () {
         ScrollTrigger.create({
           trigger: ".prallex2",
-          pin: true,
+          // pin: true,
           scrub: true,
           start: "center center",
-          end: "+=600"
+          end: "+=400"
         });
       },
       "(max-width:1280px)": function () {
         ScrollTrigger.create({
           trigger: ".prallex2",
-          pin: true,
+          // pin: true,
           scrub: true,
           start: "top top",
           end: "top"
@@ -132,11 +132,11 @@ const HowItWork: NextPage<any> = () => {
             <div className="scrolable-text-box how-it-work-title">
               <div className="scroll-text-item">
                 <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32">
-                  • how it work • how it work
-                  • how it work • how it work
-                  • how it work • how it work
-                  • how it work • how it work
-                  • how it work • how it work
+                  • how it works • how it works
+                  • how it works • how it works
+                  • how it works • how it works
+                  • how it works • how it works
+                  • how it works • how it works
                 </h2>
               </div>
             </div>

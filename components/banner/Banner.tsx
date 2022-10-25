@@ -22,6 +22,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   window.addEventListener('scroll', scrollHandler);
 
   useEffect(() => {
+    
     // modal text varying 
     gsap.to('.modal-img-item.two', {
       scrollTrigger: {
@@ -71,6 +72,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         },
       }
     );
+
     // animated title
     const textAnim = gsap.utils.toArray(
       '.banner_title_animation > span > span'
@@ -95,6 +97,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         },
       }
     );
+
     // scroll text
     document.body.style.overflow = 'auto';
     document.scrollingElement.scrollTo(0, 0);
@@ -114,11 +117,12 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             scrub: 0.5,
             start: 'top +=850',
             markers: true,
-            end: '+=2000',
+            end: '200%',
           },
         }
       );
     });
+
   }, [scroll]);
 
   return (

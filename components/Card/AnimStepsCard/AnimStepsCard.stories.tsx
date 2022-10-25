@@ -1,23 +1,23 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Token, { IToken } from './Token';
-import { mockTokenProps } from './Token.mocks';
+import AnimStepsCard, { IAnimStepsCard } from './AnimStepsCard';
+import { mockAnimStepsCardProps } from './AnimStepsCard.mocks';
 
 
 export default {
-  title: 'Collections Token/Token',
-  component: Token,
+  title: 'Cards/AnimStepsCard',
+  component: AnimStepsCard,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof Token>;
+} as ComponentMeta<typeof AnimStepsCard>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Token> = (args) => (
-  <Token {...args} />
+const Template: ComponentStory<typeof AnimStepsCard> = (args) => (
+  <AnimStepsCard {...args} />
 );
 
 export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 
 Base.args = {
-  ...mockTokenProps.base,
-} as IToken;
+  ...mockAnimStepsCardProps.base,
+} as IAnimStepsCard;

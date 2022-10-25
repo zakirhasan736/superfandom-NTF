@@ -41,7 +41,9 @@ module.exports = {
         'primary': '#000000',
         'secondary': '#ffffff',
         'darkgray': '#878787', 
+        'lightgray': '#E6E6E6', 
         'neon': '#6BD6D6',
+        'skyblue': '#40A3FF',
       },
       fontSize: {
         'fig-xs': ['10px', '14.24px'],

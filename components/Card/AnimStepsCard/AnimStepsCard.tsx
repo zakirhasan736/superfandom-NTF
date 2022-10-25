@@ -1,13 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 
-export interface IToken {
+export interface IAnimStepsCard {
   id: number;
   categories_name: string;
   photo_name: string;
 }
 
-const Token: React.FC<IToken> = ({id,photo_name}) => {
+const AnimStepsCard: React.FC<IAnimStepsCard> = ({id,photo_name}) => {
   return (
     <div key={id}>
       <Image
@@ -21,4 +21,4 @@ const Token: React.FC<IToken> = ({id,photo_name}) => {
   );
 };
 
-export default Token;
+export default AnimStepsCard;
