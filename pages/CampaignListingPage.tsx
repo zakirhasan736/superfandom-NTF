@@ -2,7 +2,7 @@ import Head from 'next/head';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
 import Exclusive from '../components/Exclusive/Exclusive';
-import TokenCollection from '../components/c-s-token/TokensCollection';
+import CSToken from '../components/c-s-token/CSToken';
 import CampaignBanner from '../components/banner/CampaignBanner';
 
 const CampaignListing: NextPageWithLayout = () => {
@@ -16,7 +16,7 @@ const CampaignListing: NextPageWithLayout = () => {
       </Head>
       <CampaignBanner title={''} subtitle={''} desc={''} />
       <Exclusive />
-      <TokenCollection />
+      <CSToken pageName={"campaign"}/>
     </div>
   );
 };

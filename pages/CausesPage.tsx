@@ -5,7 +5,7 @@ import CausesBanner from '../components/banner/CausesBanner';
 import FaqPage from '../components/FAQ/Faq';
 import ActiveDrop from '../components/ActiveDrop/ActiveDrop';
 import CSToken from '../components/c-s-token/CSToken';
-import HowItWork2 from '../components/how-it-work/HowItWork2';
+import HowItWork from '../components/how-it-work/HowItWork';
 
 const CausesPage: NextPageWithLayout = () => {
 
@@ -18,10 +18,9 @@ const CausesPage: NextPageWithLayout = () => {
       </Head>
       <CausesBanner title={''} subtitle={''} desc={''} />
        <ActiveDrop />
-       <CSToken />
-       <HowItWork2 />
+       <CSToken pageName={"causes"}/>
+      <HowItWork card1={false} card2={true} pageName={"causes"} />
       <FaqPage />
-      
     </div>
   );
 };
