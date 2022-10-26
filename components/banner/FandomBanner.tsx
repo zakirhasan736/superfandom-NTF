@@ -6,13 +6,13 @@ import Lottie from 'react-lottie';
 import Animation1 from '../../public/lottie_files/01.json';
 gsap.registerPlugin(ScrollTrigger);
 
-export interface IFundomBanner {
+export interface IFandomBanner {
   title: string;
   subtitle: string;
   desc: string;
 }
 
-const FundomBanner: React.FC<IFundomBanner> = ({ title, subtitle, desc }) => {
+const FandomBanner: React.FC<IFandomBanner> = () => {
  
   useEffect(() => {
     
@@ -209,4 +209,4 @@ const FundomBanner: React.FC<IFundomBanner> = ({ title, subtitle, desc }) => {
   );
 };
 
-export default FundomBanner;
+export default FandomBanner;

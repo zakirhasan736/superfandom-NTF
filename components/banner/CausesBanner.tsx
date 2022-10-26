@@ -3,9 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-// import ScrollAnimText from '../scroll-anim-text/ScrollAnimText';
-import { IBanner } from './Banner4';
 gsap.registerPlugin(ScrollTrigger);
+
 export interface ICausesBanner {
   title: string;
   subtitle: string;
