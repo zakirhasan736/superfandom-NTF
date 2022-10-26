@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Token from '../collect-soulbound-tokens/Token';
 import { IToken } from '../collect-soulbound-tokens/Token';
 
-const CSToken = () => {
+const CSToken = ({pageName}:any) => {
   const [filterText, setFilter] = useState<string>('all');
   const [tokenItem, setTokenItem] = useState<any>([]);
   let data = [
@@ -82,7 +82,11 @@ const CSToken = () => {
         <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="section-titlebox text-animetion mb-8 md:mb-4">
             <h2 className="section-title title_animation max-w-[970px] font-primary font-normal text-fig-3x text-left text-primary laptop-x:text-6xl md:text-fig-40 uppercase">
-              collect soulbound tokens
+              {
+              pageName==="causes" && "collect soulbound tokens"||
+              pageName==="fandom" && "collections"||
+              pageName==="campaign" && "collections"
+              }
             </h2>
           </div>
 
@@ -94,38 +98,51 @@ const CSToken = () => {
                   filterText === 'all' && 'bg-primary text-secondary'
                 } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
-                all nft tokens
+                 {
+              pageName==="causes" && "all nft tokens"||
+              pageName==="fandom" && "all soulbound tokens"||
+              pageName==="campaign" && "all collections"
+              }
               </button>
-
               <button
                 onClick={() => setFilter('p_food')}
                 className={`border-primary ${
                   filterText === 'p_food' && 'bg-primary text-secondary'
                 } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
-                pakistani food
+                
+                {
+              pageName==="causes" && "pakistani food"||
+              pageName==="fandom" && "pakistani food"||
+              pageName==="campaign" && "pfps"
+              }
               </button>
-
               <button
                 onClick={() => setFilter('d_wot_b')}
                 className={`border-primary ${
                   filterText === 'd_wot_b' && 'bg-primary text-secondary'
                 } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
-                doctors without borders
+                
+                {
+              pageName==="causes" && "doctors without borders"||
+              pageName==="fandom" && "doctors without borders"||
+              pageName==="campaign" && "editions"
+              }
               </button>
-
+             {
+             (pageName==="causes" || pageName==="fandom") &&
               <button
-                onClick={() => setFilter('lorem')}
-                className={`border-primary ${
-                  filterText === 'lorem' && 'bg-primary text-secondary'
-                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
-              >
-                lorem ipsum
-              </button>
+              onClick={() => setFilter('lorem')}
+              className={`border-primary ${
+                filterText === 'lorem' && 'bg-primary text-secondary'
+              } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+            >
+              lorem ipsum
+            </button>
+             }
             </div>
           </div>
-
           <div className="collection-tokens-box">
             <div className="content_wrapper flex items-center flex-wrap gap-5 mb-16">
               {tokenItem.map(({ id, photo_name, categories_name }: IToken) => (
@@ -137,7 +154,6 @@ const CSToken = () => {
                 />
               ))}
             </div>
-
             <div className="collection-btn-box text-center flex justify-center sm:flex sm:flex-col sm:px-4">
               <Link href="/">
                 <a className="p-5 max-w-[180px] w-full font-primary uppercase font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out md:border-primary md:text-primary md:hover:bg-primary md:hover:text-secondary">

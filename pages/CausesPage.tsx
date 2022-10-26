@@ -18,10 +18,9 @@ const CausesPage: NextPageWithLayout = () => {
       </Head>
       <CausesBanner />
        <ActiveDrop />
-       <CSToken />
-       <HowItWork2 />
+       <CSToken pageName={"causes"}/>
+      <HowItWork2 pageName={"causes"} />
       <FaqPage />
-      
     </div>
   );
 };

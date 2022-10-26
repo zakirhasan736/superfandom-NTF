@@ -3,8 +3,8 @@ import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
 import FaqPage from '../components/FAQ/Faq';
 import ActiveDrop from '../components/ActiveDrop/ActiveDrop';
-import NFTToken from '../components/c-s-token/NFTToken';
-import HowItWork3 from '../components/how-it-work/HowItWork3';
+import CSToken from '../components/c-s-token/CSToken';
+import HowItWork2 from '../components/how-it-work/HowItWork2';
 import FandomBanner from '../components/banner/FandomBanner';
 
 const Fundom: NextPageWithLayout = () => {
@@ -18,8 +18,8 @@ const Fundom: NextPageWithLayout = () => {
       </Head>
       <FandomBanner  />
       <ActiveDrop />
-      <NFTToken />
-      <HowItWork3 />
+      <CSToken pageName={"fandom"}/>
+      <HowItWork2  pageName={"fandom"} />
       <FaqPage />
     </div>
   );

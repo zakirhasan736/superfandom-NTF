@@ -1,11 +1,13 @@
+import { NextPage } from 'next';
 import React, { useEffect } from 'react';
-import StepCard from '../Card/StepCards/StepCard';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import StepCard from '../Card/StepCards/StepCard';
+
 gsap.registerPlugin(ScrollTrigger);
 
 
-const HowItWork2 = () => {
+const HowItWork2: NextPage<any> = ({pageName}) => {
   let StepCadItems = [
     {
       id: 1,
@@ -24,7 +26,7 @@ const HowItWork2 = () => {
       photo_name: 'number3.png',
       title: 'increase reputation',
       desc: 'Soulbound tokens you own increase your reputation',
-    }
+    },
   ];
 useEffect(() =>{
   document.body.style.overflow = 'auto';
@@ -33,12 +35,11 @@ useEffect(() =>{
     const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
     gsap.fromTo(w, { x, y: 0, }, {
       x: xEnd,
-      ease: 'power3.out',
-      duration: '100s',
+      duration: 10,
       scrollTrigger: {
         trigger: section,
         markers: true,
-        scrub: .01,
+        scrub: 0.5
       },
       y: 0,
     });
@@ -46,11 +47,14 @@ useEffect(() =>{
 })
   return (
     <>
-      <section className="how-it-work-section w-full bg-primary pt-0 pb-0-0 relative z-10  overflow-hidden">
-        <div className="section-title-box relative">
+      <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
+          <div className="section-title-box relative">
           <div className="how-it-work-modal-img min-w-[1920px] w-full h-[660px]">
-            <img
-              src="/images/HowItWork-bg-1.png"
+          <img
+              src={`/images/${
+                (pageName === 'causes' && 'HowItWork-bg-1.png') ||
+                (pageName === 'fandom' && 'how-it-work-bg-2.png')
+              }`}
               alt={'how-it-work-bg-modal-img'}
               className="how-it-work-bg-modal-img h-full w-full"
               width="100%"
@@ -69,8 +73,7 @@ useEffect(() =>{
             </div>
           </div>
         </div>
-
-        <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
+          <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="how-it-work-content-wrapper flex items-center gap-5 bg-primary py-[138px]">
           {StepCadItems.map(({ id, photo_name, title,  desc }) => (
                 <StepCard 

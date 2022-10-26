@@ -18,7 +18,7 @@ const Home: NextPageWithLayout = () => {
       </Head>
       <Banner />
       <TextImgSiniped />
-      <HowItWork />
+      <HowItWork card1={true} card2={false} pageName={"home"} />
       <Explore />
       <FaqPage />
     </div>
