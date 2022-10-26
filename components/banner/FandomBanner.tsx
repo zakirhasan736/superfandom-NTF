@@ -7,9 +7,9 @@ import Animation1 from '../../public/lottie_files/01.json';
 gsap.registerPlugin(ScrollTrigger);
 
 export interface IFandomBanner {
-  title: string;
-  subtitle: string;
-  desc: string;
+  title?: string;
+  subtitle?: string;
+  desc?: string;
 }
 
 const FandomBanner: React.FC<IFandomBanner> = () => {

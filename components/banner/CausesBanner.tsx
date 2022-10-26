@@ -6,9 +6,9 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export interface ICausesBanner {
-  title: string;
-  subtitle: string;
-  desc: string;
+  title?: string;
+  subtitle?: string;
+  desc?: string;
 }
 const CausesBanner: React.FC<ICausesBanner> = ({ title, subtitle, desc }) => {
   const [scroll, setscroll] = useState(false);

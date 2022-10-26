@@ -3,6 +3,8 @@ import StepCard from '../Card/StepCards/StepCard';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+
+
 const HowItWork2 = () => {
   let StepCadItems = [
     {
@@ -31,11 +33,12 @@ useEffect(() =>{
     const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
     gsap.fromTo(w, { x, y: 0, }, {
       x: xEnd,
-      duration: 10,
+      ease: 'power3.out',
+      duration: '100s',
       scrollTrigger: {
         trigger: section,
         markers: true,
-        scrub: 0.5
+        scrub: .01,
       },
       y: 0,
     });

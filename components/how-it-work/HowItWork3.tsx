@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import StepCard from '../Card/StepCards/StepCard';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
 gsap.registerPlugin(ScrollTrigger);
+
 const HowItWork3 = () => {
   let StepCadItems = [
     {
@@ -27,7 +29,7 @@ const HowItWork3 = () => {
   useEffect(() => {
     document.body.style.overflow = 'auto';
     gsap.utils
-      .toArray('.scrolable-text-box.how-it-work-title.three')
+      .toArray('.scrolable-text-box.how-it-work-title.two')
       .forEach((section: any, index) => {
         const w = section.querySelector('.scroll-text-item');
         const [x, xEnd] =
@@ -64,7 +66,7 @@ const HowItWork3 = () => {
             />
           </div>
           <div className="section-titlebox lg:mb-15 sm:mb-5 absolute bottom-4">
-            <div className="scrolable-text-box how-it-work-title three">
+            <div className="scrolable-text-box how-it-work-title two">
               <div className="scroll-text-item">
                 <h2 className="section-title scrollable--title2 font-primary font-normal text-fig-5x text-secondary text-center uppercase md:text-fig-xx sm:text-fig-32">
                   • how it works • how it works • how it works • how it works •

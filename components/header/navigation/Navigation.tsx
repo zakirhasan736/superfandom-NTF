@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { HiMenu, HiX } from 'react-icons/hi';
+
 export interface INavigation extends React.ComponentPropsWithoutRef<'header'> {
   headerNext: boolean;
 }
