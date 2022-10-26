@@ -29,7 +29,7 @@ const HowItWork2: NextPage<any> = ({pageName}) => {
   ];
   useEffect(() => {
     document.body.style.overflow = 'auto';
-    gsap.utils.toArray('.scrolable-text-box.how-it-work-title').forEach((section:any, index) => {
+    gsap.utils.toArray('.scrolable-text-box.how-it-work-title.two').forEach((section:any, index) => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
       gsap.fromTo(w, { x, y: 0, }, {
@@ -47,8 +47,9 @@ const HowItWork2: NextPage<any> = ({pageName}) => {
   return (
     <>
       <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
-        <div className="scrolable-bg-shape absolute top-0 left-0 w-full prallex2">
-        <img
+          <div className="section-title-box relative">
+          <div className="how-it-work-modal-img min-w-[1920px] w-full h-[660px]">
+          <img
               src={`/images/${
                 (pageName === 'causes' && 'HowItWork-bg-1.png') ||
                 (pageName === 'fandom' && 'how-it-work-bg-2.png')
@@ -58,34 +59,31 @@ const HowItWork2: NextPage<any> = ({pageName}) => {
               width="100%"
               height="100%"
             />
-        </div>
-        <div className="how-it-work-wrapper pt-[60px] pb-[124px] w-full z-10 relative lg:pt-[80px] lg:pb-[80px] md:pt-8 md:pb-8">
-          <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
-            <div className="scrolable-text-box how-it-work-title">
+          </div>
+          <div className="section-titlebox lg:mb-15 sm:mb-5 absolute bottom-4">
+            <div className="scrolable-text-box how-it-work-title two">
               <div className="scroll-text-item">
-                <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32">
-                  • how it works • how it works
-                  • how it works • how it works
-                  • how it works • how it works
-                  • how it works • how it works
-                  • how it works • how it works
+                <h2 className="section-title scrollable--title2 font-primary font-normal text-fig-5x text-secondary text-center uppercase md:text-fig-xx sm:text-fig-32">
+                  • how it works • how it works • how it works • how it works •
+                  how it works • how it works • how it works • how it works •
+                  how it works • how it works
                 </h2>
               </div>
             </div>
           </div>
-           <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
+        </div>
+          <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="how-it-work-content-wrapper flex items-center gap-5 bg-primary py-[138px]">
-            {StepCadItems.map(({ id, photo_name, title, desc }:any) => (
-              <StepCard
+          {StepCadItems.map(({ id, photo_name, title,  desc }) => (
+                <StepCard 
                 key={id}
                 id={id}
                 title={title}
                 desc={desc}
                 photo_name={photo_name}
-              />
-            ))}
+                />
+              ))}
           </div>
-        </div>
         </div>
       </section>
     </>
