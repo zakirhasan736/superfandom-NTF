@@ -6,6 +6,7 @@ import StepCard from '../Card/StepCards/StepCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
+
 const HowItWork2: NextPage<any> = ({pageName}) => {
   let StepCadItems = [
     {
@@ -27,23 +28,23 @@ const HowItWork2: NextPage<any> = ({pageName}) => {
       desc: 'Soulbound tokens you own increase your reputation',
     },
   ];
-  useEffect(() => {
-    document.body.style.overflow = 'auto';
-    gsap.utils.toArray('.scrolable-text-box.how-it-work-title.two').forEach((section:any, index) => {
-      const w = section.querySelector('.scroll-text-item');
-      const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
-      gsap.fromTo(w, { x, y: 0, }, {
-        x: xEnd,
-        duration: 10,
-        scrollTrigger: {
-          trigger: section,
-          markers: true,
-          scrub: 0.5
-        },
-        y: 0,
-      });
+useEffect(() =>{
+  document.body.style.overflow = 'auto';
+  gsap.utils.toArray('.scrolable-text-box.how-it-work-title.two').forEach((section:any, index) => {
+    const w = section.querySelector('.scroll-text-item');
+    const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
+    gsap.fromTo(w, { x, y: 0, }, {
+      x: xEnd,
+      duration: 10,
+      scrollTrigger: {
+        trigger: section,
+        markers: true,
+        scrub: 0.5
+      },
+      y: 0,
     });
-  }, []);
+  });
+})
   return (
     <>
       <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">

@@ -2,8 +2,11 @@ import { NextPage } from 'next';
 import React,{useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 const ProductDetails2: NextPage<any> = () => {
+
   const [count,setCount] = useState(1)
+  
   return (
     <>
       <section className="product-details-section relative w-full px-0 bg-secondary pt-44 overflow-hidden">
