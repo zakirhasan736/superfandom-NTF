@@ -16,17 +16,6 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
  
   useEffect(() => {
     
-    // modal text varying 
-    gsap.to('.lotties--anim', {
-      scrollTrigger: {
-        trigger: '.lotties--anim',
-        scrub: 1,
-        start: 'top center',
-        end: 'bottom +=0'
-      },
-      yPercent: 10,
-    });
-    
     // banner scroll scale bg
     const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
     gsap.fromTo(
@@ -48,49 +37,6 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
       }
     );
 
-    // banner modal images
-    const slidePrl = gsap.utils.toArray('.modal-img-item');
-    gsap.fromTo(
-      slidePrl,
-      { y: 0 },
-      {
-        y: -400,
-        ease: 'none',
-        force3D: true,
-        scrollTrigger: {
-          // pin: true,
-          trigger: '.main-visual-section',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-      }
-    );
-
-    // animated title
-    const textAnim = gsap.utils.toArray(
-      '.banner_title_animation > span > span'
-    );
-    gsap.fromTo(
-      textAnim,
-      {
-        translateY: '0%',
-        opacity: 1,
-      },
-      {
-        translateY: '200%',
-        ease: 'power3',
-        force3D: true,
-        duration: 1,
-        scrollTrigger: {
-          // pin: true,
-          trigger: '.main-visual-section',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.5,
-        },
-      }
-    );
 
     // scroll text
     document.body.style.overflow = 'auto';

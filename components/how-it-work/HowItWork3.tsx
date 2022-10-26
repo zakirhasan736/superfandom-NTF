@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import StepCard from '../Card/StepCards/StepCard';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 const HowItWork3 = () => {
   let StepCadItems = [
     {
@@ -19,9 +22,34 @@ const HowItWork3 = () => {
       photo_name: 'number3.png',
       title: 'increase reputation',
       desc: 'Soulbound tokens you own increase your reputation',
-    }
+    },
   ];
-
+  useEffect(() => {
+    document.body.style.overflow = 'auto';
+    gsap.utils
+      .toArray('.scrolable-text-box.how-it-work-title.three')
+      .forEach((section: any, index) => {
+        const w = section.querySelector('.scroll-text-item');
+        const [x, xEnd] =
+          index % 2
+            ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
+            : [w.scrollWidth * -1, 0];
+        gsap.fromTo(
+          w,
+          { x, y: 0 },
+          {
+            x: xEnd,
+            duration: 10,
+            scrollTrigger: {
+              trigger: section,
+              markers: true,
+              scrub: 0.5,
+            },
+            y: 0,
+          }
+        );
+      });
+  });
   return (
     <>
       <section className="how-it-work-section w-full bg-primary pt-0 pb-0-0 relative z-10  overflow-hidden">
@@ -36,7 +64,7 @@ const HowItWork3 = () => {
             />
           </div>
           <div className="section-titlebox lg:mb-15 sm:mb-5 absolute bottom-4">
-            <div className="scrolable-text-box how-it-work-title two">
+            <div className="scrolable-text-box how-it-work-title three">
               <div className="scroll-text-item">
                 <h2 className="section-title scrollable--title2 font-primary font-normal text-fig-5x text-secondary text-center uppercase md:text-fig-xx sm:text-fig-32">
                   • how it works • how it works • how it works • how it works •
@@ -50,15 +78,15 @@ const HowItWork3 = () => {
 
         <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="how-it-work-content-wrapper flex items-center gap-5 bg-primary py-[138px]">
-          {StepCadItems.map(({ id, photo_name, title,  desc }) => (
-                <StepCard 
+            {StepCadItems.map(({ id, photo_name, title, desc }) => (
+              <StepCard
                 key={id}
                 id={id}
                 title={title}
                 desc={desc}
                 photo_name={photo_name}
-                />
-              ))}
+              />
+            ))}
           </div>
         </div>
       </section>
