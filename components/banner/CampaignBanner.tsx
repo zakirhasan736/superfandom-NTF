@@ -6,9 +6,9 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export interface ICampaignBanner {
-  title: string;
-  subtitle: string;
-  desc: string;
+  title?: string;
+  subtitle?: string;
+  desc?: string;
 }
 
 const CampaignBanner: React.FC<ICampaignBanner> = () => {

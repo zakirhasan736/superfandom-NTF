@@ -1,9 +1,9 @@
 import { NextPage } from 'next';
 import React,{useState} from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
-
 import Image from 'next/image';
 import Link from 'next/link';
+
 const ProductDetails: NextPage<any> = () => {
   const [more,setMore] = useState(false)
   return (

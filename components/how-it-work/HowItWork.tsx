@@ -7,11 +7,31 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Animation1 from '../../public/lottie_files/01.json';
 import Animation2 from '../../public/lottie_files/02.json';
 import Animation3 from '../../public/lottie_files/03.json';
+import StepCard from '../Card/StepCards/StepCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HowItWork: NextPage<any> = () => {
-
+const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
+  let StepCadItems = [
+    {
+      id: 1,
+      photo_name: 'number1.png',
+      title: 'Mint soulbound',
+      desc: 'Soulbound tokens are forever bound to your wallet',
+    },
+    {
+      id: 2,
+      photo_name: 'number2.png',
+      title: 'forever bound',
+      desc: 'Soulbound tokens are forever bound to your wallet',
+    },
+    {
+      id: 3,
+      photo_name: 'number3.png',
+      title: 'increase reputation',
+      desc: 'Soulbound tokens you own increase your reputation',
+    },
+  ];
   useEffect(() => {
     document.body.style.overflow = 'auto';
     gsap.utils.toArray('.scrolable-text-box.how-it-work-title').forEach((section:any, index) => {
@@ -120,7 +140,11 @@ const HowItWork: NextPage<any> = () => {
       <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
         <div className="scrolable-bg-shape absolute top-0 left-0 w-full prallex2">
         <img
-              src={`/images/how-it-work-bg.png}`}
+              src={`/images/${
+                (pageName === 'home' && 'how-it-work-bg.png')||
+                (pageName === 'causes' && 'HowItWork-bg-1.png') ||
+                (pageName === 'fandom' && 'how-it-work-bg-2.png')
+              }`}
               alt={'how-it-work-bg-modal-img'}
               className="how-it-work-bg-modal-img h-full w-full"
               width="100%"
@@ -141,6 +165,7 @@ const HowItWork: NextPage<any> = () => {
               </div>
             </div>
           </div>
+      {card1 && 
           <div className="custom-container 2xl:px-0 xl:px-0 laptop-x:px-12 md:px-5 sm:px-4">
             <div className="how-it-work-cont-wrapper">
               <ul className="how-it-work-info-items">
@@ -256,6 +281,22 @@ const HowItWork: NextPage<any> = () => {
               </ul>
             </div>
           </div>
+      }
+          {card2 && 
+           <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
+          <div className="how-it-work-content-wrapper flex items-center gap-5 bg-primary py-[138px]">
+            {StepCadItems.map(({ id, photo_name, title, desc }:any) => (
+              <StepCard
+                key={id}
+                id={id}
+                title={title}
+                desc={desc}
+                photo_name={photo_name}
+              />
+            ))}
+          </div>
+        </div>
+          }
         </div>
       </section>
     </>

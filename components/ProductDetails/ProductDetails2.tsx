@@ -5,6 +5,7 @@ import Image from 'next/image';
 const ProductDetails2: NextPage<any> = () => {
   const [count, setCount] = useState(1);
   const [open, setOpen] = useState(false);
+
   return (
     <>
       <section className="product-details-section relative w-full px-0 bg-secondary pt-44 overflow-hidden">
