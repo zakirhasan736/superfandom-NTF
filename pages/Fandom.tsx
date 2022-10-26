@@ -4,7 +4,7 @@ import { NextPageWithLayout } from './page';
 import FaqPage from '../components/FAQ/Faq';
 import ActiveDrop from '../components/ActiveDrop/ActiveDrop';
 import CSToken from '../components/c-s-token/CSToken';
-import HowItWork from '../components/how-it-work/HowItWork';
+import HowItWork2 from '../components/how-it-work/HowItWork2';
 import FandomBanner from '../components/banner/FandomBanner';
 
 const Fundom: NextPageWithLayout = () => {
@@ -19,7 +19,7 @@ const Fundom: NextPageWithLayout = () => {
       <FandomBanner title={''} subtitle={''} desc={''} />
       <ActiveDrop />
       <CSToken pageName={"fandom"}/>
-      <HowItWork card1={false} card2={true} pageName={"fandom"} />
+      <HowItWork2  pageName={"fandom"} />
       <FaqPage />
     </div>
   );
