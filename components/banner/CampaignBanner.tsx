@@ -5,13 +5,13 @@ import gsap, { Power3 } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-export interface IBanner {
+export interface ICampaignBanner {
   title: string;
   subtitle: string;
   desc: string;
 }
 
-const Banner4: React.FC<IBanner> = () => {
+const CampaignBanner: React.FC<ICampaignBanner> = () => {
   return (
     <>
       <section className="main-visual-section bg-secondary pt-44 relative overflow-hidden">
@@ -83,4 +83,4 @@ const Banner4: React.FC<IBanner> = () => {
   );
 };
 
-export default Banner4;
+export default CampaignBanner;

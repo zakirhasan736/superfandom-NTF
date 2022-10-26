@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -7,13 +7,13 @@ import Lottie from 'react-lottie';
 import Animation1 from '../../public/lottie_files/01.json';
 gsap.registerPlugin(ScrollTrigger);
 
-export interface IBanner {
+export interface IFundomBanner {
   title: string;
   subtitle: string;
   desc: string;
 }
 
-const Banner3: React.FC<IBanner> = ({ title, subtitle, desc }) => {
+const FundomBanner: React.FC<IFundomBanner> = ({ title, subtitle, desc }) => {
  
   useEffect(() => {
     
@@ -210,4 +210,4 @@ const Banner3: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   );
 };
 
-export default Banner3;
+export default FundomBanner;

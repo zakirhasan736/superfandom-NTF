@@ -5,7 +5,7 @@ import FaqPage from '../components/FAQ/Faq';
 import ActiveDrop from '../components/ActiveDrop/ActiveDrop';
 import NFTToken from '../components/c-s-token/NFTToken';
 import HowItWork3 from '../components/how-it-work/HowItWork3';
-import Banner3 from '../components/banner/Banner3';
+import FundomBanner from '../components/banner/FundomBanner';
 
 const Fundom: NextPageWithLayout = () => {
 
@@ -17,7 +17,7 @@ const Fundom: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <Banner3 title={''} subtitle={''} desc={''} /> */}
-      <Banner3 title={''} subtitle={''} desc={''} />
+      <FundomBanner title={''} subtitle={''} desc={''} />
       <ActiveDrop />
       <NFTToken />
       <HowItWork3 />
