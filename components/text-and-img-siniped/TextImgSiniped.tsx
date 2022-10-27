@@ -1,12 +1,250 @@
 import { NextPage } from 'next';
-import React, { useEffect } from 'react';
-import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
+import TokenCards ,{ITokenCards} from '../Card/TokenCards/TokenCards';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const TextImgSiniped: NextPage<any> = () => {
+  const [tokenItem, setTokenItem] = useState<any>([]);
+  const [tokenItem2, setTokenItem2] = useState<any>([]);
+  let data = [
+    {
+      id: 1,
+      photo_name: 'card-img-1.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 2,
+      photo_name: 'card-img-2.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 3,
+      photo_name: 'card-img-3.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 4,
+      photo_name: 'card-img-4.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 5,
+      photo_name: 'card-img-5.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png', 
+    },
+    {
+      id: 6,
+      photo_name: 'card-img-6.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 7,
+      photo_name: 'card-img-7.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 8,
+      photo_name: 'card-img-8.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 9,
+      photo_name: 'card-img-9.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 10,
+      photo_name: 'card-img-10.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 11,
+      photo_name: 'card-img-11.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 12,
+      photo_name: 'card-img-12.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+  ];
+
+  let data2 = [
+    {
+      id: 1,
+      photo_name: 'card-img-1.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 2,
+      photo_name: 'card-img-2.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 3,
+      photo_name: 'card-img-3.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    
+      
+    },
+    {
+      id: 4,
+      photo_name: 'card-img-4.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 5,
+      photo_name: 'card-img-5.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 6,
+      photo_name: 'card-img-6.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 7,
+      photo_name: 'card-img-7.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 8,
+      photo_name: 'card-img-8.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+     
+    },
+    {
+      id: 9,
+      photo_name: 'card-img-9.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 10,
+      photo_name: 'card-img-10.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+     
+    },
+    {
+      id: 11,
+      photo_name: 'card-img-11.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+    {
+      id: 12,
+      photo_name: 'card-img-12.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+    },
+  ];
+
+  useEffect(() => {
+    const items = data
+    setTokenItem(items);
+  }, []);
+
+  useEffect(() => {
+    const items = data2
+    setTokenItem2(items);
+  }, []);
+
   useEffect(() => {
     document.body.style.overflow = 'auto';
     gsap.utils.toArray('.scroll-image-box').forEach((section:any, index) => {
@@ -56,8 +294,7 @@ const TextImgSiniped: NextPage<any> = () => {
           });
         }
       });
-      
-      ScrollTrigger.create({
+ScrollTrigger.create({
         trigger: section,
         start: 'top center',
         end: 'bottom center',
@@ -114,97 +351,31 @@ const TextImgSiniped: NextPage<any> = () => {
                 <div className="text-img-siniped-anim-scroll overflow-hidden  w-full flex gap-x-12  max-h-[1080px] h-full px-[50px] md:hidden laptop-m:max-h-[800px]">
                   <div className="scroll-image-box">
                     <ul  id="left-image" className="scroll-slides-card-left anim-card-scroll flex flex-col gap-y-12">
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-15.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-14.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-13.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-13.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-13.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-15.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-14.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-13.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-13.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-13.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                    </ul>
+                              {tokenItem.map(
+                ({
+                  id,
+                  photo_name,
+                  userPhoto,
+                  Price,
+                  desc,
+                  userInfo,
+                  btnName,
+                }: ITokenCards) => (
+                  <li className="slide-image-items w-[382px] h-[520px]">
+                  <TokenCards
+                    key={id}
+                    id={id}
+                    photo_name={photo_name}
+                    Price={Price}
+                    desc={desc}
+                    userInfo={userInfo}
+                    btnName={btnName}
+                    userPhoto={userPhoto}
+                  />
+                  </li>
+                )
+              )}
+                            </ul>
                   </div>
 
                   <div className="scroll-image-box">
@@ -212,78 +383,30 @@ const TextImgSiniped: NextPage<any> = () => {
                       id="right-image"
                       className="scroll-slides-card-right anim-card-scroll flex flex-col gap-y-12"
                     >
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-12.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-11.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-10.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-15.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-14.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-13.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-13.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-13.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
+                         {tokenItem.map(
+                ({
+                  id,
+                  photo_name,
+                  userPhoto,
+                  Price,
+                  desc,
+                  userInfo,
+                  btnName,
+                }: ITokenCards) => (
+                  <li className="slide-image-items w-[382px] h-[520px]">
+                  <TokenCards
+                    key={id}
+                    id={id}
+                    photo_name={photo_name}
+                    Price={Price}
+                    desc={desc}
+                    userInfo={userInfo}
+                    btnName={btnName}
+                    userPhoto={userPhoto}
+                  />
+                  </li>
+                )
+              )}
                     </ul>
                   </div>
                 </div>
@@ -298,60 +421,30 @@ const TextImgSiniped: NextPage<any> = () => {
                       id="left-image-1"
                       className="scroll-slides-card-left anim-card-scroll flex flex-col gap-y-12"
                     >
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-4.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-5.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-6.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-4.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-5.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-6.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
+                        {tokenItem2.map(
+                ({
+                  id,
+                  photo_name,
+                  userPhoto,
+                  Price,
+                  desc,
+                  userInfo,
+                  btnName,
+                }: ITokenCards) => (
+                  <li className="slide-image-items w-[382px] h-[520px]">
+                  <TokenCards
+                    key={id}
+                    id={id}
+                    photo_name={photo_name}
+                    Price={Price}
+                    desc={desc}
+                    userInfo={userInfo}
+                    btnName={btnName}
+                    userPhoto={userPhoto}
+                  />
+                  </li>
+                )
+              )}
                     </ul>
                   </div>
 
@@ -360,60 +453,30 @@ const TextImgSiniped: NextPage<any> = () => {
                       id="right-image-1"
                       className="scroll-slides-card-right anim-card-scroll flex flex-col gap-y-12"
                     >
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-7.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-8.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-9.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-7.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-8.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <Image
-                          src="/images/card-img-9.png"
-                          alt="superfandom slides-card-img"
-                          className="slides-card-img "
-                          width="382px"
-                          height="520px"
-                        />
-                      </li>
+                       {tokenItem2.map(
+                ({
+                  id,
+                  photo_name,
+                  userPhoto,
+                  Price,
+                  desc,
+                  userInfo,
+                  btnName,
+                }: ITokenCards) => (
+                  <li className="slide-image-items w-[382px] h-[520px]">
+                  <TokenCards
+                    key={id}
+                    id={id}
+                    photo_name={photo_name}
+                    Price={Price}
+                    desc={desc}
+                    userInfo={userInfo}
+                    btnName={btnName}
+                    userPhoto={userPhoto}
+                  />
+                  </li>
+                )
+              )}
                     </ul>
                   </div>
                 </div>
