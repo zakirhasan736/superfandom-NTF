@@ -156,7 +156,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                 <ul className="modal-img-list flex gap-7 items-center justify-end mr-28 desktop-l:mr-16 lg:mr-12 md:flex-row-reverse md:absolute md:top-[-45px] md:mr-0">
                   <li className="modal-img-item mt-[320px] md:mt-0 md:w-[180px] sm:w-[146px] md:relative md:top-[-17px]">
                     <Image
-                      src="/images/card-img-1.png"
+                      src="/images/card-img-17.png"
                       alt="superfandom banner-modal-img"
                       className="banner-modal-img"
                       width="382px"
@@ -165,7 +165,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                   </li>
                   <li className="modal-img-item two md:w-[180px] sm:w-[146px] md:relative md:bottom-[-45px]">
                     <Image
-                      src="/images/card-img-2.png"
+                      src="/images/card-img-19.png"
                       alt="superfandom banner-modal-img"
                       className="banner-modal-img  two"
                       width="382px"
