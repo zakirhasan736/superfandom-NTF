@@ -1,71 +1,164 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Token from '../collect-soulbound-tokens/Token';
-import { IToken } from '../collect-soulbound-tokens/Token';
+import TokenCards , {ITokenCards} from '../Card/TokenCards/TokenCards';
 
-const CSToken = ({pageName}:any) => {
+const CSToken = ({ pageName }: any) => {
   const [filterText, setFilter] = useState<string>('all');
   const [tokenItem, setTokenItem] = useState<any>([]);
   let data = [
     {
       id: 1,
       categories_name: ['all', 'p_food'],
-      photo_name: 'Group_481234.png',
+      photo_name: 'card-img-1.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      bidNow: 'Bid Now',
+      bidNowBg: 'white',
+      
     },
     {
       id: 2,
       categories_name: ['all', 'lorem'],
-      photo_name: 'Group_481235.png',
+      photo_name: 'card-img-2.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      bidNow: 'Bid Now',
+      bidNowBg: 'white',
+      
     },
     {
       id: 3,
       categories_name: ['all', 'd_wot_b'],
-      photo_name: 'Group_481236.png',
+      photo_name: 'card-img-3.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      bidNow: 'BID IN 6 HRS 25 MINS 36 SECS',
+      bidNowBg: 'neon',
+      
     },
     {
       id: 4,
       categories_name: ['all', 'p_food'],
-      photo_name: 'Group_481237.png',
+      photo_name: 'card-img-4.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
     },
     {
       id: 5,
       categories_name: ['all', 'p_food'],
-      photo_name: 'Group_481234.png',
+      photo_name: 'card-img-5.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      bidNow: 'BID IN 6 HRS 25 MINS 36 SECS',
+      bidNowBg: 'neon',
+      
     },
     {
       id: 6,
       categories_name: ['all', 'lorem'],
-      photo_name: 'Group_481235.png',
+      photo_name: 'card-img-6.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      bidNow: 'Bid Now',
+      bidNowBg: 'white',
+      
     },
     {
       id: 7,
       categories_name: ['all', 'd_wot_b'],
-      photo_name: 'Group_481236.png',
+      photo_name: 'card-img-7.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
     },
     {
       id: 8,
       categories_name: ['all', 'p_food'],
-      photo_name: 'Group_481237.png',
+      photo_name: 'card-img-8.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
     },
     {
       id: 9,
       categories_name: ['all', 'p_food'],
-      photo_name: 'Group_481234.png',
+      photo_name: 'card-img-9.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
     },
     {
       id: 10,
       categories_name: ['all', 'lorem'],
-      photo_name: 'Group_481235.png',
+      photo_name: 'card-img-10.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
     },
     {
       id: 11,
       categories_name: ['all', 'd_wot_b'],
-      photo_name: 'Group_481236.png',
+      photo_name: 'card-img-11.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
     },
     {
       id: 12,
       categories_name: ['all', 'p_food'],
-      photo_name: 'Group_481237.png',
+      photo_name: 'card-img-12.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
     },
   ];
 
@@ -82,11 +175,9 @@ const CSToken = ({pageName}:any) => {
         <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="section-titlebox text-animetion mb-8 md:mb-4">
             <h2 className="section-title title_animation max-w-[970px] font-primary font-normal text-fig-3x text-left text-primary laptop-x:text-6xl md:text-fig-40 uppercase">
-              {
-              pageName==="causes" && "collect soulbound tokens"||
-              pageName==="fandom" && "collections"||
-              pageName==="campaign" && "collections"
-              }
+              {(pageName === 'causes' && 'collect soulbound tokens') ||
+                (pageName === 'fandom' && 'collections') ||
+                (pageName === 'campaign' && 'collections')}
             </h2>
           </div>
 
@@ -98,11 +189,9 @@ const CSToken = ({pageName}:any) => {
                   filterText === 'all' && 'bg-primary text-secondary'
                 } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
-                 {
-              pageName==="causes" && "all nft tokens"||
-              pageName==="fandom" && "all soulbound tokens"||
-              pageName==="campaign" && "all collections"
-              }
+                {(pageName === 'causes' && 'all nft tokens') ||
+                  (pageName === 'fandom' && 'all soulbound tokens') ||
+                  (pageName === 'campaign' && 'all collections')}
               </button>
               <button
                 onClick={() => setFilter('p_food')}
@@ -110,12 +199,9 @@ const CSToken = ({pageName}:any) => {
                   filterText === 'p_food' && 'bg-primary text-secondary'
                 } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
-                
-                {
-              pageName==="causes" && "pakistani food"||
-              pageName==="fandom" && "pakistani food"||
-              pageName==="campaign" && "pfps"
-              }
+                {(pageName === 'causes' && 'pakistani food') ||
+                  (pageName === 'fandom' && 'pakistani food') ||
+                  (pageName === 'campaign' && 'pfps')}
               </button>
               <button
                 onClick={() => setFilter('d_wot_b')}
@@ -123,36 +209,53 @@ const CSToken = ({pageName}:any) => {
                   filterText === 'd_wot_b' && 'bg-primary text-secondary'
                 } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
-                
-                {
-              pageName==="causes" && "doctors without borders"||
-              pageName==="fandom" && "doctors without borders"||
-              pageName==="campaign" && "editions"
-              }
+                {(pageName === 'causes' && 'doctors without borders') ||
+                  (pageName === 'fandom' && 'doctors without borders') ||
+                  (pageName === 'campaign' && 'editions')}
               </button>
-             {
-             (pageName==="causes" || pageName==="fandom") &&
-              <button
-              onClick={() => setFilter('lorem')}
-              className={`border-primary ${
-                filterText === 'lorem' && 'bg-primary text-secondary'
-              } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
-            >
-              lorem ipsum
-            </button>
-             }
+              {(pageName === 'causes' || pageName === 'fandom') && (
+                <button
+                  onClick={() => setFilter('lorem')}
+                  className={`border-primary ${
+                    filterText === 'lorem' && 'bg-primary text-secondary'
+                  } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                >
+                  lorem ipsum
+                </button>
+              )}
             </div>
           </div>
           <div className="collection-tokens-box">
             <div className="content_wrapper flex items-center flex-wrap gap-5 mb-16">
-              {tokenItem.map(({ id, photo_name, categories_name }: IToken) => (
-                <Token
-                  key={id}
-                  id={id}
-                  categories_name={categories_name}
-                  photo_name={photo_name}
-                />
-              ))}
+              
+              {tokenItem.map(
+                ({
+                  id,
+                  photo_name,
+                  categories_name,
+                  bidNowBg,
+                  userPhoto,
+                  bidNow,
+                  Price,
+                  desc,
+                  userInfo,
+                  btnName,
+                }: ITokenCards) => (
+                  <TokenCards
+                    key={id}
+                    id={id}
+                    categories_name={categories_name}
+                    photo_name={photo_name}
+                    Price={Price}
+                    desc={desc}
+                    userInfo={userInfo}
+                    btnName={btnName}
+                    userPhoto={userPhoto}
+                    bidNow={bidNow}
+                    bidNowBg={bidNowBg}
+                  />
+                )
+              )}
             </div>
             <div className="collection-btn-box text-center flex justify-center sm:flex sm:flex-col sm:px-4">
               <Link href="/">

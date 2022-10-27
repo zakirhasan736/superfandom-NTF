@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
-import gsap, { Power3 } from 'gsap';
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 

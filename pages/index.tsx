@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
-import FaqPage from '../components/FAQ/Faq';
+import FaqPage from '../components/Faq/Faq';
 import Explore from '../components/explore-and-collect/Explore';
 import HowItWork from '../components/how-it-work/HowItWork';
 import TextImgSiniped from '../components/text-and-img-siniped/TextImgSiniped';

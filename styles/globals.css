@@ -861,3 +861,10 @@ header.white-varient-navbar .navbar-cont-box .nav-items  li a{
     border: 1px solid #000000;
   }
   header.white-varient-navbar  .navbar-btn-items li a{color: #000000;}
+
+  /* tokens cards styled */
+  .bg-neon{background-color: #56ccf2;}
+  .bg-purple{background-color: #2f80ed;}
+  .bg-white{background-color: #ffffff;}
+  .tokens-card-top-cont .card-updates-info:empty,
+  .tokens-card-top-cont .link-item-text:empty{display: none;}

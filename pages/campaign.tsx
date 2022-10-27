@@ -5,7 +5,7 @@ import Exclusive from '../components/Exclusive/Exclusive';
 import CSToken from '../components/c-s-token/CSToken';
 import CampaignBanner from '../components/banner/CampaignBanner';
 
-const CampaignListing: NextPageWithLayout = () => {
+const Campaign: NextPageWithLayout = () => {
 
   return (
     <div className="container-wrapper">
@@ -21,8 +21,8 @@ const CampaignListing: NextPageWithLayout = () => {
   );
 };
 
-export default CampaignListing;
+export default Campaign;
 
-CampaignListing.getLayout = (page) => {
+Campaign.getLayout = (page) => {
   return <PrimaryLayout headerNext={true}>{page}</PrimaryLayout>;
 };

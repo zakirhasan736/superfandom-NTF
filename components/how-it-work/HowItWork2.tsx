@@ -44,6 +44,7 @@ useEffect(() =>{
       y: 0,
     });
   });
+
 })
   return (
     <>
@@ -60,7 +61,7 @@ useEffect(() =>{
               width="100%"
               height="100%"
             />
-          </div>
+          </div> 
           <div className="section-titlebox lg:mb-15 sm:mb-5 absolute bottom-4">
             <div className="scrolable-text-box how-it-work-title two">
               <div className="scroll-text-item">

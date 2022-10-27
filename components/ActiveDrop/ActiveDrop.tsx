@@ -1,10 +1,47 @@
-import React, { useEffect } from 'react';
+import React, { useEffect , useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { NextPage } from 'next';
+import ActiveCard, {IActiveCard} from '../Card/ActiveCard/ActiveCard';
 
 
 const ActiveDrop: NextPage<any> = () => {
+  const [ActiveCards, setActiveCards] = useState<any>([]);
+
+  let data = [
+    {
+      id: 1,
+      photo_name: 'drop-card-img-1.png',
+      desc: 'DWB in collaboration with Bella Hadid, all proceeds go to DWB',
+      title: 'Doctors Without Borders',
+      cardLogo: 'varified-logo.png',
+      cardInfo: 'Live', 
+      cardInfoBg: 'purple' ,
+    },
+    {
+      id: 2,
+  photo_name: 'drop-card-img-2.png',
+  desc: 'DWB in collaboration with Bella Hadid, all proceeds go to DWB',
+  title: 'Doctors Without Borders',
+  cardLogo: 'varified-logo.png',
+  cardInfo: 'soon', 
+  cardInfoBg: 'neon' ,
+    },
+    {
+      id: 3,
+      photo_name: 'drop-card-img-3.png',
+      desc: 'DWB in collaboration with Bella Hadid, all proceeds go to DWB',
+      title: 'Doctors Without Borders',
+      cardLogo: 'varified-logo.png',
+      cardInfo: 'Live', 
+      cardInfoBg: 'purple' ,
+    }
+  ];
+
+  useEffect(() => {
+    const items = data;
+    setActiveCards(items);
+  }, []);
   return (
     <>
       <section className="active-drop-section w-full bg-primary pt-[142px] laptop-m:pt-[65px]  md:pt-8 pb-16 px-0 relative z-10  overflow-hidden">
@@ -20,34 +57,32 @@ const ActiveDrop: NextPage<any> = () => {
         <div className="container 2xl:container xl:container lg:container md:container sm:container 2xl:pl-12 2xl:pr-12 xl:pl-12 xl:pr-12 lg:pl-8 lg:pr-8 md:px-0 sm:px-0">
           <div className="active-drop-content-wrapper px-28 py-[100px] sm:pb-8 w-full h-full bg-primary md:bg-secondary sm:rounded-0">
             <div className="active-drop-slidebox mb-16">
-              <ul className="active-drop-slides-image flex no-wrap gap-5">
-                <li className="active-drop-image-items w-[516px] h-[432px]">
-                  <Image
-                    src="/images/card-img-23.png"
-                    alt="superfandom active-drop-image"
-                    className="active-drop-image h-full w-full"
-                    width="516px"
-                    height="432px"
-                  />
-                </li>
-                <li className="active-drop-image-items w-[516px] h-[432px]">
-                  <Image
-                    src="/images/card-img-24.png"
-                    alt="superfandom active-drop-image"
-                    className="active-drop-image h-full w-full"
-                    width="516px"
-                    height="432px"
-                  />
-                </li>
-                <li className="active-drop-image-items w-[516px] h-[432px]">
-                  <Image
-                    src="/images/card-img-25.png"
-                    alt="superfandom active-drop-image"
-                    className="active-drop-image h-full w-full"
-                    width="516px"
-                    height="432px"
-                  />
-                </li>
+              <ul className="active-drop-slides-cards flex no-wrap gap-5">
+           
+                {ActiveCards.map(
+                  ({
+                    id,
+                    photo_name,
+                    cardInfo,
+                    cardLogo,
+                    cardInfoBg,
+                    title,
+                    desc,
+                  }: IActiveCard) => (
+                    <li className="active-drop-cards-items w-[518px] h-[432px]" key={id}>
+                      <ActiveCard
+                        id={id}
+                        photo_name={photo_name}
+                        desc={desc}
+                        title={title}
+                        cardLogo={cardLogo}
+                        cardInfo={cardInfo}
+                        cardInfoBg={cardInfoBg}
+                      />
+                    </li>
+                  )
+                )}
+               
               </ul>
             </div>
             <div className="active-drop-btn-box text-center flex justify-center sm:flex sm:flex-col sm:px-4">

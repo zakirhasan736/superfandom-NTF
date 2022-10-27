@@ -2,7 +2,7 @@ import Head from 'next/head';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
 import CausesBanner from '../components/banner/CausesBanner';
-import FaqPage from '../components/FAQ/Faq';
+import FaqPage from '../components/Faq/Faq';
 import ActiveDrop from '../components/ActiveDrop/ActiveDrop';
 import CSToken from '../components/c-s-token/CSToken';
 import HowItWork2 from '../components/how-it-work/HowItWork2';
