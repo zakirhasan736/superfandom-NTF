@@ -1,13 +1,164 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { NextPage } from 'next';
 import gsap from 'gsap';
+import TokenCards, {ITokenCards} from '../Card/TokenCards/TokenCards';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Explore: NextPage<any> = () => {
+  const [tokenItem, setTokenItem] = useState<any>([]);
+  let data = [
+    {
+      id: 1,
+      photo_name: 'card-img-1.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
+    },
+    {
+      id: 2,
+      photo_name: 'card-img-2.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
+    },
+    {
+      id: 3,
+      photo_name: 'card-img-3.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'BID IN 6 HRS 25 MINS 36 SECS',
+      // bidNowBg: 'neon',
+      
+    },
+    {
+      id: 4,
+      photo_name: 'card-img-4.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
+    },
+    {
+      id: 5,
+      photo_name: 'card-img-5.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'BID IN 6 HRS 25 MINS 36 SECS',
+      // bidNowBg: 'neon',
+      
+    },
+    {
+      id: 6,
+      photo_name: 'card-img-6.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
+    },
+    {
+      id: 7,
+      photo_name: 'card-img-7.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
+    },
+    {
+      id: 8,
+      photo_name: 'card-img-8.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+    },
+    {
+      id: 9,
+      photo_name: 'card-img-9.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
+    },
+    {
+      id: 10,
+      photo_name: 'card-img-10.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+    },
+    {
+      id: 11,
+      photo_name: 'card-img-11.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
+    },
+    {
+      id: 12,
+      photo_name: 'card-img-12.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      // bidNow: 'Bid Now',
+      // bidNowBg: 'white',
+      
+    },
+  ];
+
+  useEffect(() => {
+    const items = data
+    setTokenItem(items);
+  }, []);
 
   useEffect(() => {
 
@@ -36,69 +187,31 @@ const Explore: NextPage<any> = () => {
           <div className="explore-content-wrapper pt-12 pb-[51px] sm:pb-8 px-0 bg-primary md:bg-secondary sm:rounded-0">
             <div className="explore-slidebox mb-12">
               <ul className="slides-image-box flex no-wrap gap-5">
-                <li className="slide-image-items w-[382px] h-[520px]">
-                  <Image
-                    src="/images/card-img-7.png"
-                    alt="superfandom slide-image"
-                    className="slide-image h-full w-full"
-                    width="382px"
-                    height="520px"
+              
+                {tokenItem.map(
+                ({
+                  id,
+                  photo_name,
+                  userPhoto,
+                  Price,
+                  desc,
+                  userInfo,
+                  btnName,
+                }: ITokenCards) => (
+                  <li className="slide-image-items w-[382px] h-[520px]">
+                  <TokenCards
+                    key={id}
+                    id={id}
+                    photo_name={photo_name}
+                    Price={Price}
+                    desc={desc}
+                    userInfo={userInfo}
+                    btnName={btnName}
+                    userPhoto={userPhoto}
                   />
-                </li>
-                <li className="slide-image-items w-[382px] h-[520px]">
-                  <Image
-                    src="/images/card-img-13.png"
-                    alt="superfandom slide-image"
-                    className="slide-image h-full w-full"
-                    width="382px"
-                    height="520px"
-                  />
-                </li>
-                <li className="slide-image-items w-[382px] h-[520px]">
-                  <Image
-                    src="/images/card-img-13.png"
-                    alt="superfandom slide-image"
-                    className="slide-image h-full w-full"
-                    width="382px"
-                    height="520px"
-                  />
-                </li>
-                <li className="slide-image-items w-[382px] h-[520px]">
-                  <Image
-                    src="/images/card-img-13.png"
-                    alt="superfandom slide-image"
-                    className="slide-image h-full w-full"
-                    width="382px"
-                    height="520px"
-                  />
-                </li>
-                <li className="slide-image-items w-[382px] h-[520px]">
-                  <Image
-                    src="/images/card-img-18.png"
-                    alt="superfandom slide-image"
-                    className="slide-image h-full w-full"
-                    width="382px"
-                    height="520px"
-                  />
-                </li>
-                <li className="slide-image-items w-[382px] h-[520px]">
-                  <Image
-                    src="/images/card-img-4.png"
-                    alt="superfandom slide-image"
-                    className="slide-image h-full w-full"
-                    width="382px"
-                    height="520px"
-                  />
-                </li>
-                <li className="slide-image-items w-[382px] h-[520px]">
-                  <Image
-                    src="/images/card-img-5.png"
-                    alt="superfandom slide-image"
-                    className="slide-image h-full w-full"
-                    width="382px"
-                    height="520px"
-                  />
-                </li>
+                  </li>
+                )
+              )}
               </ul>
             </div>
             <div className="explore-btn-box text-center flex justify-center sm:flex sm:flex-col sm:px-4">
