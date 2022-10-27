@@ -227,8 +227,38 @@ const CSToken = ({ pageName }: any) => {
           </div>
           <div className="collection-tokens-box">
             <div className="content_wrapper flex items-center flex-wrap gap-5 mb-16">
-              
-              {tokenItem.map(
+              {
+                pageName==="campaign" ?
+                tokenItem.map(
+                  ({
+                    id,
+                    photo_name,
+                    categories_name,
+                    bidNowBg,
+                    userPhoto,
+                    bidNow,
+                    Price,
+                    desc,
+                    userInfo,
+                    btnName,
+                  }: ITokenCards) => (
+                    // Exclusive card
+                    <TokenCards
+                      key={id}
+                      id={id}
+                      categories_name={categories_name}
+                      photo_name={photo_name}
+                      Price={Price}
+                      desc={desc}
+                      userInfo={userInfo}
+                      btnName={btnName}
+                      userPhoto={userPhoto}
+                      bidNow={bidNow}
+                      bidNowBg={bidNowBg}
+                    />
+                  )
+                ):
+                tokenItem.map(
                 ({
                   id,
                   photo_name,
@@ -255,7 +285,8 @@ const CSToken = ({ pageName }: any) => {
                     bidNowBg={bidNowBg}
                   />
                 )
-              )}
+              )
+              }
             </div>
             <div className="collection-btn-box text-center flex justify-center sm:flex sm:flex-col sm:px-4">
               <Link href="/">

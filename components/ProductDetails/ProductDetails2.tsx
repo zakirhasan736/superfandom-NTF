@@ -138,10 +138,14 @@ const ProductDetails2: NextPage<any> = () => {
           </div>
         </div>
         {/* modal */}
-        <div className={`${open ? "block":"hidden"} fixed z-50 inset-y-0 w-full h-full left-0 right-8 flex items-center justify-center`}>
+        <div
+          className={`${
+            open ? 'block' : 'hidden'
+          } fixed z-50 inset-y-0 w-full h-full left-0 right-8 flex items-center justify-center`}
+        >
           <div className="shadow border rounded bg-black w-48 h-48 text-white">
-            <button onClick={()=>setOpen(!open)}>close</button>
-   <h2>Modal title</h2> 
+            <button onClick={() => setOpen(!open)}>close</button>
+            <h2>Modal title</h2>
           </div>
         </div>
       </section>
