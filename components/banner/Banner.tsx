@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import TokenCards, {ITokenCards} from '../Card/TokenCards/TokenCards';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -12,7 +13,38 @@ export interface IBanner {
 }
 
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
+  const [tokenItem, setTokenItem] = useState<any>([]);
   const [scroll, setscroll] = useState(false);
+
+  let data = [
+    {
+      id: 1,
+      photo_name: 'card-img-1.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      
+    },
+    {
+      id: 2,
+      photo_name: 'card-img-2.png',
+      Price: '320STX',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      userInfo: '@voice over',
+      btnName: 'Buy Now',
+      userPhoto: 'user-img.png',
+      
+    }
+  ];
+
+  useEffect(() => {
+    const items = data
+    setTokenItem(items);
+  }, []);
+
+
   const scrollHandler = () => {
     if (!scroll) {
       setscroll(true);
@@ -23,7 +55,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   useEffect(() => {
     
     // modal text varying 
-    gsap.to('.modal-img-item.two', {
+    gsap.to('.modal-img-item', {
       scrollTrigger: {
         trigger: '.banner-modal-img.two',
         scrub: 0.5,
@@ -44,7 +76,6 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         ease: 'none',
         force3D: true,
         scrollTrigger: {
-          // pin: true,
           trigger: '.main-visual-section',
           start: 'top top',
           end: 'bottom top',
@@ -63,7 +94,6 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         ease: 'none',
         force3D: true,
         scrollTrigger: {
-          // pin: true,
           trigger: '.main-visual-section',
           start: 'top top',
           end: 'bottom top',
@@ -88,7 +118,6 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         force3D: true,
         duration: 1,
         scrollTrigger: {
-          // pin: true,
           trigger: '.main-visual-section',
           start: 'top top',
           end: 'bottom top',
@@ -99,7 +128,8 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
 
     // scroll text
     document.body.style.overflow = 'auto';
-    gsap.utils.toArray('.scrolable-text-box').forEach((section: any, index) => {
+   const bannerScrolled = gsap.utils.toArray('.scrolable-text-box');
+   bannerScrolled.forEach((section: any, index) => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] =
         index % 2
@@ -114,8 +144,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             trigger: section,
             scrub: 0.5,
             start: 'top +=850',
-            markers: true,
-            end: '200%',
+            end: () => "+=" + (w.scrollWidth - section.offsetWidth),
           },
         }
       );
@@ -125,27 +154,25 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
 
   return (
     <>
-      <section className="main-visual-section bg-primary pb-[51px] pt-[209px] relative sm:pt-[150px] overflow-hidden">
+      <section className="main-visual-section main-banner--one bg-primary pb-[51px] pt-[209px] relative sm:pt-[150px] overflow-hidden">
         <div className="container lg:container md:container sm:container relative lg:px-9 md:px-7 sm:px-4">
           <div className="main-visual-wrapper flex items-center justify-between md:block">
             {/* ------------------- */}
             <div className="banner-text-cont-left text_animation text-animetion w-full relative z-50">
               <div className="heading-title-box h-full w-full block">
                 <h2 className="banner_title_animation active title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
-                  <span className="overflow-hidden w-full h-full block leading-[132px] pb-2">
-                    <span className="font-primary font-normal text-fig-5x text-left text-secondary uppercase  laptop-x:text-[130px] laptop-x:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
+                  <span className="overflow-hidden w-full h-full block">
+                    <span className="leading-[155px] font-primary font-normal text-fig-5x text-left text-secondary uppercase  laptop-x:text-[130px] laptop-x:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
                       Collect
                     </span>{' '}
                   </span>
-                  <br />
-                  <span className="overflow-hidden w-full h-full block leading-[132px] pb-2">
-                    <span className="font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-x:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
+                  <span className="overflow-hidden w-full h-full block">
+                    <span className="leading-[155px] font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-x:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
                       life-changing
                     </span>{' '}
                   </span>
-                  <br />
-                  <span className="overflow-hidden w-full h-full block leading-[132px] pb-2">
-                    <span className="font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-m:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
+                  <span className="overflow-hidden w-full h-full block">
+                    <span className="leading-[155px] font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-m:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
                       NFTs
                     </span>
                   </span>
@@ -154,24 +181,30 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
 
               <div className="banner-modal-imgbox w-full z-20 relative">
                 <ul className="modal-img-list flex gap-7 items-center justify-end mr-28 desktop-l:mr-16 lg:mr-12 md:flex-row-reverse md:absolute md:top-[-45px] md:mr-0">
-                  <li className="modal-img-item mt-[320px] md:mt-0 md:w-[180px] sm:w-[146px] md:relative md:top-[-17px]">
-                    <Image
-                      src="/images/card-img-17.png"
-                      alt="superfandom banner-modal-img"
-                      className="banner-modal-img"
-                      width="382px"
-                      height="520px"
-                    />
+                  {tokenItem.map(
+                ({
+                  id,
+                  photo_name,
+                  userPhoto,
+                  Price,
+                  desc,
+                  userInfo,
+                  btnName,
+                }: ITokenCards) => (
+                  <li className="modal-img-item md:w-[180px] sm:w-[146px] md:relative w-[382px] h-[520px]">
+                  <TokenCards
+                    key={id}
+                    id={id}
+                    photo_name={photo_name}
+                    Price={Price}
+                    desc={desc}
+                    userInfo={userInfo}
+                    btnName={btnName}
+                    userPhoto={userPhoto}
+                  />
                   </li>
-                  <li className="modal-img-item two md:w-[180px] sm:w-[146px] md:relative md:bottom-[-45px]">
-                    <Image
-                      src="/images/card-img-19.png"
-                      alt="superfandom banner-modal-img"
-                      className="banner-modal-img  two"
-                      width="382px"
-                      height="520px"
-                    />
-                  </li>
+                )
+              )}
                 </ul>
               </div>
               <span className="md:hidden lg:text-6xl overly-text-bottom z-30 font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-[-90deg] absolute left-0 top-[520px]">
@@ -194,12 +227,12 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               </p>
               <div className="banner-btn-box text-left flex mt-8">
                 <Link href="/">
-                  <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-3 hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
+                  <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-3 hover:bg-neon hover:border-neon transition duration-150 ease-out">
                     Explore Causes
                   </a>
                 </Link>
                 <Link href="/">
-                  <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-secondary hover:text-primary transition duration-150 ease-out">
+                  <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-purple hover:border-purple transition duration-150 ease-out">
                     explore fandoms
                   </a>
                 </Link>
@@ -207,15 +240,8 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             </div>
             {/* ------------ */}
           </div>
-          {/* <div className="main-visual-modal-bg absolute bottom-[170px] left-0 w-full max-w-[1820px] right-0 ml-auto prallex3 mr-auto">
-            <Image
-              src="/images/banner-bg.png"
-              alt="superfandom banner-bg"
-              className="banner-bg "
-              width="1820px"
-              height="444px"
-            />
-          </div> */}
+         {/* ================ */}
+      
         </div>
 
         <div className="scroll-anim-text-wrapper  w-full z-10 relative mt-[-130px] md:mt-0 sm:h-[210px] h-[456px]">

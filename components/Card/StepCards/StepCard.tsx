@@ -10,7 +10,7 @@ export interface IStepCard {
 
 const StepCard: React.FC<IStepCard> = ({id,photo_name, title, desc}) => {
   return (
-    <div className="steps-card--items pt-[29px] pr-9 pb-16 pl-4 relative border-solid border-2 border-secondary h-[400px] rounded-3xl" key={id}>
+    <div className="steps-card--items pt-[29px] pr-9 pb-16 pl-4 relative border-solid border-2 border-secondary h-[400px] rounded-3xl bg-primary" key={id}>
     <div className="step--icons-img">
     <Image
   src={`/images/${photo_name}`}

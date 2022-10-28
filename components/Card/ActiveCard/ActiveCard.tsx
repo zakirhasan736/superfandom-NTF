@@ -27,7 +27,7 @@ const ActiveCard: React.FC<IActiveCard> = ({
     >
       <div className="token-img-cont-box relative">
         <div className="tokens-img-wrap relative">
-          <div className="token--icons-img w-full h-[432px]">
+          <div className="active--cards-img w-full h-[432px] relative">
             <Image
               src={`/images/${photo_name}`}
               alt="tokens-card-img"
@@ -48,8 +48,8 @@ const ActiveCard: React.FC<IActiveCard> = ({
             </span>
           </div>
 
-          <div className="token-card-content-box pt-[13px] pb-8 px-8  absolute bottom-0 left-0 w-full flex items-start">
-            <div className="card-verified-logo">
+          <div className="token-card-content-box pt-[13px] pb-8 px-8  absolute bottom-0 left-0 w-full flex items-start z-40">
+            <div className="card-verified-logo w-[87px] h-[87px] rounded-[100px]">
               <Image
                 src={`/images/${cardLogo}`}
                 alt="active-card-img"
@@ -60,10 +60,10 @@ const ActiveCard: React.FC<IActiveCard> = ({
             </div>
 
             <div className="card-wrapper ml-6">
-              <h3 className="card-title font-primary font-normal text-fig-32 text-left text-secondary uppercase mb-2">
+              <h3 className="card-title font-primary font-normal text-fig-32 h-[62px] overflow-hidden text-left text-secondary uppercase mb-2">
                 {title}
               </h3>
-              <p className="desc mb-8 text-fig-xs text-left text-secondary font-primary font-normal">
+              <p className="desc mb-8 text-fig-xs text-left h-[15px] overflow-hidden text-secondary font-primary font-normal">
                 {desc}
               </p>
             </div>

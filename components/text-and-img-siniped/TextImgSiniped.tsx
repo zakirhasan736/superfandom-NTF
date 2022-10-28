@@ -1,253 +1,17 @@
 import { NextPage } from 'next';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import gsap from 'gsap';
-import TokenCards ,{ITokenCards} from '../Card/TokenCards/TokenCards';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const TextImgSiniped: NextPage<any> = () => {
-  const [tokenItem, setTokenItem] = useState<any>([]);
-  const [tokenItem2, setTokenItem2] = useState<any>([]);
-  let data = [
-    {
-      id: 1,
-      photo_name: 'card-img-1.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 2,
-      photo_name: 'card-img-2.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 3,
-      photo_name: 'card-img-3.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 4,
-      photo_name: 'card-img-4.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 5,
-      photo_name: 'card-img-5.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png', 
-    },
-    {
-      id: 6,
-      photo_name: 'card-img-6.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 7,
-      photo_name: 'card-img-7.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 8,
-      photo_name: 'card-img-8.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 9,
-      photo_name: 'card-img-9.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 10,
-      photo_name: 'card-img-10.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 11,
-      photo_name: 'card-img-11.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 12,
-      photo_name: 'card-img-12.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-  ];
-
-  let data2 = [
-    {
-      id: 1,
-      photo_name: 'card-img-1.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 2,
-      photo_name: 'card-img-2.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 3,
-      photo_name: 'card-img-3.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    
-      
-    },
-    {
-      id: 4,
-      photo_name: 'card-img-4.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 5,
-      photo_name: 'card-img-5.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 6,
-      photo_name: 'card-img-6.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 7,
-      photo_name: 'card-img-7.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 8,
-      photo_name: 'card-img-8.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-     
-    },
-    {
-      id: 9,
-      photo_name: 'card-img-9.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 10,
-      photo_name: 'card-img-10.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-     
-    },
-    {
-      id: 11,
-      photo_name: 'card-img-11.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-    {
-      id: 12,
-      photo_name: 'card-img-12.png',
-      Price: '320STX',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      userInfo: '@voice over',
-      btnName: 'Buy Now',
-      userPhoto: 'user-img.png',
-    },
-  ];
-
-  useEffect(() => {
-    const items = data
-    setTokenItem(items);
-  }, []);
-
-  useEffect(() => {
-    const items = data2
-    setTokenItem2(items);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = 'auto';
-    gsap.utils.toArray('.scroll-image-box').forEach((section:any, index) => {
+    const textImagesScrolled = gsap.utils.toArray('.scroll-image-box');
+    textImagesScrolled.forEach((section: any, index) => {
       const w = section.querySelector('ul.anim-card-scroll');
       const [y, yEnd] =
         index % 2
@@ -262,64 +26,70 @@ const TextImgSiniped: NextPage<any> = () => {
             trigger: section,
             toggleActions: 'restart pause reverse pause',
             scrub: 0.5,
+            start: 'top +=900',
+            end: () => '+=' + (w.scrollHeight - section.offsetHeight),
           },
         }
       );
     });
-
-
   }, []);
 
   useEffect(() => {
-    gsap.utils.toArray('.text-img-siniped-info-list').forEach((section:any) => {
-      const elems = section.querySelectorAll('.siniped-text-box');
-      // Set starting params for sections
-      ScrollTrigger.matchMedia({
-        "min-width:992px": function(){
-          gsap.set(elems, {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: 'power3.out',
-            overwrite: 'auto',
-          });
-        },
-        "min-width:991px": function(){
-          gsap.set(elems, {
-            y: 90,
-            opacity: 0,
-            duration: 1,
-            ease: 'power3.out',
-            overwrite: 'auto',
-          });
-        }
+    const textImgFade = gsap.utils
+      .toArray('.text-img-siniped-info-list');
+      textImgFade.forEach((section: any) => {
+        const elems = section.querySelectorAll('.siniped-text-box');
+        // Set starting params for sections
+        ScrollTrigger.matchMedia({
+          'min-width:992px': function () {
+            gsap.set(elems, {
+              y: 50,
+              opacity: 0,
+              duration: 1,
+              ease: 'power3.out',
+              overwrite: 'auto',
+            });
+          },
+          'min-width:991px': function () {
+            gsap.set(elems, {
+              y: 90,
+              opacity: 0,
+              duration: 1,
+              ease: 'power3.out',
+              overwrite: 'auto',
+            });
+          },
+        });
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top center',
+          end: 'bottom center',
+          onEnter: () =>
+            gsap.to(elems, {
+              y: 0,
+              opacity: 1,
+              stagger: 0.2,
+            }),
+          onLeave: () =>
+            gsap.to(elems, {
+              y: -50,
+              opacity: 0,
+              stagger: 0.2,
+            }),
+          onEnterBack: () =>
+            gsap.to(elems, {
+              y: 0,
+              opacity: 1,
+              stagger: -0.2,
+            }),
+          onLeaveBack: () =>
+            gsap.to(elems, {
+              y: 50,
+              opacity: 0,
+              stagger: -0.2,
+            }),
+        });
       });
-ScrollTrigger.create({
-        trigger: section,
-        start: 'top center',
-        end: 'bottom center',
-        onEnter: () => gsap.to(elems, {
-          y: 0,
-          opacity: 1,
-          stagger: 0.2,
-        }),
-        onLeave: () => gsap.to(elems, {
-          y: -50,
-          opacity: 0,
-          stagger: 0.2,
-        }),
-        onEnterBack: () => gsap.to(elems, {
-          y: 0,
-          opacity: 1,
-          stagger: -0.2,
-        }),
-        onLeaveBack: () => gsap.to(elems, {
-          y: 50,
-          opacity: 0,
-          stagger: -0.2,
-        }),
-      });
-    })
   }, []);
 
   return (
@@ -341,7 +111,7 @@ ScrollTrigger.create({
                       support
                     </p>
                     <Link href="/">
-                      <a className="link-buttons uppercase flex flex-col max-w-[190px] text-center w-full  p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
+                      <a className="link-buttons uppercase flex flex-col max-w-[190px] text-center w-full  p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-neon hover:border-neon transition duration-150 ease-out">
                         Explore Causes
                       </a>
                     </Link>
@@ -349,33 +119,284 @@ ScrollTrigger.create({
                 </div>
 
                 <div className="text-img-siniped-anim-scroll overflow-hidden  w-full flex gap-x-12  max-h-[1080px] h-full px-[50px] md:hidden laptop-m:max-h-[800px]">
+                
                   <div className="scroll-image-box">
-                    <ul  id="left-image" className="scroll-slides-card-left anim-card-scroll flex flex-col gap-y-12">
-                              {tokenItem.map(
-                ({
-                  id,
-                  photo_name,
-                  userPhoto,
-                  Price,
-                  desc,
-                  userInfo,
-                  btnName,
-                }: ITokenCards) => (
-                  <li className="slide-image-items w-[382px] h-[520px]">
-                  <TokenCards
-                    key={id}
-                    id={id}
-                    photo_name={photo_name}
-                    Price={Price}
-                    desc={desc}
-                    userInfo={userInfo}
-                    btnName={btnName}
-                    userPhoto={userPhoto}
-                  />
-                  </li>
-                )
-              )}
-                            </ul>
+                    <ul
+                      id="left-image"
+                      className="scroll-slides-card-left anim-card-scroll flex flex-col gap-y-12"
+                    >
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-1.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-2.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-3.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-4.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-5.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-6.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                    </ul>
                   </div>
 
                   <div className="scroll-image-box">
@@ -383,32 +404,280 @@ ScrollTrigger.create({
                       id="right-image"
                       className="scroll-slides-card-right anim-card-scroll flex flex-col gap-y-12"
                     >
-                         {tokenItem.map(
-                ({
-                  id,
-                  photo_name,
-                  userPhoto,
-                  Price,
-                  desc,
-                  userInfo,
-                  btnName,
-                }: ITokenCards) => (
-                  <li className="slide-image-items w-[382px] h-[520px]">
-                  <TokenCards
-                    key={id}
-                    id={id}
-                    photo_name={photo_name}
-                    Price={Price}
-                    desc={desc}
-                    userInfo={userInfo}
-                    btnName={btnName}
-                    userPhoto={userPhoto}
-                  />
-                  </li>
-                )
-              )}
+                 <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-7.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-8.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-9.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-10.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-11.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-12.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </li>
+                      {/* ====================== */}
                     </ul>
                   </div>
+
                 </div>
               </li>
               {/* ------------------------- */}
@@ -416,67 +685,561 @@ ScrollTrigger.create({
               {/* ----------------------- */}
               <li className="text-img-siniped-info-list info-list2 columns-2 gap-0 bg-secondary md:columns-1 border-t border-b border-solid border-primary">
                 <div className="text-img-siniped-anim-scroll overflow-hidden w-full flex gap-x-12 max-h-[1080px] px-[50px] bg-primary h-full md:hidden laptop-m:max-h-[800px]">
-                  <div className="scroll-image-box">
+                   <div className="scroll-image-box">
                     <ul
-                      id="left-image-1"
+                      id="left-image"
                       className="scroll-slides-card-left anim-card-scroll flex flex-col gap-y-12"
                     >
-                        {tokenItem2.map(
-                ({
-                  id,
-                  photo_name,
-                  userPhoto,
-                  Price,
-                  desc,
-                  userInfo,
-                  btnName,
-                }: ITokenCards) => (
-                  <li className="slide-image-items w-[382px] h-[520px]">
-                  <TokenCards
-                    key={id}
-                    id={id}
-                    photo_name={photo_name}
-                    Price={Price}
-                    desc={desc}
-                    userInfo={userInfo}
-                    btnName={btnName}
-                    userPhoto={userPhoto}
-                  />
-                  </li>
-                )
-              )}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-13.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-14.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-15.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-1.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-4.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-9.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+
+                        </div>
+                      </li>
+                      {/* ====================== */}
                     </ul>
                   </div>
 
                   <div className="scroll-image-box">
                     <ul
-                      id="right-image-1"
+                      id="right-image"
                       className="scroll-slides-card-right anim-card-scroll flex flex-col gap-y-12"
                     >
-                       {tokenItem2.map(
-                ({
-                  id,
-                  photo_name,
-                  userPhoto,
-                  Price,
-                  desc,
-                  userInfo,
-                  btnName,
-                }: ITokenCards) => (
-                  <li className="slide-image-items w-[382px] h-[520px]">
-                  <TokenCards
-                    key={id}
-                    id={id}
-                    photo_name={photo_name}
-                    Price={Price}
-                    desc={desc}
-                    userInfo={userInfo}
-                    btnName={btnName}
-                    userPhoto={userPhoto}
-                  />
-                  </li>
-                )
-              )}
+                 <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-5.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-10.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-2.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-8.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-15.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      {/* ====================== */}
+                      <li className="slides-card-items h-[520px] w-[382px]">
+                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                          <div className="token-img-cont-box relative">
+                            <div className="tokens-img-wrap relative">
+                              <div className="token--icons-img w-full h-[382px]">
+                                <Image
+                                  src="/images/card-img-1.png"
+                                  alt="tokens-card-img"
+                                  className="token-card-img h-full w-full"
+                                  width="382px"
+                                  height="382px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="token-card-content-box pt-[13px] pb-4 px-6">
+                            <div className="user-info-box mb-4 flex items-center">
+                              <img
+                                src="/images/user-img.png"
+                                alt="user-img"
+                                className="user-img rounded-[100%] overflow-hidden mr-2"
+                                width="20px"
+                                height="20px"
+                              />
+                              <h5 className="user-info-title font-primary font-normal text-fig-base text-left text-darkgray">
+                                @voice over
+                              </h5>
+                            </div>
+                            <p className="desc mb-4 text-fig-xs text-left text-secondary font-primary font-normal">
+                              Each Mystery Box contains one NFT with unique
+                              abilities, allotted at random (and revealed later)
+                            </p>
+                            <div className="token-cards-bottom flex justify-between">
+                              <span className="cursor-pointer token-info-name text-fig-15 text-left text-darkgray font-primary font-normal uppercase">
+                                Buy Now
+                              </span>
+                              <h3 className="token-price font-primary font-normal text-fig-32 text-right text-secondary uppercase">
+                                320STX
+                              </h3>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </li>
+                      {/* ====================== */}
                     </ul>
                   </div>
                 </div>
@@ -484,13 +1247,14 @@ ScrollTrigger.create({
                 <div className="text-cont-box w-full py-[307px] px-[190px] bg-secondary max-h-[1080px] h-full laptop-x:px-[80px] laptop-m:max-h-[800px] laptop-m:py-[210px] lg:px-[60px] md:py-8 md:px-6 sm:px-4">
                   <div className="siniped-text-box">
                     <h2 className="title  mb-6 font-primary font-normal text-fig-3x text-left text-primary uppercase desktop-l:text-7xl desktop-m:text-6xl md:text-fig-40">
-                    Experience <br /> NFTs for <br /> Fandoms
+                      Experience <br /> NFTs for <br /> Fandoms
                     </h2>
                     <p className="desc font-primary font-normal text-fig-24 text-left text-primary pb-6 desktop-m:text-xl md:text-fig-4">
-                    Support your favorite creators and interact with them both in the real world or in the Metaverse
+                      Support your favorite creators and interact with them both
+                      in the real world or in the Metaverse
                     </p>
                     <Link href="/">
-                      <a className=" uppercase flex flex-col max-w-[190px] text-center w-full p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out">
+                      <a className=" uppercase flex flex-col max-w-[190px] text-center w-full p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-purple hover:border-purple hover:text-secondary transition duration-150 ease-out">
                         Explore fandoms
                       </a>
                     </Link>

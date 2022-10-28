@@ -1,9 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
 
 export interface ICampaignBanner {
   title?: string;
@@ -18,7 +15,7 @@ const CampaignBanner: React.FC<ICampaignBanner> = () => {
         <div className="container lg:container md:container sm:container relative lg:px-9 md:px-7 sm:px-4">
           <div className="banner-top-box h-[260px] relative">
             <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4 relative">
-              <div className="banner-brand-logo w-[218px] h-[218px] absolute top-[140px]">
+              <div className="banner-brand-logo w-[218px] h-[218px] overflow-hidden rounded-[100%] border-[10px] border-solid border-secondary absolute top-[140px]">
                 <Image
                   src="/images/banner-logo.png"
                   alt="superfandom banner-logo-image"

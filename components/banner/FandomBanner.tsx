@@ -28,7 +28,6 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
         ease: 'none',
         force3D: true,
         scrollTrigger: {
-          // pin: true,
           trigger: '.main-visual-section',
           start: 'top top',
           end: 'bottom top',
@@ -40,7 +39,8 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
 
     // scroll text
     document.body.style.overflow = 'auto';
-    gsap.utils.toArray('.scrolable-text-box').forEach((section: any, index) => {
+  const fandomScrolled =  gsap.utils.toArray('.scrolable-text-box');
+  fandomScrolled.forEach((section: any, index) => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] =
         index % 2
@@ -55,8 +55,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
             trigger: section,
             scrub: 0.5,
             start: 'top +=850',
-            markers: true,
-            end: '200%',
+            end: () => "+=" + (w.scrollWidth - section.offsetWidth),
           },
         }
       );
@@ -111,7 +110,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
               </p>
               <div className="banner-btn-box text-left flex mt-8">
                 <Link href="/">
-                  <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-3 hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
+                  <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-3 hover:bg-purple hover:border-purple transition duration-150 ease-out">
                   explore fandoms
                   </a>
                 </Link>

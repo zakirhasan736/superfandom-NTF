@@ -5,6 +5,7 @@ export interface IExclusiveCard {
   id: 1,
   photo_name?: string;
   desc?: string;
+  categories_name?: string;
   title?: string;
   cardType?: string;
   cardInfo?: string;
@@ -18,7 +19,7 @@ const ExclusiveCard: React.FC<IExclusiveCard> = ({id, photo_name,cardInfo, cardT
       <div className="token-img-cont-box relative">
 
         <div className="tokens-img-wrap relative">
-          <div className="token--icons-img w-full h-[520px]">
+          <div className="exclusive--card-img w-full h-[520px] relative">
             <Image
               src={`/images/${photo_name}`}
               alt="tokens-card-img"
@@ -37,7 +38,7 @@ const ExclusiveCard: React.FC<IExclusiveCard> = ({id, photo_name,cardInfo, cardT
 
 
 
-    <div className="token-card-content-box pt-[13px] pb-4 px-6 absolute bottom-0 left-0">
+    <div className="token-card-content-box pt-[13px] pb-4 px-6 absolute bottom-0 left-0 z-50">
          <h3 className="card-title font-primary font-normal text-fig-32 text-left text-secondary uppercase mb-4">{title}</h3>
         <p className="desc mb-8 text-fig-xs text-left text-secondary font-primary font-normal">{desc}</p>
         <div className="token-cards-bottom flex justify-end w-full">
