@@ -30,6 +30,7 @@ const CausesBanner: React.FC<ICausesBanner> = ({ title, subtitle, desc }) => {
       },
       y: 180,
     });
+
     gsap.to('.modal-img-item.two', {
         scrollTrigger: {
           trigger: '.banner-modal-img.two',
@@ -57,11 +58,9 @@ const CausesBanner: React.FC<ICausesBanner> = ({ title, subtitle, desc }) => {
       { scaleY: 1, scaleX: 1, y: 160, x: 50 },
       {
         scaleX: 25,
-        // scaleY: 0,
         ease: 'none',
         force3D: true,
         scrollTrigger: {
-          // pin: true,
           trigger: '.main-visual-section',
           start: 'top top',
           end: 'bottom top',
@@ -72,7 +71,8 @@ const CausesBanner: React.FC<ICausesBanner> = ({ title, subtitle, desc }) => {
 
     // scroll text
     document.body.style.overflow = 'auto';
-    gsap.utils.toArray('.scrolable-text-box').forEach((section: any, index) => {
+    const causesScrolled =  gsap.utils.toArray('.scrolable-text-box');
+    causesScrolled.forEach((section: any, index) => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] =
         index % 2
@@ -87,8 +87,7 @@ const CausesBanner: React.FC<ICausesBanner> = ({ title, subtitle, desc }) => {
             trigger: section,
             scrub: 0.5,
             start: 'top +=850',
-            markers: true,
-            end: '200%',
+            end: () => "+=" + (w.scrollWidth - section.offsetWidth),
           },
         }
       );
@@ -159,7 +158,7 @@ const CausesBanner: React.FC<ICausesBanner> = ({ title, subtitle, desc }) => {
               </p>
               <div className="banner-btn-box text-left flex mt-8">
                 <Link href="/">
-                  <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-3 hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
+                  <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-3 hover:bg-neon hover:border-neon transition duration-150 ease-out">
                     Explore Causes
                   </a>
                 </Link>

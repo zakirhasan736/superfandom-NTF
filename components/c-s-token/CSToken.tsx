@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import TokenCards , {ITokenCards} from '../Card/TokenCards/TokenCards';
+import ExclusiveCard, {IExclusiveCard} from '../Card/ExclusiveCard/ExclusiveCard';
 
 const CSToken = ({ pageName }: any) => {
   const [filterText, setFilter] = useState<string>('all');
   const [tokenItem, setTokenItem] = useState<any>([]);
+  const [ExclusiveTokenData, setExclusiveTokenData] = useState<any>([]);
   let data = [
     {
       id: 1,
@@ -54,8 +56,6 @@ const CSToken = ({ pageName }: any) => {
       userInfo: '@voice over',
       btnName: 'Buy Now',
       userPhoto: 'user-img.png',
-      // bidNow: 'Bid Now',
-      // bidNowBg: 'white',
       
     },
     {
@@ -93,8 +93,6 @@ const CSToken = ({ pageName }: any) => {
       userInfo: '@voice over',
       btnName: 'Buy Now',
       userPhoto: 'user-img.png',
-      // bidNow: 'Bid Now',
-      // bidNowBg: 'white',
       
     },
     {
@@ -106,8 +104,6 @@ const CSToken = ({ pageName }: any) => {
       userInfo: '@voice over',
       btnName: 'Buy Now',
       userPhoto: 'user-img.png',
-      // bidNow: 'Bid Now',
-      // bidNowBg: 'white',
     },
     {
       id: 9,
@@ -118,8 +114,6 @@ const CSToken = ({ pageName }: any) => {
       userInfo: '@voice over',
       btnName: 'Buy Now',
       userPhoto: 'user-img.png',
-      // bidNow: 'Bid Now',
-      // bidNowBg: 'white',
       
     },
     {
@@ -131,8 +125,6 @@ const CSToken = ({ pageName }: any) => {
       userInfo: '@voice over',
       btnName: 'Buy Now',
       userPhoto: 'user-img.png',
-      // bidNow: 'Bid Now',
-      // bidNowBg: 'white',
     },
     {
       id: 11,
@@ -143,8 +135,6 @@ const CSToken = ({ pageName }: any) => {
       userInfo: '@voice over',
       btnName: 'Buy Now',
       userPhoto: 'user-img.png',
-      // bidNow: 'Bid Now',
-      // bidNowBg: 'white',
       
     },
     {
@@ -156,9 +146,130 @@ const CSToken = ({ pageName }: any) => {
       userInfo: '@voice over',
       btnName: 'Buy Now',
       userPhoto: 'user-img.png',
-      // bidNow: 'Bid Now',
-      // bidNowBg: 'white',
       
+    }
+  ];
+
+  let data2 = [
+    {
+      id: 1,
+      categories_name: ['all', 'pfps'],
+      photo_name: 'exclusive-img-1.png',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      title: 'Collection name',
+      cardType: 'Nft',
+      cardInfo: 'soon', 
+      cardInfoBg: 'neon' ,
+    },
+    {
+      id: 2,
+      categories_name: ['all', 'editions'],
+      photo_name: 'exclusive-img-2.png',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      title: 'Collection name',
+      cardType: 'Nft',
+      cardInfo: 'Live', 
+      cardInfoBg: 'purple' ,
+    },
+    {
+      id: 3,
+      categories_name: ['all', 'pfps'],
+      photo_name: 'exclusive-img-3.png',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      title: 'Collection name',
+      cardType: 'Nft',
+      cardInfo: 'Live', 
+      cardInfoBg: 'purple' ,
+    },
+    {
+      id: 4,
+      categories_name: ['all', 'pfps'],
+      photo_name: 'exclusive-img-4.png',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      title: 'Collection name',
+      cardType: 'Nft',
+      cardInfo: 'soon', 
+      cardInfoBg: 'neon' ,
+    },
+    {
+      id: 5,
+      categories_name: ['all', 'editions'],
+      photo_name: 'exclusive-img-2.png',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      title: 'Collection name',
+      cardType: 'Nft',
+      cardInfo: 'Live', 
+      cardInfoBg: 'neon' ,
+    },
+    {
+      id: 6,
+      categories_name: ['all', 'pfps'],
+      photo_name: 'exclusive-img-4.png',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      title: 'Collection name',
+      cardType: 'Nft',
+      cardInfo: 'Live', 
+      cardInfoBg: 'neon' ,
+    },
+    {
+      id: 7,
+      categories_name: ['all', 'pfps'],
+      photo_name: 'exclusive-img-3.png',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      title: 'Collection name',
+      cardType: 'Nft',
+      cardInfo: 'Live', 
+      cardInfoBg: 'neon' ,
+    },
+    {
+      id: 8,
+      categories_name: ['all', 'editions'],
+      photo_name: 'exclusive-img-1.png',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      title: 'Collection name',
+      cardType: 'Nft',
+      cardInfo: 'Live', 
+      cardInfoBg: 'neon' ,
+    },
+    {
+      id: 9,
+      categories_name: ['all', 'pfps'],
+      photo_name: 'exclusive-img-4.png',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      title: 'Collection name',
+      cardType: 'Nft',
+      cardInfo: 'Live', 
+      cardInfoBg: 'neon' ,
+    },
+    {
+      id: 10,
+      categories_name: ['all', 'editions'],
+      photo_name: 'exclusive-img-2.png',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      title: 'Collection name',
+      cardType: 'Nft',
+      cardInfo: 'Live', 
+      cardInfoBg: 'neon' ,
+    },
+    {
+      id: 11,
+      categories_name: ['all', 'pfps'],
+      photo_name: 'exclusive-img-4.png',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      title: 'Collection name',
+      cardType: 'Nft',
+      cardInfo: 'Live', 
+      cardInfoBg: 'neon' ,
+    },
+    {
+      id: 12,
+      categories_name: ['all', 'editions'],
+      photo_name: 'exclusive-img-1.png',
+      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
+      title: 'Collection name',
+      cardType: 'Nft',
+      cardInfo: 'Live', 
+      cardInfoBg: 'neon' ,
     },
   ];
 
@@ -167,6 +278,13 @@ const CSToken = ({ pageName }: any) => {
       item.categories_name.includes(filterText)
     );
     setTokenItem(items);
+  }, [filterText]);
+
+  useEffect(() => {
+    const items2 = data2.filter((item) =>
+      item.categories_name.includes(filterText)
+    );
+    setExclusiveTokenData(items2);
   }, [filterText]);
 
   return (
@@ -229,32 +347,28 @@ const CSToken = ({ pageName }: any) => {
             <div className="content_wrapper flex items-center flex-wrap gap-5 mb-16">
               {
                 pageName==="campaign" ?
-                tokenItem.map(
+                ExclusiveTokenData.map(
                   ({
                     id,
                     photo_name,
-                    categories_name,
-                    bidNowBg,
-                    userPhoto,
-                    bidNow,
-                    Price,
                     desc,
-                    userInfo,
-                    btnName,
-                  }: ITokenCards) => (
+                    title,
+                    cardType,
+                    cardInfo,
+                    categories_name,
+                    cardInfoBg,
+                  }: IExclusiveCard) => (
                     // Exclusive card
-                    <TokenCards
+                    <ExclusiveCard
                       key={id}
                       id={id}
-                      categories_name={categories_name}
+                    categories_name={categories_name}
                       photo_name={photo_name}
-                      Price={Price}
                       desc={desc}
-                      userInfo={userInfo}
-                      btnName={btnName}
-                      userPhoto={userPhoto}
-                      bidNow={bidNow}
-                      bidNowBg={bidNowBg}
+                      title={title}
+                      cardType={cardType}
+                      cardInfo={cardInfo}
+                      cardInfoBg={cardInfoBg}
                     />
                   )
                 ):

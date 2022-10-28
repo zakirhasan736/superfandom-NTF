@@ -34,7 +34,8 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
   ];
   useEffect(() => {
     document.body.style.overflow = 'auto';
-    gsap.utils.toArray('.scrolable-text-box.how-it-work-title').forEach((section:any, index) => {
+  const howItWorkScrolled =  gsap.utils.toArray('.scrolable-text-box.how-it-work-title.one');
+  howItWorkScrolled.forEach((section:any, index) => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
       gsap.fromTo(w, { x, y: 0, }, {
@@ -42,14 +43,16 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
         duration: 10,
         scrollTrigger: {
           trigger: section,
-          markers: true,
-          scrub: 0.5
+          scrub: 0.5,
+          start: 'top top',
+          end: () => "+=" + (w.scrollWidth - section.offsetWidth),
         },
         y: 0,
       });
     });
 
-    gsap.utils.toArray('.how-it-work-info-items').forEach((section:any) => {
+   const workInfoItems = gsap.utils.toArray('.how-it-work-info-items');
+   workInfoItems.forEach((section:any) => {
       const infoLine = section.querySelector('.how-it-work-info-list');
       gsap.to(infoLine, {
         scrollTrigger: {
@@ -59,7 +62,6 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
           end: 'bottom bottom',
           toggleActions: 'restart pause reverse pause',
           toggleClass: 'active',
-          // ease: 'power2',
         },
         opacity: 1,
       });
@@ -68,7 +70,6 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
       "(min-width:1681px)": function () {
         ScrollTrigger.create({
           trigger: ".prallex2",
-          // pin: true,
           scrub: 1.5,
           start: "center center",
           end: "+=400"
@@ -77,7 +78,6 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
       "(max-width:1680px)": function () {
         ScrollTrigger.create({
           trigger: ".prallex2",
-          // pin: true,
           scrub: true,
           start: "center center",
           end: "+=400"
@@ -86,18 +86,19 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
       "(max-width:1280px)": function () {
         ScrollTrigger.create({
           trigger: ".prallex2",
-          // pin: true,
           scrub: true,
           start: "top top",
           end: "top"
         });
       },
-      // "(max-width:1680px)": function(){},
+     
     })
 
   }, []);
+
   useEffect(() => {
-    gsap.utils.toArray('.how-it-work-info-list').forEach((section:any) => {
+   const howItworkInfoFade = gsap.utils.toArray('.how-it-work-info-list');
+   howItworkInfoFade.forEach((section:any) => {
       const elems = section.querySelectorAll('.text-cont-box');
       // Set starting params for sections
       gsap.set(elems, {
@@ -153,7 +154,7 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
         </div>
         <div className="how-it-work-wrapper pt-[60px] pb-[124px] w-full z-10 relative lg:pt-[80px] lg:pb-[80px] md:pt-8 md:pb-8">
           <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
-            <div className="scrolable-text-box how-it-work-title">
+            <div className="scrolable-text-box how-it-work-title one">
               <div className="scroll-text-item">
                 <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32">
                   • how it works • how it works
@@ -172,7 +173,7 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
                 <li className="how-it-work-info-list info-list1 flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
                   <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                     <div className="text-cont-box w-full max-w-[462px] relative">
-                      <div className="info-num-icon absolute right-0 top-[-129px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
+                      <div className="info-num-icon absolute right-0 top-[-133px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
                         <Image
                           src="/images/Subtract-num-1.png"
                           alt="superfandom info-item-num-img"
@@ -208,7 +209,7 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
                 <li className="how-it-work-info-list info-list2 flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
                   <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                     <div className="text-cont-box w-full max-w-[462px] relative">
-                      <div className="info-num-icon absolute right-0 top-[-129px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
+                      <div className="info-num-icon absolute right-0 top-[-133px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
                         <Image
                           src="/images/Subtract-num-2.png"
                           alt="superfandom info-item-num-img"
@@ -245,7 +246,7 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
                 <li className="how-it-work-info-list info-list3 flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
                   <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                     <div className="text-cont-box w-full max-w-[462px] relative">
-                      <div className="info-num-icon absolute right-0 top-[-129px] md:w-[130px] sm:w-[60px]  md:top-0 md:left-0 md:right-auto">
+                      <div className="info-num-icon absolute right-[-30px] top-[-133px] md:w-[130px] sm:w-[60px]  md:top-0 md:left-0 md:right-auto">
                         <Image
                           src="/images/Subtract-num-3.png"
                           alt="superfandom info-item-num-img"

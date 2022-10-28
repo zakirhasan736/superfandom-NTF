@@ -74,12 +74,12 @@ const ProductDetails2: NextPage<any> = () => {
                           </span>
                         </h3>
                         <div className="product-price-btn-box text-center flex sm:flex sm:flex-col sm:px-4">
-                          <div className="update-product flex items-center justify-between p-5 font-primary uppercase font-normal text-fig-15 text-primary  rounded-[40px] bg-transparent border border-solid border-primary transition duration-150 ease-out md:border-primary max-w-[180px] w-full md:text-primary mr-5">
+                          <div className="update-product flex items-center justify-between font-primary uppercase font-normal text-fig-15 text-primary  rounded-[40px] bg-transparent border border-solid border-primary transition duration-150 ease-out md:border-primary max-w-[180px] w-full md:text-primary mr-5">
                             <div
                               onClick={() =>
                                 count > 1 && setCount((prev) => prev - 1)
                               }
-                              className="inc-box cursor-pointer"
+                              className="inc-box cursor-pointer py-5 pl-5"
                             >
                               <img src="/images/minus.png" alt="icon" />
                             </div>
@@ -88,7 +88,7 @@ const ProductDetails2: NextPage<any> = () => {
                             </div>
                             <div
                               onClick={() => setCount((prev) => prev + 1)}
-                              className="dec-box cursor-pointer"
+                              className="dec-box cursor-pointer py-5 pr-5"
                             >
                               <img src="/images/plus.png" alt="icon" />
                             </div>

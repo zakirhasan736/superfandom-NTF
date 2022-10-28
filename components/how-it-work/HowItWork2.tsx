@@ -30,16 +30,18 @@ const HowItWork2: NextPage<any> = ({pageName}) => {
   ];
 useEffect(() =>{
   document.body.style.overflow = 'auto';
-  gsap.utils.toArray('.scrolable-text-box.how-it-work-title.two').forEach((section:any, index) => {
-    const w = section.querySelector('.scroll-text-item');
-    const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
-    gsap.fromTo(w, { x, y: 0, }, {
+  const howItWorkScrolled2 = gsap.utils.toArray('.how-it-work-section-box');
+  howItWorkScrolled2.forEach((section:any, index) => {
+    const wi = section.querySelector('.scroll-text-item');
+    const [x, xEnd] = (index % 2) ? ['10%', (wi.scrollWidth - section.offsetWidth) * -1] : [wi.scrollWidth * -1, 0];
+    gsap.fromTo(wi, { x, y: 0, }, {
       x: xEnd,
       duration: 10,
       scrollTrigger: {
         trigger: section,
-        markers: true,
-        scrub: 0.5
+        scrub: 0.1,
+        start: 'top top',
+        end: () => "+=" + (wi.scrollWidth - section.offsetWidth),
       },
       y: 0,
     });
@@ -49,7 +51,7 @@ useEffect(() =>{
   return (
     <>
       <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
-          <div className="section-title-box relative">
+          <div className="section-title-box how-it-work-section-box relative w-full">
           <div className="how-it-work-modal-img min-w-[1920px] w-full h-[660px]">
           <img
               src={`/images/${
@@ -63,7 +65,7 @@ useEffect(() =>{
             />
           </div> 
           <div className="section-titlebox lg:mb-15 sm:mb-5 absolute bottom-4">
-            <div className="scrolable-text-box how-it-work-title two">
+            <div className="scrolable-text-box how-it-work-title">
               <div className="scroll-text-item">
                 <h2 className="section-title scrollable--title2 font-primary font-normal text-fig-5x text-secondary text-center uppercase md:text-fig-xx sm:text-fig-32">
                   • how it works • how it works • how it works • how it works •

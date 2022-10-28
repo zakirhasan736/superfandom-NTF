@@ -581,6 +581,21 @@ a {
     top: -107px;
   }
 }
+/* benner home page */
+.main-visual-section.main-banner--one .banner-modal-imgbox .modal-img-list .modal-img-item:first-child{
+  margin-top: 320px;
+}
+
+@media screen and (max-width:991px) {
+.main-visual-section.main-banner--one .banner-modal-imgbox .modal-img-list .modal-img-item:first-child{
+  top: -17px;
+  margin-top: 0px;
+}
+
+.main-visual-section.main-banner--one .banner-modal-imgbox .modal-img-list .modal-img-item:nth-child(2){
+  margin-bottom: -45px;
+} 
+}
 
 /* .how-it-work-section{} */
 /* explore and collect section */
@@ -868,3 +883,18 @@ header.white-varient-navbar .navbar-cont-box .nav-items  li a{
   .bg-white{background-color: #ffffff;}
   .tokens-card-top-cont .card-updates-info:empty,
   .tokens-card-top-cont .link-item-text:empty{display: none;}
+  .active--cards-img:before,
+  .exclusive--card-img:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background:  linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  }
+
+/* ============================== */
