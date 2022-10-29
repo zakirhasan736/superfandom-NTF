@@ -837,14 +837,28 @@ li.text-img-siniped-info-list.active .siniped-text-box {
   background-image: url('/images/drop-bg-img.png');
   background-position: center;
   background-size: cover;
-
+}
+@media screen and (max-width:991px) {
+  .active-drop-section{
+    background-image: url('/images/drop-bg-img.png');
+    background-position: center;
+    background-size: cover;
+  }
+  .active-drop-content-wrapper{
+    background-image:none;
+    background-color: transparent;
+  }
 }
 .exclusive-content-wrapper{
   background-image: url('/images/explore-bg.png');
   background-position: center;
   background-size: cover;
 }
-
+@media screen and (max-width:991px) {
+  .exclusive-content-wrapper{
+    background-image: none;
+  }
+}
 .banner-top-box{
   background-image: url('/images/banner4-bg-img.png');
   background-position: center;
@@ -876,7 +890,10 @@ header.white-varient-navbar .navbar-cont-box .nav-items  li a{
     border: 1px solid #000000;
   }
   header.white-varient-navbar  .navbar-btn-items li a{color: #000000;}
-
+@media screen and (max-width:991px) {
+  header.white-varient-navbar  .navbar-btn-items li a{color: #ffffff;}
+  
+}
   /* tokens cards styled */
   .bg-neon{background-color: #56ccf2;}
   .bg-purple{background-color: #2f80ed;}
@@ -896,5 +913,6 @@ header.white-varient-navbar .navbar-cont-box .nav-items  li a{
     z-index: 1;
     background:  linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
   }
+
 
 /* ============================== */

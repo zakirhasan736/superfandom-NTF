@@ -162,17 +162,17 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               <div className="heading-title-box h-full w-full block">
                 <h2 className="banner_title_animation active title_animation banner-title mb-[67px] absolute top-0 left-0 z-30">
                   <span className="overflow-hidden w-full h-full block">
-                    <span className="leading-[155px] font-primary font-normal text-fig-5x text-left text-secondary uppercase  laptop-x:text-[130px] laptop-x:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
+                    <span className="leading-[155px] font-primary font-normal text-fig-5x text-left text-secondary uppercase  laptop-x:text-[130px] laptop-x:leading-[130px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
                       Collect
                     </span>{' '}
                   </span>
                   <span className="overflow-hidden w-full h-full block">
-                    <span className="leading-[155px] font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-x:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
+                    <span className="leading-[155px] font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-x:leading-[130px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
                       life-changing
                     </span>{' '}
                   </span>
                   <span className="overflow-hidden w-full h-full block">
-                    <span className="leading-[155px] font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-m:leading-[100px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
+                    <span className="leading-[155px] font-primary md:block font-normal text-fig-5x text-left text-secondary uppercase laptop-x:text-[130px] laptop-x:leading-[130px] lg:text-[110px] lg:leading-[80px] md:text-fig-xx sm:text-fig-40">
                       NFTs
                     </span>
                   </span>

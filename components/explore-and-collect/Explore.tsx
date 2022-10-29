@@ -140,7 +140,7 @@ const Explore: NextPage<any> = () => {
       scrollTrigger: {
         trigger: ".explore-section",
         scrub: true,
-        start: "top 0px",
+        start: "top top",
         end: "bottom -550px",
         markers: false,
         toggleClass: "active"
@@ -164,7 +164,7 @@ useEffect(() => {
 
     ScrollTrigger.create({
       trigger: '.explore-section',
-      start: 'top 40%',
+      start: 'top 60%',
       end: 'bottom top',
       onEnter: () => gsap.to(animTextExplor, {
         y: 0,
