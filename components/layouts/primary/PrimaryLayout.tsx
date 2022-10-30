@@ -5,12 +5,14 @@ import Navigation from '../../header/navigation/Navigation';
 export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {
   justify?: 'items-center' | 'items-start';
   headerNext:boolean;
+  pageName?:string;
 }
 
 const PrimaryLayout: React.FC<IPrimaryLayout> = ({
   children,
   justify = 'items-center',
   headerNext,
+  pageName,
   ...divProps
 }) => {
   return (
@@ -24,7 +26,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
         <Navigation headerNext={headerNext}/>
         <main className="w-full main-wrapper--box">{children}</main>
         <div className="m-auto" />
-        <Footer />
+        <Footer pageName={pageName}/>
       </div>
     </>
   );

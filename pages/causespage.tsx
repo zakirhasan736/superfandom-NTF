@@ -28,5 +28,5 @@ const CausesPage: NextPageWithLayout = () => {
 export default CausesPage;
 
 CausesPage.getLayout = (page) => {
-  return <PrimaryLayout headerNext={false}>{page}</PrimaryLayout>;
+  return <PrimaryLayout pageName={"causes"} headerNext={false}>{page}</PrimaryLayout>;
 };

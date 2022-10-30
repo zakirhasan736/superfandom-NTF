@@ -28,5 +28,5 @@ const Fundom: NextPageWithLayout = () => {
 export default Fundom;
 
 Fundom.getLayout = (page) => {
-  return <PrimaryLayout headerNext={false}>{page}</PrimaryLayout>;
+  return <PrimaryLayout pageName={"fandom"} headerNext={false}>{page}</PrimaryLayout>;
 };

@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export interface IFooter extends React.ComponentPropsWithoutRef<'footer'> {}
+export interface IFooter extends React.ComponentPropsWithoutRef<'footer'> {
+  pageName:string;
+}
 
-const Footer: React.FC<IFooter> = ({ className, ...footerProps }) => {
+const Footer: React.FC<IFooter> = ({ className,pageName, ...footerProps }) => {
   return (
     <footer
       {...footerProps}
@@ -22,18 +24,18 @@ const Footer: React.FC<IFooter> = ({ className, ...footerProps }) => {
           </div>
           <div className="footer-contant-box w-full">
             <ul className="footer-link-items flex items-center border-b border-solid border-secondary w-full py-[85px] px-[84px] laptop-x:py-12 laptop-x:px-14 lg:block lg:p-0 lg:text-center">
-              <li className="font-primary text-fig-32 font-normal text-secondary laptop-x:text-2xl laptop-m:text-xl lg:text-lg md:text-fig-15 lg:py-4 lg:border-t lg:border-solid lg:border-secondary">
-                <Link href="/">
+              <li className={`${pageName==="causes"?"text-red-500":""} font-primary text-fig-32 font-normal text-secondary laptop-x:text-2xl laptop-m:text-xl lg:text-lg md:text-fig-15 lg:py-4 lg:border-t lg:border-solid lg:border-secondary`}>
+                <Link href="/causespage">
                   <a>CAUSES</a>
                 </Link>
               </li>
-              <li className="font-primary text-fig-32 font-normal text-secondary laptop-x:text-2xl laptop-m:text-xl lg:text-lg md:text-fig-15 lg:py-4 lg:border-t lg:border-solid lg:border-secondary">
-                <Link href="/">
+              <li  className={`${pageName==="fandom"?"text-red-500":"" } font-primary text-fig-32 font-normal text-secondary laptop-x:text-2xl laptop-m:text-xl lg:text-lg md:text-fig-15 lg:py-4 lg:border-t lg:border-solid lg:border-secondary`}>
+                <Link href="/fandom">
                   <a>FANDOMS</a>
                 </Link>
               </li>
-              <li className="font-primary text-fig-32 font-normal text-secondary laptop-x:text-2xl laptop-m:text-xl lg:text-lg md:text-fig-15 lg:py-4 lg:border-t lg:border-solid lg:border-secondary">
-                <Link href="/">
+              <li className={`${pageName==="campaign"?"text-red-500":"" } font-primary text-fig-32 font-normal text-secondary laptop-x:text-2xl laptop-m:text-xl lg:text-lg md:text-fig-15 lg:py-4 lg:border-t lg:border-solid lg:border-secondary`}>
+                <Link href="/campaign">
                   <a>CAMPAIGN</a>
                 </Link>
               </li>
