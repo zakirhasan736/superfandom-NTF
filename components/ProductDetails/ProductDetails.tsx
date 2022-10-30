@@ -6,6 +6,8 @@ import Link from 'next/link';
 
 const ProductDetails: NextPage<any> = () => {
   const [more,setMore] = useState(false)
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <section className="product-details-section relative w-full px-0 bg-secondary pt-44 md:pt-32 overflow-hidden">
@@ -79,11 +81,12 @@ const ProductDetails: NextPage<any> = () => {
                               buy now
                             </a>
                           </Link>
-                          <Link href="/">
-                            <a className="p-5 font-primary uppercase font-normal text-fig-15 text-primary  rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out md:border-primary max-w-[180px] w-full md:text-primary md:hover:bg-primary md:hover:text-secondary md:max-w-[100%]">
+                          <button
+                            onClick={() => setOpen(!open)}
+                            className="p-5 font-primary uppercase font-normal text-fig-15 text-primary  rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out md:border-primary max-w-[180px] w-full md:text-primary md:hover:bg-primary md:hover:text-secondary md:max-w-[100%]"
+                          >
                               make offer
-                            </a>
-                          </Link>
+                           </button>
                         </div>
                       </div>
                     </div>
@@ -194,6 +197,16 @@ const ProductDetails: NextPage<any> = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div
+          className={`${
+            open ? 'block' : 'hidden'
+          } fixed z-50 inset-y-0 w-full h-full left-0 right-8 flex items-center justify-center`}
+        >
+          <div className="shadow border rounded bg-black w-48 h-48 text-white">
+            <button onClick={() => setOpen(!open)}>close</button>
+            <h2>Modal title</h2>
           </div>
         </div>
       </section>

@@ -200,8 +200,8 @@ useEffect(() => {
           </div>
         </div>
         <div className="container 2xl:container xl:container lg:container md:container sm:container 2xl:pl-12 2xl:pr-12 xl:pl-12 xl:pr-12 lg:pl-8 lg:pr-8 md:px-0 sm:px-0">
-          <div className="explore-content-wrapper pt-12 pb-[51px] sm:pb-8 px-0 bg-primary md:bg-secondary sm:rounded-0">
-            <div className="explore-slidebox mb-12">
+          <div className="explore-content-wrapper pt-12 pb-[51px] md:pb-0 px-0 bg-primary md:bg-secondary sm:rounded-0 sm:pt-0">
+            <div className="explore-slidebox mb-12 desktop-m:h-[505px] laptop-x:h-[461px] laptop-m:h-[510px] lg:h-[450px] md:h-[340px]">
               <ul className="slides-image-box flex no-wrap gap-5">
               
                 {tokenItem.map(
@@ -214,7 +214,7 @@ useEffect(() => {
                   userInfo,
                   btnName,
                 }: ITokenCards) => (
-                  <li className="slide-image-items w-[382px] h-[520px]">
+                  <li className="slide-image-items">
                   <TokenCards
                     key={id}
                     id={id}

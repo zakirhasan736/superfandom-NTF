@@ -138,7 +138,7 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
   }, []);
   return (
     <>
-      <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
+      <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden md:pb-[53px]">
         <div className="scrolable-bg-shape absolute top-0 left-0 w-full prallex2">
         <img
               src={`/images/${
@@ -152,7 +152,7 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
               height="100%"
             />
         </div>
-        <div className="how-it-work-wrapper pt-[60px] pb-[124px] w-full z-10 relative lg:pt-[80px] lg:pb-[80px] md:pt-8 md:pb-8">
+        <div className="how-it-work-wrapper pt-[60px] pb-[124px] w-full z-10 relative lg:pt-[80px] lg:pb-[60px] md:pt-8 md:pb-8">
           <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
             <div className="scrolable-text-box how-it-work-title one">
               <div className="scroll-text-item">
@@ -167,13 +167,14 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
             </div>
           </div>
       {card1 && 
-          <div className="custom-container 2xl:px-0 xl:px-0 laptop-x:px-12 md:px-5 sm:px-4">
+          <div className="custom-container 2xl:px-0 xl:px-12 desktop-m:12 laptop-x:px-12 laptop-m:px-10 md:px-5 sm:px-4">
             <div className="how-it-work-cont-wrapper">
               <ul className="how-it-work-info-items">
-                <li className="how-it-work-info-list info-list1 flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
+
+                <li className="how-it-work-info-list info-list1 flex items-center flex-row gap-[190px] laptop-m:gap-x-16 lg:gap-[120px] md:gap-8 md:flex-col-reverse md:mb-0">
                   <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                     <div className="text-cont-box w-full max-w-[462px] relative">
-                      <div className="info-num-icon absolute right-0 top-[-133px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
+                      <div className="info-num-icon absolute right-0 top-[-133px] laptop-m:top-[-90px] laptop-m:w-[150px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
                         <Image
                           src="/images/Subtract-num-1.png"
                           alt="superfandom info-item-num-img"
@@ -192,7 +193,7 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
                       </div>
                     </div>
                   </div>
-                  <div className="how-it-work-anim-cont w-full relative sm:mb-8 md:text-right md:flex md:justify-center">
+                  <div className="how-it-work-anim-cont w-full max-w-[505px] min-w-[345px] md:max-w-[345px] relative sm:mb-8 md:text-right md:flex md:justify-center">
                     <Lottie
                       options={{
                         loop: true,
@@ -202,14 +203,18 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
                           preserveAspectRatio: 'xMidYMid slice'
                         }
                       }}
-                      height={610}
-                      width={600} />
+                      max-height={520}
+                      width={`100%`}
+                      height={`100%`}
+                      max-width={505}
+                       />
                   </div>
                 </li>
-                <li className="how-it-work-info-list info-list2 flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
+
+                <li className="how-it-work-info-list info-list2 flex items-center flex-row gap-[190px] laptop-m:gap-x-16 lg:gap-[120px] md:gap-8 md:flex-col-reverse md:mb-0">
                   <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                     <div className="text-cont-box w-full max-w-[462px] relative">
-                      <div className="info-num-icon absolute right-0 top-[-133px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
+                      <div className="info-num-icon absolute right-0 top-[-133px] laptop-m:top-[-90px]  laptop-m:w-[150px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
                         <Image
                           src="/images/Subtract-num-2.png"
                           alt="superfandom info-item-num-img"
@@ -228,7 +233,7 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
                       </div>
                     </div>
                   </div>
-                  <div className="how-it-work-anim-cont w-full relative flex justify-end md:justify-center sm:mb-8">
+                  <div className="how-it-work-anim-cont w-full max-w-[762px] min-w-[345px] md:max-w-[345px] relative flex justify-end md:justify-center sm:mb-8">
                   <Lottie
                       options={{
                         loop: true,
@@ -238,15 +243,17 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
                           preserveAspectRatio: 'xMidYMid slice'
                         }
                       }}
-                      height={600}
-                      width={650} />
+                      max-height={728}
+                      width={`100%`}
+                      height={`100%`}
+                      max-width={762} />
                   </div>
                 </li>
 
-                <li className="how-it-work-info-list info-list3 flex items-center flex-row gap-[190px] lg:gap-[120px] md:flex-col-reverse md:mb-8">
+                <li className="how-it-work-info-list info-list3 flex items-center flex-row gap-[190px] laptop-m:gap-x-16 lg:gap-[120px] md:gap-8 md:flex-col-reverse md:mb-0">
                   <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                     <div className="text-cont-box w-full max-w-[462px] relative">
-                      <div className="info-num-icon absolute right-[-30px] top-[-133px] md:w-[130px] sm:w-[60px]  md:top-0 md:left-0 md:right-auto">
+                      <div className="info-num-icon absolute right-[-30px] top-[-133px]  laptop-m:w-[150px] md:w-[130px] sm:w-[60px]  md:top-0 md:left-0 md:right-auto">
                         <Image
                           src="/images/Subtract-num-3.png"
                           alt="superfandom info-item-num-img"
@@ -265,7 +272,7 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
                       </div>
                     </div>
                   </div>
-                  <div className="how-it-work-anim-cont w-full relative flex justify-center mb-8">
+                  <div className="how-it-work-anim-cont w-full max-w-[722px] min-w-[345px] md:max-w-[345px] relative flex justify-center mb-8">
                   <Lottie
                       options={{
                         loop: true,
@@ -275,10 +282,13 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
                           preserveAspectRatio: 'xMidYMid slice'
                         }
                       }}
-                      height={600}
-                      width={750} />
+                      max-height={596}
+                      width={`100%`}
+                      height={`100%`}
+                      max-width={722}/>
                   </div>
                 </li>
+
               </ul>
             </div>
           </div>
