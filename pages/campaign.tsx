@@ -24,5 +24,5 @@ const Campaign: NextPageWithLayout = () => {
 export default Campaign;
 
 Campaign.getLayout = (page) => {
-  return <PrimaryLayout headerNext={true}>{page}</PrimaryLayout>;
+  return <PrimaryLayout pageName={"campaign"} headerNext={true}>{page}</PrimaryLayout>;
 };
