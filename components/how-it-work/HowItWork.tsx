@@ -156,7 +156,7 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
           <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
             <div className="scrolable-text-box how-it-work-title one">
               <div className="scroll-text-item">
-                <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase md:text-fig-xx sm:text-fig-32">
+                <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-40">
                   • how it works • how it works
                   • how it works • how it works
                   • how it works • how it works

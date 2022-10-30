@@ -18,24 +18,46 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
     
     // banner scroll scale bg
     const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
-    gsap.fromTo(
-      imgSclTest,
-      { scaleY: 1, scaleX: 1, y: 420 },
-      {
-        scaleX: 2,
-        scaleY: 5,
-        y:0,
-        ease: 'none',
-        force3D: true,
-        scrollTrigger: {
-          trigger: '.main-visual-section',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.5,
-        },
-      }
-    );
-
+   
+    let viewPort = gsap.matchMedia();
+    viewPort.add("(min-width:768px)", () => {
+      gsap.fromTo(
+        imgSclTest,
+        { scaleY: 1, scaleX: 1, y: 420 },
+        {
+          scaleX: 2,
+          scaleY: 5,
+          y:0,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        }
+      );
+     }),
+    viewPort.add("(max-width:767px)", () => {
+      gsap.fromTo(
+        imgSclTest,
+        { scaleY: 6, scaleX: .95, y: 300 },
+        {
+          scaleX: 5,
+          scaleY: 25,
+          y:0,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        }
+      );
+    }),
 
     // scroll text
     document.body.style.overflow = 'auto';
@@ -65,20 +87,20 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
 
   return (
     <>
-      <section className="main-visual-section bg-primary pt-[274px] relative overflow-hidden">
-        <div className="custom-container lg:container md:container sm:container relative lg:px-9 md:px-7 sm:px-4">
-          <div className="main-visual-wrapper flex items-center justify-between md:block pb-[300px] relative">
+      <section className="main-visual-section bg-primary pt-[274px] md:pt-56 sm:pt-40 relative overflow-hidden">
+        <div className="custom-container lg:container md:container sm:container relative 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
+          <div className="main-visual-wrapper flex items-center justify-between md:block pb-[300px] laptop-m:pb-[200px] lg:pb-[160px] md:pb-16 relative">
             {/* ------------------- */}
             <div className="banner-text-cont-left text_animation w-full relative z-50">
 
                <div className="heading-title-box h-full w-full block">
-                <h2 className="absolute right-[-277px] top-[100px] banner_title_animation uppercase text-secondary banner-title mb-8 z-30 text-fig-3x font-normal font-primary text-right">
+                <h2 className="absolute md:relative md:text-left md:right-0 md:top-0 md:mb-0 right-[-277px] desktop-m:right-[-300px] laptop-m:right-[-350px] top-[100px] banner_title_animation uppercase text-secondary banner-title mb-8 z-30 text-fig-3x laptop-x:text-[80px] laptop-m:text-[65px] lg:text-[56px] sm:text-[40px] sm:leading-[40px] font-normal font-primary text-right">
                 NFTs for Fandoms
                 </h2>
               </div>
 
-              <div className="banner-modal-imgbox lotties--anim w-full z-20 relative flex justify-start">
-                 <div className="banner-anim-modal">
+              <div className="banner-modal-imgbox lotties--anim w-full z-20 relative flex justify-start md:justify-center">
+                 <div className="banner-anim-modal lottie-anim-modal md:max-w-[353px] sm:w-[253px] sm:h-[220px]">
                  <Lottie
                       options={{
                         loop: true,
@@ -98,8 +120,8 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
             {/* --------------- */}
 
             {/* ------------- */}
-            <div className="banner-text-cont-right w-[560px] relative z-50 mt-52 mr-10 md:mt-32 md:pt-[301px] sm:pt-[310px] lg:mr-0 sm:mr-[-35px] md:w-full">
-              <span className="md:hidden lg:text-6xl overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute bottom-[420px] right-[-90px]">
+            <div className="banner-text-cont-right w-[560px] lg:w-[590px] relative z-50 mt-52 md:mt-0 mr-10 desktop-m:mr-0  md:pt-0 sm:pt-[215px] lg:mr-0 sm:mr-[-35px] md:w-full">
+              <span className="md:hidden lg:text-6xl overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute bottom-[420px] right-[-90px] desktop-m:right-0">
               nft
               </span>
               <h3 className="subtitle font-primary font-normal text-fig-32 text-left text-secondary uppercase mb-3 md:text-fig-24">
@@ -108,7 +130,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
               <p className="desc font-primary font-normal text-fig-base text-left text-secondary md:text-fig-base">
               Mint Experience NFTs of your favorite creators and have special experiences with them, including real-life or Metaverse meet ups, exclusive access, collabs, and much more!
               </p>
-              <div className="banner-btn-box text-left flex mt-8">
+              <div className="banner-btn-box text-left flex mt-8 md:hidden">
                 <Link href="/">
                   <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-3 hover:bg-purple hover:border-purple transition duration-150 ease-out">
                   explore fandoms
@@ -139,7 +161,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
         </div>
 
         <div className="main-test-modal-bg absolute top-0 left-0 w-full max-w-[1820px] right-0 ml-auto mr-auto">
-          <div className="scrolable-bg-shape bg-shape absolute top-0 left-0 w-full sm:h-full">
+          <div className="scrolable-bg-shape bg-shape absolute top-0 left-0 w-full ">
             <img
               src="/images/banner-bg-img3.png"
               alt="superfandom bg-shape"

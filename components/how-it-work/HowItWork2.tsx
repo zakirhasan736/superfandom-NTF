@@ -52,7 +52,7 @@ useEffect(() =>{
     <>
       <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
           <div className="section-title-box how-it-work-section-box relative w-full">
-          <div className="how-it-work-modal-img min-w-[1920px] w-full h-[660px] md:h-[300px] object-cover">
+          <div className="how-it-work-modal-img min-w-[1920px] w-full h-[660px] lg:h-[450px] md:h-[300px] object-cover">
           <img
               src={`/images/${
                 (pageName === 'causes' && 'HowItWork-bg-1.png') ||
@@ -68,7 +68,7 @@ useEffect(() =>{
           <div className="section-titlebox lg:mb-15 sm:mb-5 absolute bottom-4">
             <div className="scrolable-text-box how-it-work-title">
               <div className="scroll-text-item">
-                <h2 className="section-title scrollable--title2 font-primary font-normal text-fig-5x text-secondary text-center uppercase md:text-fig-xx sm:text-fig-32">
+                <h2 className="section-title scrollable--title2 font-primary font-normal text-fig-5x text-secondary text-center uppercase lg:text-fig-xx md:text-fig-40">
                   • how it works • how it works • how it works • how it works •
                   how it works • how it works • how it works • how it works •
                   how it works • how it works
