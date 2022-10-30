@@ -281,15 +281,15 @@ const CSToken = ({ pageName }: any) => {
   }, [filterText]);
 
   useEffect(() => {
-    const items2 = data2.filter((item) =>
-      item.categories_name.includes(filterText)
+    const items2 = data2.filter((items) =>
+      items.categories_name.includes(filterText)
     );
     setExclusiveTokenData(items2);
   }, [filterText]);
 
   return (
     <>
-      <section className="collection-tokent-section w-full bg-secondary pt-[132px] laptop-m:pt-[65px]  md:pt-8 pb-24 px-0 relative z-10  overflow-hidden">
+      <section className="collection-tokent-section w-full bg-secondary pt-[132px] laptop-m:pt-[65px] md:pt-16 pb-24 md:pb-16 px-0 relative z-10  overflow-hidden">
         <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="section-titlebox text-animetion mb-8 md:mb-4">
             <h2 className="section-title title_animation max-w-[970px] font-primary font-normal text-fig-3x text-left text-primary laptop-x:text-6xl md:text-fig-40 uppercase">
@@ -300,12 +300,12 @@ const CSToken = ({ pageName }: any) => {
           </div>
 
           <div className="collection-wrapper-box">
-            <div className="collection-tabs-items mb-8">
+            <div className="collection-tabs-items mb-8 md:flex md:flex-nowrap">
               <button
                 onClick={() => setFilter('all')}
                 className={`border-primary ${
                   filterText === 'all' && 'bg-primary text-secondary'
-                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 md:whitespace-nowrap font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
                 {(pageName === 'causes' && 'all nft tokens') ||
                   (pageName === 'fandom' && 'all soulbound tokens') ||
@@ -315,7 +315,7 @@ const CSToken = ({ pageName }: any) => {
                 onClick={() => setFilter('p_food')}
                 className={`border-primary ${
                   filterText === 'p_food' && 'bg-primary text-secondary'
-                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 md:whitespace-nowrap font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
                 {(pageName === 'causes' && 'pakistani food') ||
                   (pageName === 'fandom' && 'pakistani food') ||
@@ -325,7 +325,7 @@ const CSToken = ({ pageName }: any) => {
                 onClick={() => setFilter('d_wot_b')}
                 className={`border-primary ${
                   filterText === 'd_wot_b' && 'bg-primary text-secondary'
-                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 md:whitespace-nowrap font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
                 {(pageName === 'causes' && 'doctors without borders') ||
                   (pageName === 'fandom' && 'doctors without borders') ||
@@ -336,7 +336,7 @@ const CSToken = ({ pageName }: any) => {
                   onClick={() => setFilter('lorem')}
                   className={`border-primary ${
                     filterText === 'lorem' && 'bg-primary text-secondary'
-                  } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                  } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 md:whitespace-nowrap font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
                 >
                   lorem ipsum
                 </button>
@@ -344,7 +344,7 @@ const CSToken = ({ pageName }: any) => {
             </div>
           </div>
           <div className="collection-tokens-box">
-            <div className="content_wrapper flex items-center flex-wrap gap-5 mb-16">
+            <div className="content_wrapper flex items-center flex-wrap md:flex-nowrap md:w-[fit-content] gap-5 mb-16 md:mb-0">
               {
                 pageName==="campaign" ?
                 ExclusiveTokenData.map(
@@ -402,7 +402,7 @@ const CSToken = ({ pageName }: any) => {
               )
               }
             </div>
-            <div className="collection-btn-box text-center flex justify-center sm:flex sm:flex-col sm:px-4">
+            <div className="collection-btn-box text-center flex justify-center md:hidden sm:px-4 ">
               <Link href="/">
                 <a className="p-5 max-w-[180px] w-full font-primary uppercase font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out md:border-primary md:text-primary md:hover:bg-primary md:hover:text-secondary">
                   view all

@@ -53,7 +53,7 @@ const ProductDetails2: NextPage<any> = () => {
               </div>
 
               <div className="product-details-right-cont w-full">
-                <div className="product-cont-box desc-box bg-lightgray px-10 md:p-5 rounded-[20px] mb-8 w-full">
+                <div className="product-cont-box desc-box bg-lightgray p-10 md:p-5 rounded-[20px] mb-8 w-full">
                   <h3 className="product-cont-title text-primary text-left text-fig-24 sm:text-fig-base font-primary font-normal mb-4 pb-4 border-b border-secondary">
                     Mint price
                   </h3>

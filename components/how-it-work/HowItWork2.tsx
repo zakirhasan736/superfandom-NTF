@@ -52,16 +52,17 @@ useEffect(() =>{
     <>
       <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
           <div className="section-title-box how-it-work-section-box relative w-full">
-          <div className="how-it-work-modal-img min-w-[1920px] w-full h-[660px]">
+          <div className="how-it-work-modal-img min-w-[1920px] w-full h-[660px] md:h-[300px] object-cover">
           <img
               src={`/images/${
                 (pageName === 'causes' && 'HowItWork-bg-1.png') ||
                 (pageName === 'fandom' && 'how-it-work-bg-2.png')
               }`}
               alt={'how-it-work-bg-modal-img'}
-              className="how-it-work-bg-modal-img h-full w-full"
+              className="how-it-work-bg-modal-img h-full w-full object-cover"
               width="100%"
               height="100%"
+              
             />
           </div> 
           <div className="section-titlebox lg:mb-15 sm:mb-5 absolute bottom-4">
@@ -77,7 +78,7 @@ useEffect(() =>{
           </div>
         </div>
           <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
-          <div className="how-it-work-content-wrapper flex items-center gap-5 bg-primary py-[138px]">
+          <div className="how-it-work-content-wrapper flex items-center gap-5 bg-primary py-[138px] laptop-x:py-24 lg:py-16 md:py-8 md:block">
           {StepCadItems.map(({ id, photo_name, title,  desc }) => (
                 <StepCard 
                 key={id}

@@ -62,7 +62,7 @@ const Exclusive: NextPage<any> = () => {
         </div>
 
         <div className="container 2xl:container xl:container lg:container md:container sm:container 2xl:px-12 xl:px-12 laptop-x:px-0 lg:px-0 md:px-0 sm:px-0">
-          <div className="exclusive-content-wrapper px-28 py-12 desktop-l:px-12 md:px-4 md:pt-0 sm:pb-8 w-full h-full bg-secondary md:bg-secondary rounded-3xl laptop-x:rounded-none overflow-hidden">
+          <div className="exclusive-content-wrapper px-28 py-12 desktop-l:px-12 md:px-4 md:py-0 sm:pb-8 w-full h-full bg-secondary md:bg-secondary rounded-3xl laptop-x:rounded-none overflow-hidden">
             <div className="exclusive-slidebox">
               <ul className="exclusive-slides-image flex no-wrap gap-5">
                 {ExclusiveCards.map(
@@ -75,7 +75,7 @@ const Exclusive: NextPage<any> = () => {
                     cardInfo,
                     cardInfoBg,
                   }: IExclusiveCard) => (
-                    <li className="exclusive-image-items w-[382px] h-[520px] md:w-[100%] md:min-w-[216px] md:h-[100%]" key={id}>
+                    <li className="exclusive-image-items w-[382px]  md:w-full md:min-w-[216px]" key={id}>
                       <ExclusiveCard
                         id={id}
                         photo_name={photo_name}
