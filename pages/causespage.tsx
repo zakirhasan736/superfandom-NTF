@@ -33,7 +33,7 @@ const CausesPage: NextPageWithLayout<ICausesPage> = ({ drops }) => {
 export default CausesPage;
 
 CausesPage.getLayout = (page) => {
-  return <PrimaryLayout headerNext={false}>{page}</PrimaryLayout>;
+  return <PrimaryLayout pageName={"causes"} headerNext={false}>{page}</PrimaryLayout>;
 };
 
 export const getStaticProps: GetStaticProps = async () => {

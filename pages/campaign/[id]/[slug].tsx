@@ -25,9 +25,12 @@ const Campaign: NextPageWithLayout<any> = ({ drop }) => {
 export default Campaign;
 
 Campaign.getLayout = (page) => {
-  return <PrimaryLayout headerNext={true}>{page}</PrimaryLayout>;
+  return (
+    <PrimaryLayout pageName={'campaign'} headerNext={true}>
+      {page}
+    </PrimaryLayout>
+  );
 };
-
 export const getStaticProps = async ({ params }: any) => {
   const jsonResult = await ApiClient.get(
     `/drops/${params.id}?withCollections=true`

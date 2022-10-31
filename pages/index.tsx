@@ -1,14 +1,13 @@
 import Head from 'next/head';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
-import FaqPage from '../components/Faq/Faq';
+import FaqPage from '../components/FAQ/Faq';
 import Explore from '../components/explore-and-collect/Explore';
 import HowItWork from '../components/how-it-work/HowItWork';
 import TextImgSiniped from '../components/text-and-img-siniped/TextImgSiniped';
 import Banner from '../components/banner/Banner';
 
 const Home: NextPageWithLayout = () => {
-
   return (
     <div className="container-wrapper">
       <Head>
@@ -18,7 +17,7 @@ const Home: NextPageWithLayout = () => {
       </Head>
       <Banner />
       <TextImgSiniped />
-      <HowItWork card1={true} card2={false} pageName={"home"} />
+      <HowItWork card1={true} card2={false} pageName={'home'} />
       <Explore />
       <FaqPage />
     </div>
