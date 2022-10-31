@@ -6,12 +6,16 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export interface ICampaignBanner {
-  title?: string;
-  subtitle?: string;
-  desc?: string;
+  title: string;
+  image: string;
+  description: string;
 }
 
-const CampaignBanner: React.FC<ICampaignBanner> = () => {
+const CampaignBanner: React.FC<ICampaignBanner> = ({
+  title,
+  description,
+  image = '/images/banner-logo.png',
+}) => {
   return (
     <>
       <section className="main-visual-section bg-secondary pt-44 relative overflow-hidden">
@@ -20,7 +24,7 @@ const CampaignBanner: React.FC<ICampaignBanner> = () => {
             <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4 relative">
               <div className="banner-brand-logo w-[218px] h-[218px] absolute top-[140px]">
                 <Image
-                  src="/images/banner-logo.png"
+                  src={image}
                   alt="superfandom banner-logo-image"
                   className="slide-image h-full w-full"
                   width="218px"
@@ -33,7 +37,7 @@ const CampaignBanner: React.FC<ICampaignBanner> = () => {
             <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4 relative">
               <div className="banner-content-text-box mt-32">
                 <h2 className="title-box mb-8 relative font-primary font-normal text-fig-32 text-left text-primary uppercase max-w-[495px] w-full">
-                  Doctors Without Borders{' '}
+                  {title}
                   <span className="mark-icon absolute right-0 top-[-20px]">
                     <img
                       src="/images/icon/icon-mark.png"
@@ -44,11 +48,7 @@ const CampaignBanner: React.FC<ICampaignBanner> = () => {
                   </span>
                 </h2>
                 <p className="banner-desc mb-8 max-w-[825px] w-full font-primary font-normal text-fig-base text-left text-primary">
-                  Médecins Sans Frontières, or Doctors Without Borders in
-                  English, is an international humanitarian medical
-                  non-governmental organisation of French origin best known for
-                  its projects in conflict zones and in countries affected by
-                  endemic diseases.
+                  {description}
                 </p>
                 <ul className="banner-socials-box flex items-center">
                   <li className="socials-items w-[32px] h-[32px] mr-8">

@@ -3,53 +3,10 @@ import { NextPage } from 'next';
 import ExclusiveCard, {
   IExclusiveCard,
 } from '../Card/ExclusiveCard/ExclusiveCard';
+import Link from 'next/link';
 
-const Exclusive: NextPage<any> = () => {
-  const [ExclusiveCards, setExclusiveCards] = useState<any>([]);
-
-  let data = [
-    {
-      id: 1,
-      photo_name: 'exclusive-img-1.png',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      title: 'Collection name',
-      cardType: 'Nft',
-      cardInfo: 'Live',
-      cardInfoBg: 'purple',
-    },
-    {
-      id: 2,
-      photo_name: 'exclusive-img-2.png',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      title: 'Collection name',
-      cardType: 'Nft',
-      cardInfo: 'Live',
-      cardInfoBg: 'purple',
-    },
-    {
-      id: 3,
-      photo_name: 'exclusive-img-3.png',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      title: 'Collection name',
-      cardType: 'Nft',
-      cardInfo: 'soon',
-      cardInfoBg: 'neon',
-    },
-    {
-      id: 4,
-      photo_name: 'exclusive-img-4.png',
-      desc: 'Each Mystery Box contains one NFT with unique abilities, allotted at random (and revealed later)',
-      title: 'Collection name',
-      cardType: 'Nft',
-      cardInfo: 'soon',
-      cardInfoBg: 'neon',
-    },
-  ];
-
-  useEffect(() => {
-    const items = data;
-    setExclusiveCards(items);
-  }, []);
+const Exclusive: NextPage<any> = ({ collections }) => {
+  console.log(collections);
   return (
     <>
       <section className="exclusive-section w-full bg-secondary pt-[92px] laptop-m:pt-[65px]  md:pt-8 pb-0 px-0 relative z-10  overflow-hidden">
@@ -65,29 +22,35 @@ const Exclusive: NextPage<any> = () => {
           <div className="exclusive-content-wrapper px-28 py-12 sm:pb-8 w-full h-full bg-secondary md:bg-secondary sm:rounded-0">
             <div className="exclusive-slidebox">
               <ul className="exclusive-slides-image flex no-wrap gap-5">
-                {ExclusiveCards.map(
-                  ({
-                    id,
-                    photo_name,
-                    title,
-                    desc,
-                    cardType,
-                    cardInfo,
-                    cardInfoBg,
-                  }: IExclusiveCard) => (
-                    <li className="exclusive-image-items w-[382px] h-[520px]" key={id}>
-                      <ExclusiveCard
-                        id={id}
-                        photo_name={photo_name}
-                        desc={desc}
-                        title={title}
-                        cardType={cardType}
-                        cardInfo={cardInfo}
-                        cardInfoBg={cardInfoBg}
-                      />
-                    </li>
+                {collections
+                  ?.filter(
+                    (collection: any) =>
+                      collection.contractType === 'continuous'
                   )
-                )}
+                  .map((collection: any) =>
+                    collection.nfts.map((nft: any, index: number) => (
+                      <Link
+                        key={index}
+                        href={'/DetailsPage/[id]'}
+                        as={`/DetailsPage/${nft._id}`}
+                      >
+                        <li
+                          className="exclusive-image-items w-[382px] h-[520px]"
+                          key={index}
+                        >
+                          <ExclusiveCard
+                            _id={nft._id}
+                            image={nft.mediaUrl}
+                            description={nft.description}
+                            title={nft.title}
+                            cardType={'1 nft'}
+                            status={undefined}
+                            statusColor={undefined}
+                          />
+                        </li>
+                      </Link>
+                    ))
+                  )}
               </ul>
             </div>
           </div>

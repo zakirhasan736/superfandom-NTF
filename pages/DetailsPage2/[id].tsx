@@ -1,11 +1,10 @@
 import Head from 'next/head';
-import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
-import { NextPageWithLayout } from './page';
-import Exclusive from '../components/Exclusive/Exclusive';
-import ProductDetails2 from '../components/ProductDetails/ProductDetails2';
+import PrimaryLayout from '../../components/layouts/primary/PrimaryLayout';
+import { NextPageWithLayout } from '../page';
+import Exclusive from '../../components/Exclusive/Exclusive';
+import ProductDetails2 from '../../components/ProductDetails/ProductDetails2';
 
-const DetailsPage2: NextPageWithLayout = () => {
-
+const Id: NextPageWithLayout = () => {
   return (
     <div className="container-wrapper bg-secondary">
       <Head>
@@ -14,14 +13,14 @@ const DetailsPage2: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ProductDetails2 />
-      <Exclusive  />
+      <Exclusive />
       <div className="spacher h-[50px]"></div>
     </div>
   );
 };
 
-export default DetailsPage2;
+export default Id;
 
-DetailsPage2.getLayout = (page) => {
+Id.getLayout = (page) => {
   return <PrimaryLayout headerNext={true}>{page}</PrimaryLayout>;
 };

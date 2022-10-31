@@ -193,7 +193,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                 favorite fandoms
               </p>
               <div className="banner-btn-box text-left flex mt-8">
-                <Link href="/">
+                <Link href="/CausesPage">
                   <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-3 hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
                     Explore Causes
                   </a>

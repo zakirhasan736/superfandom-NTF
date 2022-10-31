@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import TokenCards , {ITokenCards} from '../Card/TokenCards/TokenCards';
+import TokenCards, { ITokenCards } from '../Card/TokenCards/TokenCards';
 
-const CSToken = ({ pageName }: any) => {
+const CSToken = ({ pageName, collections }: any) => {
   const [filterText, setFilter] = useState<string>('all');
   const [tokenItem, setTokenItem] = useState<any>([]);
   let data = [
@@ -17,7 +17,6 @@ const CSToken = ({ pageName }: any) => {
       userPhoto: 'user-img.png',
       bidNow: 'Bid Now',
       bidNowBg: 'white',
-      
     },
     {
       id: 2,
@@ -30,7 +29,6 @@ const CSToken = ({ pageName }: any) => {
       userPhoto: 'user-img.png',
       bidNow: 'Bid Now',
       bidNowBg: 'white',
-      
     },
     {
       id: 3,
@@ -43,7 +41,6 @@ const CSToken = ({ pageName }: any) => {
       userPhoto: 'user-img.png',
       bidNow: 'BID IN 6 HRS 25 MINS 36 SECS',
       bidNowBg: 'neon',
-      
     },
     {
       id: 4,
@@ -56,7 +53,6 @@ const CSToken = ({ pageName }: any) => {
       userPhoto: 'user-img.png',
       // bidNow: 'Bid Now',
       // bidNowBg: 'white',
-      
     },
     {
       id: 5,
@@ -69,7 +65,6 @@ const CSToken = ({ pageName }: any) => {
       userPhoto: 'user-img.png',
       bidNow: 'BID IN 6 HRS 25 MINS 36 SECS',
       bidNowBg: 'neon',
-      
     },
     {
       id: 6,
@@ -82,7 +77,6 @@ const CSToken = ({ pageName }: any) => {
       userPhoto: 'user-img.png',
       bidNow: 'Bid Now',
       bidNowBg: 'white',
-      
     },
     {
       id: 7,
@@ -95,7 +89,6 @@ const CSToken = ({ pageName }: any) => {
       userPhoto: 'user-img.png',
       // bidNow: 'Bid Now',
       // bidNowBg: 'white',
-      
     },
     {
       id: 8,
@@ -120,7 +113,6 @@ const CSToken = ({ pageName }: any) => {
       userPhoto: 'user-img.png',
       // bidNow: 'Bid Now',
       // bidNowBg: 'white',
-      
     },
     {
       id: 10,
@@ -145,7 +137,6 @@ const CSToken = ({ pageName }: any) => {
       userPhoto: 'user-img.png',
       // bidNow: 'Bid Now',
       // bidNowBg: 'white',
-      
     },
     {
       id: 12,
@@ -158,7 +149,6 @@ const CSToken = ({ pageName }: any) => {
       userPhoto: 'user-img.png',
       // bidNow: 'Bid Now',
       // bidNowBg: 'white',
-      
     },
   ];
 
@@ -177,116 +167,116 @@ const CSToken = ({ pageName }: any) => {
             <h2 className="section-title title_animation max-w-[970px] font-primary font-normal text-fig-3x text-left text-primary laptop-x:text-6xl md:text-fig-40 uppercase">
               {(pageName === 'causes' && 'collect soulbound tokens') ||
                 (pageName === 'fandom' && 'collections') ||
-                (pageName === 'campaign' && 'collections')}
+                // (pageName === 'campaign' && 'collections')}
+                (pageName === 'campaign' && 'editions')}
             </h2>
           </div>
 
-          <div className="collection-wrapper-box">
-            <div className="collection-tabs-items mb-8">
-              <button
-                onClick={() => setFilter('all')}
-                className={`border-primary ${
-                  filterText === 'all' && 'bg-primary text-secondary'
-                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
-              >
-                {(pageName === 'causes' && 'all nft tokens') ||
-                  (pageName === 'fandom' && 'all soulbound tokens') ||
-                  (pageName === 'campaign' && 'all collections')}
-              </button>
-              <button
-                onClick={() => setFilter('p_food')}
-                className={`border-primary ${
-                  filterText === 'p_food' && 'bg-primary text-secondary'
-                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
-              >
-                {(pageName === 'causes' && 'pakistani food') ||
-                  (pageName === 'fandom' && 'pakistani food') ||
-                  (pageName === 'campaign' && 'pfps')}
-              </button>
-              <button
-                onClick={() => setFilter('d_wot_b')}
-                className={`border-primary ${
-                  filterText === 'd_wot_b' && 'bg-primary text-secondary'
-                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
-              >
-                {(pageName === 'causes' && 'doctors without borders') ||
-                  (pageName === 'fandom' && 'doctors without borders') ||
-                  (pageName === 'campaign' && 'editions')}
-              </button>
-              {(pageName === 'causes' || pageName === 'fandom') && (
-                <button
-                  onClick={() => setFilter('lorem')}
-                  className={`border-primary ${
-                    filterText === 'lorem' && 'bg-primary text-secondary'
-                  } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
-                >
-                  lorem ipsum
-                </button>
-              )}
-            </div>
-          </div>
+          {/*<div className="collection-wrapper-box">*/}
+          {/*  <div className="collection-tabs-items mb-8">*/}
+          {/*    <button*/}
+          {/*      onClick={() => setFilter('all')}*/}
+          {/*      className={`border-primary ${*/}
+          {/*        filterText === 'all' && 'bg-primary text-secondary'*/}
+          {/*      } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}*/}
+          {/*    >*/}
+          {/*      {(pageName === 'causes' && 'all nft tokens') ||*/}
+          {/*        (pageName === 'fandom' && 'all soulbound tokens') ||*/}
+          {/*        (pageName === 'campaign' && 'all collections')}*/}
+          {/*    </button>*/}
+          {/*    <button*/}
+          {/*      onClick={() => setFilter('p_food')}*/}
+          {/*      className={`border-primary ${*/}
+          {/*        filterText === 'p_food' && 'bg-primary text-secondary'*/}
+          {/*      } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}*/}
+          {/*    >*/}
+          {/*      {(pageName === 'causes' && 'pakistani food') ||*/}
+          {/*        (pageName === 'fandom' && 'pakistani food') ||*/}
+          {/*        (pageName === 'campaign' && 'pfps')}*/}
+          {/*    </button>*/}
+          {/*    <button*/}
+          {/*      onClick={() => setFilter('d_wot_b')}*/}
+          {/*      className={`border-primary ${*/}
+          {/*        filterText === 'd_wot_b' && 'bg-primary text-secondary'*/}
+          {/*      } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}*/}
+          {/*    >*/}
+          {/*      {(pageName === 'causes' && 'doctors without borders') ||*/}
+          {/*        (pageName === 'fandom' && 'doctors without borders') ||*/}
+          {/*        (pageName === 'campaign' && 'editions')}*/}
+          {/*    </button>*/}
+          {/*    {(pageName === 'causes' || pageName === 'fandom') && (*/}
+          {/*      <button*/}
+          {/*        onClick={() => setFilter('lorem')}*/}
+          {/*        className={`border-primary ${*/}
+          {/*          filterText === 'lorem' && 'bg-primary text-secondary'*/}
+          {/*        } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}*/}
+          {/*      >*/}
+          {/*        lorem ipsum*/}
+          {/*      </button>*/}
+          {/*    )}*/}
+          {/*  </div>*/}
+          {/*</div>*/}
           <div className="collection-tokens-box">
             <div className="content_wrapper flex items-center flex-wrap gap-5 mb-16">
-              {
-                pageName==="campaign" ?
-                tokenItem.map(
-                  ({
-                    id,
-                    photo_name,
-                    categories_name,
-                    bidNowBg,
-                    userPhoto,
-                    bidNow,
-                    Price,
-                    desc,
-                    userInfo,
-                    btnName,
-                  }: ITokenCards) => (
-                    // Exclusive card
-                    <TokenCards
-                      key={id}
-                      id={id}
-                      categories_name={categories_name}
-                      photo_name={photo_name}
-                      Price={Price}
-                      desc={desc}
-                      userInfo={userInfo}
-                      btnName={btnName}
-                      userPhoto={userPhoto}
-                      bidNow={bidNow}
-                      bidNowBg={bidNowBg}
-                    />
-                  )
-                ):
-                tokenItem.map(
-                ({
-                  id,
-                  photo_name,
-                  categories_name,
-                  bidNowBg,
-                  userPhoto,
-                  bidNow,
-                  Price,
-                  desc,
-                  userInfo,
-                  btnName,
-                }: ITokenCards) => (
-                  <TokenCards
-                    key={id}
-                    id={id}
-                    categories_name={categories_name}
-                    photo_name={photo_name}
-                    Price={Price}
-                    desc={desc}
-                    userInfo={userInfo}
-                    btnName={btnName}
-                    userPhoto={userPhoto}
-                    bidNow={bidNow}
-                    bidNowBg={bidNowBg}
-                  />
-                )
-              )
-              }
+              {pageName === 'campaign'
+                ? collections
+                    .filter(
+                      (collection: any) =>
+                        collection.contractType === 'editions'
+                    )
+                    .map(
+                      (
+                        {
+                          _id,
+                          image,
+                          userPhoto,
+                          description,
+                          title,
+                        }: ITokenCards,
+                        index: number
+                      ) => (
+                        <Link
+                          key={index}
+                          href={'/DetailsPage2/[id]'}
+                          as={`/DetailsPage2/${_id}`}
+                        >
+                          <TokenCards
+                            _id={_id}
+                            image={image}
+                            price={'10 STX'}
+                            description={description}
+                            title={title}
+                            btnName={'buy now'}
+                            userPhoto={userPhoto}
+                          />
+                        </Link>
+                      )
+                    )
+                : tokenItem.map(
+                    ({
+                      _id,
+                      image,
+                      bidNowBg,
+                      userPhoto,
+                      bidNow,
+                      price,
+                      description,
+                      title,
+                    }: ITokenCards) => (
+                      <TokenCards
+                        key={_id}
+                        _id={_id}
+                        image={image}
+                        price={price}
+                        description={description}
+                        title={title}
+                        btnName={'Buy Now'}
+                        userPhoto={userPhoto}
+                        bidNow={bidNow}
+                        bidNowBg={bidNowBg}
+                      />
+                    )
+                  )}
             </div>
             <div className="collection-btn-box text-center flex justify-center sm:flex sm:flex-col sm:px-4">
               <Link href="/">

@@ -1,14 +1,19 @@
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
 import CausesBanner from '../components/banner/CausesBanner';
-import FaqPage from '../components/Faq/Faq';
+import FaqPage from '../components/FAQ/Faq';
 import ActiveDrop from '../components/ActiveDrop/ActiveDrop';
 import CSToken from '../components/c-s-token/CSToken';
 import HowItWork2 from '../components/how-it-work/HowItWork2';
+import { ApiClient } from '../utils/api-client';
 
-const CausesPage: NextPageWithLayout = () => {
+export interface ICausesPage {
+  drops: any;
+}
 
+const CausesPage: NextPageWithLayout<ICausesPage> = ({ drops }) => {
   return (
     <div className="container-wrapper">
       <Head>
@@ -17,9 +22,9 @@ const CausesPage: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <CausesBanner />
-       <ActiveDrop />
-       <CSToken pageName={"causes"}/>
-      <HowItWork2 pageName={"causes"} />
+      <ActiveDrop drops={drops} />
+      <CSToken pageName={'causes'} />
+      <HowItWork2 pageName={'causes'} />
       <FaqPage />
     </div>
   );
@@ -29,4 +34,18 @@ export default CausesPage;
 
 CausesPage.getLayout = (page) => {
   return <PrimaryLayout headerNext={false}>{page}</PrimaryLayout>;
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const result = await ApiClient.get('/drops?withCollections=true');
+
+  const drops = result.data;
+
+  return {
+    props: {
+      drops,
+    },
+
+    revalidate: 60 * 60, // 1 hour
+  };
 };

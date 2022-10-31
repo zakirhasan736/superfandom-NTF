@@ -2,34 +2,35 @@ import React from 'react';
 import Image from 'next/image';
 
 export interface IActiveCard {
-  id: 1;
-  photo_name?: string;
-  desc?: string;
-  title?: string;
-  cardLogo?: string;
-  cardInfo?: string;
-  cardInfoBg?: 'purple' | 'neon';
+  _id: string;
+  bgImage: string;
+  description: string;
+  title: string;
+  image: string;
+  status: string;
+  statusColor: 'purple' | 'neon';
+  slug?: string;
 }
 
 const ActiveCard: React.FC<IActiveCard> = ({
-  id,
-  photo_name,
-  cardInfo,
-  cardLogo,
-  cardInfoBg,
+  _id,
+  bgImage = '/images/drop-card-img-2.png',
+  status,
+  image,
+  statusColor = 'purple',
   title,
-  desc,
+  description,
 }) => {
   return (
     <div
       className="token-card--items w-[518px] rounded-3xl overflow-hidden bg-primary"
-      key={id}
+      key={_id}
     >
       <div className="token-img-cont-box relative">
         <div className="tokens-img-wrap relative">
           <div className="token--icons-img w-full h-[432px]">
             <Image
-              src={`/images/${photo_name}`}
+              src={bgImage}
               alt="tokens-card-img"
               className="token-card-img h-full w-full"
               width="518px"
@@ -41,17 +42,17 @@ const ActiveCard: React.FC<IActiveCard> = ({
             <span
               className={[
                 'card-updates-info  text-fig-15 uppercase text-secondary block  text-center font-primary font-normal rounded-[100%] w-[62px] h-[62px] leading-[62px]',
-                `bg-${cardInfoBg}`,
+                `bg-${statusColor}`,
               ].join(' ')}
             >
-              {cardInfo}
+              {status}
             </span>
           </div>
 
           <div className="token-card-content-box pt-[13px] pb-8 px-8  absolute bottom-0 left-0 w-full flex items-start">
             <div className="card-verified-logo">
               <Image
-                src={`/images/${cardLogo}`}
+                src={`${image}`}
                 alt="active-card-img"
                 className="active-card-img h-full w-full"
                 width="87px"
@@ -64,7 +65,7 @@ const ActiveCard: React.FC<IActiveCard> = ({
                 {title}
               </h3>
               <p className="desc mb-8 text-fig-xs text-left text-secondary font-primary font-normal">
-                {desc}
+                {description}
               </p>
             </div>
           </div>

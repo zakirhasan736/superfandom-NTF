@@ -215,7 +215,7 @@ const Explore: NextPage<any> = () => {
               </ul>
             </div>
             <div className="explore-btn-box text-center flex justify-center sm:flex sm:flex-col sm:px-4">
-              <Link href="/">
+              <Link href="/CausesPage">
                 <a className="p-5 font-primary uppercase font-normal text-fig-15 text-primary sm:mb-5 sm:mr-0 rounded-[40px] bg-secondary border md:hover:text-primary border-solid border-secondary mr-5 hover:bg-transparent hover:text-secondary transition duration-150 ease-out md:bg-primary md:hover:text-primary md:hover:border-primary md:text-secondary">
                   Explore Causes
                 </a>

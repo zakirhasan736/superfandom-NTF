@@ -340,7 +340,7 @@ ScrollTrigger.create({
                       nonfungible or soulbound tokens to memorialize your
                       support
                     </p>
-                    <Link href="/">
+                    <Link href="/CausesPage">
                       <a className="link-buttons uppercase flex flex-col max-w-[190px] text-center w-full  p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-transparent hover:text-secondary transition duration-150 ease-out">
                         Explore Causes
                       </a>
