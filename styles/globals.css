@@ -936,6 +936,9 @@ header.white-varient-navbar .navbar-btn-items li a {
 .tokens-card-top-cont .link-item-text:empty {
   display: none;
 }
+.collection-tabs-items > button.active {
+  font-weight: 400 !important;
+}
 .active--cards-img:before,
 .exclusive--card-img:before {
   content: '';

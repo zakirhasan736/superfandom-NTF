@@ -4,7 +4,7 @@ import Lottie from 'react-lottie';
 import Image from 'next/image';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Animation1 from '../../public/lottie_files/01.json';
+import Animation1 from '../../public/lottie_files/Comp_1.json';
 import Animation2 from '../../public/lottie_files/02.json';
 import Animation3 from '../../public/lottie_files/03.json';
 import StepCard from '../Card/StepCards/StepCard';

@@ -214,7 +214,7 @@ viewPort.add("(max-width:767px)", () => {
 
             {/* ------------- */}
             <div className="banner-text-cont-right w-[560px] relative z-50 mt-24 mr-10 laptop-x:mr-0 laptop-x:mt-16 md:mt-32 sm:mt-20 md:pt-[301px] sm:pt-[310px] lg:mr-0 sm:mr-[-35px] md:w-full">
-              <span className="md:hidden lg:text-6xl laptop-m:text-fig-xx overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute right-0 bottom-[420px] laptop-x:bottom-[350px]">
+              <span className="md:hidden lg:text-6xl laptop-m:text-fig-xx overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute right: -175px; bottom: 345px; laptop-x:bottom-[350px]">
                 SBT
               </span>
               <h3 className="subtitle font-primary font-normal text-fig-32 text-left text-secondary uppercase mb-3 lg:text-[26px] md:text-fig-24">
