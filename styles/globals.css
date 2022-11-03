@@ -914,11 +914,23 @@ header.white-varient-navbar .navbar-cont-box .nav-items li a {
 header.white-varient-navbar .navbar-btn-items li:not(:first-child) {
   border: 1px solid #000000;
 }
+header.white-varient-navbar .navbar-btn-items li:not(:first-child):hover {
+  background-color: #000000;
+}
+header.white-varient-navbar .navbar-btn-items li:not(:first-child):hover a{
+color: #ffffff;
+}
 header.white-varient-navbar .navbar-btn-items li a {
   color: #000000;
 }
 @media screen and (max-width: 991px) {
   header.white-varient-navbar .navbar-btn-items li a {
+    color: #ffffff;
+  }
+  header.white-varient-navbar .navbar-btn-items li:not(:first-child) a {
+    color: #000000;
+  }
+  header.white-varient-navbar .navbar-btn-items li:not(:first-child):hover a {
     color: #ffffff;
   }
 }
@@ -936,6 +948,9 @@ header.white-varient-navbar .navbar-btn-items li a {
 .tokens-card-top-cont .link-item-text:empty {
   display: none;
 }
+.collection-tabs-items > button.active {
+  font-weight: 400 !important;
+}
 .active--cards-img:before,
 .exclusive--card-img:before {
   content: '';
@@ -949,6 +964,7 @@ header.white-varient-navbar .navbar-btn-items li a {
   z-index: 1;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
 }
+
 @media screen and (max-width: 1440px) {
   .banner-anim-modal.lottie-anim-modal > div{
     transform: scale(0.8);

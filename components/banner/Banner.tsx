@@ -278,19 +278,19 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             <div className="scrolable-text-box">
               <div className="scroll-text-item">
                 <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-40 mb-[29px]">
-                  nft • fandoms • metavers • nft • fandoms • metavers • nft •
-                  fandoms • metavers • nft • fandoms • metavers • nft • fandoms
-                  • metavers •
+                  nft • fandoms • Metaverse • nft • fandoms • Metaverse • nft •
+                  fandoms • Metaverse • nft • fandoms • Metaverse • nft • fandoms
+                  • Metaverse •
                 </h2>
               </div>
             </div>
 
             <div className="scrolable-text-box">
               <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-40 mb-[29px] md:mb-[14px]">
-                  soulbound • tokens • no • soulbound • tokens • no • soulbound
-                  • tokens • no • soulbound • tokens • no • soulbound • tokens •
-                  no •
+                <h2 className="section-title whitespace-nowrap font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-40 mb-[29px] md:mb-[14px]">
+                  soulbound • tokens • Nonfungible • soulbound • tokens • Nonfungible • soulbound
+                  • tokens • Nonfungible • soulbound • tokens • Nonfungible • soulbound • tokens •
+                  Nonfungible •
                 </h2>
               </div>
             </div>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Lottie from 'react-lottie';
-import Animation1 from '../../public/lottie_files/01.json';
+import Animation1 from '../../public/lottie_files/Comp_1.json';
 gsap.registerPlugin(ScrollTrigger);
 
 export interface IFandomBanner {
@@ -94,7 +94,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
             <div className="banner-text-cont-left text_animation w-full relative z-50">
 
                <div className="heading-title-box h-full w-full block">
-                <h2 className="absolute md:relative md:text-left md:right-0 md:top-0 md:mb-0 right-[-277px] desktop-m:right-[-300px] laptop-m:right-[-350px] top-[100px] banner_title_animation uppercase text-secondary banner-title mb-8 z-30 text-fig-3x laptop-x:text-[80px] laptop-m:text-[65px] lg:text-[56px] sm:text-[40px] sm:leading-[40px] font-normal font-primary text-right">
+                <h2 className="absolute md:relative md:text-left md:right-0 md:top-0 md:mb-0 right-[-277px] desktop-m:right-[-300px] laptop-m:right-[-350px] top-[108px] banner_title_animation uppercase text-secondary banner-title mb-8 z-30 text-fig-3x laptop-x:text-[80px] laptop-m:text-[65px] lg:text-[56px] sm:text-[40px] sm:leading-[40px] font-normal font-primary text-right">
                 NFTs for Fandoms
                 </h2>
               </div>

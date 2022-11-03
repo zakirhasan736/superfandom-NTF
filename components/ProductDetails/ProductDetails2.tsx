@@ -79,7 +79,7 @@ const ProductDetails2: NextPage<any> = () => {
                               onClick={() =>
                                 count > 1 && setCount((prev) => prev - 1)
                               }
-                              className="inc-box cursor-pointer py-5 pl-5"
+                              className="inc-box cursor-pointer py-[17px] pl-5"
                             >
                               <img src="/images/minus.png" alt="icon" />
                             </div>
@@ -88,7 +88,7 @@ const ProductDetails2: NextPage<any> = () => {
                             </div>
                             <div
                               onClick={() => setCount((prev) => prev + 1)}
-                              className="dec-box cursor-pointer py-5 pr-5"
+                              className="dec-box cursor-pointer py-[17px] pr-5"
                             >
                               <img src="/images/plus.png" alt="icon" />
                             </div>

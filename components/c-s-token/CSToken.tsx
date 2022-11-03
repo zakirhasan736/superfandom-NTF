@@ -304,18 +304,18 @@ const CSToken = ({ pageName }: any) => {
               <button
                 onClick={() => setFilter('all')}
                 className={`border-primary ${
-                  filterText === 'all' && 'bg-primary text-secondary'
-                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 md:whitespace-nowrap font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                  filterText === 'all' && 'bg-primary text-secondary active'
+                } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 ml-0 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
-                {(pageName === 'causes' && 'all nft tokens') ||
-                  (pageName === 'fandom' && 'all soulbound tokens') ||
+                {(pageName === 'causes' && 'all soulbound tokens') ||
+                  (pageName === 'fandom' && 'all nft tokens') ||
                   (pageName === 'campaign' && 'all collections')}
               </button>
               <button
                 onClick={() => setFilter('p_food')}
                 className={`border-primary ${
-                  filterText === 'p_food' && 'bg-primary text-secondary'
-                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 md:whitespace-nowrap font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                  filterText === 'p_food' && 'bg-primary text-secondary active'
+                } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
                 {(pageName === 'causes' && 'pakistani food') ||
                   (pageName === 'fandom' && 'pakistani food') ||
@@ -324,8 +324,8 @@ const CSToken = ({ pageName }: any) => {
               <button
                 onClick={() => setFilter('d_wot_b')}
                 className={`border-primary ${
-                  filterText === 'd_wot_b' && 'bg-primary text-secondary'
-                } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 md:whitespace-nowrap font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                  filterText === 'd_wot_b' && 'bg-primary text-secondary active'
+                } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
                 {(pageName === 'causes' && 'doctors without borders') ||
                   (pageName === 'fandom' && 'doctors without borders') ||
@@ -335,8 +335,8 @@ const CSToken = ({ pageName }: any) => {
                 <button
                   onClick={() => setFilter('lorem')}
                   className={`border-primary ${
-                    filterText === 'lorem' && 'bg-primary text-secondary'
-                  } border rounded-[40px] px-[10px] py-[10px] mx-2 text-fig-15 md:whitespace-nowrap font-normal uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                    filterText === 'lorem' && 'bg-primary text-secondary active'
+                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
                 >
                   lorem ipsum
                 </button>

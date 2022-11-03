@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const HowItWork2: NextPage<any> = ({pageName}) => {
-  let StepCadItems = [
+  let StepCadItems1 = [
     {
       id: 1,
       photo_name: 'number1.png',
@@ -26,6 +26,26 @@ const HowItWork2: NextPage<any> = ({pageName}) => {
       photo_name: 'number3.png',
       title: 'increase reputation',
       desc: 'Soulbound tokens you own increase your reputation',
+    },
+  ];
+  let StepCadItems2 = [
+    {
+      id: 1,
+      photo_name: 'number1.png',
+      title: 'Mint the tokens',
+      desc: 'Mint the tokens of your favorite creator or brand',
+    },
+    {
+      id: 2,
+      photo_name: 'number2.png',
+      title: 'metaverse',
+      desc: 'Display the tokens as virtual goods in the Metaverse',
+    },
+    {
+      id: 3,
+      photo_name: 'number3.png',
+      title: 'redeem',
+      desc: 'Redeem your tokens for various perks',
     },
   ];
 useEffect(() =>{
@@ -79,15 +99,36 @@ useEffect(() =>{
         </div>
           <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="how-it-work-content-wrapper flex items-center gap-5 bg-primary py-[138px] laptop-x:py-24 lg:py-16 md:py-8 md:block">
-          {StepCadItems.map(({ id, photo_name, title,  desc }) => (
-                <StepCard 
+                            {
+                pageName==="fandom" ?
+                StepCadItems2.map(
+                  ({
+                    id, photo_name, title,  desc
+                  }) => (
+                    // Exclusive card
+                    <StepCard 
+                    key={id}
+                    id={id}
+                    title={title}
+                    desc={desc}
+                    photo_name={photo_name}
+                    />
+                  )
+                ):
+                StepCadItems1.map(
+                ({
+                  id, photo_name, title,  desc
+                }) => (
+                  <StepCard 
                 key={id}
                 id={id}
                 title={title}
                 desc={desc}
                 photo_name={photo_name}
                 />
-              ))}
+                )
+              )
+              }
           </div>
         </div>
       </section>
