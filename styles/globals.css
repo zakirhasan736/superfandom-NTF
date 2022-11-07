@@ -788,17 +788,29 @@ a {
   transform: translateY(0);
   opacity: 1;
 }
-.main-visual-section
+.explore-section.active .section-titlebox h2.section-title {
+  color: #000000;
+}
+.explore-section.active {
+  background-color: #ffffff;
+  transition: color 650ms ease 0s;
+}
+@media screen and (min-width:768px) {
+  .main-visual-section
   .heading-title-box
   h2.banner_title_animation
   > span
   > span {
-  display: block;
-  transform: translateY(400%);
-  opacity: 0;
-  transition: transform var(--duration) var(--ease);
+  transform: none;
+  opacity: 1;
 }
 
+}
+@media screen and (max-width:767px) {
+  .explore-section.active .section-titlebox h2.section-title {
+    color: #000000 !important;
+  }
+}
 .main-visual-section.active
   .heading-title-box
   h2.banner_title_animation
@@ -824,11 +836,13 @@ li.text-img-siniped-info-list .text-cont-box {
   position: relative;
   overflow: hidden;
 }
-.text-img-siniped-info-list.inf-list2 .siniped-text-box,
+@media screen and (min-width:768px) {
+  .text-img-siniped-info-list.inf-list2 .siniped-text-box,
 li.text-img-siniped-info-list .siniped-text-box {
   opacity: 0;
   transform: translateY(100%);
   transition: all 1s ease 0s;
+}
 }
 
 .text-img-siniped-info-list.inf-list2.active .siniped-text-box,

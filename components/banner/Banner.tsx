@@ -85,43 +85,6 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           },
         }
       );
-    }),
-    viewPort.add("(max-width:767px)", () => {
-      gsap.fromTo(
-        imgSclTest,
-        { scaleY: 5, scaleX: 1, y: 510 },
-        {
-          scaleX: 2.5,
-          scaleY: 50,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.5,
-          },
-        }
-      );
-    })
-    // banner modal images
-    const slidePrl = gsap.utils.toArray('.modal-img-item');
-    gsap.fromTo(
-      slidePrl,
-      { y: 0 },
-      {
-        y: -400,
-        ease: 'none',
-        force3D: true,
-        scrollTrigger: {
-          trigger: '.main-visual-section',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-      }
-    );
-
     // animated title
     const textAnim = gsap.utils.toArray(
       '.banner_title_animation > span > span'
@@ -142,6 +105,43 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           start: 'top top',
           end: 'bottom top',
           scrub: 0.5,
+        },
+      }
+    );
+    }),
+    viewPort.add("(max-width:767px)", () => {
+      gsap.fromTo(
+        imgSclTest,
+        { scaleY: 5, scaleX: 1, y: 510 },
+        {
+          scaleX: 2.5,
+          scaleY: 50,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        }
+      );
+
+    })
+    // banner modal images
+    const slidePrl = gsap.utils.toArray('.modal-img-item');
+    gsap.fromTo(
+      slidePrl,
+      { y: 0 },
+      {
+        y: -400,
+        ease: 'none',
+        force3D: true,
+        scrollTrigger: {
+          trigger: '.main-visual-section',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
         },
       }
     );

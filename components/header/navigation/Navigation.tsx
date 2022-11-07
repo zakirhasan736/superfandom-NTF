@@ -53,12 +53,35 @@ const Header: React.FC<INavigation> = ({
                 open && 'navbar-box-active'
               }`}
             >
-              <ul className="nav-items flex items-center mr-[76px] lg:mr-[25px] md:mr-0 md:block md:mb-16">
+              <ul className="nav-items flex items-center mr-[76px] lg:mr-[25px] md:mr-0  md:mb-16 md:hidden">
                 <li className="uppercase font-primary font-normal text-secondary p-5 mr-5 md:mr-0 text-fig-15 lg:mr-[7px] md:text-fig-32 md:w-full md:p-8 md:border-t md:border-solid md:border-secondary md:text-center ">
                   <Link href="/">
                     <a>explore</a>
                   </Link>
                 </li>
+              </ul>
+              <ul className="nav-items items-center mr-[76px] lg:mr-[25px] md:mr-0 md:mb-16 hidden md:block">
+                <li className="uppercase font-primary font-normal text-secondary p-5 mr-5 md:mr-0 text-fig-15 lg:mr-[7px] md:text-fig-32 md:w-full md:p-8 md:border-t md:border-solid md:border-secondary md:text-center ">
+                  <Link href="/">
+                    <a>CAUSES</a>
+                  </Link>
+                </li>
+                <li className="uppercase font-primary font-normal text-secondary p-5 mr-5 md:mr-0 text-fig-15 lg:mr-[7px] md:text-fig-32 md:w-full md:p-8 md:border-t md:border-solid md:border-secondary md:text-center ">
+                  <Link href="/">
+                    <a>FANDOMS</a>
+                  </Link>
+                </li>
+                <li className="uppercase font-primary font-normal text-secondary p-5 mr-5 md:mr-0 text-fig-15 lg:mr-[7px] md:text-fig-32 md:w-full md:p-8 md:border-t md:border-solid md:border-secondary md:text-center ">
+                  <Link href="/">
+                    <a>CAMPAIGN</a>
+                  </Link>
+                </li>
+                <li className="uppercase font-primary font-normal text-secondary p-5 mr-5 md:mr-0 text-fig-15 lg:mr-[7px] md:text-fig-32 md:w-full md:p-8 md:border-t md:border-b md:border-solid md:border-secondary md:text-center ">
+                  <Link href="/">
+                    <a>SERVICES</a>
+                  </Link>
+                </li>
+                
               </ul>
               <ul className="navbar-btn-items md:px-4 flex items-center md:block">
                 <li className="uppercase font-primary font-normal text-secondary text-fig-15 p-5 md:mb-4 md:w-full md:max-auto md:p-5 md:border md:border-solid md:border-secondary md:text-center md:rounded-[40px] md:bg-primary md:hover:bg-secondary md:hover:text-primary">
@@ -66,7 +89,7 @@ const Header: React.FC<INavigation> = ({
                     <a>log in</a>
                   </Link>
                 </li>
-                <li className="uppercase font-primary font-normal text-secondary text-fig-15 p-5 mr-5 md:mr-0 md:w-full md:max-auto md:p-5 md:border md:border-solid md:border-secondary md:text-center md:rounded-[40px] md:bg-secondary md:text-primary md:hover:bg-primary md:hover:text-secondary border border-solid border-secondary rounded-[40px] hover:bg-secondary hover:text-primary">
+                <li className="uppercase font-primary cursor-pointer font-normal text-secondary text-fig-15 p-5 mr-5 md:mr-0 md:w-full md:max-auto md:p-5 md:border md:border-solid md:border-secondary md:text-center md:rounded-[40px] md:bg-secondary md:text-primary md:hover:bg-primary md:hover:text-secondary border border-solid border-secondary rounded-[40px] hover:bg-secondary hover:text-primary">
                   <Link href="/">
                     <a>Sign up</a>
                   </Link>

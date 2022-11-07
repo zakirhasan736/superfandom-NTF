@@ -66,75 +66,83 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
         opacity: 1,
       });
     });
-    ScrollTrigger.matchMedia({
-      "(min-width:1681px)": function () {
-        ScrollTrigger.create({
-          trigger: ".prallex2",
-          scrub: 1.5,
-          start: "center center",
-          end: "+=400"
-        });
-      },
-      "(max-width:1680px)": function () {
-        ScrollTrigger.create({
-          trigger: ".prallex2",
-          scrub: true,
-          start: "center center",
-          end: "+=400"
-        });
-      },
-      "(max-width:1280px)": function () {
-        ScrollTrigger.create({
-          trigger: ".prallex2",
-          scrub: true,
-          start: "top top",
-          end: "top"
-        });
-      },
-     
+
+    let viewPort = gsap.matchMedia();
+    viewPort.add("(min-width:1681px)", () => {
+      ScrollTrigger.create({
+        trigger: ".prallex2",
+        scrub: 1.5,
+        start: "center center",
+        end: "+=400"
+      });
+    }),
+    viewPort.add("(max-width:1680px)", () => {
+      ScrollTrigger.create({
+        trigger: ".prallex2",
+        scrub: true,
+        start: "center center",
+        end: "+=400"
+      });
+    }),
+    viewPort.add("(max-width:1280px)", () => {
+      ScrollTrigger.create({
+        trigger: ".prallex2",
+        scrub: true,
+        start: "top top",
+        end: "top"
+      });
     })
 
   }, []);
 
   useEffect(() => {
-   const howItworkInfoFade = gsap.utils.toArray('.how-it-work-info-list');
-   howItworkInfoFade.forEach((section:any) => {
-      const elems = section.querySelectorAll('.text-cont-box');
-      // Set starting params for sections
-      gsap.set(elems, {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        overwrite: 'auto',
-      });
 
-      ScrollTrigger.create({
-        trigger: section,
-        start: 'top 60%',
-        end: 'bottom 30%',
-        onEnter: () => gsap.to(elems, {
-          y: 0,
-          opacity: 1,
-          stagger: 0.2,
-        }),
-        onLeave: () => gsap.to(elems, {
-          y: -50,
-          opacity: 0,
-          stagger: 0.2,
-        }),
-        onEnterBack: () => gsap.to(elems, {
-          y: 0,
-          opacity: 1,
-          stagger: -0.2,
-        }),
-        onLeaveBack: () => gsap.to(elems, {
+   const howItworkInfoFade = gsap.utils.toArray('.how-it-work-info-list');
+
+    let viewPort = gsap.matchMedia();
+    viewPort.add("(min-width:768px)", () => {
+      howItworkInfoFade.forEach((section:any) => {
+        const elems = section.querySelectorAll('.text-cont-box');
+        // Set starting params for sections
+        gsap.set(elems, {
           y: 50,
           opacity: 0,
-          stagger: -0.2,
-        }),
+          duration: 1,
+          ease: 'power3.out',
+          overwrite: 'auto',
+        });
+  
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top 60%',
+          end: 'bottom 30%',
+          onEnter: () => gsap.to(elems, {
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+          }),
+          onLeave: () => gsap.to(elems, {
+            y: -50,
+            opacity: 0,
+            stagger: 0.2,
+          }),
+          onEnterBack: () => gsap.to(elems, {
+            y: 0,
+            opacity: 1,
+            stagger: -0.2,
+          }),
+          onLeaveBack: () => gsap.to(elems, {
+            y: 50,
+            opacity: 0,
+            stagger: -0.2,
+          }),
+        });
       });
-    })
+  
+    }),
+    viewPort.add("(min-width:767px)", () => {})
+
+
   }, []);
   return (
     <>

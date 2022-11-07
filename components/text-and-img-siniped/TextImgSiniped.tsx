@@ -37,59 +37,52 @@ const TextImgSiniped: NextPage<any> = () => {
   useEffect(() => {
     const textImgFade = gsap.utils
       .toArray('.text-img-siniped-info-list');
-      textImgFade.forEach((section: any) => {
-        const elems = section.querySelectorAll('.siniped-text-box');
-        // Set starting params for sections
-        ScrollTrigger.matchMedia({
-          'min-width:992px': function () {
-            gsap.set(elems, {
-              y: 50,
-              opacity: 0,
-              duration: 1,
-              ease: 'power3.out',
-              overwrite: 'auto',
-            });
-          },
-          'min-width:991px': function () {
-            gsap.set(elems, {
-              y: 90,
-              opacity: 0,
-              duration: 1,
-              ease: 'power3.out',
-              overwrite: 'auto',
-            });
-          },
+      
+      let viewPort = gsap.matchMedia();
+      viewPort.add("(min-width:768px)", () => {
+        textImgFade.forEach((section: any) => {
+          const elems = section.querySelectorAll('.siniped-text-box');
+          // Set starting params for sections
+          gsap.set(elems, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out',
+            overwrite: 'auto',
+          });
+          ScrollTrigger.create({
+            trigger: section,
+            start: 'top center',
+            end: 'bottom center',
+            onEnter: () =>
+              gsap.to(elems, {
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+              }),
+            onLeave: () =>
+              gsap.to(elems, {
+                y: -50,
+                opacity: 0,
+                stagger: 0.2,
+              }),
+            onEnterBack: () =>
+              gsap.to(elems, {
+                y: 0,
+                opacity: 1,
+                stagger: -0.2,
+              }),
+            onLeaveBack: () =>
+              gsap.to(elems, {
+                y: 50,
+                opacity: 0,
+                stagger: -0.2,
+              }),
+          });
+         
         });
-        ScrollTrigger.create({
-          trigger: section,
-          start: 'top center',
-          end: 'bottom center',
-          onEnter: () =>
-            gsap.to(elems, {
-              y: 0,
-              opacity: 1,
-              stagger: 0.2,
-            }),
-          onLeave: () =>
-            gsap.to(elems, {
-              y: -50,
-              opacity: 0,
-              stagger: 0.2,
-            }),
-          onEnterBack: () =>
-            gsap.to(elems, {
-              y: 0,
-              opacity: 1,
-              stagger: -0.2,
-            }),
-          onLeaveBack: () =>
-            gsap.to(elems, {
-              y: 50,
-              opacity: 0,
-              stagger: -0.2,
-            }),
-        });
-      });
+      }),
+      viewPort.add("(max-width:767px)", () => {})
   }, []);
 
   return (
@@ -111,7 +104,7 @@ const TextImgSiniped: NextPage<any> = () => {
                       support
                     </p>
                     <Link href="/">
-                      <a className="link-buttons uppercase flex flex-col max-w-[190px] text-center w-full  p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-neon hover:border-neon transition duration-150 ease-out">
+                      <a className="link-buttons uppercase flex flex-col max-w-[190px] sm:max-w-full text-center w-full  p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-neon hover:border-neon transition duration-150 ease-out">
                         Explore Causes
                       </a>
                     </Link>
@@ -1256,7 +1249,7 @@ const TextImgSiniped: NextPage<any> = () => {
                       in the real world or in the Metaverse
                     </p>
                     <Link href="/">
-                      <a className=" uppercase flex flex-col max-w-[190px] text-center w-full p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-purple hover:border-purple hover:text-secondary transition duration-150 ease-out">
+                      <a className=" uppercase flex flex-col max-w-[190px] sm:max-w-full text-center w-full p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-purple hover:border-purple hover:text-secondary transition duration-150 ease-out">
                         Explore fandoms
                       </a>
                     </Link>
