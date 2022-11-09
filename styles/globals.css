@@ -830,7 +830,9 @@ a {
   > span:nth-child(1) {
   transition-delay: calc(var(--delay) + 190ms);
 }
-
+.how-it-work-content-wrapper > .steps-card--items:last-child {
+	margin-bottom: 0;
+}
 .text-img-siniped-info-list.inf-list2 .text-cont-box,
 li.text-img-siniped-info-list .text-cont-box {
   position: relative;

@@ -85,29 +85,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           },
         }
       );
-    // animated title
-    const textAnim = gsap.utils.toArray(
-      '.banner_title_animation > span > span'
-    );
-    gsap.fromTo(
-      textAnim,
-      {
-        translateY: '0%',
-        opacity: 1,
-      },
-      {
-        translateY: '200%',
-        ease: 'power3',
-        force3D: true,
-        duration: 1,
-        scrollTrigger: {
-          trigger: '.main-visual-section',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.5,
-        },
-      }
-    );
+
     }),
     viewPort.add("(max-width:767px)", () => {
       gsap.fromTo(
@@ -128,6 +106,30 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
       );
 
     })
+
+        // animated title
+        const textAnim = gsap.utils.toArray(
+          '.banner_title_animation > span > span'
+        );
+        gsap.fromTo(
+          textAnim,
+          {
+            translateY: '0%',
+            opacity: 1,
+          },
+          {
+            translateY: '200%',
+            ease: 'power3',
+            force3D: true,
+            duration: 1,
+            scrollTrigger: {
+              trigger: '.main-visual-section',
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 0.5,
+            },
+          }
+        );
     // banner modal images
     const slidePrl = gsap.utils.toArray('.modal-img-item');
     gsap.fromTo(

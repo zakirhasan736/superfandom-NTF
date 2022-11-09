@@ -45,7 +45,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
         { scaleY: 6, scaleX: .95, y: 300 },
         {
           scaleX: 5,
-          scaleY: 25,
+          scaleY: 15,
           y:0,
           ease: 'none',
           force3D: true,
