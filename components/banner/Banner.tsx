@@ -53,18 +53,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   window.addEventListener('scroll', scrollHandler);
 
   useEffect(() => {
-    
-    // modal text varying 
-    gsap.to('.modal-img-item', {
-      scrollTrigger: {
-        trigger: '.banner-modal-img.two',
-        scrub: 0.5,
-        start: 'top center',
-        end: 'bottom +=200'
-      },
-      yPercent: -20,
-    });
-    
+
     // banner scroll scale bg
     const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
     let viewPort = gsap.matchMedia();
@@ -85,7 +74,58 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           },
         }
       );
-
+    // animated title
+    const textAnim = gsap.utils.toArray(
+      '.banner_title_animation > span > span'
+    );
+    gsap.fromTo(
+      textAnim,
+      {
+        translateY: '0%',
+        opacity: 1,
+      },
+      {
+        translateY: '200%',
+        ease: 'power3',
+        force3D: true,
+        duration: 1,
+        scrollTrigger: {
+          trigger: '.main-visual-section',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 0.5,
+        },
+      }
+    );
+        
+    // modal text varying 
+    gsap.to('.modal-img-item', {
+      scrollTrigger: {
+        trigger: '.banner-modal-img.two',
+        scrub: 0.5,
+        start: 'top center',
+        end: 'bottom +=200'
+      },
+      yPercent: -20,
+    });
+     // banner modal images
+     const slidePrl = gsap.utils.toArray('.modal-img-item');
+     gsap.fromTo(
+       slidePrl,
+       { y: 0 },
+       {
+         y: -400,
+         ease: 'none',
+         force3D: true,
+         scrollTrigger: {
+           trigger: '.main-visual-section',
+           start: 'top top',
+           end: 'bottom top',
+           scrub: true,
+         },
+       }
+     );
+ 
     }),
     viewPort.add("(max-width:767px)", () => {
       gsap.fromTo(
@@ -93,7 +133,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         { scaleY: 5, scaleX: 1, y: 510 },
         {
           scaleX: 2.5,
-          scaleY: 50,
+          scaleY: 90,
           ease: 'none',
           force3D: true,
           scrollTrigger: {
@@ -104,39 +144,24 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           },
         }
       );
-
-    })
-
-        // animated title
-        const textAnim = gsap.utils.toArray(
-          '.banner_title_animation > span > span'
-        );
-        gsap.fromTo(
-          textAnim,
-          {
-            translateY: '0%',
-            opacity: 1,
-          },
-          {
-            translateY: '200%',
-            ease: 'power3',
-            force3D: true,
-            duration: 1,
-            scrollTrigger: {
-              trigger: '.main-visual-section',
-              start: 'top top',
-              end: 'bottom top',
-              scrub: 0.5,
-            },
-          }
-        );
-    // banner modal images
+    
+    // modal text varying 
+    gsap.to('.modal-img-item', {
+      scrollTrigger: {
+        trigger: '.banner-modal-img.two',
+        scrub: 0.5,
+        start: 'top center',
+        end: 'bottom +=200'
+      },
+      yPercent: -5,
+    });
+     // banner modal images
     const slidePrl = gsap.utils.toArray('.modal-img-item');
     gsap.fromTo(
       slidePrl,
       { y: 0 },
       {
-        y: -400,
+        y: -50,
         ease: 'none',
         force3D: true,
         scrollTrigger: {
@@ -147,6 +172,8 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         },
       }
     );
+    })
+   
 
     // scroll text
     document.body.style.overflow = 'auto';
@@ -266,7 +293,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
       
         </div>
 
-        <div className="scroll-anim-text-wrapper  w-full z-10 relative mt-[-130px] lg:h-[274px] md:mt-0 sm:h-[142px]  md:mt-8 h-[456px]">
+        <div className="scroll-anim-text-wrapper  w-full z-10 relative mt-[-130px] lg:h-[274px] md:mt-0 sm:h-[142px]  h-[456px] md:mt-10">
           <div className="section-titlebox mb-24 md:mb-0">
 
           <div className="scrolable-text-box">
@@ -279,7 +306,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
 
             <div className="scrolable-text-box">
               <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-40 mb-[29px]">
+                <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-32 mb-[29px] md:mb-[14px]">
                   nft • fandoms • Metaverse • nft • fandoms • Metaverse • nft •
                   fandoms • Metaverse • nft • fandoms • Metaverse • nft • fandoms
                   • Metaverse •
@@ -289,7 +316,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
 
             <div className="scrolable-text-box">
               <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-40 mb-[29px] md:mb-[14px]">
+                <h2 className="section-title whitespace-nowrap font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-32 mb-[29px] md:mb-[14px]">
                   soulbound • tokens • Nonfungible • soulbound • tokens • Nonfungible • soulbound
                   • tokens • Nonfungible • soulbound • tokens • Nonfungible • soulbound • tokens •
                   Nonfungible •
@@ -299,7 +326,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
 
             <div className="scrolable-text-box">
               <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-40 mb-0">
+                <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-32 mb-0">
                   nft • fandoms • metaverse • nft • fandoms • metaverse • nft •
                   fandoms • metaverse • nft • fandoms • metaverse • nft •
                   fandoms • metaverse •
@@ -322,7 +349,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           <Image
             src="/images/banner-bg.png"
             alt="superfandom banner-bg"
-            className="banner-bg "
+            className="banner-bg sm:hidden"
             width="1820px"
             height="444px"
           />
@@ -330,7 +357,14 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             <img
               src="/images/how-it-work-bg.png"
               alt="superfandom bg-shape"
-              className="bg-shape-image w-full h-full"
+              className="bg-shape-image w-full h-full sm:hidden"
+              width="1920px"
+              height="556px"
+            />
+              <img
+              src="/images/baner-mobo1.png"
+              alt="superfandom bg-shape"
+              className="bg-shape-image w-full h-full hidden sm:block"
               width="1920px"
               height="556px"
             />

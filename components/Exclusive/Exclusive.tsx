@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NextPage } from 'next';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import ExclusiveCard, {
   IExclusiveCard,
 } from '../Card/ExclusiveCard/ExclusiveCard';
@@ -50,6 +53,47 @@ const Exclusive: NextPage<any> = () => {
     const items = data;
     setExclusiveCards(items);
   }, []);
+
+
+  const settings = {
+    dots: false,
+    infinite: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 5000,
+        settings: 'unslick',
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 3,
+          dot: false,
+          variableWidth: true,
+          nav: false,
+          centerMode: true,
+          centerPadding: "10px",
+        }
+      }
+      ,
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 2,
+          dot: false,
+          variableWidth: true,
+          nav: false,
+          centerMode: true,
+          centerPadding: "10px",
+        }
+      }
+    ]
+  };
+
+
   return (
     <>
       <section className="exclusive-section w-full bg-secondary pt-[92px] laptop-m:pt-[65px]  md:pt-8 pb-0 px-0 relative z-10  overflow-hidden">
@@ -61,10 +105,11 @@ const Exclusive: NextPage<any> = () => {
           </div>
         </div>
 
-        <div className="container 2xl:container xl:container lg:container md:container sm:container 2xl:px-12 xl:px-12 laptop-x:px-0 lg:px-0 md:px-0 sm:px-0">
-          <div className="exclusive-content-wrapper px-28 py-12 desktop-l:px-12 md:px-4 md:py-0 sm:pb-8 w-full h-full bg-secondary md:bg-secondary rounded-3xl laptop-x:rounded-none overflow-hidden">
+        <div className="container 2xl:container xl:container lg:container md:container sm:container 2xl:px-12 xl:px-12 laptop-x:px-0 lg:px-0 md:px-0">
+          <div className="exclusive-content-wrapper px-28 py-12 desktop-l:px-12 md:px-0 md:py-0  sm:pb-8 w-full h-full bg-secondary md:bg-secondary rounded-3xl laptop-x:rounded-none overflow-hidden">
             <div className="exclusive-slidebox">
-              <ul className="exclusive-slides-image flex no-wrap gap-5">
+              <ul className="exclusive-slides-image">
+              <Slider {...settings}>
                 {ExclusiveCards.map(
                   ({
                     id,
@@ -88,6 +133,7 @@ const Exclusive: NextPage<any> = () => {
                     </li>
                   )
                 )}
+             </Slider>
               </ul>
             </div>
           </div>

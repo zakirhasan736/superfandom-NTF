@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import TokenCards , {ITokenCards} from '../Card/TokenCards/TokenCards';
 import ExclusiveCard, {IExclusiveCard} from '../Card/ExclusiveCard/ExclusiveCard';
 
@@ -287,9 +290,47 @@ const CSToken = ({ pageName }: any) => {
     setExclusiveTokenData(items2);
   }, [filterText]);
 
+  const settings = {
+    dots: false,
+    infinite: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 5000,
+        settings: 'unslick',
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll:3,
+          dot: false,
+          variableWidth: true,
+          nav: false,
+          centerMode: true,
+          centerPadding: "10px",
+        }
+      }
+      ,
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 2,
+          dot: false,
+          variableWidth: true,
+          nav: false,
+          centerMode: true,
+          centerPadding: "10px",
+        }
+      }
+    ]
+  };
+
   return (
     <>
-      <section className="collection-tokent-section w-full bg-secondary pt-[132px] laptop-m:pt-[65px] md:pt-16 pb-24 md:pb-16 px-0 relative z-10  overflow-hidden">
+      <section className="collection-tokent-section w-full bg-secondary pt-[132px] laptop-m:pt-[65px] md:py-8 pb-24 px-0 relative z-10  overflow-hidden">
         <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="section-titlebox text-animetion mb-8 md:mb-4">
             <h2 className="section-title title_animation max-w-[970px] font-primary font-normal text-fig-3x text-left text-primary laptop-x:text-6xl md:text-fig-40 uppercase">
@@ -305,7 +346,7 @@ const CSToken = ({ pageName }: any) => {
                 onClick={() => setFilter('all')}
                 className={`border-primary ${
                   filterText === 'all' && 'bg-primary text-secondary active'
-                } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 ml-0 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:text-fig-xs md:px-2 md:mx-[2px] ml-0 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
                 {(pageName === 'causes' && 'all soulbound tokens') ||
                   (pageName === 'fandom' && 'all nft tokens') ||
@@ -315,7 +356,7 @@ const CSToken = ({ pageName }: any) => {
                 onClick={() => setFilter('p_food')}
                 className={`border-primary ${
                   filterText === 'p_food' && 'bg-primary text-secondary active'
-                } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:text-fig-xs md:px-2 md:mx-[2px] md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
                 {(pageName === 'causes' && 'pakistani food') ||
                   (pageName === 'fandom' && 'pakistani food') ||
@@ -325,7 +366,7 @@ const CSToken = ({ pageName }: any) => {
                 onClick={() => setFilter('d_wot_b')}
                 className={`border-primary ${
                   filterText === 'd_wot_b' && 'bg-primary text-secondary active'
-                } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:text-fig-xs md:px-2 md:mx-[2px] md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
               >
                 {(pageName === 'causes' && 'doctors without borders') ||
                   (pageName === 'fandom' && 'doctors without borders') ||
@@ -336,15 +377,20 @@ const CSToken = ({ pageName }: any) => {
                   onClick={() => setFilter('lorem')}
                   className={`border-primary ${
                     filterText === 'lorem' && 'bg-primary text-secondary active'
-                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:text-fig-xs md:px-2 md:mx-[2px] md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary sm:px-0 hover:bg-primary`}
                 >
                   lorem ipsum
                 </button>
               )}
             </div>
           </div>
+          </div>
+          <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-0">
           <div className="collection-tokens-box">
-            <div className="content_wrapper flex items-center flex-wrap md:flex-nowrap md:w-[fit-content] gap-5 mb-16 md:mb-0">
+            <div className="content_wrapper md
+            
+            :block md::w-full gap-5 mb-16 md:mb-0">
+            <Slider {...settings}>
               {
                 pageName==="campaign" ?
                 ExclusiveTokenData.map(
@@ -401,6 +447,7 @@ const CSToken = ({ pageName }: any) => {
                 )
               )
               }
+              </Slider>
             </div>
             <div className="collection-btn-box text-center flex justify-center md:hidden sm:px-4 ">
               <Link href="/">

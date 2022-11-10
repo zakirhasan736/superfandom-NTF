@@ -72,14 +72,25 @@ useEffect(() =>{
     <>
       <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
           <div className="section-title-box how-it-work-section-box relative w-full sm:mb-[60px]">
-          <div className="how-it-work-modal-img min-w-[1920px] w-full h-[660px] lg:h-[450px] md:h-[300px] object-cover">
+          <div className="how-it-work-modal-img min-w-[1920px] w-full h-[660px] lg:h-[450px] md:h-[300px] md:min-w-full md:w-full object-cover">
           <img
               src={`/images/${
                 (pageName === 'causes' && 'HowItWork-bg-1.png') ||
                 (pageName === 'fandom' && 'how-it-work-bg-2.png')
               }`}
               alt={'how-it-work-bg-modal-img'}
-              className="how-it-work-bg-modal-img h-full w-full object-cover"
+              className="how-it-work-bg-modal-img h-full w-full object-cover sm:hidden"
+              width="100%"
+              height="100%"
+              
+            />
+             <img
+              src={`/images/${
+                (pageName === 'causes' && 'howitwork-mob2.png') ||
+                (pageName === 'fandom' && 'howitwork-mob1.png')
+              }`}
+              alt={'how-it-work-bg-modal-img'}
+              className="how-it-work-bg-modal-img h-full w-full hidden sm:block"
               width="100%"
               height="100%"
               

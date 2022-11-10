@@ -35,11 +35,12 @@ const TextImgSiniped: NextPage<any> = () => {
   }, []);
 
   useEffect(() => {
-    const textImgFade = gsap.utils
-      .toArray('.text-img-siniped-info-list');
+   
       
       let viewPort = gsap.matchMedia();
-      viewPort.add("(min-width:768px)", () => {
+      viewPort.add("(min-width:992px)", () => {
+        const textImgFade = gsap.utils
+        .toArray('.text-img-siniped-info-list');
         textImgFade.forEach((section: any) => {
           const elems = section.querySelectorAll('.siniped-text-box');
           // Set starting params for sections
@@ -82,7 +83,51 @@ const TextImgSiniped: NextPage<any> = () => {
          
         });
       }),
-      viewPort.add("(max-width:767px)", () => {})
+      viewPort.add("(max-width:991px)", () => {
+        const textImgFade = gsap.utils
+        .toArray('.text-img-siniped-info-list');
+        textImgFade.forEach((section: any) => {
+          const elems = section.querySelectorAll('.siniped-text-box');
+          // Set starting params for sections
+          gsap.set(elems, {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: 'power3.out',
+            overwrite: 'auto',
+          });
+          ScrollTrigger.create({
+            trigger: section,
+            start: 'top center',
+            end: 'bottom center',
+            onEnter: () =>
+              gsap.to(elems, {
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+              }),
+            onLeave: () =>
+              gsap.to(elems, {
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+              }),
+            onEnterBack: () =>
+              gsap.to(elems, {
+                y: 0,
+                opacity: 1,
+                stagger: -0.2,
+              }),
+            onLeaveBack: () =>
+              gsap.to(elems, {
+                y: 0,
+                opacity: 1,
+                stagger: -0.2,
+              }),
+          });
+         
+        });
+      })
   }, []);
 
   return (
