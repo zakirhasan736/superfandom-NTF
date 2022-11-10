@@ -11,9 +11,10 @@ const Footer: React.FC<IFooter> = ({ className,pageName, ...footerProps }) => {
       {...footerProps}
       className={`w-full footer-section bg-secondary ${className}`}
     >
+      <div className="footer-mobo-spaching"></div>
       <div className="container 2xl:container xl:container lg:container 2xl:px-12 pb-[50px] xl:px-12  lg:p-0 ">
         <div className="footer-wrapper-box rounded-[24px] bg-primary flex items-center lg:block lg:rounded-none">
-          <div className="footer-brandlogo  border-r border-solid flex items-center border-secondary lg:block lg:w-full lg:text-center py-[132px] px-[108px] desktop-m:px-[62px] laptop-x:px-[40px]  laptop-x:py-[80px] lg:py-8 lg:px-[77px]">
+          <div className="footer-brandlogo  border-r border-solid flex items-center border-secondary lg:block lg:w-full lg:text-center py-[132px] px-[108px] desktop-m:px-[62px] laptop-x:px-[40px]  laptop-x:py-[80px] lg:py-8 lg:px-[77px] sm:px-16">
             <Image
               src="/images/footer-logo.png"
               alt="superfandom logo"

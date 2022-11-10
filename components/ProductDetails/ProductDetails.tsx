@@ -93,7 +93,7 @@ const ProductDetails: NextPage<any> = () => {
                   </div>
                 </div>
 
-                <div className={`${more ? "h-100 transition-all duration-300 ease-in-out" :"h-20 sm:h-16 transition-all sm:mb-8 duration-300 ease-in-out"} product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] w-full overflow-hidden transition-all duration-300 ease-in-out`}>
+                <div className={`${more ? "h-100 transition-all duration-300 ease-in-out sm:mb-8" :"h-20 sm:h-16 transition-all sm:mb-8 duration-300 ease-in-out"} product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] w-full overflow-hidden transition-all duration-300 ease-in-out`}>
                   <div className="product-cont-title text-primary text-left text-fig-24 sm:text-fig-base font-primary font-normal mb-0 pb-4 border-b border-secondary flex items-center justify-between">
                     <h3>Offers</h3>
                     <div onClick={()=>setMore(!more)} className={`${more ? "rotate-360":"rotate-90"} cursor-pointer`}>

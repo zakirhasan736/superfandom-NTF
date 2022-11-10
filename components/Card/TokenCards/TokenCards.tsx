@@ -19,7 +19,7 @@ export interface ITokenCards {
 
 const TokenCards: React.FC<ITokenCards> = ({ id, photo_name,cardInfo,bidNowBg, userPhoto,bidNow,cardInfoBg,  Price, desc, userInfo, btnName }) => {
   return (
-    <div className="token-card--items  w-[382px] md:w-full md:min-w-[216px] lg:w-[290px] laptop-x:w-[300px] laptop-m:w-[350px] desktop-m:w-[350px] rounded-3xl overflow-hidden bg-primary md:rounded-2xl" key={id}>
+    <div className="token-card--items  w-[382px] md:w-full md:min-w-[216px] sm:min-w-full lg:w-[290px] laptop-x:w-[300px] laptop-m:w-[350px] desktop-m:w-[350px] rounded-3xl overflow-hidden bg-primary md:rounded-2xl" key={id}>
 
       <div className="token-img-cont-box relative">
 

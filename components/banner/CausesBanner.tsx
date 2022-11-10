@@ -97,7 +97,7 @@ viewPort.add("(max-width:767px)", () => {
 
   gsap.fromTo(
     imgSclTest,
-    { scaleY: 1, scaleX: 1, y: 0, x: 15 },
+    { scaleY: 1, scaleX: .92, y: 0, x: 0 },
     {
       scaleX: 2,
       scaleY: 7,
@@ -213,8 +213,8 @@ viewPort.add("(max-width:767px)", () => {
             {/* --------------- */}
 
             {/* ------------- */}
-            <div className="banner-text-cont-right right-[155px] w-[560px] relative z-50 mt-24  laptop-x:mt-16 md:mt-32 sm:mt-20 md:pt-[301px] sm:pt-[310px]  md:w-full">
-              <span className="md:hidden lg:text-6xl laptop-m:text-fig-xx overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute right-[-175px] bottom-[345px] laptop-x:bottom-[350px]">
+            <div className="banner-text-cont-right right-[155px] desktop-m:right-0 lg:right-[20px] md:right-0 w-[560px] relative z-50 mt-24  laptop-x:mt-16 md:mt-32 sm:mt-0 md:pt-[301px] sm:pt-[395px]  md:w-full">
+              <span className="md:hidden lg:text-6xl laptop-m:text-fig-xx overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute right-[-175px] desktop-m:right-[-10px] lg:right-[-23px] bottom-[345px] laptop-x:bottom-[350px]">
                 SBT
               </span>
               <h3 className="subtitle font-primary font-normal text-fig-32 text-left text-secondary uppercase mb-3 lg:text-[26px] md:text-fig-24">
@@ -245,7 +245,7 @@ viewPort.add("(max-width:767px)", () => {
             </div>
             <div className="scrolable-text-box">
               <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x laptop-x:text-fig-3x text-center uppercase lg:text-fig-xx md:text-fig-40 mb-[29px]">
+                <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x laptop-x:text-fig-3x text-center uppercase lg:text-fig-xx md:text-fig-32 mb-[29px]">
                   soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound
                 </h2>
               </div>
