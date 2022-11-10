@@ -105,7 +105,7 @@ const Exclusive: NextPage<any> = () => {
           </div>
         </div>
 
-        <div className="container 2xl:container xl:container lg:container md:container sm:container 2xl:px-12 xl:px-12 laptop-x:px-0 lg:px-0 md:px-0">
+        <div className="container 2xl:container xl:container lg:container md:container sm:container 2xl:px-12 xl:px-12 laptop-x:px-0 lg:px-0 md:px-0 sm:px-0">
           <div className="exclusive-content-wrapper px-28 py-12 desktop-l:px-12 md:px-0 md:py-0  sm:pb-8 w-full h-full bg-secondary md:bg-secondary rounded-3xl laptop-x:rounded-none overflow-hidden">
             <div className="exclusive-slidebox">
               <ul className="exclusive-slides-image">
