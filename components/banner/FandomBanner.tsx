@@ -25,8 +25,8 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
         imgSclTest,
         { scaleY: 1, scaleX: 1, y: 420 },
         {
-          scaleX: 2,
-          scaleY: 5,
+          scaleX: 1.8,
+          scaleY: 3.5,
           y:0,
           ease: 'none',
           force3D: true,
