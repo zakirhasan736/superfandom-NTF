@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
+import { Settings } from "react-slick";
 import Link from 'next/link';
 import { NextPage } from 'next';
 import "slick-carousel/slick/slick.css"; 
@@ -239,7 +240,7 @@ useEffect(() => {
 }, []);
 
 
-const settings = {
+const slickSettings:Settings = {
   dots: false,
   infinite: false,
   slidesToShow: 12,
@@ -254,9 +255,9 @@ const settings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 2,
-        dot: false,
+        dots: false,
         variableWidth: true,
-        nav: false,
+        // nav: false,
         centerMode: true,
         centerPadding: "10px",
       }
@@ -279,7 +280,7 @@ const settings = {
           <div className="explore-content-wrapper pt-12 pb-[51px] md:pb-0 px-0 bg-primary md:bg-secondary sm:rounded-0 sm:pt-0">
             <div className="explore-slidebox mb-12 sm:mb-8 desktop-m:h-[505px] laptop-x:h-[461px] laptop-m:h-[510px] lg:h-[450px] md:h-[340px]">
               <ul className="slides-image-box">
-              <Slider {...settings}>
+              <Slider {...slickSettings}>
                 {tokenItem.map(
                 ({
                   id,
@@ -290,9 +291,8 @@ const settings = {
                   userInfo,
                   btnName,
                 }: ITokenCards) => (
-                  <li className="slide-image-items">
+                  <li className="slide-image-items" key={id}>
                   <TokenCards
-                    key={id}
                     id={id}
                     photo_name={photo_name}
                     Price={Price}

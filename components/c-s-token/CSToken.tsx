@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Slider from 'react-slick';
+import { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import TokenCards , {ITokenCards} from '../Card/TokenCards/TokenCards';
@@ -290,7 +291,7 @@ const CSToken = ({ pageName }: any) => {
     setExclusiveTokenData(items2);
   }, [filterText]);
 
-  const settings = {
+  const settings:Settings = {
     dots: false,
     infinite: false,
     slidesToShow: 4,
@@ -305,9 +306,9 @@ const CSToken = ({ pageName }: any) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll:3,
-          dot: false,
+          dots: false,
           variableWidth: true,
-          nav: false,
+          // nav: false,
           centerMode: true,
           centerPadding: "10px",
         }
@@ -318,9 +319,9 @@ const CSToken = ({ pageName }: any) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 2,
-          dot: false,
+          dots: false,
           variableWidth: true,
-          nav: false,
+          // nav: false,
           centerMode: true,
           centerPadding: "10px",
         }

@@ -1,6 +1,8 @@
 import { IFooter } from './Footer';
 
-const base: IFooter = {};
+const base: IFooter = {
+  pageName:""
+};
 
 export const mockFooterProps = {
   base,

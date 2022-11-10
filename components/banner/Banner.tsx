@@ -240,9 +240,8 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                   userInfo,
                   btnName,
                 }: ITokenCards) => (
-                  <li className="modal-img-item md:w-[180px] sm:w-[146px]  md:relative w-[382px] sm:min-w-[147px] sm:h-[200px] md:min-w-[216px] lg:w-[290px] laptop-x:w-[300px] laptop-m:w-[300px] desktop-m:w-[350px] rounded-3xl overflow-hidden bg-primary md:rounded-2xl sm:rounded-lg">
+                  <li className="modal-img-item md:w-[180px] sm:w-[146px]  md:relative w-[382px] sm:min-w-[147px] sm:h-[200px] md:min-w-[216px] lg:w-[290px] laptop-x:w-[300px] laptop-m:w-[300px] desktop-m:w-[350px] rounded-3xl overflow-hidden bg-primary md:rounded-2xl sm:rounded-lg" key={id}>
                   <TokenCards
-                    key={id}
                     id={id}
                     photo_name={photo_name}
                     Price={Price}

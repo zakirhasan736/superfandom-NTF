@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NextPage } from 'next';
 import Slider from 'react-slick';
+import { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import ExclusiveCard, {
@@ -55,7 +56,7 @@ const Exclusive: NextPage<any> = () => {
   }, []);
 
 
-  const settings = {
+  const settings:Settings = {
     dots: false,
     infinite: false,
     slidesToShow: 4,
@@ -70,9 +71,9 @@ const Exclusive: NextPage<any> = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 3,
-          dot: false,
+          dots: false,
           variableWidth: true,
-          nav: false,
+          // nav: false,
           centerMode: true,
           centerPadding: "10px",
         }
@@ -83,9 +84,9 @@ const Exclusive: NextPage<any> = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 2,
-          dot: false,
+          dots: false,
           variableWidth: true,
-          nav: false,
+          // nav: false,
           centerMode: true,
           centerPadding: "10px",
         }

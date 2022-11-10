@@ -5,7 +5,7 @@ import Navigation from '../../header/navigation/Navigation';
 export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {
   justify?: 'items-center' | 'items-start';
   headerNext:boolean;
-  pageName?:string;
+  pageName?:string | undefined;
 }
 
 const PrimaryLayout: React.FC<IPrimaryLayout> = ({
