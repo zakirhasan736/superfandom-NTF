@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export interface IFooter extends React.ComponentPropsWithoutRef<'footer'> {
-  pageName:string;
+  pageName?:string;
 }
 
 const Footer: React.FC<IFooter> = ({ className,pageName, ...footerProps }) => {

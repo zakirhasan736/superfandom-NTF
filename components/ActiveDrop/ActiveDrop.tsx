@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Slider from 'react-slick';
+import { Settings } from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { NextPage } from 'next';
@@ -44,7 +45,7 @@ const ActiveDrop: NextPage<any> = () => {
     setActiveCards(items);
   }, []);
 
-  const settings = {
+  const settings:Settings = {
     dots: false,
     infinite: false,
     slidesToShow: 4,
@@ -60,9 +61,9 @@ const ActiveDrop: NextPage<any> = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 3,
-          dot: false,
+          dots: false,
           variableWidth: true,
-          nav: false,
+          // nav: false,
           centerMode: true,
           centerPadding: '10px',
           arrows: false,
@@ -73,9 +74,9 @@ const ActiveDrop: NextPage<any> = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 2,
-          dot: false,
+          dots: false,
           variableWidth: true,
-          nav: false,
+          // nav: false,
           centerMode: true,
           centerPadding: '10px',
           arrows: false,

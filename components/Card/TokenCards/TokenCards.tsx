@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 
 export interface ITokenCards {
@@ -35,12 +36,12 @@ const TokenCards: React.FC<ITokenCards> = ({ id, photo_name,cardInfo,bidNowBg, u
           </div>
 
           <div className="tokens-card-top-cont flex justify-between items-start absolute top-0 left-0 p-5 w-full md:p-2">
-            <a
-              href="/"
-              className={['link-item-text uppercase text-fig-15 bg-secondary text-primary text-center lg:text-fig-12 md:text-fig-xs font-primary font-normal p-[10px] rounded-[40px]', `bg-${bidNowBg}`].join(' ')}
+            <Link href="/">
+            <a className={['link-item-text uppercase text-fig-15 bg-secondary text-primary text-center lg:text-fig-12 md:text-fig-xs font-primary font-normal p-[10px] rounded-[40px]', `bg-${bidNowBg}`].join(' ')}
               >
               {bidNow}
             </a>
+            </Link>
             <span className={['card-updates-info  text-fig-15 uppercase text-secondary block  text-center lg:text-fig-12 md:text-fig-xs font-primary font-normal rounded-[100%] w-[62px] h-[62px] leading-[62px]', `bg-${cardInfoBg}`].join(' ')}
             >
              {cardInfo}
