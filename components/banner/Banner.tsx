@@ -263,7 +263,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             {/* --------------- */}
 
             {/* ------------- */}
-            <div className="banner-text-cont-right w-[560px] relative z-50 mt-24 mr-10 md:mt-40 md:pt-[301px] sm:pt-[290px] lg:mr-0 sm:mr-[-35px] md:w-full">
+            <div className="banner-text-cont-right w-[560px] relative z-50 mt-24 mr-10 md:mt-0 md:pt-[301px] sm:pt-[445px] lg:mr-0 sm:mr-[-35px] md:w-full">
               <span className="md:hidden lg:text-6xl overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute right-0 bottom-[420px]">
                 SBT
               </span>
