@@ -18,7 +18,7 @@ const LoadingScreen: NextPage<any> = ({loaded}) => {
                 height="270px"
               />
             </div>
-            <span className="absolute top-[70%] left-0 bottom-0 right-0 text-center text-fig-32">
+            <span className="absolute top-[70%] left-0 bottom-0 right-0 text-center text-fig-32 text-neon">
               <CountUp end={100} duration={loaded} />%
             </span>
           </div>
