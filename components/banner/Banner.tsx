@@ -57,23 +57,9 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     // banner scroll scale bg
     const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
     let viewPort = gsap.matchMedia();
+
     viewPort.add("(min-width:768px)", () => {
-      gsap.fromTo(
-        imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 320 },
-        {
-          scaleX: 2.5,
-          scaleY: 5,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.5,
-          },
-        }
-      );
+      
     // animated title
     const textAnim = gsap.utils.toArray(
       '.banner_title_animation > span > span'
@@ -127,6 +113,132 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
      );
  
     }),
+    viewPort.add("(min-width:1681px)", () => {
+      gsap.fromTo(
+        imgSclTest,
+        { scaleY: 0.4, scaleX: 1, y: 320 },
+        {
+          scaleX: 2.5,
+          scaleY: 5,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        }
+      );
+    })
+    viewPort.add("(max-width:1680px)", () => {
+      gsap.fromTo(
+        imgSclTest,
+        { scaleY: 0.4, scaleX: 1, y: 330 },
+        {
+          scaleX: 2.5,
+          scaleY: 5,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        }
+      );
+    })
+    viewPort.add("(max-width:1440px)", () => {
+      gsap.fromTo(
+        imgSclTest,
+        { scaleY: 0.4, scaleX: 1, y: 307},
+        {
+          scaleX: 2.5,
+          scaleY: 5,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        }
+      );
+    })
+    viewPort.add("(max-width:1399px)", () => {
+      gsap.fromTo(
+        imgSclTest,
+        { scaleY: 0.4, scaleX: 1, y: 310},
+        {
+          scaleX: 2.5,
+          scaleY: 5,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        }
+      );
+    })
+    viewPort.add("(max-width:1280px)", () => {
+      gsap.fromTo(
+        imgSclTest,
+        { scaleY: 0.4, scaleX: 1, y: 324},
+        {
+          scaleX: 2.5,
+          scaleY: 5,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        }
+      );
+    })
+    viewPort.add("(max-width:1199px)", () => {
+      gsap.fromTo(
+        imgSclTest,
+        { scaleY: 0.4, scaleX: 1, y: 289},
+        {
+          scaleX: 2.5,
+          scaleY: 5,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        }
+      );
+    })
+    viewPort.add("(max-width:991px)", () => {
+      gsap.fromTo(
+        imgSclTest,
+        { scaleY: 0.4, scaleX: 1, y: 249},
+        {
+          scaleX: 2.5,
+          scaleY: 5,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        }
+      );
+    })
     viewPort.add("(max-width:767px)", () => {
       gsap.fromTo(
         imgSclTest,

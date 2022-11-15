@@ -1,11 +1,11 @@
 import { NextPage } from 'next';
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const ProductDetails: NextPage<any> = () => {
-  const [more,setMore] = useState(false)
+  const [more, setMore] = useState(false);
   const [open, setOpen] = useState(false);
 
   return (
@@ -85,20 +85,31 @@ const ProductDetails: NextPage<any> = () => {
                             onClick={() => setOpen(!open)}
                             className="p-5 font-primary uppercase font-normal text-fig-15 text-primary  rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out md:border-primary max-w-[180px] w-full md:text-primary md:hover:bg-primary md:hover:text-secondary md:max-w-[100%]"
                           >
-                              make offer
-                           </button>
+                            make offer
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className={`${more ? "h-100 transition-all duration-300 ease-in-out sm:mb-8" :"h-20 sm:h-16 transition-all sm:mb-8 duration-300 ease-in-out"} product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] w-full overflow-hidden transition-all duration-300 ease-in-out`}>
+                <div
+                  className={`${
+                    more
+                      ? 'h-100 transition-all duration-300 ease-in-out sm:mb-8'
+                      : 'h-20 sm:h-16 transition-all sm:mb-8 duration-300 ease-in-out'
+                  } product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] w-full overflow-hidden transition-all duration-300 ease-in-out`}
+                >
                   <div className="product-cont-title text-primary text-left text-fig-24 sm:text-fig-base font-primary font-normal mb-0 pb-4 border-b border-secondary flex items-center justify-between">
                     <h3>Offers</h3>
-                    <div onClick={()=>setMore(!more)} className={`${more ? "rotate-360":"rotate-90"} cursor-pointer`}>
-                    <IoIosArrowDown/>
-                  </div>
+                    <div
+                      onClick={() => setMore(!more)}
+                      className={`${
+                        more ? 'rotate-360' : 'rotate-90'
+                      } cursor-pointer`}
+                    >
+                      <IoIosArrowDown />
+                    </div>
                   </div>
                   <div className="offer-list-box">
                     <div className="offer-details mb-4">
