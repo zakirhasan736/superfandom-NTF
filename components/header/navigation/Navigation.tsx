@@ -5,11 +5,14 @@ import { HiMenu, HiX } from 'react-icons/hi';
 
 export interface INavigation extends React.ComponentPropsWithoutRef<'header'> {
   headerNext: boolean;
+  pageName?: string;
 }
 
 const Header: React.FC<INavigation> = ({
   className,
+  pageName,
   headerNext,
+
   ...headerProps
 }) => {
   const [open, setOpen] = useState(false);
@@ -23,21 +26,22 @@ const Header: React.FC<INavigation> = ({
       <div className="container lg:container md:container sm:container 2xl:px-12 xl:px-12 lg:px-8  sm:px-4 md:px-0">
         <nav className="navbar">
           <div className="nav-contantwrapper flex items-center justify-between md:block">
-            
             <div className="navbar-wrapper md:flex md:items-center md:justify-between relative md:px-8 sm:px-3 z-[99999]">
               <div className="nav-logo w-[222px] h-[66px] sm:w-[170px] sm:h-auto">
                 <div className="brand-logo-box">
-                  <Image
-                    src={`${
-                      headerNext
-                        ? '/images/brand-logo-fill.png'
-                        : '/images/brand-logo.png'
-                    }`}
-                    alt="superfandom logo"
-                    className="brand-image"
-                    width="222px"
-                    height="66px"
-                  />
+                  <Link href="/">
+                    <Image
+                      src={`${
+                        headerNext
+                          ? '/images/brand-logo-fill.png'
+                          : '/images/brand-logo.png'
+                      }`}
+                      alt="superfandom logo"
+                      className="brand-image"
+                      width="222px"
+                      height="66px"
+                    />
+                  </Link>
                 </div>
               </div>
               <div
@@ -61,18 +65,30 @@ const Header: React.FC<INavigation> = ({
                 </li>
               </ul>
               <ul className="nav-items items-center mr-[76px] lg:mr-[25px] md:mr-0 md:mb-16 hidden md:block">
-                <li className="uppercase font-primary font-normal text-secondary p-5 mr-5 md:mr-0 text-fig-15 lg:mr-[7px] md:text-fig-32 md:w-full md:p-8 md:border-t md:border-solid md:border-secondary md:text-center ">
-                  <Link href="/">
+                <li
+                  className={`${
+                    pageName === 'causes' ? 'text-neon' : ''
+                  } uppercase font-primary font-normal text-secondary p-5 mr-5 md:mr-0 text-fig-15 lg:mr-[7px] md:text-fig-32 md:w-full md:p-8 md:border-t md:border-solid md:border-secondary md:text-center`}
+                >
+                  <Link href="/causespage">
                     <a>CAUSES</a>
                   </Link>
                 </li>
-                <li className="uppercase font-primary font-normal text-secondary p-5 mr-5 md:mr-0 text-fig-15 lg:mr-[7px] md:text-fig-32 md:w-full md:p-8 md:border-t md:border-solid md:border-secondary md:text-center ">
-                  <Link href="/">
+                <li
+                  className={`${
+                    pageName === 'fandom' ? 'text-neon' : ''
+                  } uppercase font-primary font-normal text-secondary p-5 mr-5 md:mr-0 text-fig-15 lg:mr-[7px] md:text-fig-32 md:w-full md:p-8 md:border-t md:border-solid md:border-secondary md:text-center`}
+                >
+                  <Link href="/fandom">
                     <a>FANDOMS</a>
                   </Link>
                 </li>
-                <li className="uppercase font-primary font-normal text-secondary p-5 mr-5 md:mr-0 text-fig-15 lg:mr-[7px] md:text-fig-32 md:w-full md:p-8 md:border-t md:border-solid md:border-secondary md:text-center ">
-                  <Link href="/">
+                <li
+                  className={`${
+                    pageName === 'campaign' ? 'text-neon' : ''
+                  } uppercase font-primary font-normal text-secondary p-5 mr-5 md:mr-0 text-fig-15 lg:mr-[7px] md:text-fig-32 md:w-full md:p-8 md:border-t md:border-solid md:border-secondary md:text-center`}
+                >
+                  <Link href="/campaign">
                     <a>CAMPAIGN</a>
                   </Link>
                 </li>
@@ -81,7 +97,6 @@ const Header: React.FC<INavigation> = ({
                     <a>SERVICES</a>
                   </Link>
                 </li>
-                
               </ul>
               <ul className="navbar-btn-items md:px-4 flex items-center md:block">
                 <li className="uppercase font-primary font-normal text-secondary text-fig-15 p-5 md:mb-4 md:w-full md:max-auto md:p-5 md:border md:border-solid md:border-secondary md:text-center md:rounded-[40px] md:bg-primary md:hover:bg-secondary md:hover:text-primary">
@@ -96,9 +111,7 @@ const Header: React.FC<INavigation> = ({
                 </li>
               </ul>
             </div>
-
           </div>
-         
         </nav>
       </div>
     </header>

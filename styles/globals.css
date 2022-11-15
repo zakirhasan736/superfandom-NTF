@@ -309,16 +309,26 @@ a {
   flex-direction: row-reverse;
 }
 .text-img-siniped-info-items > li:first-child .text-img-siniped-anim-scroll {
-  background-image: url('/images/bg-right-img.png');
-  background-repeat: no-repeat;
   overflow: hidden;
-  background-size: cover;
+  background-color:hsla(179,100%,49%,1);
+background-image:
+radial-gradient(at 74% 0%, hsla(226,95%,38%,1) 0px, transparent 50%),
+radial-gradient(at 100% 0%, hsla(214,89%,56%,1) 0px, transparent 50%),
+radial-gradient(at 13% 2%, hsla(272,97%,49%,1) 0px, transparent 50%),
+radial-gradient(at 0% 100%, hsla(159,99%,59%,1) 0px, transparent 50%),
+radial-gradient(at 100% 100%, hsla(179,100%,49%,1) 0px, transparent 50%);
 }
 .text-img-siniped-info-items > li:nth-child(2) .text-img-siniped-anim-scroll {
-  background-image: url('/images/bg-left-img.png');
-  background-repeat: no-repeat;
   overflow: hidden;
-  background-size: cover;
+  background-color:hsla(282,99%,48%,1);
+background-image:
+radial-gradient(at 53% 0%, hsla(239,75%,35%,1) 0px, transparent 50%),
+radial-gradient(at 100% 0%, hsla(239,75%,35%,1) 0px, transparent 50%),
+radial-gradient(at 0% 0%, hsla(245,92%,22%,1) 0px, transparent 50%),
+radial-gradient(at 0% 36%, hsla(257,92%,72%,1) 0px, transparent 50%),
+radial-gradient(at 0% 100%, hsla(282,99%,48%,1) 0px, transparent 50%),
+radial-gradient(at 100% 100%, hsla(271,99%,47%,1) 0px, transparent 50%),
+radial-gradient(at 51% 100%, hsla(273,87%,27%,1) 0px, transparent 50%);
 }
 .text-img-siniped-info-items > li .text-cont-box > .desc {
   margin-bottom: 24px !important;
