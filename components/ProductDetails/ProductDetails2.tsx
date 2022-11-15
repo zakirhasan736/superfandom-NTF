@@ -171,11 +171,11 @@ const ProductDetails2: NextPage<any> = () => {
         <div
           className={`${
             open ? 'block' : 'hidden'
-          } fixed z-50 inset-y-0 w-full h-full left-0 right-8 flex items-center justify-center px-6`}
+          } fixed z-[9999] inset-y-0 w-full h-full left-0 right-8 flex items-center justify-center px-6 popup-box`}
         >
           <div className="border bg-secondary max-w-[1000px] rounded-[20px] w-full px-5 pt-5 pb-24">
             <div className="close-button-box flex justify-end w-full">
-              <button onClick={() => setOpen(!open)}>
+              <button onClick={() => setOpen(!open)} className="md:w-[45px] sm:w-[32px] md:h-[45px] sm:h-[32px]">
                 <Image
                   src="/images/close.png"
                   alt="superfandom popup close icon"
