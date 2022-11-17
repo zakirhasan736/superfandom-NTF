@@ -1131,3 +1131,8 @@ header.white-varient-navbar .navbar-btn-items li a {
   z-index: -1;
 }
 /* ============================== */
+.collection-tabs-items button:hover ,
+.collection-tabs-items button.active {
+  color: #ffffff !important;
+  background: #000000 !important;
+}
