@@ -53,8 +53,8 @@ const TextImgSiniped: NextPage<any> = () => {
           });
           ScrollTrigger.create({
             trigger: section,
-            start: 'top center',
-            end: 'bottom center',
+            start: 'top +=100',
+            end: 'bottom +=100',
             onEnter: () =>
               gsap.to(elems, {
                 y: 0,
@@ -98,8 +98,8 @@ const TextImgSiniped: NextPage<any> = () => {
           });
           ScrollTrigger.create({
             trigger: section,
-            start: 'top center',
-            end: 'bottom center',
+            start: 'top top',
+            end: 'bottom bottom',
             onEnter: () =>
               gsap.to(elems, {
                 y: 0,

@@ -27,7 +27,7 @@ const Header: React.FC<INavigation> = ({
         <nav className="navbar">
           <div className="nav-contantwrapper flex items-center justify-between md:block">
             <div className="navbar-wrapper md:flex md:items-center md:justify-between relative md:px-8 sm:px-3 z-[99999]">
-              <div className="nav-logo w-[222px] h-[66px] sm:w-[170px] sm:h-auto">
+              <div className="nav-logo w-[222px] h-[60px] sm:w-[170px] sm:h-auto">
                 <div className="brand-logo-box">
                   <Link href="/">
                     <Image
@@ -39,7 +39,7 @@ const Header: React.FC<INavigation> = ({
                       alt="superfandom logo"
                       className="brand-image"
                       width="222px"
-                      height="66px"
+                      height="60px"
                     />
                   </Link>
                 </div>

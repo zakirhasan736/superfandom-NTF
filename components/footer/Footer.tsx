@@ -20,7 +20,7 @@ const Footer: React.FC<IFooter> = ({ className,pageName, ...footerProps }) => {
               alt="superfandom logo"
               className="brand-image"
               width="222px"
-              height="66px"
+              height="60px"
             />
           </div>
           <div className="footer-contant-box w-full">
