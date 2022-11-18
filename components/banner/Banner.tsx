@@ -116,7 +116,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     viewPort.add("(min-width:1681px)", () => {
       gsap.fromTo(
         imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 320 },
+        { scaleY: 0.4, scaleX: 1, y: 326 },
         {
           scaleX: 2.5,
           scaleY: 5,
@@ -134,7 +134,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     viewPort.add("(max-width:1680px)", () => {
       gsap.fromTo(
         imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 330 },
+        { scaleY: 0.4, scaleX: 1, y: 343 },
         {
           scaleX: 2.5,
           scaleY: 5,
@@ -152,7 +152,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     viewPort.add("(max-width:1440px)", () => {
       gsap.fromTo(
         imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 307},
+        { scaleY: 0.4, scaleX: 1, y: 315},
         {
           scaleX: 2.5,
           scaleY: 5,
@@ -170,7 +170,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     viewPort.add("(max-width:1399px)", () => {
       gsap.fromTo(
         imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 310},
+        { scaleY: 0.4, scaleX: 1, y: 318},
         {
           scaleX: 2.5,
           scaleY: 5,
@@ -188,7 +188,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     viewPort.add("(max-width:1280px)", () => {
       gsap.fromTo(
         imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 324},
+        { scaleY: 0.4, scaleX: 1, y: 330},
         {
           scaleX: 2.5,
           scaleY: 5,
@@ -206,7 +206,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     viewPort.add("(max-width:1199px)", () => {
       gsap.fromTo(
         imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 289},
+        { scaleY: 0.4, scaleX: 1, y: 295},
         {
           scaleX: 2.5,
           scaleY: 5,
