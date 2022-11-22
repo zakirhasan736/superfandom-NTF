@@ -33,8 +33,8 @@ const Header: React.FC<INavigation> = ({
                     <Image
                       src={`${
                         headerNext
-                          ? '/images/brand-logo-fill.png'
-                          : '/images/brand-logo.png'
+                          ? '/images/brand-logo-fill.svg'
+                          : '/images/brand-logo.svg'
                       }`}
                       alt="superfandom logo"
                       className="brand-image"

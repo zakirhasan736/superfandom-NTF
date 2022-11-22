@@ -16,7 +16,7 @@ const CampaignBanner: React.FC<ICampaignBanner> = () => {
           <div className="banner-top-box h-[260px] relative rounded-3xl md:h-[100px]">
             <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4 relative">
               <div className="brand-logo-wrap relative md:w-24 md:h-24 md:mr-auto md:ml-auto">
-              <div className="banner-brand-logo w-[218px] h-[218px] md:w-24 md:h-24 overflow-hidden rounded-[100%] border-[10px] border-solid border-secondary absolute top-[140px] md:top-[52px] md:left-0 md:right-0 md:mr-auto md:ml-auto">
+              <div className="banner-brand-logo w-[218px] h-[218px] md:w-24 md:h-24 overflow-hidden rounded-[100%] border-[10px] md:border-[5px] sm:border-[2px] border-solid border-secondary absolute top-[140px] md:top-[52px] md:left-0 md:right-0 md:mr-auto md:ml-auto">
                 <Image
                   src="/images/exclusive-img-1.png"
                   alt="superfandom banner-logo-image"

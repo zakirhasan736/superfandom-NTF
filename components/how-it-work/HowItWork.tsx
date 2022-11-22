@@ -37,14 +37,14 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
   const howItWorkScrolled =  gsap.utils.toArray('.scrolable-text-box.how-it-work-title.one');
   howItWorkScrolled.forEach((section:any, index) => {
       const w = section.querySelector('.scroll-text-item');
-      const [x, xEnd] = (index % 2) ? ['10%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
+      const [x, xEnd] = (index % 2) ? ['1%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
       gsap.fromTo(w, { x, y: 0, }, {
         x: xEnd,
         duration: 10,
         scrollTrigger: {
           trigger: section,
-          scrub: 0.5,
-          start: 'top top',
+          scrub: 0.2,
+          start: 'top center',
           end: () => "+=" + (w.scrollWidth - section.offsetWidth),
         },
         y: 0,
@@ -202,7 +202,7 @@ const HowItWork: NextPage<any> = ({card1,card2,pageName}) => {
           <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
             <div className="scrolable-text-box how-it-work-title one">
               <div className="scroll-text-item">
-                <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-40">
+                <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx sm:text-fig-40 sm:tracking-[.05em]">
                   • how it works • how it works
                   • how it works • how it works
                   • how it works • how it works

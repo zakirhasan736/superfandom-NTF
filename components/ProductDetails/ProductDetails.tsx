@@ -15,7 +15,7 @@ const ProductDetails: NextPage<any> = () => {
           <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
             <div className="product-details-cont-wrapper flex items-start gap-8 sm:block">
               <div className="product-details-left-cont max-w-[570px] w-full ">
-                <div className="product-modal-img max-w-[570px] max-h-[570px] w-full h-full mb-8">
+                <div className="product-modal-img max-w-[570px] max-h-[570px] w-full h-full mb-8 md:mb-4">
                   <Image
                     src="/images/product-details-1.png"
                     alt="superfandom product-details-img"
@@ -24,7 +24,7 @@ const ProductDetails: NextPage<any> = () => {
                     height="570px"
                   />
                 </div>
-                <div className="product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] sm:mb-8 sm:hidden">
+                <div className="product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] sm:mb-4 sm:hidden">
                   <h3 className="product-cont-title text-primary text-left text-fig-24 font-primary font-normal mb-4 pb-4 border-b border-secondary sm:text-fig-base">
                     Description
                   </h3>
@@ -55,7 +55,7 @@ const ProductDetails: NextPage<any> = () => {
               </div>
 
               <div className="product-details-right-cont w-full">
-                <div className="product-cont-box desc-box bg-lightgray p-10 lg:p-5 rounded-[20px] mb-8 w-full">
+                <div className="product-cont-box desc-box bg-lightgray p-10 lg:p-5 rounded-[20px] mb-8 md:mb-4 w-full">
                   <h3 className="product-cont-title text-primary text-left text-fig-24 font-primary  sm:text-fig-base font-normal mb-4 pb-4 border-b border-secondary">
                     Sale in progress
                   </h3>
@@ -96,8 +96,8 @@ const ProductDetails: NextPage<any> = () => {
                 <div
                   className={`${
                     more
-                      ? 'h-100 transition-all duration-300 ease-in-out sm:mb-8'
-                      : 'h-20 sm:h-16 transition-all sm:mb-8 duration-300 ease-in-out'
+                      ? 'h-100 transition-all duration-300 ease-in-out sm:mb-4'
+                      : 'h-20 sm:h-16 transition-all sm:mb-4 duration-300 ease-in-out'
                   } product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] w-full overflow-hidden transition-all duration-300 ease-in-out`}
                 >
                   <div className="product-cont-title text-primary text-left text-fig-24 sm:text-fig-base font-primary font-normal mb-0 pb-4 border-b border-secondary flex items-center justify-between">

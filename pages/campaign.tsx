@@ -15,7 +15,7 @@ const Campaign: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <CampaignBanner  />
-      <Exclusive />
+      <Exclusive pageName={"campaign"} />
       <CSToken pageName={"campaign"}/>
     </div>
   );

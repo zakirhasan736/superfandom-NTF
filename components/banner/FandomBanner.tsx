@@ -66,7 +66,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] =
         index % 2
-          ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
+          ? ['1%', (w.scrollWidth - section.offsetWidth) * -1]
           : [w.scrollWidth * -1, 0];
       gsap.fromTo(
         w,
@@ -75,7 +75,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
           x: xEnd,
           scrollTrigger: {
             trigger: section,
-            scrub: 0.5,
+            scrub: 0.06,
             start: 'top +=850',
             end: () => "+=" + (w.scrollWidth - section.offsetWidth),
           },
@@ -151,8 +151,8 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
 
             <div className="scrolable-text-box">
               <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-40 mb-[29px]">
-                nft•fandoms•nft•fandoms•nft•fandoms•nft•fandoms•nft•fandoms•nft•fandoms•
+                <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx sm:text-fig-40 mb-[29px]">
+                nft•fandoms•nft•fandoms•nft•fandoms•nft•fandoms•nft•fandoms•nft•fandoms•nft•fandoms•
                 </h2>
               </div>
             </div>

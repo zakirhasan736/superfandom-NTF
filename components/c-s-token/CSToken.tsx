@@ -323,7 +323,7 @@ const CSToken = ({ pageName }: any) => {
   return (
     <>
       <section className="collection-tokent-section w-full bg-secondary pt-[132px] laptop-m:pt-[65px] md:py-8 pb-24 px-0 relative z-10  overflow-hidden">
-        <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
+        <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-2">
           <div className="section-titlebox text-animetion mb-8 md:mb-4">
             <h2 className="section-title title_animation max-w-[970px] font-primary font-normal text-fig-3x text-left text-primary laptop-x:text-6xl md:text-fig-40 uppercase">
               {(pageName === 'causes' && 'collect soulbound tokens') ||
@@ -333,12 +333,12 @@ const CSToken = ({ pageName }: any) => {
           </div>
 
           <div className="collection-wrapper-box">
-            <div className="collection-tabs-items mb-8 md:flex md:flex-nowrap">
+            <div className="collection-tabs-items mb-8 md:flex md:flex-nowrap sm:block">
               <button
                 onClick={() => setFilter('all')}
                 className={`border-primary ${
                   filterText === 'all' && 'bg-primary text-secondary active'
-                } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 ml-0 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 ml-0 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary sm:mb-4`}
               >
                 {(pageName === 'causes' && 'all soulbound tokens') ||
                   (pageName === 'fandom' && 'all nft tokens') ||
@@ -351,7 +351,7 @@ const CSToken = ({ pageName }: any) => {
                     className={`border-primary ${
                       filterText === 'p_food' &&
                       'bg-primary text-secondary active'
-                    } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                    } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary sm:mb-4`}
                   >
                     {(pageName === 'causes' && 'pakistani food') ||
                       (pageName === 'fandom' && 'pakistani food')}
@@ -363,7 +363,7 @@ const CSToken = ({ pageName }: any) => {
                   className={`border-primary ${
                     filterText === 'd_wot_b' &&
                     'bg-primary text-secondary active'
-                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary sm:mb-4`}
                 >
                   doctors without borders
                 </button>
@@ -374,7 +374,7 @@ const CSToken = ({ pageName }: any) => {
                   className={`border-primary ${
                     filterText === 'd_wot_b' &&
                     'bg-primary text-secondary active'
-                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary sm:mb-4`}
                 >
                   doctors without borders
                 </button>
@@ -385,7 +385,7 @@ const CSToken = ({ pageName }: any) => {
                   className={`border-primary ${
                     filterText === 'editions' &&
                     'bg-primary text-secondary active'
-                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary sm:mb-4`}
                 >
                   editions
                 </button>
@@ -395,7 +395,7 @@ const CSToken = ({ pageName }: any) => {
                   onClick={() => setFilter('pfps')}
                   className={`border-primary ${
                     filterText === 'pfps' && 'bg-primary text-secondary active'
-                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary sm:mb-4`}
                 >
                   pfps
                 </button>
@@ -405,7 +405,7 @@ const CSToken = ({ pageName }: any) => {
                   onClick={() => setFilter('lorem')}
                   className={`border-primary ${
                     filterText === 'lorem' && 'bg-primary text-secondary active'
-                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary`}
+                  } border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary sm:mb-0`}
                 >
                   lorem ipsum
                 </button>

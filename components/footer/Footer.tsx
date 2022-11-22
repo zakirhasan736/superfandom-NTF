@@ -16,7 +16,7 @@ const Footer: React.FC<IFooter> = ({ className,pageName, ...footerProps }) => {
         <div className="footer-wrapper-box rounded-[24px] bg-primary flex items-center lg:block lg:rounded-none">
           <div className="footer-brandlogo  border-r border-solid flex items-center border-secondary lg:block lg:w-full lg:text-center py-[132px] px-[108px] desktop-m:px-[62px] laptop-x:px-[40px]  laptop-x:py-[80px] lg:py-8 lg:px-[77px] sm:px-16">
             <Image
-              src="/images/footer-logo.png"
+              src="/images/footer-logo.svg"
               alt="superfandom logo"
               className="brand-image"
               width="222px"

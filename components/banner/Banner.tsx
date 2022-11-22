@@ -131,7 +131,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         }
       );
     })
-    viewPort.add("(max-width:1680px)", () => {
+    viewPort.add("(max-width:1680px) and (min-width:1441px)", () => {
       gsap.fromTo(
         imgSclTest,
         { scaleY: 0.4, scaleX: 1, y: 343 },
@@ -149,7 +149,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         }
       );
     })
-    viewPort.add("(max-width:1440px)", () => {
+    viewPort.add("(max-width:1440px) and (min-width:1400px)", () => {
       gsap.fromTo(
         imgSclTest,
         { scaleY: 0.4, scaleX: 1, y: 315},
@@ -167,7 +167,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         }
       );
     })
-    viewPort.add("(max-width:1399px)", () => {
+    viewPort.add("(max-width:1399px) and (min-width:1281px)", () => {
       gsap.fromTo(
         imgSclTest,
         { scaleY: 0.4, scaleX: 1, y: 318},
@@ -185,7 +185,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         }
       );
     })
-    viewPort.add("(max-width:1280px)", () => {
+    viewPort.add("(max-width:1280px) and (min-width:1200px)", () => {
       gsap.fromTo(
         imgSclTest,
         { scaleY: 0.4, scaleX: 1, y: 330},
@@ -203,7 +203,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         }
       );
     })
-    viewPort.add("(max-width:1199px)", () => {
+    viewPort.add("(max-width:1199px) and (min-width:992px)", () => {
       gsap.fromTo(
         imgSclTest,
         { scaleY: 0.4, scaleX: 1, y: 295},
@@ -221,7 +221,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         }
       );
     })
-    viewPort.add("(max-width:991px)", () => {
+    viewPort.add("(max-width:991px) and (min-width:768px)", () => {
       gsap.fromTo(
         imgSclTest,
         { scaleY: 0.4, scaleX: 1, y: 249},
@@ -341,7 +341,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               </div>
 
               <div className="banner-modal-imgbox main-banner-modal-img w-full z-20 relative">
-                <ul className="modal-img-list flex gap-7 items-center justify-end mr-28 desktop-l:mr-16 lg:mr-12 md:flex-row-reverse md:absolute md:top-[110px] sm:top-[204px] md:mr-0">
+                <ul className="modal-img-list flex gap-7 items-center justify-end sm:justify-center mr-28 desktop-l:mr-16 lg:mr-12 md:flex-row-reverse md:absolute md:top-[110px] sm:top-[141px] md:mr-0">
                   {tokenItem.map(
                 ({
                   id,
@@ -352,7 +352,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                   userInfo,
                   btnName,
                 }: ITokenCards) => (
-                  <li className="modal-img-item md:w-[180px] sm:w-[146px]  md:relative w-[382px] sm:min-w-[147px] sm:h-[200px] md:min-w-[216px] lg:w-[290px] laptop-x:w-[300px] laptop-m:w-[300px] desktop-m:w-[350px] rounded-3xl overflow-hidden bg-primary md:rounded-2xl sm:rounded-lg" key={id}>
+                  <li className="modal-img-item md:w-[180px]  md:relative w-[382px] md:min-w-[216px] lg:w-[290px] laptop-x:w-[300px] laptop-m:w-[300px] desktop-m:w-[350px] rounded-3xl overflow-hidden bg-primary md:rounded-2xl sm:rounded-lg" key={id}>
                   <TokenCards
                     id={id}
                     photo_name={photo_name}
@@ -374,7 +374,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             {/* --------------- */}
 
             {/* ------------- */}
-            <div className="banner-text-cont-right w-[560px] relative z-50 mt-24 mr-10 md:mt-0 md:pt-[301px] sm:pt-[445px] lg:mr-0 sm:mr-[-35px] md:w-full">
+            <div className="banner-text-cont-right w-[560px] relative z-50 mt-24 mr-10 md:mt-0 md:pt-[422px] sm:pt-[465px] lg:mr-0 sm:mr-[-35px] md:w-full">
               <span className="md:hidden lg:text-6xl overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute right-0 bottom-[420px]">
                 SBT
               </span>
@@ -385,14 +385,14 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
                 Participate in your cherished causes, or experience your
                 favorite fandoms
               </p>
-              <div className="banner-btn-box text-left flex mt-8">
+              <div className="banner-btn-box text-left sm:justify-center gap-5 flex mt-8">
                 <Link href="/">
-                  <a className="py-5 px-5 lg:px-3 uppercase laptop-m:whitespace-nowrap sm:text-xs font-primary font-normal text-fig-15 lg:text-fig-12 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-3 hover:bg-neon hover:border-neon transition duration-150 ease-out">
+                  <a className="py-5 px-5 lg:px-3 uppercase laptop-m:whitespace-nowrap sm:text-xs font-primary font-normal text-fig-15 lg:text-fig-12 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-neon hover:border-neon transition duration-150 ease-out sm:max-w-[153px] sm:w-full sm:text-center">
                     Explore Causes
                   </a>
                 </Link>
                 <Link href="/">
-                  <a className="py-5 px-5 lg:px-3 uppercase laptop-m:whitespace-nowrap sm:text-xs font-primary font-normal text-fig-15 lg:text-fig-12 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-purple hover:border-purple transition duration-150 ease-out">
+                  <a className="py-5 px-5 lg:px-3 uppercase laptop-m:whitespace-nowrap sm:text-xs font-primary font-normal text-fig-15 lg:text-fig-12 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-purple hover:border-purple transition duration-150 ease-out sm:max-w-[153px] sm:w-full sm:text-center">
                     explore fandoms
                   </a>
                 </Link>

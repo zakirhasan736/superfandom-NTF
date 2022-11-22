@@ -173,13 +173,13 @@ viewPort.add("(max-width:767px)", () => {
             <div className="banner-text-cont-left text_animation text-animetion w-full relative z-50">
               {/* <div className="custom-container 2xl:px-0 xl:px-0 laptop-x:px-12 md:px-5 sm:px-4"></div> */}
               <div className="heading-title-box h-full w-full block">
-                <h2 className="banner_title_animation active title_animation uppercase text-secondary banner-title mb-8 absolute top-0 left-0 z-30 text-fig-3x laptop-m:text-fig-xx sm:text-[40px] sm:leading-[40px] lg:text-[55px] font-normal font-primary text-left">
+                <h2 className="banner_title_animation active title_animation uppercase text-secondary banner-title mb-8 absolute top-0 left-0 z-30 text-fig-3x laptop-m:text-fig-xx sm:text-[40px] sm:leading-[40px] lg:text-[55px] sm:max-w-[360px] font-normal font-primary text-left">
                   Support Pakistani <br /> Flood Victims
                 </h2>
               </div>
 
-              <div className="banner-modal-imgbox w-full z-20 relative">
-                <ul className="modal-img-list flex gap-7 items-center justify-start mr-28 desktop-l:mr-16 lg:mr-12 md:flex-row-reverse md:absolute md:top-[-45px] md:mr-0 mt-[271px] laptop-x:mt-[220px] md:mt-[170px] sm:top-0 sm:mt-[40px]">
+              <div className="banner-modal-imgbox w-full z-20 relative sm:flex sm:justify-center sm:pl-3 sm:p r-3">
+                <ul className="modal-img-list flex gap-7 sm:gap-4 items-center justify-start sm:justify-center sm:left-0 sm:right-0 mr-28 desktop-l:mr-16 lg:mr-12 md:flex-row-reverse md:absolute md:top-[-45px] md:mr-0 mt-[271px] laptop-x:mt-[220px] md:mt-[170px] sm:top-0 sm:mt-[40px]">
                   <li className="modal-img-item one mt-[-190px]  md:mt-0 sm:w-[147px] sm:h-[200px] sm:mt-[80px] ">
                     <Image
                       src="/images/card-img-20.png "
@@ -189,7 +189,7 @@ viewPort.add("(max-width:767px)", () => {
                       height="373px"
                     />
                   </li>
-                  <li className="modal-img-item two sm:w-[147px] sm:h-[200px] sm:mt-12 sm:ml-4">
+                  <li className="modal-img-item two sm:w-[147px] sm:h-[200px] sm:mt-12 sm:ml-0">
                     <Image
                       src="/images/card-img-21.png"
                       alt="superfandom banner-modal-img"
@@ -213,7 +213,7 @@ viewPort.add("(max-width:767px)", () => {
             {/* --------------- */}
 
             {/* ------------- */}
-            <div className="banner-text-cont-right right-[155px] desktop-m:right-0 lg:right-[20px] md:right-0 w-[560px] relative z-50 mt-24  laptop-x:mt-16 md:mt-32 sm:mt-0 md:pt-[301px] sm:pt-[395px]  md:w-full">
+            <div className="banner-text-cont-right right-[155px] desktop-m:right-0 lg:right-[20px] md:right-0 w-[560px] relative z-50 mt-24  laptop-x:mt-16 md:mt-32 sm:mt-0 md:pt-[301px] sm:px-2 sm:pt-[395px]  md:w-full">
               <span className="md:hidden lg:text-6xl laptop-m:text-fig-xx overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute right-[-175px] desktop-m:right-[-10px] lg:right-[-23px] bottom-[345px] laptop-x:bottom-[350px]">
                 SBT
               </span>
@@ -245,7 +245,7 @@ viewPort.add("(max-width:767px)", () => {
             </div>
             <div className="scrolable-text-box">
               <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x laptop-x:text-fig-3x text-center uppercase lg:text-fig-xx md:text-fig-32 mb-[29px]">
+                <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x laptop-x:text-fig-3x text-center uppercase lg:text-fig-xx sm:text-fig-40 mb-[29px]">
                   soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound
                 </h2>
               </div>

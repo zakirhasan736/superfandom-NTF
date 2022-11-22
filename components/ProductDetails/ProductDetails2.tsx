@@ -14,7 +14,7 @@ const ProductDetails2: NextPage<any> = () => {
           <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
             <div className="product-details-cont-wrapper flex items-start gap-8 sm:block">
               <div className="product-details-left-cont max-w-[570px] w-full ">
-                <div className="product-modal-img max-w-[570px] max-h-[570px] w-full h-full mb-8">
+                <div className="product-modal-img max-w-[570px] max-h-[570px] w-full h-full mb-8 md:mb-4">
                   <Image
                     src="/images/product-details-2.png"
                     alt="superfandom product-details-img"
@@ -23,7 +23,7 @@ const ProductDetails2: NextPage<any> = () => {
                     height="570px"
                   />
                 </div>
-                <div className="product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] sm:mb-8 sm:hidden">
+                <div className="product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] md:mb-8 sm:hidden">
                   <h3 className="product-cont-title text-primary text-left text-fig-24 font-primary font-normal mb-4 pb-4 border-b border-secondary sm:text-fig-base">
                     Description
                   </h3>
@@ -54,7 +54,7 @@ const ProductDetails2: NextPage<any> = () => {
               </div>
 
               <div className="product-details-right-cont w-full">
-                <div className="product-cont-box desc-box bg-lightgray p-10 md:p-5 rounded-[20px] mb-8 w-full">
+                <div className="product-cont-box desc-box bg-lightgray p-10 md:p-5 rounded-[20px] mb-8 w-full md:mb-4">
                   <h3 className="product-cont-title text-primary text-left text-fig-24 sm:text-fig-base font-primary font-normal mb-4 pb-4 border-b border-secondary">
                     Mint price
                   </h3>
@@ -106,7 +106,7 @@ const ProductDetails2: NextPage<any> = () => {
                     </div>
                   </div>
                 </div>
-                <div className="product-cont-box desc-box bg-lightgray p-10 md:p-5 mb-0 rounded-[20px] w-full sm:mb-8">
+                <div className="product-cont-box desc-box bg-lightgray p-10 md:p-5 mb-0 rounded-[20px] w-full sm:mb-4">
                   <div className="offer-list-box">
                     <div className="offer-details mb-4">
                       <table className="offer-table w-full">

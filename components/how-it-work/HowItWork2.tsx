@@ -53,14 +53,14 @@ useEffect(() =>{
   const howItWorkScrolled2 = gsap.utils.toArray('.how-it-work-section-box');
   howItWorkScrolled2.forEach((section:any, index) => {
     const wi = section.querySelector('.scroll-text-item');
-    const [x, xEnd] = (index % 2) ? ['10%', (wi.scrollWidth - section.offsetWidth) * -1] : [wi.scrollWidth * -1, 0];
+    const [x, xEnd] = (index % 2) ? ['1%', (wi.scrollWidth - section.offsetWidth) * -1] : [wi.scrollWidth * -1, 0];
     gsap.fromTo(wi, { x, y: 0, }, {
       x: xEnd,
       duration: 10,
       scrollTrigger: {
         trigger: section,
-        scrub: 0.1,
-        start: 'top top',
+        scrub: 0.2,
+        start: 'top center',
         end: () => "+=" + (wi.scrollWidth - section.offsetWidth),
       },
       y: 0,
@@ -99,10 +99,17 @@ useEffect(() =>{
           <div className="section-titlebox lg:mb-15 sm:mb-5 absolute bottom-4 sm:bottom-[-74px]">
             <div className="scrolable-text-box how-it-work-title">
               <div className="scroll-text-item">
-                <h2 className="section-title scrollable--title2 font-primary  font-normal text-fig-5x text-secondary text-center uppercase lg:text-fig-xx md:text-fig-40">
-                  • how it works • how it works • how it works • how it works •
-                  how it works • how it works • how it works • how it works •
-                  how it works • how it works
+                <h2 className="section-title scrollable--title2 font-primary  font-normal text-fig-5x text-secondary text-center uppercase lg:text-fig-xx sm:text-fig-40 sm:tracking-[.05em]">
+                  • how it works 
+                  • how it works 
+                  • how it works
+                   • how it works 
+                   • how it works 
+                   • how it works 
+                   • how it works 
+                   • how it works 
+                   • how it works
+                   • how it works
                 </h2>
               </div>
             </div>

@@ -847,7 +847,7 @@ radial-gradient(at 51% 100%, hsla(273,87%,27%,1) 0px, transparent 50%);
     margin-right: 10px;
   }
   .collection-tokens-box .token-card--items {
-    max-width: 280px;
+    max-width: 216px;
   }
 }
 @media (min-width:992px) {
@@ -857,6 +857,7 @@ radial-gradient(at 51% 100%, hsla(273,87%,27%,1) 0px, transparent 50%);
     align-items: center;
     gap: 20px;
   }
+
 }
 
 @media (min-width:768px) {
@@ -879,7 +880,7 @@ radial-gradient(at 51% 100%, hsla(273,87%,27%,1) 0px, transparent 50%);
     margin-right: 15px;
   }
   .collection-tokens-box .slick-slider .token-card--items {
-    max-width: 250px;
+    max-width: 216px;
     margin-right: 15px;
   }
   .active-drop-slides-cards .slick-slide {
@@ -954,6 +955,9 @@ li.text-img-siniped-info-list.active .siniped-text-box {
   background-size: cover;
 }
 @media screen and (max-width: 991px) {
+  .exclusive--card-img > span {
+    height: 100%;
+  }
   .active-drop-section {
     background-image: url('/images/drop-bg-img.png');
     background-position: center;
@@ -970,10 +974,16 @@ li.text-img-siniped-info-list.active .siniped-text-box {
   background-size: cover;
 }
 @media screen and (max-width: 991px) {
-  .exclusive-content-wrapper {
+  .exclusive-wrap--campaign.exclusive-content-wrapper {
+    padding: 0;
     background-image: none;
   }
+  .exclusive-content-wrapper {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 }
+
 .banner-top-box {
   background-image: url('/images/banner4-bg-img.png');
   background-position: center;
@@ -990,6 +1000,8 @@ li.text-img-siniped-info-list.active .siniped-text-box {
   }
   header.white-varient-navbar .navbar-cont-box .nav-items li {
     border-top: 1px solid #000000;
+  }
+  header.white-varient-navbar .navbar-cont-box .nav-items li:last-child {
     border-bottom: 1px solid #000000;
   }
   header.white-varient-navbar .navbar-btn-items li:first-child a {
@@ -999,8 +1011,6 @@ li.text-img-siniped-info-list.active .siniped-text-box {
 header.white-varient-navbar .navbar-cont-box .nav-items li a {
   color: #000000 !important;
   font-weight: 400;
-  font-size: 15px;
-  line-height: 21.36px;
 }
 header.white-varient-navbar .navbar-btn-items li:not(:first-child) {
   border: 1px solid #000000;
@@ -1089,12 +1099,13 @@ header.white-varient-navbar .navbar-btn-items li a {
     left: -129px;
     position: relative;
   }
-  .banner-modal-imgbox.main-banner-modal-img .modal-img-item .token-card--items{
-    width: 350px;
-    transform: scale(.42);
-    position: relative;
-    left: -102px;
-    top: -134px;
+
+  .banner-modal-imgbox.main-banner-modal-img .modal-img-item{
+    scale: 0.7;
+    left: -92px;
+  }
+  .banner-modal-imgbox.main-banner-modal-img .modal-img-item:nth-child(2){
+    left: -20px;
   }
   .main-wrapper--box{
     position: relative;
