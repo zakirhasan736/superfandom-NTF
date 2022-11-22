@@ -28,10 +28,10 @@ const CampaignBanner: React.FC<ICampaignBanner> = () => {
                 </div>
                 <span className="mark-icon absolute right-0 top-14 hidden md:block">
                   <img
-                    src="/images/icon/icon-mark.png"
+                    src="/images/icon-mark.png"
                     width="28px"
                     height="28px"
-                    alt=""
+                    alt="mark-icon"
                   />
                 </span>
               </div>
@@ -44,10 +44,10 @@ const CampaignBanner: React.FC<ICampaignBanner> = () => {
                   Doctors Without Borders{' '}
                   <span className="mark-icon absolute right-0 top-[-20px] md:hidden">
                     <img
-                      src="/images/icon/icon-mark.png"
+                      src="/images/icon-mark.png"
                       width="28px"
                       height="28px"
-                      alt=""
+                      alt="mark-icon"
                     />
                   </span>
                 </h2>
@@ -62,7 +62,7 @@ const CampaignBanner: React.FC<ICampaignBanner> = () => {
                   <li className="socials-items w-[32px] h-[32px] mr-8">
                     <Link href="/">
                       <Image
-                        src="/images/icon/instagram-fill.png"
+                        src="/images/instagram-fill.png"
                         alt="superfandom socials-icon-image"
                         className="socials-icon-image h-full w-full"
                         width="32px"
@@ -73,7 +73,7 @@ const CampaignBanner: React.FC<ICampaignBanner> = () => {
                   <li className="socials-items w-[32px] h-[32px] mr-0">
                     <Link href="/">
                       <Image
-                        src="/images/icon/twitter-fill.png"
+                        src="/images/twitter-fill.png"
                         alt="superfandom socials-icon-image"
                         className="socials-icon-image h-full w-full"
                         width="32px"

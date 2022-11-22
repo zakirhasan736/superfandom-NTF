@@ -51,7 +51,7 @@ const Footer: React.FC<IFooter> = ({ className,pageName, ...footerProps }) => {
                 <li className="font-primary cursor-pointer text-secondary laptop-x:w-6">
                   <Link href="/">
                     <Image
-                      src="/images/icon/telegram 1.png"
+                      src="/images/telegram 1.png"
                       alt="superfandom logo"
                       className="brand-image w-[24px]"
                       width="32px"
@@ -62,7 +62,7 @@ const Footer: React.FC<IFooter> = ({ className,pageName, ...footerProps }) => {
                 <li className="font-primary cursor-pointer text-secondary laptop-x:w-6">
                   <Link href="/">
                     <Image
-                      src="/images/icon/instagram 1.png"
+                      src="/images/instagram 1.png"
                       alt="superfandom logo"
                       className="brand-image w-[24px]"
                       width="32px"
@@ -74,7 +74,7 @@ const Footer: React.FC<IFooter> = ({ className,pageName, ...footerProps }) => {
                   <Link href="/">
                     <a>
                       <Image
-                        src="/images/icon/twitte-1.png"
+                        src="/images/twitte-1.png"
                         alt="superfandom logo"
                         className="brand-image w-[24px]"
                         width="32px"
