@@ -25,14 +25,14 @@ export const Accordion = ({ id, question, answer }: accordion) => {
           </div>
           {isActive ? (
             <Image
-              src="/images/close.png"
+              src="/images/faq-close.png"
               alt={'close icon'}
               width="32px"
               height="32px"
             />
           ) : (
             <Image
-              src="/images/plus.png"
+              src="/images/faq-plus.png"
               alt={'plus icon'}
               width="32px"
               height="32px"
