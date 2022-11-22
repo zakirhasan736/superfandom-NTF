@@ -35,9 +35,9 @@ const Faq: React.FC<IFaq> = ({id, question, answer }) => {
             >
                 <div className="font-24 color-black">{question}</div>
                 {isActive ? (
-                    <img src="/assets/icon/arrow-up.svg" alt={'arrow-up'} />
+                    <img src="/images/close.png" alt={'arrow-up'} />
                 ) : (
-                    <img src="/assets/icon/arrow-down.svg" alt={'arrow-down'} />
+                    <img src="/images/plus.png" alt={'arrow-down'} />
                 )}
             </div>
             {isActive && (
