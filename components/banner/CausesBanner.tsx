@@ -20,128 +20,126 @@ const CausesBanner: React.FC<ICausesBanner> = ({ title, subtitle, desc }) => {
   window.addEventListener('scroll', scrollHandler);
 
   useEffect(() => {
- 
-
     // banner scroll scale bg
- const imgSclTest = gsap.utils.toArray('.main-test-modal-bg.two');
-let viewPort = gsap.matchMedia();
-viewPort.add("(min-width:992px)", () => {
-  gsap.fromTo(
-    imgSclTest,
-    { scaleY: 1, scaleX: 1, y: 160, x: 50 },
-    {
-      scaleX: 25,
-      ease: 'none',
-      force3D: true,
-      scrollTrigger: {
-        trigger: '.main-visual-section',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 0.5,
-      },
-    }
-  );
-}),
-viewPort.add("(min-width:768px)", () => {
-  gsap.fromTo(
-    imgSclTest,
-    { scaleY: 1, scaleX: .76, y: 160, x: -50 },
-    {
-      scaleX: 25,
-      ease: 'none',
-      force3D: true,
-      scrollTrigger: {
-        trigger: '.main-visual-section',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 0.5,
-      },
-    }
-  );
+    const imgSclTest = gsap.utils.toArray('.main-test-modal-bg.two');
+    let viewPort = gsap.matchMedia();
+    viewPort.add('(min-width:992px)', () => {
+      gsap.fromTo(
+        imgSclTest,
+        { scaleY: 1, scaleX: 1, y: 160, x: 50 },
+        {
+          scaleX: 25,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        }
+      );
+    }),
+      viewPort.add('(min-width:768px)', () => {
+        gsap.fromTo(
+          imgSclTest,
+          { scaleY: 1, scaleX: 0.76, y: 160, x: -50 },
+          {
+            scaleX: 25,
+            ease: 'none',
+            force3D: true,
+            scrollTrigger: {
+              trigger: '.main-visual-section',
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 0.5,
+            },
+          }
+        );
 
-   // modal text varying
-   gsap.to('.modal-img-item.one', {
-    scrollTrigger: {
-      trigger: '.banner-modal-img.one',
-      scrub: 0.5,
-      start: 'top top',
-      end: 'bottom top',
-    },
-    y: 180,
-  });
+        // modal text varying
+        gsap.to('.modal-img-item.one', {
+          scrollTrigger: {
+            trigger: '.banner-modal-img.one',
+            scrub: 0.5,
+            start: 'top top',
+            end: 'bottom top',
+          },
+          y: 180,
+        });
 
-  gsap.fromTo('.modal-img-item.two',
-  {y: 40,},
-   {
-      scrollTrigger: {
-        trigger: '.banner-modal-img.two',
-        scrub: 0.5,
-        start: 'top top',
-        end: 'bottom top',
-      },
-      y: -380,
-    });
+        gsap.fromTo(
+          '.modal-img-item.two',
+          { y: 40 },
+          {
+            scrollTrigger: {
+              trigger: '.banner-modal-img.two',
+              scrub: 0.5,
+              start: 'top top',
+              end: 'bottom top',
+            },
+            y: -380,
+          }
+        );
 
-    gsap.to('.modal-img-item.three', {
-      scrollTrigger: {
-        trigger: '.banner-modal-img.three',
-        scrub: 0.5,
-        start: 'top top',
-        end: 'bottom top',
-      },
-      y: -180,
-    });
+        gsap.to('.modal-img-item.three', {
+          scrollTrigger: {
+            trigger: '.banner-modal-img.three',
+            scrub: 0.5,
+            start: 'top top',
+            end: 'bottom top',
+          },
+          y: -180,
+        });
+      }),
+      viewPort.add('(max-width:767px)', () => {
+        gsap.fromTo(
+          imgSclTest,
+          { scaleY: 1, scaleX: 0.92, y: 0, x: 0 },
+          {
+            scaleX: 2,
+            scaleY: 7,
+            ease: 'none',
+            force3D: true,
+            scrollTrigger: {
+              trigger: '.main-visual-section',
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 0.5,
+            },
+          }
+        );
 
-}),
-viewPort.add("(max-width:767px)", () => {
+        // modal text varying
+        gsap.to('.modal-img-item.one', {
+          scrollTrigger: {
+            trigger: '.banner-modal-img.one',
+            scrub: 0.5,
+            start: 'top top',
+            end: 'bottom top',
+          },
+          y: 80,
+          ease: 'none',
+          force3D: true,
+        });
 
-  gsap.fromTo(
-    imgSclTest,
-    { scaleY: 1, scaleX: .92, y: 0, x: 0 },
-    {
-      scaleX: 2,
-      scaleY: 7,
-      ease: 'none',
-      force3D: true,
-      scrollTrigger: {
-        trigger: '.main-visual-section',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 0.5,
-      },
-    }
-  );
-
-   // modal text varying
-  gsap.to('.modal-img-item.one',
-   {
-    scrollTrigger: {
-      trigger: '.banner-modal-img.one',
-      scrub: 0.5,
-      start: 'top top',
-      end: 'bottom top',
-    },
-    y: 80,
-    ease: 'none',
-    force3D: true,
-  }
-  );
-
-  gsap.fromTo('.modal-img-item.two',
-   {y:80,}, 
-  {
-      scrollTrigger: {
-        trigger: '.banner-modal-img.two',
-        scrub: 0.5,
-        start: 'top top',
-        end: 'bottom top',
-      },
-      y: -80,
-    });
-})
+        gsap.fromTo(
+          '.modal-img-item.two',
+          { y: 80 },
+          {
+            scrollTrigger: {
+              trigger: '.banner-modal-img.two',
+              scrub: 0.5,
+              start: 'top top',
+              end: 'bottom top',
+            },
+            y: -80,
+          }
+        );
+      });
     // scroll text
     document.body.style.overflow = 'auto';
-    const causesScrolled =  gsap.utils.toArray('.scrolable-text-box');
+    const causesScrolled = gsap.utils.toArray('.scrolable-text-box');
     causesScrolled.forEach((section: any, index) => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] =
@@ -157,7 +155,7 @@ viewPort.add("(max-width:767px)", () => {
             trigger: section,
             scrub: 0.5,
             start: 'top +=850',
-            end: () => "+=" + (w.scrollWidth - section.offsetWidth),
+            end: () => '+=' + (w.scrollWidth - section.offsetWidth),
           },
         }
       );
@@ -264,7 +262,6 @@ viewPort.add("(max-width:767px)", () => {
             />
           </div>
         </div>
-
       </section>
     </>
   );

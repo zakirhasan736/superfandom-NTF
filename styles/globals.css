@@ -310,25 +310,31 @@ a {
 }
 .text-img-siniped-info-items > li:first-child .text-img-siniped-anim-scroll {
   overflow: hidden;
-  background-color:hsla(179,100%,49%,1);
-background-image:
-radial-gradient(at 74% 0%, hsla(226,95%,38%,1) 0px, transparent 50%),
-radial-gradient(at 100% 0%, hsla(214,89%,56%,1) 0px, transparent 50%),
-radial-gradient(at 13% 2%, hsla(272,97%,49%,1) 0px, transparent 50%),
-radial-gradient(at 0% 100%, hsla(159,99%,59%,1) 0px, transparent 50%),
-radial-gradient(at 100% 100%, hsla(179,100%,49%,1) 0px, transparent 50%);
+  background-color: hsla(179, 100%, 49%, 1);
+  background-image: radial-gradient(
+      at 74% 0%,
+      hsla(226, 95%, 38%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 0%, hsla(214, 89%, 56%, 1) 0px, transparent 50%),
+    radial-gradient(at 13% 2%, hsla(272, 97%, 49%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(159, 99%, 59%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(179, 100%, 49%, 1) 0px, transparent 50%);
 }
 .text-img-siniped-info-items > li:nth-child(2) .text-img-siniped-anim-scroll {
   overflow: hidden;
-  background-color:hsla(282,99%,48%,1);
-background-image:
-radial-gradient(at 53% 0%, hsla(239,75%,35%,1) 0px, transparent 50%),
-radial-gradient(at 100% 0%, hsla(239,75%,35%,1) 0px, transparent 50%),
-radial-gradient(at 0% 0%, hsla(245,92%,22%,1) 0px, transparent 50%),
-radial-gradient(at 0% 36%, hsla(257,92%,72%,1) 0px, transparent 50%),
-radial-gradient(at 0% 100%, hsla(282,99%,48%,1) 0px, transparent 50%),
-radial-gradient(at 100% 100%, hsla(271,99%,47%,1) 0px, transparent 50%),
-radial-gradient(at 51% 100%, hsla(273,87%,27%,1) 0px, transparent 50%);
+  background-color: hsla(282, 99%, 48%, 1);
+  background-image: radial-gradient(
+      at 53% 0%,
+      hsla(239, 75%, 35%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 0%, hsla(239, 75%, 35%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(245, 92%, 22%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 36%, hsla(257, 92%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(282, 99%, 48%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(271, 99%, 47%, 1) 0px, transparent 50%),
+    radial-gradient(at 51% 100%, hsla(273, 87%, 27%, 1) 0px, transparent 50%);
 }
 .text-img-siniped-info-items > li .text-cont-box > .desc {
   margin-bottom: 24px !important;
@@ -715,7 +721,7 @@ radial-gradient(at 51% 100%, hsla(273,87%,27%,1) 0px, transparent 50%);
   overflow: hidden;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .slides-image-box {
     position: absolute;
     z-index: 9;
@@ -729,9 +735,9 @@ radial-gradient(at 51% 100%, hsla(273,87%,27%,1) 0px, transparent 50%);
     animation: left_to_right 40s linear infinite forwards;
   }
 }
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .slides-image-box {
-    position:relative;
+    position: relative;
     z-index: 9;
     display: block;
   }
@@ -823,17 +829,17 @@ radial-gradient(at 51% 100%, hsla(273,87%,27%,1) 0px, transparent 50%);
   background-color: #ffffff;
   transition: color 650ms ease 0s;
 }
-@media  (max-width:767px) {
+@media (max-width: 767px) {
   .main-visual-section
-  .heading-title-box
-  h2.banner_title_animation
-  > span
-  > span {
-  transform: none;
-  opacity: 1;
+    .heading-title-box
+    h2.banner_title_animation
+    > span
+    > span {
+    transform: none;
+    opacity: 1;
+  }
 }
-}
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   .explore-section.active .section-titlebox h2.section-title {
     color: #000000 !important;
   }
@@ -850,31 +856,30 @@ radial-gradient(at 51% 100%, hsla(273,87%,27%,1) 0px, transparent 50%);
     max-width: 216px;
   }
 }
-@media (min-width:992px) {
-  .collection-tokens-box .regular.slider{
+@media (min-width: 992px) {
+  .collection-tokens-box .regular.slider {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 20px;
   }
-
 }
 
-@media (min-width:768px) {
-
+@media (min-width: 768px) {
   .main-visual-section
-  .heading-title-box
-  h2.banner_title_animation
-  > span
-  > span {
-  display: block;
-  transform: translateY(400%);
-  opacity: 0;
-  transition: transform var(--duration) var(--ease);
+    .heading-title-box
+    h2.banner_title_animation
+    > span
+    > span {
+    display: block;
+    transform: translateY(400%);
+    opacity: 0;
+    transition: transform var(--duration) var(--ease);
+  }
+  .exclusive-slides-image {
+  }
 }
-.exclusive-slides-image{}
-}
-@media (max-width:991px) and (min-width:768px) {
+@media (max-width: 991px) and (min-width: 768px) {
   .exclusive-slides-image .slick-slider .exclusive-image-items {
     max-width: 250px;
     margin-right: 15px;
@@ -907,20 +912,20 @@ radial-gradient(at 51% 100%, hsla(273,87%,27%,1) 0px, transparent 50%);
   transition-delay: calc(var(--delay) + 190ms);
 }
 .how-it-work-content-wrapper > .steps-card--items:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 .text-img-siniped-info-list.inf-list2 .text-cont-box,
 li.text-img-siniped-info-list .text-cont-box {
   position: relative;
   overflow: hidden;
 }
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .text-img-siniped-info-list.inf-list2 .siniped-text-box,
-li.text-img-siniped-info-list .siniped-text-box {
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 1s ease 0s;
-}
+  li.text-img-siniped-info-list .siniped-text-box {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 1s ease 0s;
+  }
 }
 
 .text-img-siniped-info-list.inf-list2.active .siniped-text-box,
@@ -1018,8 +1023,8 @@ header.white-varient-navbar .navbar-btn-items li:not(:first-child) {
 header.white-varient-navbar .navbar-btn-items li:not(:first-child):hover {
   background-color: #000000;
 }
-header.white-varient-navbar .navbar-btn-items li:not(:first-child):hover a{
-color: #ffffff;
+header.white-varient-navbar .navbar-btn-items li:not(:first-child):hover a {
+  color: #ffffff;
 }
 header.white-varient-navbar .navbar-btn-items li a {
   color: #000000;
@@ -1067,7 +1072,7 @@ header.white-varient-navbar .navbar-btn-items li a {
 }
 
 @media screen and (max-width: 1440px) {
-  .banner-anim-modal.lottie-anim-modal > div{
+  .banner-anim-modal.lottie-anim-modal > div {
     transform: scale(0.8);
     left: -68px;
     position: relative;
@@ -1076,38 +1081,40 @@ header.white-varient-navbar .navbar-btn-items li a {
     margin-bottom: 90px;
   }
 }
-@media screen and (max-width:1280px) and (min-width:1200px) {
-  .banner-modal-imgbox.main-banner-modal-img .modal-img-item .token-card--items{
+@media screen and (max-width: 1280px) and (min-width: 1200px) {
+  .banner-modal-imgbox.main-banner-modal-img
+    .modal-img-item
+    .token-card--items {
     width: 300px;
   }
 }
 @media screen and (max-width: 1199px) {
-  .banner-anim-modal.lottie-anim-modal > div{
+  .banner-anim-modal.lottie-anim-modal > div {
     transform: scale(0.7);
     left: -88px;
     position: relative;
   }
 }
-@media (max-width:991px) {
+@media (max-width: 991px) {
   .how-it-work-info-items > li:not(:last-child) {
     margin-bottom: 40px;
   }
 }
 @media screen and (max-width: 767px) {
-  .banner-anim-modal.lottie-anim-modal > div{
+  .banner-anim-modal.lottie-anim-modal > div {
     transform: scale(0.5);
     left: -129px;
     position: relative;
   }
 
-  .banner-modal-imgbox.main-banner-modal-img .modal-img-item{
+  .banner-modal-imgbox.main-banner-modal-img .modal-img-item {
     scale: 0.7;
     left: -92px;
   }
-  .banner-modal-imgbox.main-banner-modal-img .modal-img-item:nth-child(2){
+  .banner-modal-imgbox.main-banner-modal-img .modal-img-item:nth-child(2) {
     left: -20px;
   }
-  .main-wrapper--box{
+  .main-wrapper--box {
     position: relative;
     z-index: 9;
   }
@@ -1130,7 +1137,7 @@ header.white-varient-navbar .navbar-btn-items li a {
 }
 
 .popup-box:before {
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
   position: absolute;
@@ -1138,11 +1145,11 @@ header.white-varient-navbar .navbar-btn-items li a {
   top: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   z-index: -1;
 }
 /* ============================== */
-.collection-tabs-items button:hover ,
+.collection-tabs-items button:hover,
 .collection-tabs-items button.active {
   color: #ffffff !important;
   background: #000000 !important;

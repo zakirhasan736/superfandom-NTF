@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import TokenCards, {ITokenCards} from '../Card/TokenCards/TokenCards';
+import TokenCards, { ITokenCards } from '../Card/TokenCards/TokenCards';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -25,7 +25,6 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
       userInfo: '@voice over',
       btnName: 'Buy Now',
       userPhoto: 'user-img.png',
-      
     },
     {
       id: 2,
@@ -35,15 +34,13 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
       userInfo: '@voice over',
       btnName: 'Buy Now',
       userPhoto: 'user-img.png',
-      
-    }
+    },
   ];
 
   useEffect(() => {
-    const items = data
+    const items = data;
     setTokenItem(items);
   }, []);
-
 
   const scrollHandler = () => {
     if (!scroll) {
@@ -53,75 +50,26 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   window.addEventListener('scroll', scrollHandler);
 
   useEffect(() => {
-
     // banner scroll scale bg
     const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
     let viewPort = gsap.matchMedia();
 
-    viewPort.add("(min-width:768px)", () => {
-      
-    // animated title
-    const textAnim = gsap.utils.toArray(
-      '.banner_title_animation > span > span'
-    );
-    gsap.fromTo(
-      textAnim,
-      {
-        translateY: '0%',
-        opacity: 1,
-      },
-      {
-        translateY: '200%',
-        ease: 'power3',
-        force3D: true,
-        duration: 1,
-        scrollTrigger: {
-          trigger: '.main-visual-section',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.5,
-        },
-      }
-    );
-        
-    // modal text varying 
-    gsap.to('.modal-img-item', {
-      scrollTrigger: {
-        trigger: '.banner-modal-img.two',
-        scrub: 0.5,
-        start: 'top center',
-        end: 'bottom +=200'
-      },
-      yPercent: -20,
-    });
-     // banner modal images
-     const slidePrl = gsap.utils.toArray('.modal-img-item');
-     gsap.fromTo(
-       slidePrl,
-       { y: 0 },
-       {
-         y: -400,
-         ease: 'none',
-         force3D: true,
-         scrollTrigger: {
-           trigger: '.main-visual-section',
-           start: 'top top',
-           end: 'bottom top',
-           scrub: true,
-         },
-       }
-     );
- 
-    }),
-    viewPort.add("(min-width:1681px)", () => {
+    viewPort.add('(min-width:768px)', () => {
+      // animated title
+      const textAnim = gsap.utils.toArray(
+        '.banner_title_animation > span > span'
+      );
       gsap.fromTo(
-        imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 326 },
+        textAnim,
         {
-          scaleX: 2.5,
-          scaleY: 5,
-          ease: 'none',
+          translateY: '0%',
+          opacity: 1,
+        },
+        {
+          translateY: '200%',
+          ease: 'power3',
           force3D: true,
+          duration: 1,
           scrollTrigger: {
             trigger: '.main-visual-section',
             start: 'top top',
@@ -130,8 +78,54 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           },
         }
       );
-    })
-    viewPort.add("(max-width:1680px) and (min-width:1441px)", () => {
+
+      // modal text varying
+      gsap.to('.modal-img-item', {
+        scrollTrigger: {
+          trigger: '.banner-modal-img.two',
+          scrub: 0.5,
+          start: 'top center',
+          end: 'bottom +=200',
+        },
+        yPercent: -20,
+      });
+      // banner modal images
+      const slidePrl = gsap.utils.toArray('.modal-img-item');
+      gsap.fromTo(
+        slidePrl,
+        { y: 0 },
+        {
+          y: -400,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+          },
+        }
+      );
+    }),
+      viewPort.add('(min-width:1681px)', () => {
+        gsap.fromTo(
+          imgSclTest,
+          { scaleY: 0.4, scaleX: 1, y: 326 },
+          {
+            scaleX: 2.5,
+            scaleY: 5,
+            ease: 'none',
+            force3D: true,
+            scrollTrigger: {
+              trigger: '.main-visual-section',
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 0.5,
+            },
+          }
+        );
+      });
+    viewPort.add('(max-width:1680px) and (min-width:1441px)', () => {
       gsap.fromTo(
         imgSclTest,
         { scaleY: 0.4, scaleX: 1, y: 343 },
@@ -148,11 +142,11 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           },
         }
       );
-    })
-    viewPort.add("(max-width:1440px) and (min-width:1400px)", () => {
+    });
+    viewPort.add('(max-width:1440px) and (min-width:1400px)', () => {
       gsap.fromTo(
         imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 315},
+        { scaleY: 0.4, scaleX: 1, y: 315 },
         {
           scaleX: 2.5,
           scaleY: 5,
@@ -166,11 +160,11 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           },
         }
       );
-    })
-    viewPort.add("(max-width:1399px) and (min-width:1281px)", () => {
+    });
+    viewPort.add('(max-width:1399px) and (min-width:1281px)', () => {
       gsap.fromTo(
         imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 318},
+        { scaleY: 0.4, scaleX: 1, y: 318 },
         {
           scaleX: 2.5,
           scaleY: 5,
@@ -184,11 +178,11 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           },
         }
       );
-    })
-    viewPort.add("(max-width:1280px) and (min-width:1200px)", () => {
+    });
+    viewPort.add('(max-width:1280px) and (min-width:1200px)', () => {
       gsap.fromTo(
         imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 330},
+        { scaleY: 0.4, scaleX: 1, y: 330 },
         {
           scaleX: 2.5,
           scaleY: 5,
@@ -202,11 +196,11 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           },
         }
       );
-    })
-    viewPort.add("(max-width:1199px) and (min-width:992px)", () => {
+    });
+    viewPort.add('(max-width:1199px) and (min-width:992px)', () => {
       gsap.fromTo(
         imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 295},
+        { scaleY: 0.4, scaleX: 1, y: 295 },
         {
           scaleX: 2.5,
           scaleY: 5,
@@ -220,11 +214,11 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           },
         }
       );
-    })
-    viewPort.add("(max-width:991px) and (min-width:768px)", () => {
+    });
+    viewPort.add('(max-width:991px) and (min-width:768px)', () => {
       gsap.fromTo(
         imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 249},
+        { scaleY: 0.4, scaleX: 1, y: 249 },
         {
           scaleX: 2.5,
           scaleY: 5,
@@ -238,8 +232,8 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           },
         }
       );
-    })
-    viewPort.add("(max-width:767px)", () => {
+    });
+    viewPort.add('(max-width:767px)', () => {
       gsap.fromTo(
         imgSclTest,
         { scaleY: 5, scaleX: 1, y: 510 },
@@ -256,41 +250,40 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           },
         }
       );
-    
-    // modal text varying 
-    gsap.to('.modal-img-item', {
-      scrollTrigger: {
-        trigger: '.banner-modal-img.two',
-        scrub: 0.5,
-        start: 'top center',
-        end: 'bottom +=200'
-      },
-      yPercent: -5,
-    });
-     // banner modal images
-    const slidePrl = gsap.utils.toArray('.modal-img-item');
-    gsap.fromTo(
-      slidePrl,
-      { y: 0 },
-      {
-        y: -50,
-        ease: 'none',
-        force3D: true,
+
+      // modal text varying
+      gsap.to('.modal-img-item', {
         scrollTrigger: {
-          trigger: '.main-visual-section',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
+          trigger: '.banner-modal-img.two',
+          scrub: 0.5,
+          start: 'top center',
+          end: 'bottom +=200',
         },
-      }
-    );
-    })
-   
+        yPercent: -5,
+      });
+      // banner modal images
+      const slidePrl = gsap.utils.toArray('.modal-img-item');
+      gsap.fromTo(
+        slidePrl,
+        { y: 0 },
+        {
+          y: -50,
+          ease: 'none',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '.main-visual-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+          },
+        }
+      );
+    });
 
     // scroll text
     document.body.style.overflow = 'auto';
-   const bannerScrolled = gsap.utils.toArray('.scrolable-text-box');
-   bannerScrolled.forEach((section: any, index) => {
+    const bannerScrolled = gsap.utils.toArray('.scrolable-text-box');
+    bannerScrolled.forEach((section: any, index) => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] =
         index % 2
@@ -305,12 +298,11 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             trigger: section,
             scrub: 0.5,
             start: 'top +=850',
-            end: () => "+=" + (w.scrollWidth - section.offsetWidth),
+            end: () => '+=' + (w.scrollWidth - section.offsetWidth),
           },
         }
       );
     });
-
   }, [scroll]);
 
   return (
@@ -343,28 +335,31 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               <div className="banner-modal-imgbox main-banner-modal-img w-full z-20 relative">
                 <ul className="modal-img-list flex gap-7 items-center justify-end sm:justify-center mr-28 desktop-l:mr-16 lg:mr-12 md:flex-row-reverse md:absolute md:top-[110px] sm:top-[141px] md:mr-0">
                   {tokenItem.map(
-                ({
-                  id,
-                  photo_name,
-                  userPhoto,
-                  Price,
-                  desc,
-                  userInfo,
-                  btnName,
-                }: ITokenCards) => (
-                  <li className="modal-img-item md:w-[180px]  md:relative w-[382px] md:min-w-[216px] lg:w-[290px] laptop-x:w-[300px] laptop-m:w-[300px] desktop-m:w-[350px] rounded-3xl overflow-hidden bg-primary md:rounded-2xl sm:rounded-lg" key={id}>
-                  <TokenCards
-                    id={id}
-                    photo_name={photo_name}
-                    Price={Price}
-                    desc={desc}
-                    userInfo={userInfo}
-                    btnName={btnName}
-                    userPhoto={userPhoto}
-                  />
-                  </li>
-                )
-              )}
+                    ({
+                      id,
+                      photo_name,
+                      userPhoto,
+                      Price,
+                      desc,
+                      userInfo,
+                      btnName,
+                    }: ITokenCards) => (
+                      <li
+                        className="modal-img-item md:w-[180px]  md:relative w-[382px] md:min-w-[216px] lg:w-[290px] laptop-x:w-[300px] laptop-m:w-[300px] desktop-m:w-[350px] rounded-3xl overflow-hidden bg-primary md:rounded-2xl sm:rounded-lg"
+                        key={id}
+                      >
+                        <TokenCards
+                          id={id}
+                          photo_name={photo_name}
+                          Price={Price}
+                          desc={desc}
+                          userInfo={userInfo}
+                          btnName={btnName}
+                          userPhoto={userPhoto}
+                        />
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
               <span className="md:hidden lg:text-6xl overly-text-bottom z-30 font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-[-90deg] absolute left-0 top-[520px]">
@@ -400,18 +395,14 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             </div>
             {/* ------------ */}
           </div>
-         {/* ================ */}
-      
+          {/* ================ */}
         </div>
 
         <div className="scroll-anim-text-wrapper  w-full z-10 relative mt-[-130px] lg:h-[274px] md:mt-0 sm:h-[142px]  h-[456px] md:mt-10">
           <div className="section-titlebox mb-24 md:mb-0">
-
-          <div className="scrolable-text-box">
+            <div className="scrolable-text-box">
               <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title">
-                 
-                </h2>
+                <h2 className="section-title whitespace-nowrap scrollable--title"></h2>
               </div>
             </div>
 
@@ -419,8 +410,8 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               <div className="scroll-text-item">
                 <h2 className="section-title whitespace-nowrap scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-32 mb-[29px] md:mb-[14px]">
                   nft • fandoms • Metaverse • nft • fandoms • Metaverse • nft •
-                  fandoms • Metaverse • nft • fandoms • Metaverse • nft • fandoms
-                  • Metaverse •
+                  fandoms • Metaverse • nft • fandoms • Metaverse • nft •
+                  fandoms • Metaverse •
                 </h2>
               </div>
             </div>
@@ -428,9 +419,9 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
             <div className="scrolable-text-box">
               <div className="scroll-text-item">
                 <h2 className="section-title whitespace-nowrap font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx md:text-fig-xx sm:text-fig-32 mb-[29px] md:mb-[14px]">
-                  soulbound • tokens • Nonfungible • soulbound • tokens • Nonfungible • soulbound
-                  • tokens • Nonfungible • soulbound • tokens • Nonfungible • soulbound • tokens •
-                  Nonfungible •
+                  soulbound • tokens • Nonfungible • soulbound • tokens •
+                  Nonfungible • soulbound • tokens • Nonfungible • soulbound •
+                  tokens • Nonfungible • soulbound • tokens • Nonfungible •
                 </h2>
               </div>
             </div>
@@ -447,12 +438,9 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
 
             <div className="scrolable-text-box">
               <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title">
-                 
-                </h2>
+                <h2 className="section-title whitespace-nowrap scrollable--title"></h2>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -472,7 +460,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
               width="1920px"
               height="556px"
             />
-              <img
+            <img
               src="/images/baner-mobo1.png"
               alt="superfandom bg-shape"
               className="bg-shape-image w-full h-full hidden sm:block"
