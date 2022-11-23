@@ -27,8 +27,8 @@ export const Accordion = ({ id, question, answer }: accordion) => {
             <Image
               src="/images/faq-close.png"
               alt={'close icon'}
-              width="32px"
-              height="32px"
+              width="33.42px"
+              height="33.42px"
             />
           ) : (
             <Image

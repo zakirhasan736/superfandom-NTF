@@ -52,8 +52,8 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
           scrollTrigger: {
             trigger: section,
             scrub: 0.2,
-            start: 'top center',
-            end: () => '+=' + (w.scrollWidth - section.offsetWidth),
+            start: 'top top+=1000',
+            end: () => '+=2000' + (w.scrollWidth - section.offsetWidth),
           },
           y: 0,
         }

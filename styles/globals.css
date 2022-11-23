@@ -791,7 +791,7 @@ a {
   }
 }
 .accordion-items .accordion-title .accordion-title-text {
-  width: calc(100% - 32px);
+  width: calc(100% - 37px);
 }
 @media (max-width: 767px) {
   .banner-btn-box > a {
