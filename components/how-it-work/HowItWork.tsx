@@ -42,14 +42,14 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
       const w = section.querySelector('.scroll-text-item');
       const [x, xEnd] =
         index % 2
-          ? ['1%', (w.scrollWidth - section.offsetWidth) * -1]
+          ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
           : [w.scrollWidth * -1, 0];
       gsap.fromTo(
         w,
         { x, y: 0 },
         {
           x: xEnd,
-          duration: 10,
+          // duration: 10,
           scrollTrigger: {
             trigger: section,
             scrub: 0.5,
