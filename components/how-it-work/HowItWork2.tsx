@@ -65,8 +65,8 @@ const HowItWork2: NextPage<any> = ({ pageName }) => {
           scrollTrigger: {
             trigger: section,
             scrub: 0.2,
-            start: 'top center',
-            end: () => '+=' + (wi.scrollWidth - section.offsetWidth),
+            start: 'top top+=1000',
+            end: () => 'bottom+=800' + (wi.scrollWidth - section.offsetWidth),
           },
           y: 0,
         }
