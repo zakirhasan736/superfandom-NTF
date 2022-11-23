@@ -3,7 +3,7 @@ import Image from 'next/image';
 type accordion = {
   id: number;
   question: string;
-  answer: string;
+  answer: string; 
 };
 
 export const Accordion = ({ id, question, answer }: accordion) => {

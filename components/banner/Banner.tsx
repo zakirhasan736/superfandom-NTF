@@ -79,16 +79,6 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         }
       );
 
-      // modal text varying
-      gsap.to('.modal-img-item', {
-        scrollTrigger: {
-          trigger: '.banner-modal-img.two',
-          scrub: 0.5,
-          start: 'top center',
-          end: 'bottom +=200',
-        },
-        yPercent: -20,
-      });
       // banner modal images
       const slidePrl = gsap.utils.toArray('.modal-img-item');
       gsap.fromTo(
@@ -398,7 +388,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           {/* ================ */}
         </div>
 
-        <div className="scroll-anim-text-wrapper  w-full z-10 relative mt-[-130px] lg:h-[274px] md:mt-0 sm:h-[142px]  h-[456px] md:mt-10">
+        <div className="scroll-anim-text-wrapper  w-full z-10 relative mt-[-130px] lg:h-[274px]  sm:h-[142px]  h-[456px] md:mt-10">
           <div className="section-titlebox mb-24 md:mb-0">
             <div className="scrolable-text-box">
               <div className="scroll-text-item">

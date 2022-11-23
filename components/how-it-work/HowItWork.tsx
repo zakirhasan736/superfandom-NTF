@@ -70,7 +70,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
           scrub: true,
           start: 'top center',
           end: 'bottom bottom',
-          toggleActions: 'restart pause reverse pause',
+          // toggleActions: 'restart pause reverse pause',
           toggleClass: 'active',
         },
         opacity: 1,

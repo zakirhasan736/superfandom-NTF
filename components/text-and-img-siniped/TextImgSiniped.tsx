@@ -24,7 +24,7 @@ const TextImgSiniped: NextPage<any> = () => {
           y: yEnd,
           scrollTrigger: {
             trigger: section,
-            toggleActions: 'restart pause reverse pause',
+            // toggleActions: 'restart pause reverse pause',
             scrub: 0.5,
             start: 'top +=900',
             end: () => '+=' + (w.scrollHeight - section.offsetHeight),

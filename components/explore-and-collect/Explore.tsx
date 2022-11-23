@@ -165,7 +165,7 @@ useEffect(() => {
         opacity: 0,
         duration: 25,
         ease: 'power3.out',
-        toggleActions: 'restart pause reverse pause',
+        // toggleActions: 'restart pause reverse pause',
         overwrite: 'auto',
   
       });
@@ -204,7 +204,7 @@ useEffect(() => {
         opacity: 1,
         duration: 25,
         ease: 'power3.out',
-        toggleActions: 'restart pause reverse pause',
+        // toggleActions: 'restart pause reverse pause',
         overwrite: 'auto',
   
       });
