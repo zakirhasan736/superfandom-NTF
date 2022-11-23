@@ -54,7 +54,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
             trigger: section,
             scrub: 0.5,
             start: 'top top',
-            end: () => '+=' + (w.scrollWidth - section.offsetWidth),
+            end: () => '+=850' + (w.scrollWidth - section.offsetWidth),
           },
           y: 0,
         }
