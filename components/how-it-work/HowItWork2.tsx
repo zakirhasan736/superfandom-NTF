@@ -76,32 +76,34 @@ const HowItWork2: NextPage<any> = ({ pageName }) => {
         );
       });
     })
-    viewPort.add('(max-width:767px)', () => {})
-    document.body.style.overflow = 'auto';
-    const howItWorkScrolled2 = gsap.utils.toArray('.how-it-work-section-box');
-    howItWorkScrolled2.forEach((section: any, index) => {
-      const wi = section.querySelector('.scroll-text-item');
-      const [x, xEnd] =
-        index % 2
-          ? ['1%', (wi.scrollWidth - section.offsetWidth) * -1]
-          : [wi.scrollWidth * -1, 0];
-      gsap.fromTo(
-        wi,
-        { x, y: 0 },
-        {
-          x: xEnd,
-          duration: 10,
-          scrollTrigger: {
-            trigger: section,
-            scrub: 0.2,
-            start: 'top +=850',
-            end: () => '+=' + (wi.scrollWidth - section.offsetWidth),
-          },
-          y: 0,
-        }
-      );
-    });
-
+    viewPort.add('(max-width:767px)', () => {
+      document.body.style.overflow = 'auto';
+      const howItWorkScrolled2 = gsap.utils.toArray('.how-it-work-section-box');
+      howItWorkScrolled2.forEach((section: any, index) => {
+        const wi = section.querySelector('.scroll-text-item');
+        const [x, xEnd] =
+          index % 2
+            ? ['1%', (wi.scrollWidth - section.offsetWidth) * -1]
+            : [wi.scrollWidth * -1, 0];
+        gsap.fromTo(
+          wi,
+          { x, y: 0 },
+          {
+            x: xEnd,
+            duration: 10,
+            scrollTrigger: {
+              trigger: section,
+              scrub: 0.2,
+              start: 'top +=850',
+              end: () => '+=' + (wi.scrollWidth - section.offsetWidth),
+            },
+            y: 0,
+          }
+        );
+      });
+  
+    })
+    
   });
   return (
     <>
