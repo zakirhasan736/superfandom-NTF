@@ -12,7 +12,7 @@ export interface IBanner {
 }
 
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
   const [tokenItem, setTokenItem] = useState<any>([]);
   const [scroll, setscroll] = useState(false);
 
@@ -48,11 +48,12 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     }
   };
   window.addEventListener('scroll', scrollHandler);
-  window.addEventListener('DOMContentLoaded', () => {
+
+  useEffect(() => {
     // banner scroll scale bg
     const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
     let viewPort = gsap.matchMedia();
-
+    if (imgSclTest.length) {
     viewPort.add('(min-width:768px)', () => {
       // animated title
       const textAnim = gsap.utils.toArray(
@@ -80,21 +81,24 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
 
       // banner modal images
       const slidePrl = gsap.utils.toArray('.modal-img-item');
-      gsap.fromTo(
-        slidePrl,
-        { y: 0 },
-        {
-          y: -400,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          },
-        }
-      );
+
+      if(slidePrl.length){
+        gsap.fromTo(
+          slidePrl,
+          { y: 0 },
+          {
+            y: -400,
+            ease: 'none',
+            force3D: true,
+            scrollTrigger: {
+              trigger: '.main-visual-section',
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true,
+            },
+          }
+        );
+      }
     }),
       viewPort.add('(min-width:1681px)', () => {
         gsap.fromTo(
@@ -252,48 +256,51 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
       });
       // banner modal images
       const slidePrl = gsap.utils.toArray('.modal-img-item');
-      gsap.fromTo(
-        slidePrl,
-        { y: 0 },
-        {
-          y: -50,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          },
-        }
-      );
-    });
-
+      if(slidePrl.length){
+        gsap.fromTo(
+          slidePrl,
+          { y: 0 },
+          {
+            y: -50,
+            ease: 'none',
+            force3D: true,
+            scrollTrigger: {
+              trigger: '.main-visual-section',
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true,
+            },
+          }
+        );
+      }
+      });
     // scroll text
     document.body.style.overflow = 'auto';
     const bannerScrolled = gsap.utils.toArray('.scrolable-text-box');
-    bannerScrolled.forEach((section: any, index) => {
-      const w = section?.querySelector('.scroll-text-item');
-      const [x, xEnd] =
-        index % 2
-          ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
-          : [w.scrollWidth * -1, 0];
-      gsap.fromTo(
-        w,
-        { x },
-        {
-          x: xEnd,
-          scrollTrigger: {
-            trigger: section,
-            scrub: 0.5,
-            start: 'top +=850',
-            end: () => '+=' + (w.scrollWidth - section.offsetWidth),
-          },
-        }
-      );
-    });
+if(bannerScrolled.length){
+  bannerScrolled.forEach((section: any, index) => {
+    const w = section.querySelector('.scroll-text-item');
+    const [x, xEnd] =
+      index % 2
+        ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
+        : [w.scrollWidth * -1, 0];
+    gsap.fromTo(
+      w,
+      { x },
+      {
+        x: xEnd,
+        scrollTrigger: {
+          trigger: section,
+          scrub: 0.5,
+          start: 'top +=850',
+          end: () => '+=' + (w.scrollWidth - section.offsetWidth),
+        },
+      }
+    );
   });
-  useEffect(() => {}, [scroll]);
+}
+  }
+  }, [scroll]);
 
   return (
     <>
