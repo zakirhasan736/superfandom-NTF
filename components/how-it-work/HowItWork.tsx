@@ -52,9 +52,9 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
           duration: 10,
           scrollTrigger: {
             trigger: section,
-            scrub: 0.2,
-            start: 'top top+=1000',
-            end: () => 'bottom+=800' + (w.scrollWidth - section.offsetWidth),
+            scrub: 0.5,
+            start: 'top top',
+            end: () => '+=' + (w.scrollWidth - section.offsetWidth),
           },
           y: 0,
         }
