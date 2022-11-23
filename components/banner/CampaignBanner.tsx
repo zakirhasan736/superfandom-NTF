@@ -61,17 +61,20 @@ const CampaignBanner: React.FC<ICampaignBanner> = () => {
                 <ul className="banner-socials-box flex items-center md:justify-center">
                   <li className="socials-items w-[32px] h-[32px] mr-8">
                     <Link href="/">
-                      <Image
+                     <a>
+                     <Image
                         src="/images/instagram-fill.png"
                         alt="superfandom socials-icon-image"
                         className="socials-icon-image h-full w-full"
                         width="32px"
                         height="32px"
                       />
+                     </a>
                     </Link>
                   </li>
                   <li className="socials-items w-[32px] h-[32px] mr-0">
                     <Link href="/">
+                      <a>
                       <Image
                         src="/images/twitter-fill.png"
                         alt="superfandom socials-icon-image"
@@ -79,6 +82,7 @@ const CampaignBanner: React.FC<ICampaignBanner> = () => {
                         width="32px"
                         height="32px"
                       />
+                        </a>
                     </Link>
                   </li>
                 </ul>

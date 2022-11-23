@@ -4,7 +4,6 @@ import Link from 'next/link';
 import TokenCards, { ITokenCards } from '../Card/TokenCards/TokenCards';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
 
 export interface IBanner {
   title?: string;
@@ -13,6 +12,7 @@ export interface IBanner {
 }
 
 const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
+  gsap.registerPlugin(ScrollTrigger);
   const [tokenItem, setTokenItem] = useState<any>([]);
   const [scroll, setscroll] = useState(false);
 
@@ -48,8 +48,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     }
   };
   window.addEventListener('scroll', scrollHandler);
-
-  useEffect(() => {
+  window.addEventListener('DOMContentLoaded', () => {
     // banner scroll scale bg
     const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
     let viewPort = gsap.matchMedia();
@@ -274,7 +273,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
     document.body.style.overflow = 'auto';
     const bannerScrolled = gsap.utils.toArray('.scrolable-text-box');
     bannerScrolled.forEach((section: any, index) => {
-      const w = section.querySelector('.scroll-text-item');
+      const w = section?.querySelector('.scroll-text-item');
       const [x, xEnd] =
         index % 2
           ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
@@ -293,7 +292,8 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
         }
       );
     });
-  }, [scroll]);
+  });
+  useEffect(() => {}, [scroll]);
 
   return (
     <>

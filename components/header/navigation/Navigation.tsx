@@ -30,7 +30,8 @@ const Header: React.FC<INavigation> = ({
               <div className="nav-logo w-[222px] h-[60px] sm:w-[170px] sm:h-auto">
                 <div className="brand-logo-box">
                   <Link href="/">
-                    <Image
+                   <a>
+                   <Image
                       src={`${
                         headerNext
                           ? '/images/brand-logo-fill.svg'
@@ -41,6 +42,7 @@ const Header: React.FC<INavigation> = ({
                       width="222px"
                       height="60px"
                     />
+                   </a>
                   </Link>
                 </div>
               </div>
