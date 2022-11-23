@@ -10,7 +10,7 @@ export interface ICausesBanner {
   subtitle?: string;
   desc?: string;
 }
-const CausesBanner: React.FC<ICausesBanner> = ({ title, subtitle, desc }) => {
+const CausesBanner: React.FC<ICausesBanner> = () => {
   const [scroll, setscroll] = useState(false);
   const scrollHandler = () => {
     if (!scroll) {

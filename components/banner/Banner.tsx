@@ -11,7 +11,7 @@ export interface IBanner {
   desc?: string;
 }
 
-const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
+const Banner: React.FC<IBanner> = () => {
 gsap.registerPlugin(ScrollTrigger);
   const [tokenItem, setTokenItem] = useState<any>([]);
   const [scroll, setscroll] = useState(false);
