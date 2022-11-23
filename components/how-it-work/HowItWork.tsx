@@ -32,6 +32,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
       desc: 'Soulbound tokens you own increase your reputation',
     },
   ];
+
   useEffect(() => {
     document.body.style.overflow = 'auto';
     const howItWorkScrolled = gsap.utils.toArray(
@@ -53,7 +54,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
             trigger: section,
             scrub: 0.2,
             start: 'top top+=1000',
-            end: () => '+=2000' + (w.scrollWidth - section.offsetWidth),
+            end: () => 'bottom+=800' + (w.scrollWidth - section.offsetWidth),
           },
           y: 0,
         }
@@ -77,7 +78,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
     });
 
     let viewPort = gsap.matchMedia();
-    viewPort.add('(min-width:1681px)', () => {
+      viewPort.add('(min-width:1681px)', () => {
       ScrollTrigger.create({
         trigger: '.prallex2',
         scrub: 1.5,
