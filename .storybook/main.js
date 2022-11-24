@@ -1,6 +1,6 @@
 module.exports = {
   stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
-  
+  typescript: { reactDocgen: false },
   staticDirs: ['../public'],
   "addons": [
     "@storybook/addon-links",
