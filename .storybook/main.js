@@ -1,11 +1,11 @@
 module.exports = {
   stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
-  
+
   staticDirs: ['../public'],
-  "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
     'storybook-css-modules-preset',
     {
       /**
@@ -20,8 +20,11 @@ module.exports = {
       },
     },
   ],
-  "framework": "@storybook/react",
-  "core": {
-    "builder": "@storybook/builder-webpack5"
-  }
+  framework: '@storybook/react',
+  typescript: {
+    reactDocgen: false,
+  },
+  core: {
+    builder: '@storybook/builder-webpack5',
+  },
 };
