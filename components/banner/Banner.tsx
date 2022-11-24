@@ -49,22 +49,8 @@ const Banner: React.FC<IBanner> = () => {
   };
   window.addEventListener('scroll', scrollHandler);
 
-  // useLayoutEffect(() => {
-  // //   const ctx = gsap.context(() => {
-  // //     const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
-
-  // //     const animation2 = gsap.to('.box2', {
-  // //       scrollTrigger: {},
-  // //     });
-  // //   });
-
-  // //   return () => {
-  // //     ctx.revert();
-  // //   };
-  // // }, []);
-
   useLayoutEffect(() => {
-    const test = gsap.context(() => {
+    const homeBannerAnim = gsap.context(() => {
       // banner scroll scale bg
       const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
       let viewPort = gsap.matchMedia();
@@ -74,7 +60,7 @@ const Banner: React.FC<IBanner> = () => {
           const textAnim = gsap.utils.toArray(
             '.banner_title_animation > span > span'
           );
-          gsap.fromTo(
+         gsap.fromTo(
             textAnim,
             {
               translateY: '0%',
@@ -317,7 +303,7 @@ const Banner: React.FC<IBanner> = () => {
       }
     });
     return () => {
-      test.revert();
+      homeBannerAnim.revert();
     };
   }, [scroll]);
 

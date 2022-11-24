@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import StepCard from '../Card/StepCards/StepCard';
@@ -47,9 +47,9 @@ const HowItWork2: NextPage<any> = ({ pageName }) => {
       desc: 'Redeem your tokens for various perks',
     },
   ];
-  useEffect(() => {
- 
-    let viewPort = gsap.matchMedia();
+  useLayoutEffect(() => {
+ const howItWorkScroll2 = gsap.context(() =>{
+  let viewPort = gsap.matchMedia();
     viewPort.add('(min-width:768px)', () => {
       document.body.style.overflow = 'auto';
       const howItWorkScrolled2 = gsap.utils.toArray('.how-it-work-section-box');
@@ -103,6 +103,10 @@ const HowItWork2: NextPage<any> = ({ pageName }) => {
       });
   
     })
+ })
+ return () => {
+  howItWorkScroll2.revert();
+};
     
   });
   return (

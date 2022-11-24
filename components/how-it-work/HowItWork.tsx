@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import Lottie from 'react-lottie';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -33,7 +33,8 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
     },
   ];
 
-  useEffect(() => {
+ useLayoutEffect(() => {
+  const  howItWorkScroll = gsap.context(() => {
     document.body.style.overflow = 'auto';
     const howItWorkScrolled = gsap.utils.toArray(
       '.scrolable-text-box.how-it-work-title.one'
@@ -101,67 +102,29 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
           end: 'top',
         });
       });
+  });
+  return () => {
+    howItWorkScroll.revert();
+  };
   }, []);
 
-  useEffect(() => {
-    const howItworkInfoFade = gsap.utils.toArray('.how-it-work-info-list');
+  useLayoutEffect(() => {
+    const howItWorkAnim = gsap.context(() =>{
+      const howItworkInfoFade = gsap.utils.toArray('.how-it-work-info-list');
 
-    let viewPort = gsap.matchMedia();
-    viewPort.add('(min-width:768px)', () => {
-      howItworkInfoFade.forEach((section: any) => {
-        const elems = section.querySelectorAll('.text-cont-box');
-        // Set starting params for sections
-        gsap.set(elems, {
-          y: 50,
-          opacity: 0,
-          duration: 1,
-          ease: 'power3.out',
-          overwrite: 'auto',
-        });
-
-        ScrollTrigger.create({
-          trigger: section,
-          start: 'top 60%',
-          end: 'bottom 30%',
-          onEnter: () =>
-            gsap.to(elems, {
-              y: 0,
-              opacity: 1,
-              stagger: 0.2,
-            }),
-          onLeave: () =>
-            gsap.to(elems, {
-              y: -50,
-              opacity: 0,
-              stagger: 0.2,
-            }),
-          onEnterBack: () =>
-            gsap.to(elems, {
-              y: 0,
-              opacity: 1,
-              stagger: -0.2,
-            }),
-          onLeaveBack: () =>
-            gsap.to(elems, {
-              y: 50,
-              opacity: 0,
-              stagger: -0.2,
-            }),
-        });
-      });
-    }),
-      viewPort.add('(max-width:767px)', () => {
+      let viewPort = gsap.matchMedia();
+      viewPort.add('(min-width:768px)', () => {
         howItworkInfoFade.forEach((section: any) => {
           const elems = section.querySelectorAll('.text-cont-box');
           // Set starting params for sections
           gsap.set(elems, {
-            y: 0,
-            opacity: 1,
+            y: 50,
+            opacity: 0,
             duration: 1,
             ease: 'power3.out',
             overwrite: 'auto',
           });
-
+  
           ScrollTrigger.create({
             trigger: section,
             start: 'top 60%',
@@ -174,8 +137,8 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
               }),
             onLeave: () =>
               gsap.to(elems, {
-                y: 0,
-                opacity: 1,
+                y: -50,
+                opacity: 0,
                 stagger: 0.2,
               }),
             onEnterBack: () =>
@@ -186,13 +149,60 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
               }),
             onLeaveBack: () =>
               gsap.to(elems, {
-                y: 0,
-                opacity: 1,
+                y: 50,
+                opacity: 0,
                 stagger: -0.2,
               }),
           });
         });
-      });
+      }),
+        viewPort.add('(max-width:767px)', () => {
+          howItworkInfoFade.forEach((section: any) => {
+            const elems = section.querySelectorAll('.text-cont-box');
+            // Set starting params for sections
+            gsap.set(elems, {
+              y: 0,
+              opacity: 1,
+              duration: 1,
+              ease: 'power3.out',
+              overwrite: 'auto',
+            });
+  
+            ScrollTrigger.create({
+              trigger: section,
+              start: 'top 60%',
+              end: 'bottom 30%',
+              onEnter: () =>
+                gsap.to(elems, {
+                  y: 0,
+                  opacity: 1,
+                  stagger: 0.2,
+                }),
+              onLeave: () =>
+                gsap.to(elems, {
+                  y: 0,
+                  opacity: 1,
+                  stagger: 0.2,
+                }),
+              onEnterBack: () =>
+                gsap.to(elems, {
+                  y: 0,
+                  opacity: 1,
+                  stagger: -0.2,
+                }),
+              onLeaveBack: () =>
+                gsap.to(elems, {
+                  y: 0,
+                  opacity: 1,
+                  stagger: -0.2,
+                }),
+            });
+          });
+        });
+    });
+    return () => {
+      howItWorkAnim.revert();
+    };
   }, []);
   return (
     <>

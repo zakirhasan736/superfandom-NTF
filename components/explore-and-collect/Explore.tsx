@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState , useLayoutEffect} from 'react';
 import Slider from 'react-slick';
 import { Settings } from "react-slick";
 import Link from 'next/link';
@@ -139,101 +139,103 @@ const Explore: NextPage<any> = () => {
     setTokenItem(items);
   }, []);
 
-  useEffect(() => {
-   
 
-}, []);
 
-useEffect(() => {
-    // Set starting params for sections
-    let viewPort = gsap.matchMedia();
-    viewPort.add("(min-width:768px)", () => {
-      gsap.to('.explore-section', {
-        scrollTrigger: {
-          trigger: ".explore-section",
-          scrub: true,
-          start: "top top",
-          end: "bottom -550px",
-          markers: false,
-          toggleClass: "active"
-        }
+useLayoutEffect(() => {
+  const exploreAnim = gsap.context(() => {
+  // Set starting params for sections
+  let viewPort = gsap.matchMedia();
+  viewPort.add("(min-width:768px)", () => {
+    gsap.to('.explore-section', {
+      scrollTrigger: {
+        trigger: ".explore-section",
+        scrub: true,
+        start: "top top",
+        end: "bottom -550px",
+        markers: false,
+        toggleClass: "active"
+      }
+  });
+
+const animTextExplor = gsap.utils.toArray('.explore--title-box');
+    gsap.set(animTextExplor, {
+      y: 50,
+      opacity: 0,
+      duration: 25,
+      ease: 'power3.out',
+      overwrite: 'auto',
+
     });
 
-  const animTextExplor = gsap.utils.toArray('.explore--title-box');
-      gsap.set(animTextExplor, {
-        y: 50,
-        opacity: 0,
-        duration: 25,
-        ease: 'power3.out',
-        overwrite: 'auto',
-  
-      });
-  
-      ScrollTrigger.create({
-        trigger: '.explore-section',
-        start: 'top 60%',
-        end: 'bottom top',
-        onEnter: () => gsap.to(animTextExplor, {
-          y: 0,
-          opacity: 1,
-          stagger: 0.2,
-        }),
-        onLeave: () => gsap.to(animTextExplor, {
-          y: -50,
-          opacity: 0,
-          stagger: 0.2,
-        }),
-        onEnterBack: () => gsap.to(animTextExplor, {
-          y: 0,
-          opacity: 1,
-          stagger: -0.2,
-        }),
-        onLeaveBack: () => gsap.to(animTextExplor, {
-          y: 50,
-          opacity: 0,
-          stagger: -0.2,
-        }),
-      });
-    })
-
-    viewPort.add("(max-width:767px)", () => {
-      const animTextExplor = gsap.utils.toArray('.explore--title-box');
-      gsap.set(animTextExplor, {
+    ScrollTrigger.create({
+      trigger: '.explore-section',
+      start: 'top 60%',
+      end: 'bottom top',
+      onEnter: () => gsap.to(animTextExplor, {
         y: 0,
         opacity: 1,
-        duration: 25,
-        ease: 'power3.out',
-        overwrite: 'auto',
+        stagger: 0.2,
+      }),
+      onLeave: () => gsap.to(animTextExplor, {
+        y: -50,
+        opacity: 0,
+        stagger: 0.2,
+      }),
+      onEnterBack: () => gsap.to(animTextExplor, {
+        y: 0,
+        opacity: 1,
+        stagger: -0.2,
+      }),
+      onLeaveBack: () => gsap.to(animTextExplor, {
+        y: 50,
+        opacity: 0,
+        stagger: -0.2,
+      }),
+    });
+  })
+
+  viewPort.add("(max-width:767px)", () => {
+    const animTextExplor = gsap.utils.toArray('.explore--title-box');
+    gsap.set(animTextExplor, {
+      y: 0,
+      opacity: 1,
+      duration: 25,
+      ease: 'power3.out',
+      overwrite: 'auto',
+
+    });
+
+    ScrollTrigger.create({
+      trigger: '.explore-section',
+      start: 'top 60%',
+      end: 'bottom top',
+      onEnter: () => gsap.to(animTextExplor, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+      }),
+      onLeave: () => gsap.to(animTextExplor, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+      }),
+      onEnterBack: () => gsap.to(animTextExplor, {
+        y: 0,
+        opacity: 1,
+        stagger: -0.2,
+      }),
+      onLeaveBack: () => gsap.to(animTextExplor, {
+        y: 0,
+        opacity: 1,
+        stagger: -0.2,
+      }),
+    });
+  })
+  return () => {
+    exploreAnim.revert();
+  };
+  });
   
-      });
-  
-      ScrollTrigger.create({
-        trigger: '.explore-section',
-        start: 'top 60%',
-        end: 'bottom top',
-        onEnter: () => gsap.to(animTextExplor, {
-          y: 0,
-          opacity: 1,
-          stagger: 0.2,
-        }),
-        onLeave: () => gsap.to(animTextExplor, {
-          y: 0,
-          opacity: 1,
-          stagger: 0.2,
-        }),
-        onEnterBack: () => gsap.to(animTextExplor, {
-          y: 0,
-          opacity: 1,
-          stagger: -0.2,
-        }),
-        onLeaveBack: () => gsap.to(animTextExplor, {
-          y: 0,
-          opacity: 1,
-          stagger: -0.2,
-        }),
-      });
-    })
- 
   
 }, []);
 
