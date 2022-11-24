@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import TokenCards, { ITokenCards } from '../Card/TokenCards/TokenCards';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
 
 export interface IBanner {
   title?: string;
@@ -12,7 +11,8 @@ export interface IBanner {
   desc?: string;
 }
 
-const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
+const Banner: React.FC<IBanner> = () => {
+  gsap.registerPlugin(ScrollTrigger);
   const [tokenItem, setTokenItem] = useState<any>([]);
   const [scroll, setscroll] = useState(false);
 
@@ -49,260 +49,262 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
   };
   window.addEventListener('scroll', scrollHandler);
 
-  useEffect(() => {
-    // banner scroll scale bg
-    const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
-    let viewPort = gsap.matchMedia();
-
-    viewPort.add('(min-width:768px)', () => {
-      // animated title
-      const textAnim = gsap.utils.toArray(
-        '.banner_title_animation > span > span'
-      );
-      gsap.fromTo(
-        textAnim,
-        {
-          translateY: '0%',
-          opacity: 1,
-        },
-        {
-          translateY: '200%',
-          ease: 'power3',
-          force3D: true,
-          duration: 1,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.5,
-          },
-        }
-      );
-
-      // modal text varying
-      gsap.to('.modal-img-item', {
-        scrollTrigger: {
-          trigger: '.banner-modal-img.two',
-          scrub: 0.5,
-          start: 'top center',
-          end: 'bottom +=200',
-        },
-        yPercent: -20,
-      });
-      // banner modal images
-      const slidePrl = gsap.utils.toArray('.modal-img-item');
-      gsap.fromTo(
-        slidePrl,
-        { y: 0 },
-        {
-          y: -400,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          },
-        }
-      );
-    }),
-      viewPort.add('(min-width:1681px)', () => {
-        gsap.fromTo(
-          imgSclTest,
-          { scaleY: 0.4, scaleX: 1, y: 326 },
-          {
-            scaleX: 2.5,
-            scaleY: 5,
-            ease: 'none',
-            force3D: true,
-            scrollTrigger: {
-              trigger: '.main-visual-section',
-              start: 'top top',
-              end: 'bottom top',
-              scrub: 0.5,
+  useLayoutEffect(() => {
+    const homeBannerAnim = gsap.context(() => {
+      // banner scroll scale bg
+      const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
+      let viewPort = gsap.matchMedia();
+      if (imgSclTest.length) {
+        viewPort.add('(min-width:768px)', () => {
+          // animated title
+          const textAnim = gsap.utils.toArray(
+            '.banner_title_animation > span > span'
+          );
+         gsap.fromTo(
+            textAnim,
+            {
+              translateY: '0%',
+              opacity: 1,
             },
+            {
+              translateY: '200%',
+              ease: 'power3',
+              force3D: true,
+              duration: 1,
+              scrollTrigger: {
+                trigger: '.main-visual-section',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 0.5,
+              },
+            }
+          );
+
+          // banner modal images
+          const slidePrl = gsap.utils.toArray('.modal-img-item');
+
+          if (slidePrl.length) {
+            gsap.fromTo(
+              slidePrl,
+              { y: 0 },
+              {
+                y: -400,
+                ease: 'none',
+                force3D: true,
+                scrollTrigger: {
+                  trigger: '.main-visual-section',
+                  start: 'top top',
+                  end: 'bottom top',
+                  scrub: true,
+                },
+              }
+            );
           }
-        );
-      });
-    viewPort.add('(max-width:1680px) and (min-width:1441px)', () => {
-      gsap.fromTo(
-        imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 343 },
-        {
-          scaleX: 2.5,
-          scaleY: 5,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.5,
-          },
-        }
-      );
-    });
-    viewPort.add('(max-width:1440px) and (min-width:1400px)', () => {
-      gsap.fromTo(
-        imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 315 },
-        {
-          scaleX: 2.5,
-          scaleY: 5,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.5,
-          },
-        }
-      );
-    });
-    viewPort.add('(max-width:1399px) and (min-width:1281px)', () => {
-      gsap.fromTo(
-        imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 318 },
-        {
-          scaleX: 2.5,
-          scaleY: 5,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.5,
-          },
-        }
-      );
-    });
-    viewPort.add('(max-width:1280px) and (min-width:1200px)', () => {
-      gsap.fromTo(
-        imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 330 },
-        {
-          scaleX: 2.5,
-          scaleY: 5,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.5,
-          },
-        }
-      );
-    });
-    viewPort.add('(max-width:1199px) and (min-width:992px)', () => {
-      gsap.fromTo(
-        imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 295 },
-        {
-          scaleX: 2.5,
-          scaleY: 5,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.5,
-          },
-        }
-      );
-    });
-    viewPort.add('(max-width:991px) and (min-width:768px)', () => {
-      gsap.fromTo(
-        imgSclTest,
-        { scaleY: 0.4, scaleX: 1, y: 249 },
-        {
-          scaleX: 2.5,
-          scaleY: 5,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.5,
-          },
-        }
-      );
-    });
-    viewPort.add('(max-width:767px)', () => {
-      gsap.fromTo(
-        imgSclTest,
-        { scaleY: 5, scaleX: 1, y: 510 },
-        {
-          scaleX: 2.5,
-          scaleY: 90,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.5,
-          },
-        }
-      );
+        }),
+          viewPort.add('(min-width:1681px)', () => {
+            gsap.fromTo(
+              imgSclTest,
+              { scaleY: 0.4, scaleX: 1, y: 326 },
+              {
+                scaleX: 2.5,
+                scaleY: 5,
+                ease: 'none',
+                force3D: true,
+                scrollTrigger: {
+                  trigger: '.main-visual-section',
+                  start: 'top top',
+                  end: 'bottom top',
+                  scrub: 0.5,
+                },
+              }
+            );
+          });
+        viewPort.add('(max-width:1680px) and (min-width:1441px)', () => {
+          gsap.fromTo(
+            imgSclTest,
+            { scaleY: 0.4, scaleX: 1, y: 343 },
+            {
+              scaleX: 2.5,
+              scaleY: 5,
+              ease: 'none',
+              force3D: true,
+              scrollTrigger: {
+                trigger: '.main-visual-section',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 0.5,
+              },
+            }
+          );
+        });
+        viewPort.add('(max-width:1440px) and (min-width:1400px)', () => {
+          gsap.fromTo(
+            imgSclTest,
+            { scaleY: 0.4, scaleX: 1, y: 315 },
+            {
+              scaleX: 2.5,
+              scaleY: 5,
+              ease: 'none',
+              force3D: true,
+              scrollTrigger: {
+                trigger: '.main-visual-section',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 0.5,
+              },
+            }
+          );
+        });
+        viewPort.add('(max-width:1399px) and (min-width:1281px)', () => {
+          gsap.fromTo(
+            imgSclTest,
+            { scaleY: 0.4, scaleX: 1, y: 318 },
+            {
+              scaleX: 2.5,
+              scaleY: 5,
+              ease: 'none',
+              force3D: true,
+              scrollTrigger: {
+                trigger: '.main-visual-section',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 0.5,
+              },
+            }
+          );
+        });
+        viewPort.add('(max-width:1280px) and (min-width:1200px)', () => {
+          gsap.fromTo(
+            imgSclTest,
+            { scaleY: 0.4, scaleX: 1, y: 330 },
+            {
+              scaleX: 2.5,
+              scaleY: 5,
+              ease: 'none',
+              force3D: true,
+              scrollTrigger: {
+                trigger: '.main-visual-section',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 0.5,
+              },
+            }
+          );
+        });
+        viewPort.add('(max-width:1199px) and (min-width:992px)', () => {
+          gsap.fromTo(
+            imgSclTest,
+            { scaleY: 0.4, scaleX: 1, y: 295 },
+            {
+              scaleX: 2.5,
+              scaleY: 5,
+              ease: 'none',
+              force3D: true,
+              scrollTrigger: {
+                trigger: '.main-visual-section',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 0.5,
+              },
+            }
+          );
+        });
+        viewPort.add('(max-width:991px) and (min-width:768px)', () => {
+          gsap.fromTo(
+            imgSclTest,
+            { scaleY: 0.4, scaleX: 1, y: 249 },
+            {
+              scaleX: 2.5,
+              scaleY: 5,
+              ease: 'none',
+              force3D: true,
+              scrollTrigger: {
+                trigger: '.main-visual-section',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 0.5,
+              },
+            }
+          );
+        });
+        viewPort.add('(max-width:767px)', () => {
+          gsap.fromTo(
+            imgSclTest,
+            { scaleY: 5, scaleX: 1, y: 510 },
+            {
+              scaleX: 2.5,
+              scaleY: 90,
+              ease: 'none',
+              force3D: true,
+              scrollTrigger: {
+                trigger: '.main-visual-section',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 0.5,
+              },
+            }
+          );
 
-      // modal text varying
-      gsap.to('.modal-img-item', {
-        scrollTrigger: {
-          trigger: '.banner-modal-img.two',
-          scrub: 0.5,
-          start: 'top center',
-          end: 'bottom +=200',
-        },
-        yPercent: -5,
-      });
-      // banner modal images
-      const slidePrl = gsap.utils.toArray('.modal-img-item');
-      gsap.fromTo(
-        slidePrl,
-        { y: 0 },
-        {
-          y: -50,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          },
+          // modal text varying
+          gsap.to('.modal-img-item', {
+            scrollTrigger: {
+              trigger: '.banner-modal-img.two',
+              scrub: 0.5,
+              start: 'top center',
+              end: 'bottom +=200',
+            },
+            yPercent: -5,
+          });
+          // banner modal images
+          const slidePrl = gsap.utils.toArray('.modal-img-item');
+          if (slidePrl.length) {
+            gsap.fromTo(
+              slidePrl,
+              { y: 0 },
+              {
+                y: -50,
+                ease: 'none',
+                force3D: true,
+                scrollTrigger: {
+                  trigger: '.main-visual-section',
+                  start: 'top top',
+                  end: 'bottom top',
+                  scrub: true,
+                },
+              }
+            );
+          }
+        });
+        // scroll text
+        document.body.style.overflow = 'auto';
+        const bannerScrolled = gsap.utils.toArray('.scrolable-text-box');
+        if (bannerScrolled.length) {
+          bannerScrolled.forEach((section: any, index) => {
+            const w = section.querySelector('.scroll-text-item');
+            const [x, xEnd] =
+              index % 2
+                ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
+                : [w.scrollWidth * -1, 0];
+            gsap.fromTo(
+              w,
+              { x },
+              {
+                x: xEnd,
+                scrollTrigger: {
+                  trigger: section,
+                  scrub: 0.5,
+                  start: 'top +=850',
+                  end: () => '+=' + (w.scrollWidth - section.offsetWidth),
+                },
+              }
+            );
+          });
         }
-      );
+      }
     });
-
-    // scroll text
-    document.body.style.overflow = 'auto';
-    const bannerScrolled = gsap.utils.toArray('.scrolable-text-box');
-    bannerScrolled.forEach((section: any, index) => {
-      const w = section.querySelector('.scroll-text-item');
-      const [x, xEnd] =
-        index % 2
-          ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
-          : [w.scrollWidth * -1, 0];
-      gsap.fromTo(
-        w,
-        { x },
-        {
-          x: xEnd,
-          scrollTrigger: {
-            trigger: section,
-            scrub: 0.5,
-            start: 'top +=850',
-            end: () => '+=' + (w.scrollWidth - section.offsetWidth),
-          },
-        }
-      );
-    });
+    return () => {
+      homeBannerAnim.revert();
+    };
   }, [scroll]);
 
   return (
@@ -398,7 +400,7 @@ const Banner: React.FC<IBanner> = ({ title, subtitle, desc }) => {
           {/* ================ */}
         </div>
 
-        <div className="scroll-anim-text-wrapper  w-full z-10 relative mt-[-130px] lg:h-[274px] md:mt-0 sm:h-[142px]  h-[456px] md:mt-10">
+        <div className="scroll-anim-text-wrapper  w-full z-10 relative mt-[-130px] lg:h-[274px]  sm:h-[142px]  h-[456px] md:mt-10">
           <div className="section-titlebox mb-24 md:mb-0">
             <div className="scrolable-text-box">
               <div className="scroll-text-item">

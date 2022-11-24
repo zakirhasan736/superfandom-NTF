@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState,useEffect } from 'react';
 import Link from 'next/link';
 import Slider from 'react-slick';
 import { Settings } from "react-slick";
@@ -63,7 +63,6 @@ const ActiveDrop: NextPage<any> = () => {
           slidesToScroll: 3,
           dots: false,
           variableWidth: true,
-          // nav: false,
           centerMode: true,
           centerPadding: '10px',
           arrows: false,
@@ -76,7 +75,6 @@ const ActiveDrop: NextPage<any> = () => {
           slidesToScroll: 2,
           dots: false,
           variableWidth: true,
-          // nav: false,
           centerMode: true,
           centerPadding: '10px',
           arrows: false,

@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -8,126 +8,134 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TextImgSiniped: NextPage<any> = () => {
 
-  useEffect(() => {
-    document.body.style.overflow = 'auto';
-    const textImagesScrolled = gsap.utils.toArray('.scroll-image-box');
-    textImagesScrolled.forEach((section: any, index) => {
-      const w = section.querySelector('ul.anim-card-scroll');
-      const [y, yEnd] =
-        index % 2
-          ? ['100%', (w.scrollHeight - section.offsetHeight) * -1]
-          : [w.scrollHeight * -1, 0];
-      gsap.fromTo(
-        w,
-        { y },
-        {
-          y: yEnd,
-          scrollTrigger: {
-            trigger: section,
-            toggleActions: 'restart pause reverse pause',
-            scrub: 0.5,
-            start: 'top +=900',
-            end: () => '+=' + (w.scrollHeight - section.offsetHeight),
-          },
-        }
-      );
+  useLayoutEffect(() => {
+    const textImgScroll = gsap.context(() => {
+      document.body.style.overflow = 'auto';
+      const textImagesScrolled = gsap.utils.toArray('.scroll-image-box');
+      textImagesScrolled.forEach((section: any, index) => {
+        const w = section.querySelector('ul.anim-card-scroll');
+        const [y, yEnd] =
+          index % 2
+            ? ['100%', (w.scrollHeight - section.offsetHeight) * -1]
+            : [w.scrollHeight * -1, 0];
+        gsap.fromTo(
+          w,
+          { y },
+          {
+            y: yEnd,
+            scrollTrigger: {
+              trigger: section,
+              // toggleActions: 'restart pause reverse pause',
+              scrub: 0.5,
+              start: 'top +=900',
+              end: () => '+=' + (w.scrollHeight - section.offsetHeight),
+            },
+          }
+        );
+      });
     });
+    return () => {
+      textImgScroll.revert();
+    };
   }, []);
 
-  useEffect(() => {
-   
-      
-      let viewPort = gsap.matchMedia();
-      viewPort.add("(min-width:992px)", () => {
-        const textImgFade = gsap.utils
-        .toArray('.text-img-siniped-info-list');
-        textImgFade.forEach((section: any) => {
-          const elems = section.querySelectorAll('.siniped-text-box');
-          // Set starting params for sections
-          gsap.set(elems, {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: 'power3.out',
-            overwrite: 'auto',
-          });
-          ScrollTrigger.create({
-            trigger: section,
-            start: 'top +=100',
-            end: 'bottom +=100',
-            onEnter: () =>
-              gsap.to(elems, {
-                y: 0,
-                opacity: 1,
-                stagger: 0.2,
-              }),
-            onLeave: () =>
-              gsap.to(elems, {
-                y: -50,
-                opacity: 0,
-                stagger: 0.2,
-              }),
-            onEnterBack: () =>
-              gsap.to(elems, {
-                y: 0,
-                opacity: 1,
-                stagger: -0.2,
-              }),
-            onLeaveBack: () =>
-              gsap.to(elems, {
-                y: 50,
-                opacity: 0,
-                stagger: -0.2,
-              }),
-          });
-         
+  useLayoutEffect(() => {
+   const textImgsectionAnim = gsap.context(() => {
+    let viewPort = gsap.matchMedia();
+    viewPort.add("(min-width:992px)", () => {
+      const textImgFade = gsap.utils
+      .toArray('.text-img-siniped-info-list');
+      textImgFade.forEach((section: any) => {
+        const elems = section.querySelectorAll('.siniped-text-box');
+        // Set starting params for sections
+        gsap.set(elems, {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.out',
+          overwrite: 'auto',
         });
-      }),
-      viewPort.add("(max-width:991px)", () => {
-        const textImgFade = gsap.utils
-        .toArray('.text-img-siniped-info-list');
-        textImgFade.forEach((section: any) => {
-          const elems = section.querySelectorAll('.siniped-text-box');
-          // Set starting params for sections
-          gsap.set(elems, {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: 'power3.out',
-            overwrite: 'auto',
-          });
-          ScrollTrigger.create({
-            trigger: section,
-            start: 'top top',
-            end: 'bottom bottom',
-            onEnter: () =>
-              gsap.to(elems, {
-                y: 0,
-                opacity: 1,
-                stagger: 0.2,
-              }),
-            onLeave: () =>
-              gsap.to(elems, {
-                y: 0,
-                opacity: 1,
-                stagger: 0.2,
-              }),
-            onEnterBack: () =>
-              gsap.to(elems, {
-                y: 0,
-                opacity: 1,
-                stagger: -0.2,
-              }),
-            onLeaveBack: () =>
-              gsap.to(elems, {
-                y: 0,
-                opacity: 1,
-                stagger: -0.2,
-              }),
-          });
-         
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top +=100',
+          end: 'bottom +=100',
+          onEnter: () =>
+            gsap.to(elems, {
+              y: 0,
+              opacity: 1,
+              stagger: 0.2,
+            }),
+          onLeave: () =>
+            gsap.to(elems, {
+              y: -50,
+              opacity: 0,
+              stagger: 0.2,
+            }),
+          onEnterBack: () =>
+            gsap.to(elems, {
+              y: 0,
+              opacity: 1,
+              stagger: -0.2,
+            }),
+          onLeaveBack: () =>
+            gsap.to(elems, {
+              y: 50,
+              opacity: 0,
+              stagger: -0.2,
+            }),
         });
-      })
+       
+      });
+    }),
+    viewPort.add("(max-width:991px)", () => {
+      const textImgFade = gsap.utils
+      .toArray('.text-img-siniped-info-list');
+      textImgFade.forEach((section: any) => {
+        const elems = section.querySelectorAll('.siniped-text-box');
+        // Set starting params for sections
+        gsap.set(elems, {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          overwrite: 'auto',
+        });
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top top',
+          end: 'bottom bottom',
+          onEnter: () =>
+            gsap.to(elems, {
+              y: 0,
+              opacity: 1,
+              stagger: 0.2,
+            }),
+          onLeave: () =>
+            gsap.to(elems, {
+              y: 0,
+              opacity: 1,
+              stagger: 0.2,
+            }),
+          onEnterBack: () =>
+            gsap.to(elems, {
+              y: 0,
+              opacity: 1,
+              stagger: -0.2,
+            }),
+          onLeaveBack: () =>
+            gsap.to(elems, {
+              y: 0,
+              opacity: 1,
+              stagger: -0.2,
+            }),
+        });
+       
+      });
+    })
+   });
+      return () => {
+        textImgsectionAnim.revert();
+      };
   }, []);
 
   return (

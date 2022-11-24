@@ -312,7 +312,6 @@ const CSToken = ({ pageName }: any) => {
           slidesToScroll: 2,
           dots: false,
           variableWidth: true,
-          // nav: false,
           centerMode: true,
           centerPadding: '10px',
         },

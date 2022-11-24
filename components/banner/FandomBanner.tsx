@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -13,37 +13,19 @@ export interface IFandomBanner {
 }
 
 const FandomBanner: React.FC<IFandomBanner> = () => {
-  useEffect(() => {
-    // banner scroll scale bg
-    const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
+  useLayoutEffect(() => {
+    const fandomBanner = gsap.context(() => {
+      // banner scroll scale bg
+      const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
 
-    let viewPort = gsap.matchMedia();
-    viewPort.add('(min-width:768px)', () => {
-      gsap.fromTo(
-        imgSclTest,
-        { scaleY: 1, scaleX: 1, y: 420 },
-        {
-          scaleX: 1.8,
-          scaleY: 3.5,
-          y: 0,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: '.main-visual-section',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.5,
-          },
-        }
-      );
-    }),
-      viewPort.add('(max-width:767px)', () => {
+      let viewPort = gsap.matchMedia();
+      viewPort.add('(min-width:768px)', () => {
         gsap.fromTo(
           imgSclTest,
-          { scaleY: 6, scaleX: 0.95, y: 300 },
+          { scaleY: 1, scaleX: 1, y: 420 },
           {
-            scaleX: 5,
-            scaleY: 15,
+            scaleX: 1.8,
+            scaleY: 3.5,
             y: 0,
             ease: 'none',
             force3D: true,
@@ -56,29 +38,52 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
           }
         );
       }),
-      // scroll text
-      (document.body.style.overflow = 'auto');
-    const fandomScrolled = gsap.utils.toArray('.scrolable-text-box');
-    fandomScrolled.forEach((section: any, index) => {
-      const w = section.querySelector('.scroll-text-item');
-      const [x, xEnd] =
-        index % 2
-          ? ['1%', (w.scrollWidth - section.offsetWidth) * -1]
-          : [w.scrollWidth * -1, 0];
-      gsap.fromTo(
-        w,
-        { x },
-        {
-          x: xEnd,
-          scrollTrigger: {
-            trigger: section,
-            scrub: 0.06,
-            start: 'top +=850',
-            end: () => '+=' + (w.scrollWidth - section.offsetWidth),
-          },
-        }
-      );
+        viewPort.add('(max-width:767px)', () => {
+          gsap.fromTo(
+            imgSclTest,
+            { scaleY: 6, scaleX: 0.95, y: 300 },
+            {
+              scaleX: 5,
+              scaleY: 15,
+              y: 0,
+              ease: 'none',
+              force3D: true,
+              scrollTrigger: {
+                trigger: '.main-visual-section',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 0.5,
+              },
+            }
+          );
+        }),
+        // scroll text
+        (document.body.style.overflow = 'auto');
+      const fandomScrolled = gsap.utils.toArray('.scrolable-text-box');
+      fandomScrolled.forEach((section: any, index) => {
+        const w = section.querySelector('.scroll-text-item');
+        const [x, xEnd] =
+          index % 2
+            ? ['1%', (w.scrollWidth - section.offsetWidth) * -1]
+            : [w.scrollWidth * -1, 0];
+        gsap.fromTo(
+          w,
+          { x },
+          {
+            x: xEnd,
+            scrollTrigger: {
+              trigger: section,
+              scrub: 0.06,
+              start: 'top +=850',
+              end: () => '+=' + (w.scrollWidth - section.offsetWidth),
+            },
+          }
+        );
+      });
     });
+    return () => {
+      fandomBanner.revert();
+    };
   }, []);
 
   return (
