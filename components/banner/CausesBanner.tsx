@@ -17,9 +17,9 @@ const CausesBanner: React.FC<ICausesBanner> = () => {
       setscroll(true);
     }
   };
-  window.addEventListener('scroll', scrollHandler);
 
   useLayoutEffect(() => {
+  window.addEventListener('scroll', scrollHandler);
     const causesBannerAnim = gsap.context(() => {
    // banner scroll scale bg
    const imgSclTest = gsap.utils.toArray('.main-test-modal-bg.two');
@@ -164,6 +164,7 @@ const CausesBanner: React.FC<ICausesBanner> = () => {
     });
     return () => {
       causesBannerAnim.revert();
+  window.addEventListener('scroll', scrollHandler);
     };
   }, [scroll]);
 
@@ -176,7 +177,7 @@ const CausesBanner: React.FC<ICausesBanner> = () => {
             <div className="banner-text-cont-left text_animation text-animetion w-full relative z-50">
               {/* <div className="custom-container 2xl:px-0 xl:px-0 laptop-x:px-12 md:px-5 sm:px-4"></div> */}
               <div className="heading-title-box h-full w-full block">
-                <h2 className="banner_title_animation active title_animation uppercase text-secondary banner-title mb-8 absolute top-0 left-0 z-30 text-fig-3x laptop-m:text-fig-xx sm:text-[40px] sm:leading-[40px] lg:text-[55px] sm:max-w-[360px] font-normal font-primary text-left">
+                <h2 className="banner-title banner2_title top-0 left-0 laptop-m:text-fig-xx sm:text-[40px] sm:leading-[40px] lg:text-[55px] sm:max-w-[360px] text-left">
                   Support Pakistani <br /> Flood Victims
                 </h2>
               </div>
@@ -220,10 +221,10 @@ const CausesBanner: React.FC<ICausesBanner> = () => {
               <span className="md:hidden lg:text-6xl laptop-m:text-fig-xx overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute right-[-175px] desktop-m:right-[-10px] lg:right-[-23px] bottom-[345px] laptop-x:bottom-[350px]">
                 SBT
               </span>
-              <h3 className="subtitle font-primary font-normal text-fig-32 text-left text-secondary uppercase mb-3 lg:text-[26px] md:text-fig-24">
+              <h3 className="banner-subtitle ">
                 Mint soulbound tokens
               </h3>
-              <p className="desc font-primary font-normal text-fig-base text-left text-secondary md:text-fig-base">
+              <p className="banner-desc">
                 Mint soulbound tokens and support Pakistani flood victims, the
                 world’s largest population of climate refugees. Proceeds go to
                 accredited organizations making a sustainable difference on the
@@ -231,7 +232,7 @@ const CausesBanner: React.FC<ICausesBanner> = () => {
               </p>
               <div className="banner-btn-box text-left flex mt-8 md:hidden">
                 <Link href="/">
-                  <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-3 hover:bg-neon hover:border-neon transition duration-150 ease-out">
+                  <a className="causes-btn">
                     Explore Causes
                   </a>
                 </Link>
@@ -248,7 +249,7 @@ const CausesBanner: React.FC<ICausesBanner> = () => {
             </div>
             <div className="scrolable-text-box">
               <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x laptop-x:text-fig-3x text-center uppercase lg:text-fig-xx sm:text-fig-40 mb-[29px]">
+                <h2 className="section-scrrolltext-title2 scrollable--title2">
                   soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound•soulbound
                 </h2>
               </div>

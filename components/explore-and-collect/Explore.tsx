@@ -270,7 +270,7 @@ const slickSettings:Settings = {
       <section className="explore-section w-full bg-primary pt-[132px] laptop-m:pt-[65px]  md:pt-8 pb-0 px-0 relative z-10 sm:bg-secondary overflow-hidden">
         <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="section-titlebox explore--title-box text-animetion mb-16 md:mb-4">
-            <h2 className="section-title title_animation font-primary font-normal text-fig-3x text-left text-secondary laptop-x:text-6xl md:text-fig-40 uppercase sm:text-primary">
+            <h2 className="section-title title_animation text-secondary uppercase sm:text-primary">
               Explore & collect
             </h2>
           </div>
@@ -309,12 +309,12 @@ const slickSettings:Settings = {
             </div>
             <div className="explore-btn-box text-center flex justify-center sm:flex sm:flex-col sm:px-4">
               <Link href="/">
-                <a className="p-5 font-primary uppercase font-normal text-fig-15 text-primary sm:mb-5 sm:mr-0 rounded-[40px] bg-secondary border border-solid border-secondary mr-5 hover:bg-neon hover:border-neon transition duration-150 ease-out md:bg-primary  md:text-secondary">
+                <a className="causes-btn md:max-w-full sm:mb-5 sm:mr-0 mr-5  md:bg-primary  md:text-secondary">
                   Explore Causes
                 </a>
               </Link>
               <Link href="/">
-                <a className="p-5 font-primary uppercase font-normal text-fig-15 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-purple hover:border-purple transition duration-150 ease-out md:border-primary md:text-primary ">
+                <a className="fandom-btn md:max-w-full bg-transparent md:border-primary md:text-primary ">
                 Explore fandoms
                 </a>
               </Link>

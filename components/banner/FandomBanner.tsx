@@ -94,7 +94,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
             {/* ------------------- */}
             <div className="banner-text-cont-left text_animation w-full relative z-50">
               <div className="heading-title-box h-full w-full block">
-                <h2 className="absolute md:relative md:text-left md:right-0 md:top-0 md:mb-0 right-[-277px] desktop-m:right-[-300px] laptop-m:right-[-350px] top-[108px] banner_title_animation uppercase text-secondary banner-title mb-8 z-30 text-fig-3x laptop-x:text-[80px] laptop-m:text-[65px] lg:text-[56px] sm:text-[40px] sm:leading-[40px] font-normal font-primary text-right">
+                <h2 className="md:relative md:text-left md:right-0 md:top-0 md:mb-0 right-[-277px] desktop-m:right-[-300px] laptop-m:right-[-350px] top-[108px]  laptop-x:text-[80px] laptop-m:text-[65px] lg:text-[56px] sm:text-[40px] sm:leading-[40px] banner2_title text-right">
                   NFTs for Fandoms
                 </h2>
               </div>
@@ -123,17 +123,17 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
               <span className="md:hidden lg:text-6xl overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute bottom-[420px] right-[-90px] desktop-m:right-0">
                 nft
               </span>
-              <h3 className="subtitle font-primary font-normal text-fig-32 text-left text-secondary uppercase mb-3 md:text-fig-24">
+              <h3 className="banner-subtitle">
                 Mint Experience NFTs
               </h3>
-              <p className="desc font-primary font-normal text-fig-base text-left text-secondary md:text-fig-base">
+              <p className="banner-desc">
                 Mint Experience NFTs of your favorite creators and have special
                 experiences with them, including real-life or Metaverse meet
                 ups, exclusive access, collabs, and much more!
               </p>
               <div className="banner-btn-box text-left flex mt-8 md:hidden">
                 <Link href="/">
-                  <a className="py-5 px-5 lg:px-3 uppercase sm:text-xs font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary mr-3 hover:bg-purple hover:border-purple transition duration-150 ease-out">
+                  <a className="causes-btn">
                     explore fandoms
                   </a>
                 </Link>
@@ -157,7 +157,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
 
             <div className="scrolable-text-box">
               <div className="scroll-text-item">
-                <h2 className="section-title whitespace-nowrap scrollable--title2 font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx sm:text-fig-40 mb-[29px]">
+                <h2 className="section-scrrolltext-title2 scrollable--title2">
                   nft•fandoms•nft•fandoms•nft•fandoms•nft•fandoms•nft•fandoms•nft•fandoms•nft•fandoms•
                 </h2>
               </div>

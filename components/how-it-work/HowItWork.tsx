@@ -224,7 +224,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
           <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
             <div className="scrolable-text-box how-it-work-title one">
               <div className="scroll-text-item">
-                <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx sm:text-fig-40 sm:tracking-[.05em]">
+                <h2 className="section-scrrolltext-title scrollable--title">
                   • how it works • how it works • how it works • how it works •
                   how it works • how it works • how it works • how it works •
                   how it works • how it works
@@ -236,7 +236,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
             <div className="custom-container 2xl:px-0 xl:px-12 desktop-m:12 laptop-x:px-12 laptop-m:px-10 md:px-5 sm:px-4">
               <div className="how-it-work-cont-wrapper">
                 <ul className="how-it-work-info-items">
-                  <li className="how-it-work-info-list info-list1 flex items-center flex-row gap-[190px] laptop-m:gap-x-16 lg:gap-[120px] md:gap-8 md:flex-col-reverse md:mb-0">
+                  <li className="how-it-work-info-list">
                     <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                       <div className="text-cont-box w-full max-w-[462px] relative">
                         <div className="info-num-icon absolute right-0 top-[-133px] laptop-m:top-[-90px] laptop-m:w-[150px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
@@ -276,7 +276,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
                     </div>
                   </li>
 
-                  <li className="how-it-work-info-list info-list2 flex items-center flex-row gap-[190px] laptop-m:gap-x-16 lg:gap-[120px] md:gap-8 md:flex-col-reverse md:mb-0">
+                  <li className="how-it-work-info-list">
                     <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                       <div className="text-cont-box w-full max-w-[462px] relative">
                         <div className="info-num-icon absolute right-0 top-[-133px] laptop-m:top-[-90px]  laptop-m:w-[150px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
@@ -316,7 +316,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
                     </div>
                   </li>
 
-                  <li className="how-it-work-info-list info-list3 flex items-center flex-row gap-[190px] laptop-m:gap-x-16 lg:gap-[120px] md:gap-8 md:flex-col-reverse md:mb-0">
+                  <li className="how-it-work-info-list">
                     <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                       <div className="text-cont-box w-full max-w-[462px] relative">
                         <div className="info-num-icon absolute right-[-30px] top-[-133px]  laptop-m:w-[150px] md:w-[130px] sm:w-[60px]  md:top-0 md:left-0 md:right-auto">

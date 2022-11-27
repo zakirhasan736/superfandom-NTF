@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import Image from 'next/image';
 export interface IFaq {
   id: number,
   question: string;
@@ -29,21 +29,31 @@ const Faq: React.FC<IFaq> = ({id, question, answer }) => {
             id={`faqs-accordion-${id}-wrapper`}
         >
             <div
-                className="d-flex flex-row justify-content-between align-items-center w-100"
+                className="font-primary font-normal accordion-title-text text-fig-32 text-left text-primary uppercase cursor-pointer md:text-fig-15"
                 onClick={() => setIsActive(!isActive)}
                 id={`faqs-accordion-${id}`}
             >
                 <div className="font-24 color-black">{question}</div>
                 {isActive ? (
-                    <img src="/images/close.png" alt={'arrow-up'} />
-                ) : (
-                    <img src="/images/plus.png" alt={'arrow-down'} />
-                )}
+            <Image
+              src="/images/faq-close.png"
+              alt={'close icon'}
+              width="33.42px"
+              height="33.42px"
+            />
+          ) : (
+            <Image
+              src="/images/faq-plus.png"
+              alt={'plus icon'}
+              width="32px"
+              height="32px"
+            />
+          )}
             </div>
             {isActive && (
                 <div
                     dangerouslySetInnerHTML={{ __html: answer }}
-                    className="text-left mt-3 font-20thin color-black"
+                    className="mt-[46px] font-primary font-normal text-left text-primary text-fig-24 md:text-fig-xs md:mt-4"
                 ></div>
             )}
         </div>

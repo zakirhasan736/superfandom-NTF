@@ -47,9 +47,9 @@ const Banner: React.FC<IBanner> = () => {
       setscroll(true);
     }
   };
-  window.addEventListener('scroll', scrollHandler);
 
   useLayoutEffect(() => {
+  window.addEventListener('scroll', scrollHandler);
     const homeBannerAnim = gsap.context(() => {
       // banner scroll scale bg
       const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
@@ -304,6 +304,7 @@ const Banner: React.FC<IBanner> = () => {
     });
     return () => {
       homeBannerAnim.revert();
+  window.addEventListener('scroll', scrollHandler);
     };
   }, [scroll]);
 
@@ -384,12 +385,12 @@ const Banner: React.FC<IBanner> = () => {
               </p>
               <div className="banner-btn-box text-left sm:justify-center gap-5 flex mt-8">
                 <Link href="/">
-                  <a className="py-5 px-5 lg:px-3 uppercase laptop-m:whitespace-nowrap sm:text-xs font-primary font-normal text-fig-15 lg:text-fig-12 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-neon hover:border-neon transition duration-150 ease-out sm:max-w-[153px] sm:w-full sm:text-center">
+                  <a className="causes-btn">
                     Explore Causes
                   </a>
                 </Link>
                 <Link href="/">
-                  <a className="py-5 px-5 lg:px-3 uppercase laptop-m:whitespace-nowrap sm:text-xs font-primary font-normal text-fig-15 lg:text-fig-12 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-purple hover:border-purple transition duration-150 ease-out sm:max-w-[153px] sm:w-full sm:text-center">
+                  <a className="fandom-btn">
                     explore fandoms
                   </a>
                 </Link>

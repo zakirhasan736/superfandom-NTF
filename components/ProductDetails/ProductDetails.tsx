@@ -77,13 +77,13 @@ const ProductDetails: NextPage<any> = () => {
                         </h3>
                         <div className="product-price-btn-box text-center flex sm:flex sm:flex-col sm:px-0">
                           <Link href="/">
-                            <a className="p-5 font-primary uppercase font-normal text-fig-15 text-secondary sm:mb-5 sm:mr-0 rounded-[40px] bg-primary border border-solid border-primary mr-5 hover:bg-transparent hover:text-primary transition max-w-[180px] w-full duration-150 ease-out  md:hover:text-primary md:hover:border-primary md:text-secondary md:max-w-[100%]">
+                            <a className="primary-btn">
                               buy now
                             </a>
                           </Link>
                           <button
                             onClick={() => setOpen(!open)}
-                            className="p-5 font-primary uppercase font-normal text-fig-15 text-primary  rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out md:border-primary max-w-[180px] w-full md:text-primary md:hover:bg-primary md:hover:text-secondary md:max-w-[100%]"
+                            className="secondary-btn"
                           >
                             make offer
                           </button>
