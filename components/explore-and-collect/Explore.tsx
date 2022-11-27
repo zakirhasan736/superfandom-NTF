@@ -12,7 +12,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const Explore: NextPage<any> = () => {
-  const exploreRef = useRef();
+  const exploreRef = useRef<HTMLDivElement | null>(null)
   const [tokenItem, setTokenItem] = useState<any>([]);
   let data = [
     {

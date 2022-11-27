@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const TextImgSiniped: NextPage<any> = () => {
-const textImgRef = useRef();
+const textImgRef = useRef<HTMLDivElement | null>(null);
   useLayoutEffect(() => {
     const textImgScroll = gsap.context(() => {
       document.body.style.overflow = 'auto';

@@ -7,7 +7,7 @@ import StepCard from '../Card/StepCards/StepCard';
 gsap.registerPlugin(ScrollTrigger);
 
 const HowItWork2: NextPage<any> = ({ pageName }) => {
-  const howWorkRef = useRef();
+  const howWorkRef = useRef<HTMLDivElement | null>(null);
   let StepCadItems1 = [
     {
       id: 1,
