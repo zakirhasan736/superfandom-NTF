@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import React, { useLayoutEffect } from 'react';
+import React, { useRef,useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import StepCard from '../Card/StepCards/StepCard';
@@ -7,6 +7,7 @@ import StepCard from '../Card/StepCards/StepCard';
 gsap.registerPlugin(ScrollTrigger);
 
 const HowItWork2: NextPage<any> = ({ pageName }) => {
+  const howWorkRef = useRef();
   let StepCadItems1 = [
     {
       id: 1,
@@ -103,7 +104,7 @@ const HowItWork2: NextPage<any> = ({ pageName }) => {
       });
   
     })
- })
+ },howWorkRef)
  return () => {
   howItWorkScroll2.revert();
 };
@@ -111,7 +112,7 @@ const HowItWork2: NextPage<any> = ({ pageName }) => {
   });
   return (
     <>
-      <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
+      <section ref={howWorkRef} className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden">
         <div className="section-title-box how-it-work-section-box relative w-full sm:mb-[60px]">
           <div className="how-it-work-modal-img min-w-[1920px] w-full h-[660px] lg:h-[450px] md:h-[300px] md:min-w-full md:w-full object-cover">
             <img

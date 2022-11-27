@@ -1,8 +1,8 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useRef,useLayoutEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import Lottie from 'react-lottie';
+import Lottie from "lottie-react";
 import Animation1 from '../../public/lottie_files/Comp_1.json';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,11 +13,11 @@ export interface IFandomBanner {
 }
 
 const FandomBanner: React.FC<IFandomBanner> = () => {
+  const fandomRef = useRef();
   useLayoutEffect(() => {
     const fandomBanner = gsap.context(() => {
       // banner scroll scale bg
       const imgSclTest = gsap.utils.toArray('.main-test-modal-bg');
-
       let viewPort = gsap.matchMedia();
       viewPort.add('(min-width:768px)', () => {
         gsap.fromTo(
@@ -58,7 +58,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
           );
         }),
         // scroll text
-        (document.body.style.overflow = 'auto');
+      (document.body.style.overflow = 'auto');
       const fandomScrolled = gsap.utils.toArray('.scrolable-text-box');
       fandomScrolled.forEach((section: any, index) => {
         const w = section.querySelector('.scroll-text-item');
@@ -80,7 +80,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
           }
         );
       });
-    });
+    },fandomRef);
     return () => {
       fandomBanner.revert();
     };
@@ -88,7 +88,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
 
   return (
     <>
-      <section className="main-visual-section bg-primary pt-[274px] md:pt-56 sm:pt-40 relative overflow-hidden">
+      <section ref={fandomRef} className="main-visual-section bg-primary pt-[274px] md:pt-56 sm:pt-40 relative overflow-hidden">
         <div className="custom-container lg:container md:container sm:container relative 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="main-visual-wrapper flex items-center justify-between md:block pb-[300px] laptop-m:pb-[200px] lg:pb-[160px] md:pb-16 relative">
             {/* ------------------- */}
@@ -102,16 +102,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
               <div className="banner-modal-imgbox lotties--anim w-full z-20 relative flex justify-start md:justify-center">
                 <div className="banner-anim-modal lottie-anim-modal md:max-w-[353px] sm:w-[253px] sm:h-[220px]">
                   <Lottie
-                    options={{
-                      loop: true,
-                      autoplay: true,
-                      animationData: Animation1,
-                      rendererSettings: {
-                        preserveAspectRatio: 'xMidYMid slice',
-                      },
-                    }}
-                    height={520}
-                    width={505}
+                    animationData={Animation1} loop={true}
                   />
                 </div>
               </div>

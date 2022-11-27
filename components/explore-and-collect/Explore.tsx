@@ -1,4 +1,4 @@
-import React, { useEffect, useState , useLayoutEffect} from 'react';
+import React, { useEffect, useState , useRef,useLayoutEffect} from 'react';
 import Slider from 'react-slick';
 import { Settings } from "react-slick";
 import Link from 'next/link';
@@ -12,6 +12,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const Explore: NextPage<any> = () => {
+  const exploreRef = useRef();
   const [tokenItem, setTokenItem] = useState<any>([]);
   let data = [
     {
@@ -230,13 +231,10 @@ const animTextExplor = gsap.utils.toArray('.explore--title-box');
         stagger: -0.2,
       }),
     });
-  })
+  })},exploreRef);
   return () => {
     exploreAnim.revert();
-  };
-  });
-  
-  
+  }; 
 }, []);
 
 
@@ -267,7 +265,7 @@ const slickSettings:Settings = {
 
   return (
     <>
-      <section className="explore-section w-full bg-primary pt-[132px] laptop-m:pt-[65px]  md:pt-8 pb-0 px-0 relative z-10 sm:bg-secondary overflow-hidden">
+      <section ref={exploreRef} className="explore-section w-full bg-primary pt-[132px] laptop-m:pt-[65px]  md:pt-8 pb-0 px-0 relative z-10 sm:bg-secondary overflow-hidden">
         <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-5 sm:px-4">
           <div className="section-titlebox explore--title-box text-animetion mb-16 md:mb-4">
             <h2 className="section-title title_animation font-primary font-normal text-fig-3x text-left text-secondary laptop-x:text-6xl md:text-fig-40 uppercase sm:text-primary">
