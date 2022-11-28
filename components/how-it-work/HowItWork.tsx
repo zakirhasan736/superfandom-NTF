@@ -245,7 +245,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
                   <li className="how-it-work-info-list">
                     <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                       <div className="text-cont-box w-full max-w-[462px] relative">
-                        <div className="info-num-icon absolute right-0 top-[-133px] laptop-m:top-[-90px] laptop-m:w-[150px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
+                        <div className="info-num-icon  right-0 laptop-m:top-[-90px]">
                           <Image
                             src="/images/Subtract-num-1.png"
                             alt="superfandom info-item-num-img"
@@ -255,16 +255,16 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
                           />
                         </div>
                         <div className="info-text-box md:pl-36 sm:pl-20">
-                          <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase md:text-fig-40 sm:text-fig-32 md:mb-4">
+                          <h2 className="title">
                             Mint <br /> soulbound
                           </h2>
-                          <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0 md:text-fig-base">
+                          <p className="desc">
                             Mint soulbound tokens of the causes you care about
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div className="how-it-work-anim-cont w-full max-w-[505px] min-w-[345px] md:max-w-[345px] relative sm:mb-8 md:text-right md:flex md:justify-center">
+                    <div className="how-it-work-anim-cont max-w-[505px]  sm:mb-8 md:text-right md:flex md:justify-center">
                       <Lottie animationData={Animation1} loop={true} />
                     </div>
                   </li>
@@ -272,7 +272,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
                   <li className="how-it-work-info-list">
                     <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                       <div className="text-cont-box w-full max-w-[462px] relative">
-                        <div className="info-num-icon absolute right-0 top-[-133px] laptop-m:top-[-90px]  laptop-m:w-[150px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto">
+                        <div className="info-num-icon  right-0  laptop-m:top-[-90px]">
                           <Image
                             src="/images/Subtract-num-2.png"
                             alt="superfandom info-item-num-img"
@@ -282,24 +282,23 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
                           />
                         </div>
                         <div className="info-text-box md:pl-36 sm:pl-20">
-                          <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase md:text-fig-40 sm:text-fig-32 md:mb-4">
+                          <h2 className="title">
                             forever <br /> bound
                           </h2>
-                          <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0 md:text-fig-base">
+                          <p className="desc">
                             Soulbound tokens are forever bound to your wallet
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div className="how-it-work-anim-cont w-full max-w-[762px] min-w-[345px] md:max-w-[345px] relative flex justify-end md:justify-center sm:mb-8">
+                    <div className="how-it-work-anim-cont max-w-[762px]  flex justify-end md:justify-center sm:mb-8">
                       <Lottie animationData={Animation2} loop={true} />
                     </div>
                   </li>
-
                   <li className="how-it-work-info-list">
                     <div className="how-it-work-info-cont w-full flex justify-end md:justify-start">
                       <div className="text-cont-box w-full max-w-[462px] relative">
-                        <div className="info-num-icon absolute right-[-30px] top-[-133px]  laptop-m:w-[150px] md:w-[130px] sm:w-[60px]  md:top-0 md:left-0 md:right-auto">
+                        <div className="info-num-icon right-[-30px]">
                           <Image
                             src="/images/Subtract-num-3.png"
                             alt="superfandom info-item-num-img"
@@ -309,16 +308,16 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
                           />
                         </div>
                         <div className="info-text-box md:pl-36 sm:pl-20">
-                          <h2 className="title font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase md:text-fig-40 sm:text-fig-32 md:mb-4">
+                          <h2 className="title">
                             increase <br /> reputation
                           </h2>
-                          <p className="desc font-primary font-normal text-fig-24 text-left text-secondary mb-0 md:text-fig-base">
+                          <p className="desc">
                             Soulbound tokens you own increase your reputation
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div className="how-it-work-anim-cont w-full max-w-[722px] min-w-[345px] md:max-w-[345px] relative flex justify-center mb-8">
+                    <div className="how-it-work-anim-cont max-w-[722px]  flex justify-center mb-8">
                       <Lottie animationData={Animation3} loop={true} />
                     </div>
                   </li>

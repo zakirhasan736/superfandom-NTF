@@ -24,26 +24,26 @@ const ProductDetails2: NextPage<any> = () => {
                   />
                 </div>
                 <div className="product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] md:mb-8 sm:hidden">
-                  <h3 className="product-cont-title text-primary text-left text-fig-24 font-primary font-normal mb-4 pb-4 border-b border-secondary sm:text-fig-base">
+                  <h3 className="product-cont-title mb-4">
                     Description
                   </h3>
                   <div className="description-list-box">
                     <div className="desceiption-details mb-4">
-                      <h4 className="list-title mb-4  font-primary font-normal text-left text-fig-15 text-primary uppercase md:mb-2 sm:text-fig-15">
+                      <h4 className="list-title mb-4">
                         <span className="mr-4 text-darkgray">by</span> Doctors
                         Without Borders
                       </h4>
-                      <p className="list-desc text-primary text-left text-fig-4 font-primary font-normal md:text-fig-xs">
+                      <p className="list-desc">
                         The holder of this soulbound token will have an
                         exclusive meetup with Kumail, where they get to talk to
                         Kumail about any topic for up to 10 minutes
                       </p>
                     </div>
                     <div className="desceiption-details mb-0">
-                      <h4 className="list-title mb-4  font-primary font-normal text-left text-fig-15 text-primary uppercase md:mb-2 sm:text-fig-15">
+                      <h4 className="list-title mb-4">
                         <span className="mr-4 text-darkgray">note</span>
                       </h4>
-                      <p className="list-desc text-primary text-left text-fig-4 font-primary font-normal md:text-fig-xs">
+                      <p className="list-desc">
                         The holder of this soulbound token will have an
                         exclusive meetup with Kumail, where they get to talk to
                         Kumail about any topic for up to 10 minutes
@@ -55,12 +55,12 @@ const ProductDetails2: NextPage<any> = () => {
 
               <div className="product-details-right-cont w-full">
                 <div className="product-cont-box desc-box bg-lightgray p-10 md:p-5 rounded-[20px] mb-8 w-full md:mb-4">
-                  <h3 className="product-cont-title text-primary text-left text-fig-24 sm:text-fig-base font-primary font-normal mb-4 pb-4 border-b border-secondary">
+                  <h3 className="mb-4 product-cont-title">
                     Mint price
                   </h3>
                   <div className="price-list-box">
                     <div className="price-details mb-4 sm:mb-0">
-                      <h4 className="list-title mb-4  font-primary font-normal text-left text-fig-15 md:text-fig-12 md:mb-2 text-primary uppercase">
+                      <h4 className="list-title mb-4 font-primary font-normal text-left text-fig-15 md:text-fig-12 md:mb-2 text-primary uppercase">
                         <span className="mr-4 text-darkgray">
                           Current price
                         </span>
@@ -112,20 +112,20 @@ const ProductDetails2: NextPage<any> = () => {
                       <table className="offer-table w-full">
                         <thead>
                           <tr>
-                            <th className="border-b uppercase  border-secondary sm:text-fig-12 font-primary font-normal text-darkgray text-fig-15 text-left py-2">
+                            <th className="border-b uppercase table-heading">
                               minted
                             </th>
-                            <th className="border-b uppercase  border-secondary sm:text-fig-12 font-primary font-normal text-darkgray text-fig-15 text-left py-2">
+                            <th className="border-b uppercase table-heading">
                               Editions
                             </th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td className="font-primary font-normal text-primary text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="text-primary table-details">
                               82,377 STX
                             </td>
-                            <td className="font-primary font-normal text-primary text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="text-primary table-details">
                               2 hours
                             </td>
                           </tr>
@@ -136,26 +136,26 @@ const ProductDetails2: NextPage<any> = () => {
                 </div>
                 {/* ===mobile view for details layout */}
                 <div className="product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] hidden sm:block">
-                  <h3 className="product-cont-title text-primary text-left text-fig-24 font-primary font-normal mb-4 pb-4 border-b border-secondary sm:text-fig-base">
+                  <h3 className="mb-4 product-cont-title"> 
                     Description
                   </h3>
                   <div className="description-list-box">
                     <div className="desceiption-details mb-4">
-                      <h4 className="list-title mb-4  font-primary font-normal text-left text-fig-15 text-primary uppercase md:mb-2 sm:text-fig-15">
+                      <h4 className="list-title mb-4">
                         <span className="mr-4 text-darkgray">by</span> Doctors
                         Without Borders
                       </h4>
-                      <p className="list-desc text-primary text-left text-fig-4 font-primary font-normal md:text-fig-xs">
+                      <p className="list-desc">
                         The holder of this soulbound token will have an
                         exclusive meetup with Kumail, where they get to talk to
                         Kumail about any topic for up to 10 minutes
                       </p>
                     </div>
                     <div className="desceiption-details mb-0">
-                      <h4 className="list-title mb-4  font-primary font-normal text-left text-fig-15 text-primary uppercase md:mb-2 sm:text-fig-15">
+                      <h4 className="list-title mb-4">
                         <span className="mr-4 text-darkgray">note</span>
                       </h4>
-                      <p className="list-desc text-primary text-left text-fig-4 font-primary font-normal md:text-fig-xs">
+                      <p className="list-desc">
                         The holder of this soulbound token will have an
                         exclusive meetup with Kumail, where they get to talk to
                         Kumail about any topic for up to 10 minutes
@@ -189,15 +189,15 @@ const ProductDetails2: NextPage<any> = () => {
               Pay via
             </h2>
             <div className="hightlight-wallet-box w-full text-center flex justify-center py-8 border-t-[1px] border-b-[1px] border-darkgray">
-              <div className="wallet-box flex items-center justify-between pl-5 py-5 border-[1px] border-primary rounded-[40px] max-w-[460px] w-full relative">
-                <h4 className="wallet-name text-fig-15 text-primary uppercase font-normal font-primary sm:text-fig-12">
+              <div className="wallet-box max-w-[460px] ">
+                <h4 className="wallet-name">
                   hiro wallet
                 </h4>
                 <Link
                   href="/"
                   className="wallet-link-button text-fig-15 px-5 max-w-[180px] w-full bg-primary"
                 >
-                  <a className="wallet-link-button uppercase text-fig-15 px-5 sm:text-fig-12 font-normal font-primary max-w-[180px] sm:max-w-[123px] sm:leading-[57px] sm:h-[59px] w-full bg-transparent text-primary border-l-[1px] border-primary hover:bg-primary rounded-[40px] hover:text-secondary block text-center absolute h-[63px] leading-[63px] right-0 top-0">
+                  <a className="wallet-link-button">
                     connect
                   </a>
                 </Link>
@@ -210,57 +210,57 @@ const ProductDetails2: NextPage<any> = () => {
             </p>
           <div className="wallet-items-wrapper flex justify-center">
               <div className="wallet-items-box max-w-[460px] w-full">
-                <div className="wallet-box flex items-center mb-4 justify-between pl-5 py-5 border-[1px] border-primary rounded-[40px] w-full relative">
-                  <h4 className="wallet-name text-fig-15 text-primary uppercase font-normal font-primary sm:text-fig-12">
+                <div className="wallet-box mb-4">
+                  <h4 className="wallet-name">
                   metamask
                   </h4>
                   <Link
                     href="/"
                     className="wallet-link-button text-fig-15 px-5 max-w-[180px] w-full bg-primary"
                   >
-                    <a className="wallet-link-button uppercase text-fig-15 px-5 sm:text-fig-12 font-normal font-primary max-w-[180px] sm:max-w-[123px] sm:leading-[57px] sm:h-[59px] w-full bg-transparent text-primary border-l-[1px] border-primary hover:bg-primary rounded-[40px] hover:text-secondary block text-center absolute h-[63px] leading-[63px] right-0 top-0">
+                    <a className="wallet-link-button">
                       connect
                     </a>
                   </Link>
                 </div>
                 {/* ---------- */}
-                <div className="wallet-box flex items-center mb-4 justify-between pl-5 py-5 border-[1px] border-primary rounded-[40px] w-full relative">
-                  <h4 className="wallet-name text-fig-15 text-primary uppercase font-normal font-primary sm:text-fig-12">
+                <div className="wallet-box mb-4">
+                  <h4 className="wallet-name">
                   Coinbase Commerce
                   </h4>
                   <Link
                     href="/"
                     className="wallet-link-button text-fig-15 px-5 max-w-[180px] w-full bg-primary"
                   >
-                    <a className="wallet-link-button uppercase text-fig-15 px-5 sm:text-fig-12 font-normal font-primary max-w-[180px] sm:max-w-[123px] sm:leading-[57px] sm:h-[59px] w-full bg-transparent text-primary border-l-[1px] border-primary hover:bg-primary rounded-[40px] hover:text-secondary block text-center absolute h-[63px] leading-[63px] right-0 top-0">
+                    <a className="wallet-link-button">
                       connect
                     </a>
                   </Link>
                 </div>
                 {/* ---------------- */}
-                <div className="wallet-box flex items-center mb-4 justify-between pl-5 py-5 border-[1px] border-primary rounded-[40px] w-full relative">
-                  <h4 className="wallet-name text-fig-15 text-primary uppercase font-normal font-primary sm:text-fig-12">
+                <div className="wallet-box mb-4">
+                  <h4 className="wallet-name">
                   Coinbase Commerce
                   </h4>
                   <Link
                     href="/"
                     className="wallet-link-button text-fig-15 px-5 max-w-[180px] w-full bg-primary"
                   >
-                     <a className="wallet-link-button uppercase text-fig-15 px-5 sm:text-fig-12 font-normal font-primary max-w-[180px] sm:max-w-[123px] sm:leading-[57px] sm:h-[59px] w-full bg-transparent text-primary border-l-[1px] border-primary hover:bg-primary rounded-[40px] hover:text-secondary block text-center absolute h-[63px] leading-[63px] right-0 top-0">
+                     <a className="wallet-link-button">
                       connect
                     </a>
                   </Link>
                 </div>
                 {/* ------------------ */}
-                <div className="wallet-box flex items-center mb-0 justify-between pl-5 py-5 border-[1px] border-primary rounded-[40px] w-full relative">
-                  <h4 className="wallet-name text-fig-15 text-primary uppercase font-normal font-primary sm:text-fig-12">
+                <div className="wallet-box mb-0 ">
+                  <h4 className="wallet-name">
                   Visa/Mastercard
                   </h4>
                   <Link
                     href="/"
                     className="wallet-link-button text-fig-15 px-5 max-w-[180px] w-full bg-primary"
                   >
-                       <a className="wallet-link-button uppercase text-fig-15 px-5 sm:text-fig-12 font-normal font-primary max-w-[180px] sm:max-w-[123px] sm:leading-[57px] sm:h-[59px] w-full bg-transparent text-primary border-l-[1px] border-primary hover:bg-primary rounded-[40px] hover:text-secondary block text-center absolute h-[63px] leading-[63px] right-0 top-0">
+                       <a className="wallet-link-button">
                       connect
                     </a>
                   </Link>

@@ -25,26 +25,26 @@ const ProductDetails: NextPage<any> = () => {
                   />
                 </div>
                 <div className="product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] sm:mb-4 sm:hidden">
-                  <h3 className="product-cont-title text-primary text-left text-fig-24 font-primary font-normal mb-4 pb-4 border-b border-secondary sm:text-fig-base">
+                  <h3 className="mb-4 product-cont-title">
                     Description
                   </h3>
                   <div className="description-list-box">
                     <div className="desceiption-details mb-4">
-                      <h4 className="list-title mb-4  font-primary font-normal text-left text-fig-15 text-primary uppercase md:mb-2 sm:text-fig-15">
+                      <h4 className="list-title mb-4">
                         <span className="mr-4 text-darkgray">by</span> Doctors
                         Without Borders
                       </h4>
-                      <p className="list-desc text-primary text-left text-fig-4 font-primary font-normal md:text-fig-xs">
+                      <p className="list-desc">
                         The holder of this soulbound token will have an
                         exclusive meetup with Kumail, where they get to talk to
                         Kumail about any topic for up to 10 minutes
                       </p>
                     </div>
                     <div className="desceiption-details mb-0">
-                      <h4 className="list-title mb-4  font-primary font-normal text-left text-fig-15 text-primary uppercase md:mb-2 sm:text-fig-15">
+                      <h4 className="list-title mb-4">
                         <span className="mr-4 text-darkgray">note</span>
                       </h4>
-                      <p className="list-desc text-primary text-left text-fig-4 font-primary font-normal md:text-fig-xs">
+                      <p className="list-desc">
                         The holder of this soulbound token will have an
                         exclusive meetup with Kumail, where they get to talk to
                         Kumail about any topic for up to 10 minutes
@@ -56,7 +56,7 @@ const ProductDetails: NextPage<any> = () => {
 
               <div className="product-details-right-cont w-full">
                 <div className="product-cont-box desc-box bg-lightgray p-10 lg:p-5 rounded-[20px] mb-8 md:mb-4 w-full">
-                  <h3 className="product-cont-title text-primary text-left text-fig-24 font-primary  sm:text-fig-base font-normal mb-4 pb-4 border-b border-secondary">
+                  <h3 className="product-cont-title  mb-4">
                     Sale in progress
                   </h3>
                   <div className="price-list-box">
@@ -100,7 +100,7 @@ const ProductDetails: NextPage<any> = () => {
                       : 'h-20 sm:h-16 transition-all sm:mb-4 duration-300 ease-in-out'
                   } product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] w-full overflow-hidden transition-all duration-300 ease-in-out`}
                 >
-                  <div className="product-cont-title text-primary text-left text-fig-24 sm:text-fig-base font-primary font-normal mb-0 pb-4 border-b border-secondary flex items-center justify-between">
+                  <div className=" mb-0 product-cont-title flex items-center justify-between">
                     <h3>Offers</h3>
                     <div
                       onClick={() => setMore(!more)}
@@ -116,59 +116,59 @@ const ProductDetails: NextPage<any> = () => {
                       <table className="offer-table w-full">
                         <thead>
                           <tr>
-                            <th className="border-b uppercase border-secondary font-primary font-normal text-darkgray text-fig-15 text-left py-2  sm:text-fig-12">
+                            <th className="uppercase table-heading">
                               Value
                             </th>
-                            <th className="border-b uppercase border-secondary font-primary font-normal text-darkgray text-fig-15 text-left py-2  sm:text-fig-12">
+                            <th className="uppercase table-heading">
                               Expires in
                             </th>
-                            <th className="border-b uppercase border-secondary font-primary font-normal text-darkgray text-fig-15 text-left py-2  sm:text-fig-12">
+                            <th className="uppercase table-heading">
                               From
                             </th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td className="border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="table-details text-primary  border-b border-secondary">
                               82,377 STX
                             </td>
-                            <td className="border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="table-details text-primary  border-b border-secondary">
                               2 hours
                             </td>
-                            <td className="border-b border-secondary font-primary font-normal text-skyblue text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="table-details text-skyblue border-b border-secondary">
                               boredorangutan
                             </td>
                           </tr>
                           <tr>
-                            <td className="border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="table-details text-primary  border-b border-secondary">
                               54,918 STX
                             </td>
-                            <td className="border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="table-details text-primary  border-b border-secondary">
                               3 days
                             </td>
-                            <td className="border-b border-secondary font-primary font-normal text-skyblue text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="table-details text-skyblue border-b border-secondary">
                               mhb11
                             </td>
                           </tr>
                           <tr>
-                            <td className="border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="table-details text-primary  border-b border-secondary">
                               24,614 STX
                             </td>
-                            <td className="border-b border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="table-details text-primary  border-b border-secondary">
                               48 mins
                             </td>
-                            <td className="border-b border-secondary font-primary font-normal text-skyblue text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="table-details text-skyblue border-b border-secondary">
                               crypto_phunk
                             </td>
                           </tr>
                           <tr>
-                            <td className="border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="table-details text-primary">
                               2,746 STX
                             </td>
-                            <td className="border-secondary font-primary font-normal text-primary text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="table-details text-primary">
                               3 weeks
                             </td>
-                            <td className="font-primary font-normal text-skyblue text-fig-15 text-left py-2 sm:text-fig-xs">
+                            <td className="table-details text-skyblue">
                               randomd00d
                             </td>
                           </tr>
@@ -179,26 +179,26 @@ const ProductDetails: NextPage<any> = () => {
                 </div>
                 {/* ===mobile view for details layout */}
                 <div className="product-cont-box desc-box bg-lightgray p-10 lg:p-5 mb-0 rounded-[20px] hidden sm:block">
-                  <h3 className="product-cont-title text-primary text-left text-fig-24 font-primary font-normal mb-4 pb-4 border-b border-secondary sm:text-fig-base">
+                  <h3 className="mb-4 product-cont-title">
                     Description
                   </h3>
                   <div className="description-list-box">
                     <div className="desceiption-details mb-4">
-                      <h4 className="list-title mb-4  font-primary font-normal text-left text-fig-15 text-primary uppercase md:mb-2 sm:text-fig-15">
+                      <h4 className="list-title mb-4">
                         <span className="mr-4 text-darkgray">by</span> Doctors
                         Without Borders
                       </h4>
-                      <p className="list-desc text-primary text-left text-fig-4 font-primary font-normal md:text-fig-xs">
+                      <p className="list-desc">
                         The holder of this soulbound token will have an
                         exclusive meetup with Kumail, where they get to talk to
                         Kumail about any topic for up to 10 minutes
                       </p>
                     </div>
                     <div className="desceiption-details mb-0">
-                      <h4 className="list-title mb-4  font-primary font-normal text-left text-fig-15 text-primary uppercase md:mb-2 sm:text-fig-15">
+                      <h4 className="list-title mb-4">
                         <span className="mr-4 text-darkgray">note</span>
                       </h4>
-                      <p className="list-desc text-primary text-left text-fig-4 font-primary font-normal md:text-fig-xs">
+                      <p className="list-desc">
                         The holder of this soulbound token will have an
                         exclusive meetup with Kumail, where they get to talk to
                         Kumail about any topic for up to 10 minutes

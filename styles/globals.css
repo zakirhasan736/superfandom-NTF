@@ -200,6 +200,19 @@
   @apply font-primary font-normal text-fig-5x text-center uppercase laptop-x:text-fig-3x lg:text-fig-xx sm:text-fig-40 mb-[29px] whitespace-nowrap ;
  }
 
+ .info-num-icon{
+  @apply absolute top-[-133px] laptop-m:w-[150px] md:w-[130px] sm:w-[60px] md:top-0 md:left-0 md:right-auto !important;
+ }
+ .how-it-work-anim-cont{
+ @apply w-full min-w-[345px] md:max-w-[345px] relative !important;
+ }
+ .info-text-box .title{
+  @apply font-primary font-normal text-fig-xx text-left mb-8 text-secondary uppercase md:text-fig-40 sm:text-fig-32 md:mb-4;
+ }
+ .info-text-box .desc{
+  @apply font-primary font-normal text-fig-24 text-left text-secondary mb-0 md:text-fig-base;
+ }
+
 /* banner styles componant */
 .banner2_title{
   @apply absolute uppercase text-secondary  font-normal font-primary mb-8 z-30  text-fig-3x;
@@ -261,6 +274,33 @@
 
 .link-text{
   @apply text-fig-15 uppercase text-center lg:text-fig-12 md:text-fig-xs font-primary font-normal;
+}
+
+/* details pages styles  */
+.offer-table .table-heading{
+  @apply border-b border-secondary font-primary font-normal text-darkgray text-fig-15 text-left py-2  sm:text-fig-12;
+}
+.offer-table .table-details{
+  @apply font-primary font-normal  text-fig-15 text-left py-2 sm:text-fig-xs;
+}
+
+.product-cont-title{
+  @apply text-primary text-left text-fig-24 sm:text-fig-base font-primary font-normal pb-4 border-b border-secondary;
+}
+.desceiption-details .list-title{
+  @apply font-primary font-normal text-left text-fig-15 text-primary uppercase md:mb-2 sm:text-fig-15;
+}
+.desceiption-details .list-desc{
+  @apply text-primary text-left text-fig-base font-primary font-normal md:text-fig-xs;
+}
+.wallet-box .wallet-name{
+  @apply text-fig-15 text-primary uppercase font-normal font-primary sm:text-fig-12;
+}
+.wallet-link-button {
+  @apply uppercase text-fig-15 px-5 sm:text-fig-12 font-normal font-primary max-w-[180px] sm:max-w-[123px] sm:leading-[57px] sm:h-[59px] w-full bg-transparent text-primary border-l-[1px] border-primary hover:bg-primary rounded-[40px] hover:text-secondary block text-center absolute h-[63px] leading-[63px] right-0 top-0;
+}
+.wallet-box{
+  @apply flex items-center justify-between pl-5 py-5 border-[1px] border-primary rounded-[40px] w-full relative;
 }
 }
 

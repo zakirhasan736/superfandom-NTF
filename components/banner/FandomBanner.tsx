@@ -111,7 +111,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
 
             {/* ------------- */}
             <div className="banner-text-cont-right w-[560px] lg:w-[590px] relative z-50 mt-52 md:mt-0 mr-10 desktop-m:mr-0  md:pt-0 sm:pt-[215px] lg:mr-0 sm:mr-[-35px] md:w-full">
-              <span className="md:hidden lg:text-6xl overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute bottom-[420px] right-[-90px] desktop-m:right-0">
+              <span className="banner-pin-text overly-text-top overly-text-bottom bottom-[420px] right-[-90px] desktop-m:right-0">
                 nft
               </span>
               <h3 className="banner-subtitle">
