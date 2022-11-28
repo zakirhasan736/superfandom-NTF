@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import React, { useRef,useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import Lottie from "lottie-react";
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -12,7 +12,7 @@ import StepCard from '../Card/StepCards/StepCard';
 gsap.registerPlugin(ScrollTrigger);
 
 const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
-  const howworkRef = useRef();
+  // const howItWorkRef = useRef();
   let StepCadItems = [
     {
       id: 1,
@@ -33,36 +33,41 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
       desc: 'Soulbound tokens you own increase your reputation',
     },
   ];
-
+  useLayoutEffect(() => {
+    const  howItWorkTextScroll = gsap.context(() => {
+      document.body.style.overflow = 'auto';
+      const howItWorkScrolled = gsap.utils.toArray(
+        '.scrolable-text-box.how-it-work-title.one'
+      );
+      howItWorkScrolled.forEach((section: any, index) => {
+        const w = section.querySelector('.scroll-text-item');
+        const [x, xEnd] =
+          index % 2
+            ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
+            : [w.scrollWidth * -1, 0];
+        gsap.fromTo(
+          w,
+          { x, y: 0 },
+          {
+            x: xEnd,
+            // duration: 10,
+            scrollTrigger: {
+              trigger: section,
+              scrub: 0.5,
+              start: 'top +=1650',
+              end: () => '+=' + (w.scrollWidth - section.offsetWidth),
+            },
+            y: 0,
+          }
+        );
+      });
+    });
+    return () => {
+      howItWorkTextScroll.revert();
+    };
+  })
  useLayoutEffect(() => {
   const  howItWorkScroll = gsap.context(() => {
-    document.body.style.overflow = 'auto';
-    const howItWorkScrolled = gsap.utils.toArray(
-      '.scrolable-text-box.how-it-work-title.one'
-    );
-    howItWorkScrolled.forEach((section: any, index) => {
-      const w = section.querySelector('.scroll-text-item');
-      const [x, xEnd] =
-        index % 2
-          ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
-          : [w.scrollWidth * -1, 0];
-      gsap.fromTo(
-        w,
-        { x, y: 0 },
-        {
-          x: xEnd,
-          // duration: 10,
-          scrollTrigger: {
-            trigger: section,
-            scrub: 0.5,
-            start: 'top top',
-            end: () => '+=850' + (w.scrollWidth - section.offsetWidth),
-          },
-          y: 0,
-        }
-      );
-    });
-
     const workInfoItems = gsap.utils.toArray('.how-it-work-info-items');
     workInfoItems.forEach((section: any) => {
       const infoLine = section.querySelector('.how-it-work-info-list');
@@ -103,16 +108,15 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
           end: 'top',
         });
       });
-  },howworkRef);
+  });
   return () => {
     howItWorkScroll.revert();
   };
   }, []);
 
   useLayoutEffect(() => {
+    const howItworkInfoFade = gsap.utils.toArray('.how-it-work-info-list');
     const howItWorkAnim = gsap.context(() =>{
-      const howItworkInfoFade = gsap.utils.toArray('.how-it-work-info-list');
-
       let viewPort = gsap.matchMedia();
       viewPort.add('(min-width:768px)', () => {
         howItworkInfoFade.forEach((section: any) => {
@@ -128,8 +132,9 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
   
           ScrollTrigger.create({
             trigger: section,
-            start: 'top 60%',
-            end: 'bottom 30%',
+            start: 'top +=100',
+            end: 'bottom +=100',
+            markers: true,
             onEnter: () =>
               gsap.to(elems, {
                 y: 0,
@@ -200,14 +205,14 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
             });
           });
         });
-    },howworkRef);
+    });
     return () => {
       howItWorkAnim.revert();
     };
   }, []);
   return (
     <>
-      <section ref={howworkRef} className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden md:pb-[53px]">
+      <section className="how-it-work-section relative w-full px-0 bg-primary  overflow-hidden md:pb-[53px]">
         <div className="scrolable-bg-shape absolute top-0 left-0 w-full prallex2">
           <img
             src={`/images/${
