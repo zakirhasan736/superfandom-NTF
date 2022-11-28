@@ -100,7 +100,7 @@ const Exclusive: NextPage<any> = ({pageName}) => {
       <section className="exclusive-section w-full bg-secondary pt-[92px] laptop-m:pt-[65px]  md:pt-8 pb-0 px-0 relative z-10  overflow-hidden">
         <div className="custom-container 2xl:px-0 xl:px-0 desktop-m:px-12 laptop-x:px-12 md:px-4 sm:px-4">
           <div className="section-titlebox text-animetion mb-16 md:mb-8">
-            <h2 className="section-title title_animation font-primary font-normal text-fig-3x text-left text-primary desktop-l:text-7xl desktop-x:text-6xl  laptop-x:text-6xl md:text-fig-40 uppercase">
+            <h2 className="section-title title_animation text-primary uppercase">
               exclusives
             </h2>
           </div>

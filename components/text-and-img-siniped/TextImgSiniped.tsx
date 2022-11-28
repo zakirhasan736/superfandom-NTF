@@ -148,16 +148,16 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
               <li className="text-img-siniped-info-list columns-2 gap-0 bg-primary md:columns-1 border-t border-solid border-primary">
                 <div className="text-cont-box w-full py-[307px] px-[190px] bg-primary  max-h-[1080px] h-full laptop-x:px-[80px] laptop-x:max-h-[760px] laptop-x:py-[195px] lg:px-[60px] md:py-8 md:px-6 sm:px-4">
                   <div className="siniped-text-box">
-                    <h2 className="title  mb-6 font-primary font-normal text-fig-3x text-left text-secondary uppercase desktop-l:text-7xl desktop-m:text-6xl md:text-fig-40">
+                    <h2 className="section-title mb-6 text-secondary uppercase">
                       Soulbound <br /> Tokens for <br /> Causes
                     </h2>
-                    <p className="desc font-primary font-normal text-fig-24 text-left text-secondary pb-6 desktop-m:text-xl md:text-fig-4">
+                    <p className="section-desc text-secondary">
                       Donate to the causes you care about and collect
                       nonfungible or soulbound tokens to memorialize your
                       support
                     </p>
                     <Link href="/">
-                      <a className="link-buttons uppercase flex flex-col max-w-[190px] sm:max-w-full text-center w-full  p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-neon hover:border-neon transition duration-150 ease-out">
+                      <a className="causes-btn flex flex-col max-w-[190px] text-center">
                         Explore Causes
                       </a>
                     </Link>
@@ -1294,15 +1294,15 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
 
                 <div className="text-cont-box w-full py-[307px] px-[190px] bg-secondary max-h-[1080px] h-full laptop-x:px-[80px] laptop-x:max-h-[760px] laptop-x:py-[195px] lg:px-[60px] md:py-8 md:px-6 sm:px-4">
                   <div className="siniped-text-box">
-                    <h2 className="title  mb-6 font-primary font-normal text-fig-3x text-left text-primary uppercase desktop-l:text-7xl desktop-m:text-6xl md:text-fig-40">
+                    <h2 className="mb-6 section-title text-primary uppercase">
                       Experience <br /> NFTs for <br /> Fandoms
                     </h2>
-                    <p className="desc font-primary font-normal text-fig-24 text-left text-primary pb-6 desktop-m:text-xl md:text-fig-4">
+                    <p className="section-desc text-primary">
                       Support your favorite creators and interact with them both
                       in the real world or in the Metaverse
                     </p>
                     <Link href="/">
-                      <a className=" uppercase flex flex-col max-w-[190px] sm:max-w-full text-center w-full p-5 font-primary font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-purple hover:border-purple hover:text-secondary transition duration-150 ease-out">
+                      <a className="fandom-btn flex flex-col max-w-[190px] text-primary border-primary text-center">
                         Explore fandoms
                       </a>
                     </Link>

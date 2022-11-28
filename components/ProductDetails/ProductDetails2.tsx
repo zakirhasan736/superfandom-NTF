@@ -97,7 +97,7 @@ const ProductDetails2: NextPage<any> = () => {
 
                           <button
                             onClick={() => setOpen(!open)}
-                            className="p-5 font-primary uppercase font-normal text-fig-15 text-secondary sm:mb-0 sm:mr-0 rounded-[40px] bg-primary border border-solid border-primary mr-5 hover:bg-transparent hover:text-primary transition max-w-[180px] w-full duration-150 ease-out  md:hover:text-primary md:hover:border-primary md:text-secondary md:max-w-[100%]"
+                            className="primary-btn"
                           >
                             mint
                           </button>

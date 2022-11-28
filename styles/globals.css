@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    font-family: 'Atyp Display', Proxima Nova, system-ui, sans-serif;
+  html,body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system,'Atyp Display', Proxima Nova, system-ui,  BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
   }
   @font-face {
     font-family: 'Atyp Display';
@@ -161,59 +166,75 @@
   }
 }
 
-/* :root {
-  --color-primary: #000000;
-  --color-secondary: #ffffff;
-  --font-display: 'Atyp Display', serif;
-  --font-size-xs: '10px';
-  --font-size-12: '12px';
-  --font-size-15: '15px';
-  --font-size-base: '16px';
-  --font-size-24: '24px';
-  --font-size-32: '32px';
-  --font-size-40: '40px';
-  --font-size-xxl: '64px';
-  --font-size-3xl: '88px';
-  --font-size-4xl: '96px';
-  --font-size-5xl: '166px';
-} */
+/* //button component */
+@layer components {
+  .primary-btn{
+    @apply p-5 font-primary uppercase font-normal text-fig-15 text-secondary sm:mb-5 sm:mr-0 rounded-[40px] bg-primary border border-solid border-primary mr-5 hover:bg-transparent hover:text-primary transition max-w-[180px] w-full duration-150 ease-out  md:hover:text-primary md:hover:border-primary md:text-secondary md:max-w-[100%];
+  }
+  .secondary-btn {
+    @apply p-5 max-w-[180px] w-full font-primary uppercase font-normal text-fig-15 text-primary rounded-[40px] bg-transparent border border-solid border-primary hover:bg-primary hover:text-secondary transition duration-150 ease-out md:border-primary md:text-primary md:hover:bg-primary md:hover:text-secondary;
+  }
+  .causes-btn{
+    @apply py-5 px-5 lg:px-3 uppercase laptop-m:whitespace-nowrap sm:text-xs font-primary font-normal text-fig-15 lg:text-fig-12 text-primary rounded-[40px] bg-secondary border border-solid border-secondary hover:bg-neon hover:border-neon transition duration-150 ease-out sm:max-w-[153px] sm:w-full sm:text-center;
+  }
+  .fandom-btn{
+    @apply py-5 px-5 lg:px-3 uppercase laptop-m:whitespace-nowrap sm:text-xs font-primary font-normal text-fig-15 lg:text-fig-12 text-secondary rounded-[40px] bg-transparent border border-solid border-secondary hover:bg-purple hover:border-purple transition duration-150 ease-out sm:max-w-[153px] sm:w-full sm:text-center;
+  }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* section componant */
+  .section-title{
+    @apply font-primary font-normal text-fig-3x text-left text-primary laptop-x:text-6xl md:text-fig-40;
+  }
+   .section-desc{
+    @apply font-primary font-normal text-fig-24 text-left pb-6 desktop-m:text-xl md:text-fig-base; 
+  }
+
+  /* how-it-work section */
+ .how-it-work-info-list{
+  @apply flex items-center flex-row gap-[190px] laptop-m:gap-x-16 lg:gap-[120px] md:gap-8 md:flex-col-reverse md:mb-0;
+ }
+ .section-scrrolltext-title{
+  @apply font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx sm:text-fig-40 sm:tracking-[.05em];
+ }
+ .section-scrrolltext-title2{
+  @apply font-primary font-normal text-fig-5x text-center uppercase laptop-x:text-fig-3x lg:text-fig-xx sm:text-fig-40 mb-[29px] whitespace-nowrap ;
+ }
+
+/* banner styles componant */
+.banner2_title{
+  @apply absolute uppercase text-secondary  font-normal font-primary mb-8 z-30  text-fig-3x;
 }
-html {
-  scroll-behavior: smooth;
+.banner-subtitle{
+ @apply font-primary font-normal text-fig-32 text-left text-secondary uppercase mb-3 md:text-fig-24 !important;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-ul,
-ol,
-button {
-  text-decoration: none;
-  list-style: none;
-}
-button {
-  box-shadow: none;
-  outline: 0 !important;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-  text-decoration: none;
+.banner-desc{
+  @apply font-primary font-normal text-fig-base text-left text-secondary md:text-fig-base;
 }
 
-* {
-  box-sizing: border-box;
+/* tokens tabs title styles */
+.token-tabs-title{
+  @apply border rounded-[40px] px-[10px] py-[9px] mx-2 text-fig-15 md:whitespace-nowrap font-medium uppercase font-primary text-center text-primary border-solid border-primary hover:text-secondary hover:bg-primary sm:mb-4;
 }
+.tabs-active{
+  @apply bg-primary text-secondary;
+}
+
+
+/* navbar navigation styles */
+.nav-items-link{
+  @apply uppercase font-primary font-normal text-secondary p-5 mr-5 md:mr-0 text-fig-15 lg:mr-[7px] md:text-fig-32 md:w-full md:p-8 md:border-t md:border-solid md:border-secondary md:text-center;
+}
+.nav-btn-link{
+ @apply uppercase font-primary cursor-pointer  font-normal text-secondary text-fig-15 p-5 md:w-full  md:p-5 md:border md:border-solid md:border-secondary md:text-center md:rounded-[40px];
+}
+
+
+/* footer nav links styles */
+.footer-list-links{
+  @apply font-primary text-fig-32 font-normal text-secondary laptop-x:text-2xl laptop-m:text-xl lg:text-lg md:text-fig-15 lg:py-4 lg:border-t lg:border-solid lg:border-secondary;
+}
+}
+
 
 .container * {
   box-sizing: border-box;
@@ -340,12 +361,12 @@ a {
   margin-bottom: 24px !important;
 }
 /* how it work section */
-.section-title.scrollable--title {
+.scrollable--title {
   -webkit-text-stroke: 1px #000000;
   color: transparent;
   white-space: nowrap;
 }
-.section-title.scrollable--title2 {
+.scrollable--title2 {
   -webkit-text-stroke: 1px #fff;
   color: transparent;
   white-space: nowrap;

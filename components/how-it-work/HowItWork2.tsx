@@ -139,7 +139,7 @@ const HowItWork2: NextPage<any> = ({ pageName }) => {
           <div className="section-titlebox lg:mb-15 sm:mb-5 absolute bottom-4 sm:bottom-[-74px]">
             <div className="scrolable-text-box how-it-work-title">
               <div className="scroll-text-item">
-                <h2 className="section-title scrollable--title2 font-primary  font-normal text-fig-5x text-secondary text-center uppercase lg:text-fig-xx sm:text-fig-40 sm:tracking-[.05em]">
+                <h2 className="section-scrrolltext-title scrollable--title2  text-secondary">
                   • how it works • how it works • how it works • how it works •
                   how it works • how it works • how it works • how it works •
                   how it works • how it works
