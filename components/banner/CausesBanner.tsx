@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState,  useLayoutEffect } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -12,6 +12,7 @@ export interface ICausesBanner {
 }
 const CausesBanner: React.FC<ICausesBanner> = () => {
   const [scroll, setscroll] = useState(false);
+  const causesRef = useRef();
   const scrollHandler = () => {
     if (!scroll) {
       setscroll(true);
@@ -161,16 +162,16 @@ const CausesBanner: React.FC<ICausesBanner> = () => {
        }
      );
    });
-    });
+  },causesRef);
     return () => {
       causesBannerAnim.revert();
-  window.addEventListener('scroll', scrollHandler);
+      window.removeEventListener('scroll', scrollHandler);
     };
   }, [scroll]);
 
   return (
     <>
-      <section className="main-visual-section bg-primary pt-[209px] md:pt-[180px] relative sm:pt-[150px] overflow-hidden">
+      <section ref={causesRef} className="main-visual-section bg-primary pt-[209px] md:pt-[180px] relative sm:pt-[150px] overflow-hidden">
         <div className="container lg:container md:container sm:container relative lg:px-9 md:px-7 sm:px-4 pb-[171px] laptop-x:pb-14 lg:pl-0">
           <div className="main-visual-wrapper flex items-center justify-between md:block pl-[112px] laptop-x:pl-[50px] laptop-m:pl-[32px] lg:pl-[28px] sm:pl-0">
             {/* ------------------- */}

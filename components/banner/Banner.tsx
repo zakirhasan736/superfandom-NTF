@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState,useRef, useEffect, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import TokenCards, { ITokenCards } from '../Card/TokenCards/TokenCards';
 import gsap from 'gsap';
@@ -12,6 +12,7 @@ export interface IBanner {
 }
 
 const Banner: React.FC<IBanner> = () => {
+  const bannerRef = useRef();
   gsap.registerPlugin(ScrollTrigger);
   const [tokenItem, setTokenItem] = useState<any>([]);
   const [scroll, setscroll] = useState(false);
@@ -301,16 +302,16 @@ const Banner: React.FC<IBanner> = () => {
           });
         }
       }
-    });
+    },bannerRef);
     return () => {
       homeBannerAnim.revert();
-  window.addEventListener('scroll', scrollHandler);
+      window.removeEventListener('scroll', scrollHandler);
     };
   }, [scroll]);
 
   return (
     <>
-      <section className="main-visual-section main-banner--one bg-primary pb-[51px] pt-[209px] relative sm:pt-[150px] overflow-hidden">
+      <section ref={bannerRef} className="main-visual-section main-banner--one bg-primary pb-[51px] pt-[209px] relative sm:pt-[150px] overflow-hidden">
         <div className="container lg:container md:container sm:container relative lg:px-9 md:px-7 sm:px-4">
           <div className="main-visual-wrapper flex items-center justify-between md:block">
             {/* ------------------- */}

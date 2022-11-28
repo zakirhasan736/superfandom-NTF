@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import React, { useLayoutEffect } from 'react';
+import React, { useRef,useLayoutEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const TextImgSiniped: NextPage<any> = () => {
-
+const textImgRef = useRef<HTMLDivElement | null>(null);
   useLayoutEffect(() => {
     const textImgScroll = gsap.context(() => {
       document.body.style.overflow = 'auto';
@@ -33,7 +33,7 @@ const TextImgSiniped: NextPage<any> = () => {
           }
         );
       });
-    });
+    },textImgRef);
     return () => {
       textImgScroll.revert();
     };
@@ -132,7 +132,7 @@ const TextImgSiniped: NextPage<any> = () => {
        
       });
     })
-   });
+   },textImgRef);
       return () => {
         textImgsectionAnim.revert();
       };
@@ -140,7 +140,7 @@ const TextImgSiniped: NextPage<any> = () => {
 
   return (
     <>
-      <section className="text-img-siniped-section relative w-full px-0 bg-primary  overflow-hidden">
+      <section ref={textImgRef} className="text-img-siniped-section relative w-full px-0 bg-primary  overflow-hidden">
         <div className="text-img-siniped-wrapper w-full z-10">
           <div className="text-img-siniped-cont-wrapper">
             <ul className="text-img-siniped-info-items">

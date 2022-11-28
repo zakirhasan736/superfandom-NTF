@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
-import React, { useLayoutEffect } from 'react';
-import Lottie from 'react-lottie';
+import React, { useLayoutEffect,useEffect } from 'react';
+import Lottie from 'lottie-react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -33,35 +33,41 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
     },
   ];
 
+  useLayoutEffect(() => {
+    const  howItWorkTextScroll = gsap.context(() => {
+      document.body.style.overflow = 'auto';
+      const howItWorkScrolled = gsap.utils.toArray(
+        '.scrolable-text-box.how-it-work-title.one'
+      );
+      howItWorkScrolled.forEach((section: any, index) => {
+        const w = section.querySelector('.scroll-text-item');
+        const [x, xEnd] =
+          index % 2
+            ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
+            : [w.scrollWidth * -1, 0];
+        gsap.fromTo(
+          w,
+          { x, y: 0 },
+          {
+            x: xEnd,
+            // duration: 10,
+            scrollTrigger: {
+              trigger: section,
+              scrub: 0.5,
+              start: 'top +=1650',
+              end: () => '+=' + (w.scrollWidth - section.offsetWidth),
+            },
+            y: 0,
+          }
+        );
+      });
+    });
+    return () => {
+      howItWorkTextScroll.revert();
+    };
+  });  
  useLayoutEffect(() => {
   const  howItWorkScroll = gsap.context(() => {
-    document.body.style.overflow = 'auto';
-    const howItWorkScrolled = gsap.utils.toArray(
-      '.scrolable-text-box.how-it-work-title.one'
-    );
-    howItWorkScrolled.forEach((section: any, index) => {
-      const w = section.querySelector('.scroll-text-item');
-      const [x, xEnd] =
-        index % 2
-          ? ['10%', (w.scrollWidth - section.offsetWidth) * -1]
-          : [w.scrollWidth * -1, 0];
-      gsap.fromTo(
-        w,
-        { x, y: 0 },
-        {
-          x: xEnd,
-          // duration: 10,
-          scrollTrigger: {
-            trigger: section,
-            scrub: 0.5,
-            start: 'top top',
-            end: () => '+=850' + (w.scrollWidth - section.offsetWidth),
-          },
-          y: 0,
-        }
-      );
-    });
-
     const workInfoItems = gsap.utils.toArray('.how-it-work-info-items');
     workInfoItems.forEach((section: any) => {
       const infoLine = section.querySelector('.how-it-work-info-list');
@@ -108,10 +114,9 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
   };
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const howItWorkAnim = gsap.context(() =>{
       const howItworkInfoFade = gsap.utils.toArray('.how-it-work-info-list');
-
       let viewPort = gsap.matchMedia();
       viewPort.add('(min-width:768px)', () => {
         howItworkInfoFade.forEach((section: any) => {
@@ -223,6 +228,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
         <div className="how-it-work-wrapper pt-[60px] pb-[124px] w-full z-10 relative lg:pt-[80px] lg:pb-[60px] md:pt-8 md:pb-8">
           <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
             <div className="scrolable-text-box how-it-work-title one">
+
               <div className="scroll-text-item">
                 <h2 className="section-scrrolltext-title scrollable--title">
                   • how it works • how it works • how it works • how it works •
@@ -259,20 +265,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
                       </div>
                     </div>
                     <div className="how-it-work-anim-cont w-full max-w-[505px] min-w-[345px] md:max-w-[345px] relative sm:mb-8 md:text-right md:flex md:justify-center">
-                      <Lottie
-                        options={{
-                          loop: true,
-                          autoplay: true,
-                          animationData: Animation1,
-                          rendererSettings: {
-                            preserveAspectRatio: 'xMidYMid slice',
-                          },
-                        }}
-                        max-height={520}
-                        width={`100%`}
-                        height={`100%`}
-                        max-width={505}
-                      />
+                      <Lottie animationData={Animation1} loop={true} />
                     </div>
                   </li>
 
@@ -299,20 +292,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
                       </div>
                     </div>
                     <div className="how-it-work-anim-cont w-full max-w-[762px] min-w-[345px] md:max-w-[345px] relative flex justify-end md:justify-center sm:mb-8">
-                      <Lottie
-                        options={{
-                          loop: true,
-                          autoplay: true,
-                          animationData: Animation2,
-                          rendererSettings: {
-                            preserveAspectRatio: 'xMidYMid slice',
-                          },
-                        }}
-                        max-height={728}
-                        width={`100%`}
-                        height={`100%`}
-                        max-width={762}
-                      />
+                      <Lottie animationData={Animation2} loop={true} />
                     </div>
                   </li>
 
@@ -339,20 +319,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
                       </div>
                     </div>
                     <div className="how-it-work-anim-cont w-full max-w-[722px] min-w-[345px] md:max-w-[345px] relative flex justify-center mb-8">
-                      <Lottie
-                        options={{
-                          loop: true,
-                          autoplay: true,
-                          animationData: Animation3,
-                          rendererSettings: {
-                            preserveAspectRatio: 'xMidYMid slice',
-                          },
-                        }}
-                        max-height={596}
-                        width={`100%`}
-                        height={`100%`}
-                        max-width={722}
-                      />
+                      <Lottie animationData={Animation3} loop={true} />
                     </div>
                   </li>
                 </ul>

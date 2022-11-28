@@ -1,4 +1,4 @@
-import React, { useEffect, useState , useLayoutEffect} from 'react';
+import React, { useEffect,useRef, useState } from 'react';
 import Slider from 'react-slick';
 import { Settings } from "react-slick";
 import Link from 'next/link';
@@ -12,6 +12,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const Explore: NextPage<any> = () => {
+  const exploreRef = useRef<HTMLDivElement | null>(null)
   const [tokenItem, setTokenItem] = useState<any>([]);
   let data = [
     {
@@ -141,7 +142,7 @@ const Explore: NextPage<any> = () => {
 
 
 
-useLayoutEffect(() => {
+useEffect(() => {
   const exploreAnim = gsap.context(() => {
   // Set starting params for sections
   let viewPort = gsap.matchMedia();
@@ -166,10 +167,9 @@ const animTextExplor = gsap.utils.toArray('.explore--title-box');
       overwrite: 'auto',
 
     });
-
     ScrollTrigger.create({
       trigger: '.explore-section',
-      start: 'top 60%',
+      start: 'top 50%',
       end: 'bottom top',
       onEnter: () => gsap.to(animTextExplor, {
         y: 0,
@@ -230,13 +230,10 @@ const animTextExplor = gsap.utils.toArray('.explore--title-box');
         stagger: -0.2,
       }),
     });
-  })
+  })},exploreRef);
   return () => {
     exploreAnim.revert();
-  };
-  });
-  
-  
+  }; 
 }, []);
 
 
@@ -257,7 +254,6 @@ const slickSettings:Settings = {
         slidesToScroll: 2,
         dots: false,
         variableWidth: true,
-        // nav: false,
         centerMode: true,
         centerPadding: "10px",
       }
