@@ -37,12 +37,12 @@ const TokenCards: React.FC<ITokenCards> = ({ id, photo_name,cardInfo,bidNowBg, u
 
           <div className="tokens-card-top-cont flex justify-between items-start absolute top-0 left-0 p-5 w-full md:p-2">
             <Link href="/">
-            <a className={['link-item-text uppercase text-fig-15 bg-secondary text-primary text-center lg:text-fig-12 md:text-fig-xs font-primary font-normal p-[10px] rounded-[40px]', `bg-${bidNowBg}`].join(' ')}
+            <a className={['link-item-text link-text  bg-secondary text-primary p-[10px] rounded-[40px]', `bg-${bidNowBg}`].join(' ')}
               >
               {bidNow}
             </a>
             </Link>
-            <span className={['card-updates-info  text-fig-15 uppercase text-secondary block  text-center lg:text-fig-12 md:text-fig-xs font-primary font-normal rounded-[100%] w-[62px] h-[62px] leading-[62px]', `bg-${cardInfoBg}`].join(' ')}
+            <span className={['link-text card-updates-info text-secondary block  rounded-[100%] w-[62px] h-[62px] leading-[62px]', `bg-${cardInfoBg}`].join(' ')}
             >
              {cardInfo}
             </span>

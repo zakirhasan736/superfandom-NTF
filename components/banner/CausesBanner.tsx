@@ -12,7 +12,7 @@ export interface ICausesBanner {
 }
 const CausesBanner: React.FC<ICausesBanner> = () => {
   const [scroll, setscroll] = useState(false);
-  const causesRef = useRef();
+  const causesRef = useRef<HTMLDivElement | null>(null);
   const scrollHandler = () => {
     if (!scroll) {
       setscroll(true);
@@ -219,7 +219,7 @@ const CausesBanner: React.FC<ICausesBanner> = () => {
 
             {/* ------------- */}
             <div className="banner-text-cont-right right-[155px] desktop-m:right-0 lg:right-[20px] md:right-0 w-[560px] relative z-50 mt-24  laptop-x:mt-16 md:mt-32 sm:mt-0 md:pt-[301px] sm:px-2 sm:pt-[395px]  md:w-full">
-              <span className="md:hidden lg:text-6xl laptop-m:text-fig-xx overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute right-[-175px] desktop-m:right-[-10px] lg:right-[-23px] bottom-[345px] laptop-x:bottom-[350px]">
+              <span className="banner-pin-text overly-text-top laptop-m:text-fig-xx right-[-175px] desktop-m:right-[-10px] lg:right-[-23px] bottom-[345px] laptop-x:bottom-[350px]">
                 SBT
               </span>
               <h3 className="banner-subtitle ">

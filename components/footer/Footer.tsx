@@ -95,12 +95,12 @@ const Footer: React.FC<IFooter> = ({ className,pageName, ...footerProps }) => {
               </div>
 
               <ul className="footer-info-links flex items-center lg:pb-2.5 lg:justify-center">
-                <li className="font-primary font-normal text-fig-base text-darkgray laptop-m:text-xs lg:text-fig-base sm:text-fig-xs">
+                <li className="footer-term-service-link">
                   <Link href="/">
                     <a>Terms of Service</a>
                   </Link>
                 </li>
-                <li className="font-primary font-normal text-fig-base text-darkgray laptop-m:text-xs lg:text-fig-base sm:text-fig-xs">
+                <li className="footer-term-service-link">
                   <Link href="/">
                     <a>Privacy Policy</a>
                   </Link>

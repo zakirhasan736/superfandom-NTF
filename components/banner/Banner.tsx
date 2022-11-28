@@ -12,7 +12,7 @@ export interface IBanner {
 }
 
 const Banner: React.FC<IBanner> = () => {
-  const bannerRef = useRef();
+  const bannerRef = useRef<HTMLDivElement | null>(null);
   gsap.registerPlugin(ScrollTrigger);
   const [tokenItem, setTokenItem] = useState<any>([]);
   const [scroll, setscroll] = useState(false);
@@ -366,7 +366,7 @@ const Banner: React.FC<IBanner> = () => {
                   )}
                 </ul>
               </div>
-              <span className="md:hidden lg:text-6xl overly-text-bottom z-30 font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-[-90deg] absolute left-0 top-[520px]">
+              <span className="z-30 banner-pin-text left-0 top-[520px]">
                 Nft
               </span>
             </div>
@@ -374,13 +374,13 @@ const Banner: React.FC<IBanner> = () => {
 
             {/* ------------- */}
             <div className="banner-text-cont-right w-[560px] relative z-50 mt-24 mr-10 md:mt-0 md:pt-[422px] sm:pt-[465px] lg:mr-0 sm:mr-[-35px] md:w-full">
-              <span className="md:hidden lg:text-6xl overly-text-top overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute right-0 bottom-[420px]">
+              <span className="banner-pin-text overly-text-top right-0 bottom-[420px]">
                 SBT
               </span>
-              <h3 className="subtitle font-primary font-normal text-fig-32 md:max-w-[375px] text-left text-secondary uppercase mb-3 laptop-m:text-[26px] md:text-fig-24">
+              <h3 className="banner-subtitle md:max-w-[375px] laptop-m:text-[26px]">
                 Soulbound tokens and NFTs that make a difference
               </h3>
-              <p className="desc font-primary font-normal text-fig-base text-left text-secondary md:text-fig-base">
+              <p className="banner-desc">
                 Participate in your cherished causes, or experience your
                 favorite fandoms
               </p>

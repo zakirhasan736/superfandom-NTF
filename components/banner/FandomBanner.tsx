@@ -13,7 +13,7 @@ export interface IFandomBanner {
 }
 
 const FandomBanner: React.FC<IFandomBanner> = () => {
-  const fandomRef = useRef();
+  const fandomRef = useRef<HTMLDivElement | null>(null);
   useLayoutEffect(() => {
     const fandomBanner = gsap.context(() => {
       // banner scroll scale bg
@@ -94,7 +94,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
             {/* ------------------- */}
             <div className="banner-text-cont-left text_animation w-full relative z-50">
               <div className="heading-title-box h-full w-full block">
-                <h2 className="md:relative md:text-left md:right-0 md:top-0 md:mb-0 right-[-277px] desktop-m:right-[-300px] laptop-m:right-[-350px] top-[108px]  laptop-x:text-[80px] laptop-m:text-[65px] lg:text-[56px] sm:text-[40px] sm:leading-[40px] banner2_title text-right">
+                <h2 className="banner2_title  md:relative md:text-left md:right-0 md:top-0 md:mb-0 right-[-277px] desktop-m:right-[-300px] laptop-m:right-[-350px] top-[108px]  laptop-x:text-[80px] laptop-m:text-[65px] lg:text-[56px] sm:text-[40px] sm:leading-[40px] text-right">
                   NFTs for Fandoms
                 </h2>
               </div>

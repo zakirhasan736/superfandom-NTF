@@ -210,6 +210,9 @@
 .banner-desc{
   @apply font-primary font-normal text-fig-base text-left text-secondary md:text-fig-base;
 }
+.banner-pin-text{
+  @apply md:hidden lg:text-6xl overly-text-bottom font-primary font-normal text-left text-fig-4x text-secondary mb-0 uppercase rotate-90 absolute;
+}
 
 /* tokens tabs title styles */
 .token-tabs-title{
@@ -232,6 +235,32 @@
 /* footer nav links styles */
 .footer-list-links{
   @apply font-primary text-fig-32 font-normal text-secondary laptop-x:text-2xl laptop-m:text-xl lg:text-lg md:text-fig-15 lg:py-4 lg:border-t lg:border-solid lg:border-secondary;
+}
+.footer-term-service-link{
+ @apply font-primary font-normal text-fig-base text-darkgray laptop-m:text-xs lg:text-fig-base sm:text-fig-xs;
+}
+
+/* scroll slide card styles here */
+.slides-card-items{
+  @apply  h-[520px] w-[382px];
+}
+.token-card--items{
+  @apply w-[382px] rounded-3xl overflow-hidden bg-primary;
+}
+
+/* text and image section style box */
+.text-img-siniped-info-list .text-cont-box{
+  @apply w-full py-[307px] px-[190px] max-h-[1080px] h-full laptop-x:px-[80px] laptop-x:max-h-[760px] laptop-x:py-[195px] lg:px-[60px] md:py-8 md:px-6 sm:px-4;
+}
+.text-img-siniped-info-list{
+  @apply columns-2 gap-0 md:columns-1 border-t border-solid border-primary;
+}
+.text-img-siniped-anim-scroll{
+  @apply overflow-hidden w-full flex gap-x-12 max-h-[1080px] h-full px-[50px] md:hidden laptop-x:max-h-[760px];
+}
+
+.link-text{
+  @apply text-fig-15 uppercase text-center lg:text-fig-12 md:text-fig-xs font-primary font-normal;
 }
 }
 

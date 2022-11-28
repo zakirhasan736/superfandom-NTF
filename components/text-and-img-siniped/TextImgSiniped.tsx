@@ -145,8 +145,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
           <div className="text-img-siniped-cont-wrapper">
             <ul className="text-img-siniped-info-items">
               {/* ------------------------ */}
-              <li className="text-img-siniped-info-list columns-2 gap-0 bg-primary md:columns-1 border-t border-solid border-primary">
-                <div className="text-cont-box w-full py-[307px] px-[190px] bg-primary  max-h-[1080px] h-full laptop-x:px-[80px] laptop-x:max-h-[760px] laptop-x:py-[195px] lg:px-[60px] md:py-8 md:px-6 sm:px-4">
+              <li className="text-img-siniped-info-list bg-primary">
+                <div className="bg-primary  text-cont-box">
                   <div className="siniped-text-box">
                     <h2 className="section-title mb-6 text-secondary uppercase">
                       Soulbound <br /> Tokens for <br /> Causes
@@ -164,15 +164,15 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                   </div>
                 </div>
 
-                <div className="text-img-siniped-anim-scroll overflow-hidden  w-full flex gap-x-12  max-h-[1080px] h-full px-[50px] md:hidden laptop-x:max-h-[760px]">
+                <div className="text-img-siniped-anim-scroll">
                 
                   <div className="scroll-image-box">
                     <ul
                       id="left-image"
                       className="scroll-slides-card-left anim-card-scroll flex flex-col gap-y-12"
                     >
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -216,8 +216,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -261,8 +261,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -306,8 +306,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -351,8 +351,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -396,8 +396,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -450,8 +450,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                       id="right-image"
                       className="scroll-slides-card-right anim-card-scroll flex flex-col gap-y-12"
                     >
-                 <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                 <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -495,8 +495,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -540,8 +540,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -585,8 +585,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -630,8 +630,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -675,8 +675,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -729,16 +729,16 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
               {/* ------------------------- */}
 
               {/* ----------------------- */}
-              <li className="text-img-siniped-info-list info-list2 columns-2 gap-0 bg-secondary md:columns-1 border-t border-b border-solid border-primary">
-                <div className="text-img-siniped-anim-scroll overflow-hidden w-full flex gap-x-12 max-h-[1080px] px-[50px] bg-primary h-full md:hidden laptop-x:max-h-[760px]">
+              <li className="text-img-siniped-info-list bg-secondary  border-b info-list2">
+                <div className="text-img-siniped-anim-scroll bg-primary">
                    
                    <div className="scroll-image-box">
                     <ul
                       id="left-image"
                       className="scroll-slides-card-left anim-card-scroll flex flex-col gap-y-12"
                     >
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -782,8 +782,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -827,8 +827,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -872,8 +872,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -917,8 +917,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -962,8 +962,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -1016,8 +1016,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                       id="right-image"
                       className="scroll-slides-card-right anim-card-scroll flex flex-col gap-y-12"
                     >
-                 <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                 <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -1061,8 +1061,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -1106,8 +1106,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -1151,8 +1151,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -1196,8 +1196,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -1241,8 +1241,8 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
                         </div>
                       </li>
                       {/* ====================== */}
-                      <li className="slides-card-items h-[520px] w-[382px]">
-                        <div className="token-card--items w-[382px] rounded-3xl overflow-hidden bg-primary">
+                      <li className="slides-card-items">
+                        <div className="token-card--items">
                           <div className="token-img-cont-box relative">
                             <div className="tokens-img-wrap relative">
                               <div className="token--icons-img w-full h-[382px]">
@@ -1292,7 +1292,7 @@ const textImgRef = useRef<HTMLDivElement | null>(null);
 
                 </div>
 
-                <div className="text-cont-box w-full py-[307px] px-[190px] bg-secondary max-h-[1080px] h-full laptop-x:px-[80px] laptop-x:max-h-[760px] laptop-x:py-[195px] lg:px-[60px] md:py-8 md:px-6 sm:px-4">
+                <div className="bg-secondary text-cont-box">
                   <div className="siniped-text-box">
                     <h2 className="mb-6 section-title text-primary uppercase">
                       Experience <br /> NFTs for <br /> Fandoms
