@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useLayoutEffect,useEffect } from 'react';
 import Lottie from 'lottie-react';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -12,8 +12,6 @@ import StepCard from '../Card/StepCards/StepCard';
 gsap.registerPlugin(ScrollTrigger);
 
 const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
-  const howworkTextRef = useRef<HTMLDivElement | null>(null);
-  const howworkRef = useRef<HTMLDivElement | null>(null)
   let StepCadItems = [
     {
       id: 1,
@@ -36,7 +34,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
   ];
 
   useLayoutEffect(() => {
-    const howItWorkScroll = gsap.context(() => {
+    const  howItWorkTextScroll = gsap.context(() => {
       document.body.style.overflow = 'auto';
       const howItWorkScrolled = gsap.utils.toArray(
         '.scrolable-text-box.how-it-work-title.one'
@@ -56,64 +54,69 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
             scrollTrigger: {
               trigger: section,
               scrub: 0.5,
-              start: 'top top',
-              end: () => '+=850' + (w.scrollWidth - section.offsetWidth),
+              start: 'top +=1650',
+              end: () => '+=' + (w.scrollWidth - section.offsetWidth),
             },
             y: 0,
           }
         );
       });
-
-      const workInfoItems = gsap.utils.toArray('.how-it-work-info-items');
-      workInfoItems.forEach((section: any) => {
-        const infoLine = section.querySelector('.how-it-work-info-list');
-        gsap.to(infoLine, {
-          scrollTrigger: {
-            trigger: section,
-            scrub: true,
-            start: 'top center',
-            end: 'bottom bottom',
-            toggleClass: 'active',
-          },
-          opacity: 1,
-        });
+    });
+    return () => {
+      howItWorkTextScroll.revert();
+    };
+  });  
+ useLayoutEffect(() => {
+  const  howItWorkScroll = gsap.context(() => {
+    const workInfoItems = gsap.utils.toArray('.how-it-work-info-items');
+    workInfoItems.forEach((section: any) => {
+      const infoLine = section.querySelector('.how-it-work-info-list');
+      gsap.to(infoLine, {
+        scrollTrigger: {
+          trigger: section,
+          scrub: true,
+          start: 'top center',
+          end: 'bottom bottom',
+          toggleClass: 'active',
+        },
+        opacity: 1,
       });
+    });
 
-      let viewPort = gsap.matchMedia();
+    let viewPort = gsap.matchMedia();
       viewPort.add('(min-width:1681px)', () => {
+      ScrollTrigger.create({
+        trigger: '.prallex2',
+        scrub: 1.5,
+        start: 'center center',
+        end: '+=400',
+      });
+    }),
+      viewPort.add('(max-width:1680px)', () => {
         ScrollTrigger.create({
           trigger: '.prallex2',
-          scrub: 1.5,
+          scrub: true,
           start: 'center center',
           end: '+=400',
         });
       }),
-        viewPort.add('(max-width:1680px)', () => {
-          ScrollTrigger.create({
-            trigger: '.prallex2',
-            scrub: true,
-            start: 'center center',
-            end: '+=400',
-          });
-        }),
-        viewPort.add('(max-width:1280px)', () => {
-          ScrollTrigger.create({
-            trigger: '.prallex2',
-            scrub: true,
-            start: 'top top',
-            end: 'top',
-          });
+      viewPort.add('(max-width:1280px)', () => {
+        ScrollTrigger.create({
+          trigger: '.prallex2',
+          scrub: true,
+          start: 'top top',
+          end: 'top',
         });
-    },howworkTextRef);
-    return () => {
-      howItWorkScroll.revert();
-    };
+      });
+  });
+  return () => {
+    howItWorkScroll.revert();
+  };
   }, []);
 
-  useLayoutEffect(() => {
-    const howItWorkAnim = gsap.context(() => {
+  useEffect(() => {
+    const howItWorkAnim = gsap.context(() =>{
       const howItworkInfoFade = gsap.utils.toArray('.how-it-work-info-list');
-
       let viewPort = gsap.matchMedia();
       viewPort.add('(min-width:768px)', () => {
         howItworkInfoFade.forEach((section: any) => {
@@ -126,7 +129,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
             ease: 'power3.out',
             overwrite: 'auto',
           });
-
+  
           ScrollTrigger.create({
             trigger: section,
             start: 'top 60%',
@@ -169,7 +172,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
               ease: 'power3.out',
               overwrite: 'auto',
             });
-
+  
             ScrollTrigger.create({
               trigger: section,
               start: 'top 60%',
@@ -201,7 +204,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
             });
           });
         });
-    },howworkRef);
+    });
     return () => {
       howItWorkAnim.revert();
     };
@@ -225,7 +228,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
         <div className="how-it-work-wrapper pt-[60px] pb-[124px] w-full z-10 relative lg:pt-[80px] lg:pb-[60px] md:pt-8 md:pb-8">
           <div className="section-titlebox mb-24 lg:mb-15 sm:mb-5">
             <div className="scrolable-text-box how-it-work-title one">
-              <div ref={howworkTextRef} className="scroll-text-item">
+              <div  className="scroll-text-item">
                 <h2 className="section-title scrollable--title font-primary font-normal text-fig-5x text-center uppercase lg:text-fig-xx sm:text-fig-40 sm:tracking-[.05em]">
                   • how it works • how it works • how it works • how it works •
                   how it works • how it works • how it works • how it works •
@@ -235,7 +238,7 @@ const HowItWork: NextPage<any> = ({ card1, card2, pageName }) => {
             </div>
           </div>
           {card1 && (
-            <div  ref={howworkRef} className="custom-container 2xl:px-0 xl:px-12 desktop-m:12 laptop-x:px-12 laptop-m:px-10 md:px-5 sm:px-4">
+            <div className="custom-container 2xl:px-0 xl:px-12 desktop-m:12 laptop-x:px-12 laptop-m:px-10 md:px-5 sm:px-4">
               <div className="how-it-work-cont-wrapper">
                 <ul className="how-it-work-info-items">
                   <li className="how-it-work-info-list info-list1 flex items-center flex-row gap-[190px] laptop-m:gap-x-16 lg:gap-[120px] md:gap-8 md:flex-col-reverse md:mb-0">
