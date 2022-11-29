@@ -1,11 +1,12 @@
 import Head from 'next/head';
-import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
-import CausesBanner from '../components/banner/CausesBanner';
-import FaqPage from '../components/Faq/Faq';
-import ActiveDrop from '../components/ActiveDrop/ActiveDrop';
-import CSToken from '../components/c-s-token/CSToken';
-import HowItWork2 from '../components/how-it-work/HowItWork2';
+import FaqPage from '../components/shared/Faq/Faq';
+import CausesBanner from '../components/core/banner/CausesBanner';
+import ActiveDrop from '../components/shared/ActiveDrop/ActiveDrop';
+import CSToken from '../components/shared/c-s-token/CSToken';
+import HowItWork2 from '../components/core/how-it-work/HowItWork2';
+import PrimaryLayout from '../components/shared/layouts/primary/PrimaryLayout';
+
 
 const CausesPage: NextPageWithLayout = () => {
 
@@ -17,8 +18,8 @@ const CausesPage: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <CausesBanner />
-       <ActiveDrop />
-       <CSToken pageName={"causes"}/>
+      <ActiveDrop />
+      <CSToken pageName={"causes"} />
       <HowItWork2 pageName={"causes"} />
       <FaqPage />
     </div>
