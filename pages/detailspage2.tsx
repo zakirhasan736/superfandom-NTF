@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
+import ProductDetails2 from '../components/core/ProductDetails/ProductDetails2';
+import Exclusive from '../components/shared/Exclusive/Exclusive';
 import { NextPageWithLayout } from './page';
-import Exclusive from '../components/Exclusive/Exclusive';
-import ProductDetails2 from '../components/ProductDetails/ProductDetails2';
+
 
 const DetailsPage2: NextPageWithLayout = () => {
 
@@ -14,7 +14,7 @@ const DetailsPage2: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ProductDetails2 />
-      <Exclusive  />
+      <Exclusive />
       <div className="spacher h-[50px]"></div>
     </div>
   );

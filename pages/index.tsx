@@ -1,11 +1,12 @@
 import Head from 'next/head';
-import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
-import FaqPage from '../components/Faq/Faq';
-import Explore from '../components/explore-and-collect/Explore';
-import HowItWork from '../components/how-it-work/HowItWork';
-import TextImgSiniped from '../components/text-and-img-siniped/TextImgSiniped';
-import Banner from '../components/banner/Banner';
+import FaqPage from '../components/shared/Faq/Faq';
+import Banner from '../components/core/banner/Banner';
+import TextImgSiniped from '../components/core/text-and-img-siniped/TextImgSiniped';
+import HowItWork from '../components/core/how-it-work/HowItWork';
+import Explore from '../components/core/explore-and-collect/Explore';
+import PrimaryLayout from '../components/shared/layouts/primary/PrimaryLayout';
+
 
 const Home: NextPageWithLayout = () => {
 

@@ -1,8 +1,9 @@
 import Head from 'next/head';
-import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
+import ProductDetails from '../components/core/ProductDetails/ProductDetails';
+import Exclusive from '../components/shared/Exclusive/Exclusive';
+import PrimaryLayout from '../components/shared/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
-import ProductDetails from '../components/ProductDetails/ProductDetails';
-import Exclusive from '../components/Exclusive/Exclusive';
+
 
 const DetailsPage: NextPageWithLayout = () => {
 

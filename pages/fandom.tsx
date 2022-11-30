@@ -1,11 +1,12 @@
 import Head from 'next/head';
-import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
-import FaqPage from '../components/Faq/Faq';
-import ActiveDrop from '../components/ActiveDrop/ActiveDrop';
-import CSToken from '../components/c-s-token/CSToken';
-import HowItWork2 from '../components/how-it-work/HowItWork2';
-import FandomBanner from '../components/banner/FandomBanner';
+import FaqPage from '../components/shared/Faq/Faq';
+import FandomBanner from '../components/core/banner/FandomBanner';
+import ActiveDrop from '../components/shared/ActiveDrop/ActiveDrop';
+import CSToken from '../components/shared/c-s-token/CSToken';
+import HowItWork2 from '../components/core/how-it-work/HowItWork2';
+import PrimaryLayout from '../components/shared/layouts/primary/PrimaryLayout';
+
 
 const Fundom: NextPageWithLayout = () => {
 
