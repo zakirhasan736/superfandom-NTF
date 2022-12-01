@@ -36,10 +36,12 @@ export const Accordion = ({ id, question, answer }: accordion) => {
           )}
         </div>
         {isActive && (
-          <div
-            dangerouslySetInnerHTML={{ __html: answer }}
+          <p
+
             className="text-left mt-[46px] font-primary font-normal text-primary text-fig-24 md:text-fig-xs md:mt-4"
-          ></div>
+          >
+            {answer}
+          </p>
         )}
       </div>
     </>

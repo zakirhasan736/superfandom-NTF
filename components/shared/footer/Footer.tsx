@@ -1,8 +1,10 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { IFooter } from '../../../typings/types';
+import FooterLink from './FooterLink';
+import ServiceLink from './ServiceLink';
+import SocialLink from './SocialLink';
 
-const Footer: React.FC<IFooter> = ({ className,pageName, ...footerProps }) => {
+const Footer: React.FC<IFooter> = ({ className, pageName, ...footerProps }) => {
   return (
     <footer
       {...footerProps}
@@ -22,68 +24,16 @@ const Footer: React.FC<IFooter> = ({ className,pageName, ...footerProps }) => {
           </div>
           <div className="footer-contant-box w-full">
             <ul className="footer-link-items flex items-center border-b border-solid border-secondary w-full py-[85px] px-[84px] laptop-x:py-12 laptop-x:px-14 lg:block lg:p-0 lg:text-center">
-              <li className={`${pageName==="causes"?"text-neon":""} footer-list-links`}>
-                <Link href="/causespage">
-                  <a>CAUSES</a>
-                </Link>
-              </li>
-              <li  className={`${pageName==="fandom"?"text-neon":"" } footer-list-links`}>
-                <Link href="/fandom">
-                  <a>FANDOMS</a>
-                </Link>
-              </li>
-              <li className={`${pageName==="campaign"?"text-neon":"" } footer-list-links`}>
-                <Link href="/campaign">
-                  <a>CAMPAIGN</a>
-                </Link>
-              </li>
-              <li className="footer-list-links">
-                <Link href="/">
-                  <a>SERVICES</a>
-                </Link>
-              </li>
+              <FooterLink name="CAUSES" title="causespage" href="/causespage" pageName={pageName} />
+              <FooterLink name="FANDOMS" title="fandom" href="/fandom" pageName={pageName} />
+              <FooterLink name="CAMPAIGN" title="campaign" href="/campaign" pageName={pageName} />
+              <FooterLink name="SERVICES" title="/" href="/" pageName={pageName} />
             </ul>
             <div className="footer-contant-wrap flex items-center justify-between px-[85px] py-[37px] laptop-x:px-[45px] laptop-x:py-5 laptop-m:px-4 lg:block lg:p-0">
               <ul className="footer-socials-icons flex items-center  lg:border-b lg:border-solid lg:border-secondary lg:justify-center lg:py-8">
-                <li className="font-primary cursor-pointer text-secondary laptop-x:w-6">
-                  <Link href="/">
-                    <a>
-                    <Image
-                      src="/images/telegram 1.png"
-                      alt="superfandom logo"
-                      className="brand-image w-[24px]"
-                      width="32px"
-                      height="32px"
-                    />
-                    </a>
-                  </Link>
-                </li>
-                <li className="font-primary cursor-pointer text-secondary laptop-x:w-6">
-                  <Link href="/">
-                    <a>
-                    <Image
-                      src="/images/instagram 1.png"
-                      alt="superfandom logo"
-                      className="brand-image w-[24px]"
-                      width="32px"
-                      height="32px"
-                    />
-                    </a>
-                  </Link>
-                </li>
-                <li className="font-primary cursor-pointer text-secondary laptop-x:w-6">
-                  <Link href="/">
-                    <a>
-                      <Image
-                        src="/images/twitte-1.png"
-                        alt="superfandom logo"
-                        className="brand-image w-[24px]"
-                        width="32px"
-                        height="32px"
-                      />
-                    </a>
-                  </Link>
-                </li>
+                <SocialLink img={"telegram 1.png"} />
+                <SocialLink img={"instagram 1.png"} />
+                <SocialLink img={"twitte-1.png"} />
               </ul>
               <div className="footer-copyright ">
                 <p className="font-primary font-normal text-fig-base laptop-m:text-xs lg:text-fig-base sm:text-fig-xs text-darkgray lg:pt-8 lg:pb-2 lg:text-center">
@@ -92,16 +42,8 @@ const Footer: React.FC<IFooter> = ({ className,pageName, ...footerProps }) => {
               </div>
 
               <ul className="footer-info-links flex items-center lg:pb-2.5 lg:justify-center">
-                <li className="footer-term-service-link">
-                  <Link href="/">
-                    <a>Terms of Service</a>
-                  </Link>
-                </li>
-                <li className="footer-term-service-link">
-                  <Link href="/">
-                    <a>Privacy Policy</a>
-                  </Link>
-                </li>
+                <ServiceLink name={"Terms of Service"} />
+                <ServiceLink name={"Privacy Policy"} />
               </ul>
             </div>
           </div>
