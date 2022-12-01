@@ -19,7 +19,7 @@ const CausesPage: NextPageWithLayout = () => {
       </Head>
       <CausesBanner />
       <ActiveDrop />
-      <CSToken pageName={"causes"} />
+      <CSToken pageName={"causes"} title={"collect soulbound tokens"} />
       <HowItWork2 pageName={"causes"} />
       <FaqPage />
     </div>

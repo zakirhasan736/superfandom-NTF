@@ -19,7 +19,7 @@ const Fundom: NextPageWithLayout = () => {
       </Head>
       <FandomBanner  />
       <ActiveDrop />
-      <CSToken pageName={"fandom"}/>
+      <CSToken pageName={"fandom"} title={"collections"}/>
       <HowItWork2  pageName={"fandom"} />
       <FaqPage />
     </div>

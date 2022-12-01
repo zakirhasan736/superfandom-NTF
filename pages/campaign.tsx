@@ -17,7 +17,7 @@ const Campaign: NextPageWithLayout = () => {
       </Head>
       <CampaignBanner />
       <Exclusive pageName={"campaign"} />
-      <CSToken pageName={"campaign"} />
+      <CSToken pageName={"campaign"} title={"collections"} />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Faq from '../components/shared/accordion/Faq';
+import Faq from '../components/shared/Faq/Faq';
 import { mockFaqProps } from '../mocks/Faq.mocks';
 import { IFaq } from '../typings/types';
 

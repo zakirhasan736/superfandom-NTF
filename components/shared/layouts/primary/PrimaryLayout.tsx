@@ -19,7 +19,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div {...divProps} className={`w-full bg-primary`}>
-        <Navigation headerNext={headerNext}/>
+        <Navigation headerNext={headerNext} pageName={pageName}/>
         <main className="w-full main-wrapper--box">{children}</main>
         <div className="m-auto" />
         <Footer pageName={pageName}/>
