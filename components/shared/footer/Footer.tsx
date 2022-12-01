@@ -5,6 +5,7 @@ import ServiceLink from './ServiceLink';
 import SocialLink from './SocialLink';
 
 const Footer: React.FC<IFooter> = ({ className, pageName, ...footerProps }) => {
+  console.log(pageName);
   return (
     <footer
       {...footerProps}
@@ -24,7 +25,7 @@ const Footer: React.FC<IFooter> = ({ className, pageName, ...footerProps }) => {
           </div>
           <div className="footer-contant-box w-full">
             <ul className="footer-link-items flex items-center border-b border-solid border-secondary w-full py-[85px] px-[84px] laptop-x:py-12 laptop-x:px-14 lg:block lg:p-0 lg:text-center">
-              <FooterLink name="CAUSES" title="causespage" href="/causespage" pageName={pageName} />
+              <FooterLink name="CAUSES" title="causes" href="/causespage" pageName={pageName} />
               <FooterLink name="FANDOMS" title="fandom" href="/fandom" pageName={pageName} />
               <FooterLink name="CAMPAIGN" title="campaign" href="/campaign" pageName={pageName} />
               <FooterLink name="SERVICES" title="/" href="/" pageName={pageName} />
