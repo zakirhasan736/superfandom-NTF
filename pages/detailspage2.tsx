@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import ProductDetails2 from '../components/core/ProductDetails/ProductDetails2';
 import Exclusive from '../components/shared/Exclusive/Exclusive';
+import PrimaryLayout from '../components/shared/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './page';
+
 
 
 const DetailsPage2: NextPageWithLayout = () => {
