@@ -1192,8 +1192,8 @@ header.white-varient-navbar .navbar-btn-items li a {
 }
 @media screen and (max-width: 767px) {
   .banner-anim-modal.lottie-anim-modal > div {
-    transform: scale(0.5);
-    left: -129px;
+    transform: scale(0.9);
+    left: 0px;
     position: relative;
   }
 
@@ -1243,4 +1243,15 @@ header.white-varient-navbar .navbar-btn-items li a {
 .collection-tabs-items button.active {
   color: #ffffff !important;
   background: #000000 !important;
+}
+@media screen and (max-width:767px) {
+  .text-img-siniped-info-list  .fandom-btn,
+  .text-img-siniped-info-list .causes-btn{
+    max-width: 100%;
+    width: 100%;
+  }
+  .product-price-btn-box .secondary-btn{
+    max-width: 100%;
+    width: 100%;
+  }
 }

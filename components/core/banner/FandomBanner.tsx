@@ -96,7 +96,7 @@ const FandomBanner: React.FC<IFandomBanner> = () => {
               </div>
 
               <div className="banner-modal-imgbox lotties--anim w-full z-20 relative flex justify-start md:justify-center">
-                <div className="banner-anim-modal lottie-anim-modal md:max-w-[353px] sm:w-[253px] sm:h-[220px]">
+                <div className="banner-anim-modal lottie-anim-modal sm:max-w-[353px] sm:w-full sm:h-[220px]">
                   <Lottie
                     animationData={Animation1} loop={true}
                   />
